@@ -1,0 +1,153 @@
+.Aboutsection {
+    margin-top: 0;
+    height: 100vh;
+
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+}
+
+.aboutus {
+    color: white;
+    padding-left: 40px;
+
+}
+
+.containermain1 {
+    display: flex;
+}
+
+.container1 {
+    background-color: pink;
+    height: 400px;
+    width: 970px;
+    margin-left: 40px;
+    color: black;
+
+
+
+}
+
+.container2 {
+    background-color: pink;
+    height: 400px;
+    width: 420px;
+    margin-left: 40px;
+    color: black;
+
+}
+
+.associationtext {
+    color: white;
+}
+
+.sponsorlogo {
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo1 {
+    height: 120px;
+    width: 120px;
+    background-color: pink;
+    background-image: url();
+}
+
+.logo2 {
+    height: 120px;
+    width: 120px;
+    background-color: pink;
+    background-image: url();
+}
+
+.logo3 {
+    height: 120px;
+    width: 120px;
+    background-color: pink;
+    background-image: url();
+}
+
+.logo4 {
+    height: 120px;
+    width: 120px;
+    background-color: pink;
+    background-image: url();
+}
+
+.logo5 {
+    height: 120px;
+    width: 120px;
+    background-color: pink;
+    background-image: url();
+}
+
+.logo6 {
+    height: 120px;
+    width: 120px;
+    background-color: pink;
+    background-image: url();
+
+}
+
+.containermain2 {
+    display: flex;
+    margin-top: 40px;
+}
+
+.container3 {
+    background-color: pink;
+    height: 400px;
+    width: 420px;
+    margin-left: 40px;
+    color: black;
+}
+
+#knowmore {
+    margin-top: 280px;
+    margin-left: 820px;
+
+
+}
+
+.container4 {
+    background-color: pink;
+    height: 400px;
+    width: 970px;
+    margin-left: 40px;
+    color: black;
+
+}
+
+.containermain3 {
+    display: flex;
+    margin-top: 40px;
+}
+
+.container5 {
+    background-color: pink;
+    height: 300px;
+    width: 350px;
+    margin-left: 40px;
+    color: black;
+}
+
+.container6 {
+    background-color: pink;
+    height: 300px;
+    width: 1050px;
+    margin-left: 40px;
+    color: black;
+
+}
+
+.containermain4 {
+    margin-top: 50px;
+    margin-left: 40px;
+    height: 400px;
+    width: 1445px;
+    background-color: pink;
+}
