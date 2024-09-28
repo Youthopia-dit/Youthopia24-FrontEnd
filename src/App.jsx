@@ -3,14 +3,15 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import IndividualEvent from './pages/Event/Individual/Individualpage'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <BrowserRouter>
       <Routes>
-        <Routes path="/" element={}/>
+        <Route path="/individualpage" element={<IndividualEvent />}/>
       </Routes>
     </BrowserRouter>
     </>

@@ -1,0 +1,22 @@
+.event{
+    height: 100vh;
+    align-content: space-between;
+}
+.image{
+    height: 100px;
+    background-color:red ;
+    
+}
+section{
+    color: white;
+    margin-left: 4rem;
+}
+.event-info{
+display:flex;
+justify-content:space-between;
+align-items:left;
+padding: 12px 0;
+}
+.reg-btn{
+    padding: 10px 20px;
+}
