@@ -1,0 +1,44 @@
+img{
+    
+    
+}
+.events{
+    height: 100vh;
+    width: 100vw;
+}
+header{
+    font-size: 54px;
+}
+p{
+    margin-top: 0px; 
+}
+.clubs{
+    
+        display: flex;
+        justify-content:space-evenly; /* Distribute the buttons across the available width */
+        padding: 20px; /* Optional: Adds space around the main section */
+        height: 30vh; /* Optional: Make the main take the full height of the viewport */
+        align-items: center;
+
+      }
+      
+      button {
+        padding: 10px 50px;
+        font-size: 16px;    
+        cursor: pointer;
+      }
+      
+      .technical {
+        
+      }
+      
+      .cultural {
+        /* Middle button */
+      }
+      
+      .informal {
+        /* Right-side button */
+      
+
+
+}
