@@ -1,6 +1,7 @@
 .Aboutsection {
     margin-top: 0;
-    height: 100vh;
+   
+    background-color: white;
 
 }
 
@@ -22,20 +23,22 @@ ul{
 }
 
 .container1 {
-    background-color: pink;
-    height: 400px;
-    width: 970px;
+    /* background-color: pink; */
+   
+    width: 70%;
     margin-left: 40px;
     color: black;
 
 
 
 }
+/* @media screen and (min-width:) {
+    
+} */
 
 .container2 {
-    background-color: pink;
-    height: 400px;
-    width: 420px;
+    
+    width: 30%;
     margin-left: 40px;
     color: black;
 
@@ -47,42 +50,53 @@ ul{
 
 .sponsorlogo {
     display: flex;
-    justify-content: space-around;
+    
+    
+   
 }
 
 .logo1 {
-    height: 120px;
-    width: 120px;
-    background-color: pink;
-    background-image: url();
+  border-radius: 50%;
+    
+     width: 20%; 
 }
+.logo1 img {
+    border-radius: 50%;
+      
+     
+  }
+  
 
 .logo2 {
-    height: 120px;
-    width: 120px;
-    background-color: pink;
+    border-radius: 50%;
+    width: 20%;
+    
     background-image: url();
 }
 
 .logo3 {
-    height: 120px;
+    width: 20%;
+    margin-left: 0px;
+    /* height: 120px;
     width: 120px;
     background-color: pink;
-    background-image: url();
+    background-image: url(); */
 }
 
 .logo4 {
-    height: 120px;
+     width: 20%; 
+    /* height: 120px;
     width: 120px;
     background-color: pink;
-    background-image: url();
+    background-image: url(); */
 }
 
 .logo5 {
-    height: 120px;
+  width: 20%; 
+    /* height: 120px;
     width: 120px;
     background-color: pink;
-    background-image: url();
+    background-image: url(); */
 }
 
 .logo6 {
@@ -91,63 +105,96 @@ ul{
     background-color: pink;
     background-image: url();
 
-}
+} */
 
 .containermain2 {
+    /* display: flex;
+    margin-top: 40px; */
     display: flex;
-    margin-top: 40px;
 }
 
-.container3 {
-    background-color: pink;
-    height: 400px;
-    width: 420px;
-    margin-left: 40px;
-    color: black;
-}
+
 
 #knowmore {
-    margin-top: 280px;
-    margin-left: 820px;
+    
+    margin-left: 83%;
+    margin-bottom: 10px;
 
 
 }
 
-.container4 {
-    background-color: pink;
-    height: 400px;
-    width: 970px;
+.container4{
+    
+    /* height: 400px; */
+    width: 50%;
+    
+    /* width: 970px; */
     margin-left: 40px;
     color: black;
 
 }
+.container4 img{
+    width: 100%;
+    object-fit: cover;
+   
 
-.containermain3 {
+}
+.container3 {
+    /* background-color: pink; */
+    
+    width: 30%;
+    margin-left: 40px;
+    color: black;
+}
+.container3 img{
+    width: 100%;
+    height: 79%;
+
+}
+/* .containermain3 {
     display: flex;
     margin-top: 40px;
-}
+} */
 
 .container5 {
-    background-color: pink;
-    height: 300px;
-    width: 350px;
-    margin-left: 40px;
-    color: black;
-}
+        /* background-color: pink; */
+        
+        width: 30%;
+        margin-left: 40px;
+        color: black;
+    }
+    .container5 img{
+        width: 100%;
+        height: 79%;
+
+    }
 
 .container6 {
     background-color: pink;
-    height: 300px;
-    width: 1050px;
+    
+    width: 70%;
     margin-left: 40px;
     color: black;
 
 }
 
 .containermain4 {
-    margin-top: 50px;
-    margin-left: 40px;
-    height: 400px;
-    width: 1445px;
-    background-color: pink;
+    
+ 
+    
+    
+   
+}
+
+
+.containermain4 img{
+    height: 300px;
+    width: 97%;
+    margin-left: 25px;
+    margin-top: 20px;
+    object-fit: cover;
+ 
+    
+    
+   
 }
