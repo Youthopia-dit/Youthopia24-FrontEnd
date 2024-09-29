@@ -1,44 +1,88 @@
-img{
-    
-    
-}
-.events{
-    height: 100vh;
-    width: 100vw;
-}
-header{
-    font-size: 54px;
-}
-p{
-    margin-top: 0px; 
-}
-.clubs{
-    
-        display: flex;
-        justify-content:space-evenly; /* Distribute the buttons across the available width */
-        padding: 20px; /* Optional: Adds space around the main section */
-        height: 30vh; /* Optional: Make the main take the full height of the viewport */
-        align-items: center;
 
-      }
-      
-      button {
-        padding: 10px 50px;
-        font-size: 16px;    
-        cursor: pointer;
-      }
-      
-      .technical {
-        
-      }
-      
-      .cultural {
-        /* Middle button */
-      }
-      
-      .informal {
-        /* Right-side button */
-      
+.events {
+  height: 100vh;
+  width: 95vw;
+  text-align: center;
+
+  
+}
 
 
+header {
+  font-size: 64px;
+}
+
+p {
+  margin-top: 0px;
+}
+
+
+/* Flexbox container for the buttons and tab content */
+.clubs {
+  display: flex;
+  flex-direction: column; /* Stack buttons and content vertically */
+  align-items: flex-start; /* Align items to the left */
+  /* padding: 51px; */
+  height: auto; /* Adjust height to fit content */
+  width: 100%; /* Full width for flexibility */
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* Button styles */
+
+.tab-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  text-align:right;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+button {
+  padding: 10px 50px;
+  font-size: 16px;
+  cursor: pointer;
+  height: 50px;
+  width: 250px;
+  border: none;
+  background-color: lightgray;
+  transition: background-color 0.3s ease;
+}
+
+/* Active button styling */
+button.active {
+  background-color: #007BFF;
+  color: white;
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* Tab content styling, just below the Technical button */
+.tab-content {
+  padding: 20px;
+  background-color: #ff0000;
+  border-radius: 5px;
+  min-height: 100px;
+  width: 300px; /* Match the width of the buttons */
+  margin-top: 20px; /* Small gap between button and content */
+  margin-left: 150px;
+}
+
+
+/* Additional optional specific styling for the buttons */
+.technical {
+  /* You can add specific styles for technical button if needed */
+}
+
+.cultural {
+  /* Middle button, can add specific styles here */
+}
+
+.informal {
+  /* Right-side button, can add specific styles here */
 }
