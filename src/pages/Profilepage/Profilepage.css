@@ -4,10 +4,11 @@
     width: 95vw; 
 }
 .image{
-    margin-left: 165px;
+    margin-left: 180px;
     margin-top: 100px;
-    height: 150px;
-    
+    height: 300px;
+    width: 300px;
+    background-color: red;
 }
 .heading{
     text-align: center;
@@ -29,7 +30,7 @@
 .button{
     height: 100px;
     width: 300px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 .registered{
     display: flex;
@@ -47,4 +48,38 @@
     align-items: center;
     height: 200px;
     width: 350px;
+}
+.text{
+    padding: 30px;
+}
+@media only screen and (max-width: 500px){
+    .contact{
+        margin-left: 100px;
+    }
+    .image{
+        margin-left: 35px;
+        size-adjust: 25%;
+    }
+    .registered{
+        margin-left: 30px;
+    }
+}
+@media only screen and (min-width:501px)and (max-width: 1000px){
+    .contact{
+        margin-left: 100px;
+    }
+    .image{
+        margin-left: 85px;
+    }
+    .registered{
+        margin-left: 30px;
+    }
+}
+@media only screen and (min-width:1001px)and (max-width: 1200px){
+    .contact{
+        margin-left: 75px;
+    }
+    .image{
+        margin-left: 100px;
+    }
 }

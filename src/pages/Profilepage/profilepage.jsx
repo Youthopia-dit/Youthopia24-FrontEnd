@@ -7,7 +7,6 @@ function ProfilePage(){
                 <div>
                 <div className="image" >
                     <h3 className="heading">Profile photo</h3>
-                    <img src="https://m.media-amazon.com/images/I/61QPLVPgSOL._SX679_.jpg" className="inside"></img>
                 </div>
                 <div className="contact">
                     <h2>Phone</h2>
@@ -18,16 +17,16 @@ function ProfilePage(){
                 </div>
                 </div>
                 <div className="mainheading">
-                    <h2>Your Name</h2>
-                    <h3>Name</h3>
-                    <h2>College</h2>
-                    <h3>DIT</h3>
-                    <h2>College ID</h2>
-                    <h3>ID</h3>
-                    <h2>Branch</h2>
-                    <h3>CSE</h3>
-                    <h2>Year</h2>
-                    <h3>2nd</h3>
+                    <h2 className="text">Your Name : Name</h2>
+                    {/* <h3>Name</h3> */}
+                    <h2 className="text">College: DIT</h2>
+                    {/* <h3>DIT</h3> */}
+                    <h2 className="text">College ID: ID</h2>
+                    {/* <h3>ID</h3> */}
+                    <h2 className="text">Branch: CSE</h2>
+                    {/* <h3>CSE</h3> */}
+                    <h2 className="text">Year: 2nd</h2>
+                    {/* <h3>2nd</h3> */}
                     <button className="button">Logout</button>
                 </div>
             </div>
