@@ -23,8 +23,7 @@ ul{
 }
 
 .container1 {
-    /* background-color: pink; */
-   
+ 
     width: 70%;
     margin-left: 40px;
     color: black;
@@ -32,9 +31,7 @@ ul{
 
 
 }
-/* @media screen and (min-width:) {
-    
-} */
+
 
 .container2 {
     
@@ -43,13 +40,71 @@ ul{
     color: black;
 
 }
+.container2 img{
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 1072px) {
+    .containermain1 {
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+
+    }
+  } 
+  @media only screen and (max-width: 1072px) {
+    .containermain2 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+
+    }
+  } 
+
+  @media only screen and (max-width: 1072px) {
+    .knowmore{
+       display:flex;
+       align-items:center;
+       text-align: center;
+       margin-right: 700px;
+       width: 95vw;
+
+    }
+  } 
+  @media only screen and (max-width: 1072px) {
+    .containermain3 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      
+
+    }
+  } 
+  @media only screen and (max-width: 1072px) {
+    .containermain4 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      
+
+    }
+  } 
+
+
+
+
 
 .associationtext {
-    color: white;
+    color: black;
 }
 
 .sponsorlogo {
     display: flex;
+    margin-left: 80px;
     
     
    
@@ -62,6 +117,8 @@ ul{
 }
 .logo1 img {
     border-radius: 50%;
+    width: 90px;
+    height: 90px;
       
      
   }
@@ -73,62 +130,74 @@ ul{
     
     background-image: url();
 }
+.logo2 img {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+      
+     
+  }
 
 .logo3 {
     width: 20%;
     margin-left: 0px;
-    /* height: 120px;
-    width: 120px;
-    background-color: pink;
-    background-image: url(); */
+  
 }
+.logo3 img {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+      
+     
+  }
 
 .logo4 {
      width: 20%; 
-    /* height: 120px;
-    width: 120px;
-    background-color: pink;
-    background-image: url(); */
+  
 }
+.logo4 img {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+      
+     
+  }
 
 .logo5 {
   width: 20%; 
-    /* height: 120px;
-    width: 120px;
-    background-color: pink;
-    background-image: url(); */
+ 
 }
+.logo5 img {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+      
+     
+  }
 
-.logo6 {
-    height: 120px;
-    width: 120px;
-    background-color: pink;
-    background-image: url();
 
-} */
 
 .containermain2 {
-    /* display: flex;
-    margin-top: 40px; */
+   
     display: flex;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 
 
 
-#knowmore {
+.knowmore {
     
-    margin-left: 83%;
+    margin-left: 350px;
     margin-bottom: 10px;
 
 
 }
 
 .container4{
-    
-    /* height: 400px; */
-    width: 50%;
-    
-    /* width: 970px; */
+
+    width: 60%;
+
     margin-left: 40px;
     color: black;
 
@@ -140,7 +209,7 @@ ul{
 
 }
 .container3 {
-    /* background-color: pink; */
+
     
     width: 30%;
     margin-left: 40px;
@@ -148,16 +217,13 @@ ul{
 }
 .container3 img{
     width: 100%;
-    height: 79%;
+    height: 100%;
 
 }
-/* .containermain3 {
-    display: flex;
-    margin-top: 40px;
-} */
+
 
 .container5 {
-        /* background-color: pink; */
+       
         
         width: 30%;
         margin-left: 40px;
@@ -170,31 +236,97 @@ ul{
     }
 
 .container6 {
-    background-color: pink;
+   
     
     width: 70%;
-    margin-left: 40px;
+   
     color: black;
 
 }
 
-.containermain4 {
-    
- 
-    
-    
-   
-}
 
 
-.containermain4 img{
+
+.containermain5 img{
     height: 300px;
     width: 97%;
     margin-left: 25px;
     margin-top: 20px;
     object-fit: cover;
+    margin-right: 40px;
+    
  
     
     
    
+}
+.fromthedesktext h2{
+    color: black;
+}
+.containermain4 {
+    display: flex;
+    margin-top: 30px;
+}
+
+.container7 {
+   
+   
+    width: 70%;
+    margin-left: 40px;
+    color: black;
+
+
+
+}
+
+.container8 {
+    
+    width: 30%;
+    margin-left: 40px;
+    color: black;
+    margin-top: 30px;
+
+}
+
+
+
+
+
+.containermain3 {
+   
+    display: flex;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+
+
+.container6{
+    
+  
+    width: 50%;
+    
+  
+    margin-left: 40px;
+    color: black;
+    background-color: white;
+
+}
+.container6 img{
+    width: 100%;
+    object-fit: cover;
+   
+
+}
+.container5 {
+    
+    
+    width: 30%;
+    margin-left: 40px;
+    color: black;
+}
+.container5 img{
+    width: 100%;
+    height: 100%;
+
 }
