@@ -2,6 +2,7 @@ import "./home.css";
 import youthopia from "../../assets/youthopia.svg";
 import Timer from "../homeTimer/timer";
 import Sponser from "../sponsers/sponsers";
+import EventAndPrev from "../eventAndPrev/eventAndPrev";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         <Timer />
       </div>
       <Sponser/>
+      <EventAndPrev/>
     </div>
   );
 }

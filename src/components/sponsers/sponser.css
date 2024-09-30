@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-
 .sponse-wrapper{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    /* padding-top: 40px;
+    padding-bottom: 40px; */
 }
 
 .sponser-logo-wrapper{
