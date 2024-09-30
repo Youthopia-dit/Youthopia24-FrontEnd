@@ -2,6 +2,8 @@ import "./eventAndPrev.css";
 import img1 from "../../assets/img1.webp";
 import img2 from "../../assets/img2.webp";
 import img3 from "../../assets/img3.webp";
+import img4 from "../../assets/img4.webp";
+import img5 from "../../assets/img5.webp";
 
 function eventAndPrev() {
   return (
@@ -32,15 +34,15 @@ function eventAndPrev() {
         </h1>
         <div className="event-cards">
           <div className="event-card">
-            <img src={img1} alt="Glimpse 1" />
+            <img src={img4} alt="Glimpse 1" />
             <h2>Glimpse 1 Description</h2>
           </div>
           <div className="event-card">
-            <img src={img2} alt="Glimpse 2" />
+            <img src={img5} alt="Glimpse 2" />
             <h2>Glimpse 2 Description</h2>
           </div>
           <div className="event-card">
-            <img src={img3} alt="Glimpse 3" />
+            <img src={img2} alt="Glimpse 3" />
             <h2>Glimpse 3 Description</h2>
           </div>
         </div>
