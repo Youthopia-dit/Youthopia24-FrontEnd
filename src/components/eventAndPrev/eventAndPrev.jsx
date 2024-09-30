@@ -13,15 +13,15 @@ function eventAndPrev() {
         <div className="event-cards">
           <div className="event-card">
             <img src={img1} alt="Event 1" />
-            <p>Event 1 Description</p>
+            <h2>Event 1 Description</h2>
           </div>
           <div className="event-card">
             <img src={img2} alt="Event 2" />
-            <p>Event 2 Description</p>
+            <h2>Event 2 Description</h2>
           </div>
           <div className="event-card">
             <img src={img3} alt="Event 3" />
-            <p>Event 3 Description</p>
+            <h2>Event 3 Description</h2>
           </div>
         </div>
       </div>
@@ -33,15 +33,15 @@ function eventAndPrev() {
         <div className="event-cards">
           <div className="event-card">
             <img src={img1} alt="Glimpse 1" />
-            <p>Glimpse 1 Description</p>
+            <h2>Glimpse 1 Description</h2>
           </div>
           <div className="event-card">
             <img src={img2} alt="Glimpse 2" />
-            <p>Glimpse 2 Description</p>
+            <h2>Glimpse 2 Description</h2>
           </div>
           <div className="event-card">
             <img src={img3} alt="Glimpse 3" />
-            <p>Glimpse 3 Description</p>
+            <h2>Glimpse 3 Description</h2>
           </div>
         </div>
       </div>

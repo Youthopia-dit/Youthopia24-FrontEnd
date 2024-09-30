@@ -18,7 +18,7 @@
   
   .event-cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
     gap: 20px; 
     flex-wrap: wrap;
@@ -28,14 +28,16 @@
   .event-card {
     /* width: 30%; */
     max-width: 30%;
+    min-width: 300px;
     height: fit-content;
-    /* border: 1px solid #ccc; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 8px;
+    /* padding: 10px;  */
+    /* border: 1px solid #ccc; */
     /* position: relative; */
-    padding: 10px; 
   }
   
   .event-card img {
