@@ -33,7 +33,7 @@ function ProfilePage(){
             <br />
             <br />
             <div>
-                <h1 className="registered">Registered events</h1>
+                <h1 className="register">Registered events</h1>
                 <div className="registered">
                     <img src="https://m.media-amazon.com/images/I/61QPLVPgSOL._SX679_.jpg" className="events"></img>
                     <img src="https://m.media-amazon.com/images/I/61QPLVPgSOL._SX679_.jpg" className="events"></img>
