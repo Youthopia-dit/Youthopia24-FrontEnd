@@ -6,14 +6,30 @@
 
   
 }
+.block{
+  padding-right: 110px;
+  
+  
 
+}
+ul{
+  list-style: none;
+  display:flex;
+  flex-wrap: nowrap;
+  
+
+}
 
 header {
   font-size: 64px;
 }
+img{
+  margin-right: 50px;
 
+}
 p {
   margin-top: 0px;
+  text-align: center;
 }
 
 
@@ -39,16 +55,6 @@ p {
   flex-wrap: wrap;
   margin-top: 50px;
 }
-button {
-  padding: 10px 50px;
-  font-size: 16px;
-  cursor: pointer;
-  height: 50px;
-  width: 250px;
-  border: none;
-  background-color: lightgray;
-  transition: background-color 0.3s ease;
-}
 
 /* Active button styling */
 button.active {
@@ -64,13 +70,13 @@ button:hover {
 
 /* Tab content styling, just below the Technical button */
 .tab-content {
-  padding: 20px;
+  padding: 50px;
   background-color: #ff0000;
   border-radius: 5px;
-  min-height: 100px;
-  width: 300px; /* Match the width of the buttons */
+  min-height: auto;
+   /* Match the width of the buttons */
   margin-top: 20px; /* Small gap between button and content */
-  margin-left: 150px;
+  margin-left: 125px;
 }
 
 
@@ -85,4 +91,14 @@ button:hover {
 
 .informal {
   /* Right-side button, can add specific styles here */
+}
+button {
+  padding: 10px 50px;
+  font-size: 16px;
+  cursor: pointer;
+  height: 50px;
+  width: 250px;
+  border: none;
+  background-color: lightgray;
+  transition: background-color 0.3s ease;
 }
