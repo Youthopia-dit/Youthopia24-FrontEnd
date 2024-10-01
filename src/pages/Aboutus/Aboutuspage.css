@@ -124,214 +124,23 @@ ul{
         font-size: 40px;
  
     }
-
-    
-
-    
-
-
-
-
-
-
-
-
-}
-
-/* @media only screen and (max-width: 1072px) {
-    .containermain1 {
-        display: flex;
-        flex-direction: column;
-  
-        align-items: center;
-
-    }
-  } 
-  @media only screen and (max-width: 1072px) {
-    .container1 {
-        display: flex;
-        flex-direction: column;
-        
-        align-items: center;
-        font-size: 50px;
-
-    }
-  } 
-  @media only screen and (max-width: 1072px) {
-    .container2 img {
-        display: flex;
-        flex-direction: column;
-
-        align-items: center;
-        height: 500px;
-        width: 50%;
-        width: 500px;
-    
-    }
-  } 
- 
-  @media only screen and (max-width: 1072px) {
-    .containermain2 {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-
-    }
-  } 
-
-  @media only screen and (max-width: 1072px) {
     .knowmore{
-       display:flex;
-       align-items:center;
-       text-align: center;
-       margin-right: 500px;
-       width: 95vw;
-
-    }
-  } 
-  @media only screen and (max-width: 1072px) {
-    .containermain3 {
         display: flex;
-        flex-direction: column;
         text-align: center;
-        align-items: center;
-      
-
     }
-  } 
-  @media only screen and (max-width: 1072px) {
-    .containermain4 {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-      
-
+    .aboutus{
+        font-size: 40px;
     }
-  } 
 
-  @media only screen and (max-width: 1072px) {
-    .associationtext {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        font-size: 60px;
-      
 
+@media only screen and (max-width: 1513px)  {
+    .about-youthopia-main h3{
+        font-size: 80px;
+        font-weight: 80px;
     }
-  } 
-
-  
-
-  @media only screen and (max-width: 1072px) {
+    }
+}   
     
-    .logo1 img{
-  
-        height: 80px ;
-        width: 80px;
-        display: flex;
-        text-align: center;
-        align-items: center;
-   
-    }
-  } 
-
-
-  @media only screen and (max-width: 1072px) {
-    .container4 {
-        display: flex;
-        flex-direction: column;
-        
-        align-items: center;
-        font-size: 50px;
-
-    }
-
-    .container3 img{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-        
- 
-    }
-
-    .container6 {
-        display: flex;
-        flex-direction: column;
-        
-        align-items: center;
-        font-size: 50px;
-
-    }
-    .container5 img {
-        display: flex;
-        flex-direction: column;
-
-        align-items: center;
-        height: 500px;
-        width: 50%;
-        width: 500px;
-        
- 
-    }
-  } 
-  @media only screen and (max-width: 1072px) {
-
-  } 
-  @media only screen and (max-width: 1072px) {
-
-  }  
-  @media only screen and (max-width: 1072px) {
-    .fromthedesktext {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        font-size: 60px;
-      
-
-    }
-  } 
-  @media only screen and (max-width: 1072px) {
-    .container7 {
-        display: flex;
-        flex-direction: column;
-        
-        align-items: center;
-        font-size: 50px;
-
-    }
-  } 
-  @media only screen and (max-width: 1072px) {
-    .container8 img {
-        display: flex;
-        flex-direction: column;
-
-        align-items: center;
-        height: 500px;
-        width: 50%;
-        width: 500px;
-        
- 
-    }
-  } 
-  @media only screen and (max-width: 1072px) {
-    .containermain5 {
-        display: flex;
-        flex-direction: column;
-        
-        align-items: center;
-        margin-top: 20px;
-
-    }
-  }  */
-
-
-
-
 
 
 .associationtext {
@@ -340,16 +149,8 @@ ul{
 
 .sponsorlogo {
     display: flex;
-    margin-left: 1rem;
-   
-    
-    
-   
+    margin-left: 1rem;  
 }
-
-
-  
-
 
 
 .containermain2 {
@@ -358,23 +159,14 @@ ul{
     margin-top: 20px;
     margin-left: 40px;
 }
-
-
-
 .knowmore {
     
-    margin-left: 40px;
+    margin-left: 50rem;
     margin-bottom: 10px;
     width: 20%;
-    font-size: 25px;
-
-
+    font-size: 20px;
+    text-align: center;
 }
-
-
-
-
-
 
 .fromthedesktext h2{
     color: black;
@@ -383,10 +175,6 @@ ul{
     display: flex;
     margin-top: 30px;
 }
-
-
-
-
 .containermain3 {
    
     display: flex;

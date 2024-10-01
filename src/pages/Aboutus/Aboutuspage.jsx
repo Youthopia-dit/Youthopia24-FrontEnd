@@ -19,7 +19,7 @@ export default function Aboutuspage() {
 
 
         <div div className="Aboutsection">
-            <h2>About Us </h2>
+            <h2 className="aboutus">About Us </h2>
             <div className="about-youthopia-main">
                 <h3 align="center">About Youthopia
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis magnam velit perferendis nobis aliquam natus maxime magni quidem placeat, tempora quod esse adipisci cum ullam, mollitia eveniet dicta rem inventore!
@@ -27,8 +27,8 @@ export default function Aboutuspage() {
                     Quae quibusdam maxime, quis repellat, tempore impedit assumenda velit aliquam autem nisi porro? Porro autem magni officia minus et numquam suscipit doloremque quam officiis quo assumenda, placeat laboriosam. Saepe, odit.
                 </h3>
                 <img src={download1}></img>
-                </div>
-            
+            </div>
+
 
             <h2 align="center" className="associationtext">  IN ASSOCIATION WITH </h2>
 
@@ -43,10 +43,14 @@ export default function Aboutuspage() {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis magnam velit perferendis nobis aliquam natus maxime magni quidem placeat, tempora quod esse adipisci cum ullam, mollitia eveniet dicta rem inventore!
                     Esse, debitis animi. Autem sunt natus in, possimus tempora asperiores, obcaecati dicta enim unde voluptate perferendis voluptates ullam nemo similique, facilis earum eligendi aspernatur. Facilis minus earum officia magnam perspiciatis?
                     Quae quibusdam maxime, quis repellat, tempore impedit assumenda velit aliquam autem nisi porro? Porro autem magni officia minus et numquam suscipit doloremque quam officiis quo assumenda, placeat laboriosam. Saepe, odit.
-                
-                </h3>
-                <button type="submit" className="knowmore">Know More</button>
 
+                </h3>
+
+
+
+            </div>
+            <div className="knowmore">
+                <button type="submit">Know More</button>
             </div>
 
 
@@ -80,9 +84,9 @@ export default function Aboutuspage() {
                 <img src={download1}></img>
 
             </div>
-            </div>
-    
-      
+        </div>
+
+
 
 
 
