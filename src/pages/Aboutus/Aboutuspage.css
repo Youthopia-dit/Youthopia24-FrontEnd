@@ -2,7 +2,32 @@
     margin-top: 0;
    
     background-color: white;
+    color: black;
+}
 
+.about-youthopia-main {
+    display: flex;
+    gap: 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+.containermain2{
+    display: flex;
+    gap: 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+.containermain3{
+    display: flex;
+    gap: 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+.containermain4{
+    display: flex;
+    gap: 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
 
 ul{
@@ -11,48 +36,140 @@ ul{
     list-style: none;
 
 }
-
-.aboutus {
-    color: white;
-    padding-left: 40px;
-
+.associationtext{
+    font-size: 40px;
 }
-
-.containermain1 {
-    display: flex;
-}
-
-.container1 {
- 
-    width: 70%;
-    margin-left: 40px;
-    color: black;
-
-
-
+.fromthedesktext{
+    font-size: 40px;
 }
 
 
-.container2 {
-    
-    width: 30%;
-    margin-left: 40px;
-    color: black;
 
-}
-.container2 img{
-    margin-top: 20px;
-}
+
 
 @media only screen and (max-width: 1072px) {
+    .about-youthopia-main {
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        align-items: center;
+
+    }
+    .about-youthopia-main img{
+        width: 50%;
+        
+
+    }
+    .about-youthopia-main h3{
+        text-align: justify;
+        font-size: 40px;
+       
+        
+
+    }
+    .containermain2{
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        align-items: center;
+      
+
+    }
+    .containermain2 img{
+        width: 50%;
+        margin-top: 3rem;
+        
+
+    }
+    .containermain2 h3{
+        text-align: justify;
+        font-size: 40px;
+ 
+    }
+    .containermain3{
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        align-items: center;
+      
+
+    }
+    .containermain3 img{
+        width: 50%;
+        margin-top: 2rem;
+        
+
+    }
+    .containermain3 h3{
+        text-align: justify;
+        font-size: 40px;
+ 
+    }
+    .containermain4{
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        align-items: center;
+      
+
+    }
+    .containermain4 img{
+        width: 50%;
+        margin-top: 2rem;
+        
+
+    }
+    .containermain4 h3{
+        text-align: justify;
+        font-size: 40px;
+ 
+    }
+
+    
+
+    
+
+
+
+
+
+
+
+
+}
+
+/* @media only screen and (max-width: 1072px) {
     .containermain1 {
         display: flex;
         flex-direction: column;
-        
+  
         align-items: center;
 
     }
   } 
+  @media only screen and (max-width: 1072px) {
+    .container1 {
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+        font-size: 50px;
+
+    }
+  } 
+  @media only screen and (max-width: 1072px) {
+    .container2 img {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        height: 500px;
+        width: 50%;
+        width: 500px;
+    
+    }
+  } 
+ 
   @media only screen and (max-width: 1072px) {
     .containermain2 {
         display: flex;
@@ -68,7 +185,7 @@ ul{
        display:flex;
        align-items:center;
        text-align: center;
-       margin-right: 700px;
+       margin-right: 500px;
        width: 95vw;
 
     }
@@ -94,6 +211,125 @@ ul{
     }
   } 
 
+  @media only screen and (max-width: 1072px) {
+    .associationtext {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        font-size: 60px;
+      
+
+    }
+  } 
+
+  
+
+  @media only screen and (max-width: 1072px) {
+    
+    .logo1 img{
+  
+        height: 80px ;
+        width: 80px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+   
+    }
+  } 
+
+
+  @media only screen and (max-width: 1072px) {
+    .container4 {
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+        font-size: 50px;
+
+    }
+
+    .container3 img{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+ 
+    }
+
+    .container6 {
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+        font-size: 50px;
+
+    }
+    .container5 img {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        height: 500px;
+        width: 50%;
+        width: 500px;
+        
+ 
+    }
+  } 
+  @media only screen and (max-width: 1072px) {
+
+  } 
+  @media only screen and (max-width: 1072px) {
+
+  }  
+  @media only screen and (max-width: 1072px) {
+    .fromthedesktext {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        font-size: 60px;
+      
+
+    }
+  } 
+  @media only screen and (max-width: 1072px) {
+    .container7 {
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+        font-size: 50px;
+
+    }
+  } 
+  @media only screen and (max-width: 1072px) {
+    .container8 img {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        height: 500px;
+        width: 50%;
+        width: 500px;
+        
+ 
+    }
+  } 
+  @media only screen and (max-width: 1072px) {
+    .containermain5 {
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+        margin-top: 20px;
+
+    }
+  }  */
+
+
 
 
 
@@ -104,76 +340,15 @@ ul{
 
 .sponsorlogo {
     display: flex;
-    margin-left: 80px;
+    margin-left: 1rem;
+   
     
     
    
 }
 
-.logo1 {
-  border-radius: 50%;
-    
-     width: 20%; 
-}
-.logo1 img {
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-      
-     
-  }
+
   
-
-.logo2 {
-    border-radius: 50%;
-    width: 20%;
-    
-    background-image: url();
-}
-.logo2 img {
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-      
-     
-  }
-
-.logo3 {
-    width: 20%;
-    margin-left: 0px;
-  
-}
-.logo3 img {
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-      
-     
-  }
-
-.logo4 {
-     width: 20%; 
-  
-}
-.logo4 img {
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-      
-     
-  }
-
-.logo5 {
-  width: 20%; 
- 
-}
-.logo5 img {
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-      
-     
-  }
 
 
 
@@ -188,78 +363,19 @@ ul{
 
 .knowmore {
     
-    margin-left: 350px;
+    margin-left: 40px;
     margin-bottom: 10px;
+    width: 20%;
+    font-size: 25px;
 
 
 }
 
-.container4{
-
-    width: 60%;
-
-    margin-left: 40px;
-    color: black;
-
-}
-.container4 img{
-    width: 100%;
-    object-fit: cover;
-   
-
-}
-.container3 {
-
-    
-    width: 30%;
-    margin-left: 40px;
-    color: black;
-}
-.container3 img{
-    width: 100%;
-    height: 100%;
-
-}
-
-
-.container5 {
-       
-        
-        width: 30%;
-        margin-left: 40px;
-        color: black;
-    }
-    .container5 img{
-        width: 100%;
-        height: 79%;
-
-    }
-
-.container6 {
-   
-    
-    width: 70%;
-   
-    color: black;
-
-}
 
 
 
 
-.containermain5 img{
-    height: 300px;
-    width: 97%;
-    margin-left: 25px;
-    margin-top: 20px;
-    object-fit: cover;
-    margin-right: 40px;
-    
- 
-    
-    
-   
-}
+
 .fromthedesktext h2{
     color: black;
 }
@@ -267,27 +383,6 @@ ul{
     display: flex;
     margin-top: 30px;
 }
-
-.container7 {
-   
-   
-    width: 70%;
-    margin-left: 40px;
-    color: black;
-
-
-
-}
-
-.container8 {
-    
-    width: 30%;
-    margin-left: 40px;
-    color: black;
-    margin-top: 30px;
-
-}
-
 
 
 
@@ -298,35 +393,10 @@ ul{
     margin-top: 20px;
     margin-left: 30px;
 }
-
-
-
-.container6{
-    
-  
-    width: 50%;
-    
-  
-    margin-left: 40px;
-    color: black;
-    background-color: white;
-
-}
-.container6 img{
-    width: 100%;
-    object-fit: cover;
-   
-
-}
-.container5 {
-    
-    
-    width: 30%;
-    margin-left: 40px;
-    color: black;
-}
-.container5 img{
-    width: 100%;
-    height: 100%;
-
+.containermain5 img{
+    width: 95%;
+    margin-left: 30px;
+    gap: 10rem;
+    margin-top: 5rem
+ 
 }
