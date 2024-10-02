@@ -4,14 +4,14 @@ function Loginpage() {
     return (<>
     <section class="img">
   
-  <div class="image">
+  <div class="img">
    
   </div>
 </section>
    <h1> Welcome Back </h1>
    <p>Please login to continue</p>
    <form>
-    <div>
+    <div >
    <p><input id="button" type="text" name="username" placeholder="username" /></p> 
     <p><input id="button" type="number" name="username" placeholder="password" /></p>
     <div class="remem"><a><input type="checkbox" name="checkbox"/>Remember me</a>
