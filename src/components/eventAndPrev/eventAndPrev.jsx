@@ -10,40 +10,35 @@ function eventAndPrev() {
     <div className="events-page">
       <div className="events-category">
         <h1 style={{ textTransform: "uppercase" }}>
-          Events Category
+          EVENTS
         </h1>
         <div className="event-cards">
           <div className="event-card">
             <img src={img1} alt="Event 1" />
-            <h2>Event 1 Description</h2>
           </div>
           <div className="event-card">
             <img src={img2} alt="Event 2" />
-            <h2>Event 2 Description</h2>
           </div>
           <div className="event-card">
             <img src={img3} alt="Event 3" />
-            <h2>Event 3 Description</h2>
           </div>
         </div>
       </div>
 
+{/* Previous year Glimps */}
       <div className="events-category">
         <h1 style={{ textTransform: "uppercase" }}>
-          Previous Years Glimpse
+        GLIMPSE FROM 2023
         </h1>
         <div className="event-cards">
           <div className="event-card">
             <img src={img4} alt="Glimpse 1" />
-            <h2>Glimpse 1 Description</h2>
           </div>
           <div className="event-card">
             <img src={img5} alt="Glimpse 2" />
-            <h2>Glimpse 2 Description</h2>
           </div>
           <div className="event-card">
             <img src={img2} alt="Glimpse 3" />
-            <h2>Glimpse 3 Description</h2>
           </div>
         </div>
       </div>

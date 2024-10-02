@@ -8,13 +8,13 @@ function Home() {
   return (
     <div className="home">
       <div className="main-page">
-        <div>
-          <img src={youthopia} className="youthopiaLogo"></img>
-        </div>
+        <img src={youthopia} className="youthopiaLogo"></img>
         <Timer />
       </div>
-      <Sponser/>
-      <EventAndPrev/>
+      <div className="sec2">
+        <Sponser />
+        <EventAndPrev />
+      </div>
     </div>
   );
 }
