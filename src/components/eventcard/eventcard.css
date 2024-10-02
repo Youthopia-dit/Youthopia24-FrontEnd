@@ -1,6 +1,6 @@
 .eventcontent {
     list-style: none;
-    padding: 30px;
+    padding: 25px;
     margin: 20px;
     border: 2px solid #ddd;
     border-radius: 10px;
@@ -13,6 +13,7 @@ li img {
     display: flex;
     margin: 5px auto 10px;
     border-radius: 8px;
+    
 }
 
 li p {
@@ -21,12 +22,12 @@ li p {
     font-weight: bold;
     color: #333;
     padding: 5px;
-    background-color: #f9f9f9;
+    background-color: #000000;
     border-radius: 5px;
 }
 
 li p:nth-child(2) {
-    margin-bottom: 130px;
+    margin-bottom: 530px;
 }
 
 li p:nth-child(4) {

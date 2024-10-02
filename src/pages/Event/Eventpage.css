@@ -79,7 +79,8 @@ button:hover {
   min-height: auto;
    /* Match the width of the buttons */
   margin-top: 20px; /* Small gap between button and content */
-  margin-left: 125px;
+  margin-left: 75px;
+  
 }
 
 
