@@ -50,7 +50,8 @@ export default function Aboutuspage() {
 
             </div>
             <div className="knowmore">
-                <button type="submit">Know More</button>
+                <a href="https://www.dituniversity.edu.in/">
+                <button type="submit">Know More</button></a>
             </div>
 
 
