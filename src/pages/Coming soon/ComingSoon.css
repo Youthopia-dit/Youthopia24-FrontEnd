@@ -1,0 +1,55 @@
+.wholepage{
+    height: 100vh;
+    width: 95vw;
+}
+.heading{
+    display: flex;
+}
+.logo{
+    margin-left: 50%;
+    height: 150px;
+    width: 175px;
+}
+.presents{
+    margin-left: 45%;
+    font-style: italic;
+    font-size: 80px;
+}
+.youthopia{
+    margin-left: 35%;
+    font-size: 100px;
+    font-style: italic;
+}
+.container{
+    display: flex;
+    width: 120%;
+    flex-wrap: nowrap;
+    transform: rotate(-20deg);
+}
+.scroll{
+    display: flex;
+    white-space: nowrap;
+    animation: swipe 5000ms infinite linear;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    font-size: 100px;
+    /* transform: rotate(-20deg); */
+}
+/* .scroll2{
+    display: flex;
+    white-space: nowrap;
+    animation: swipe 5000ms infinite linear;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    transform: rotate(20deg);
+} */
+/* @keyframes swipe{
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-50%);
+    }
+} */
