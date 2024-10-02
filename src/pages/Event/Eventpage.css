@@ -12,13 +12,16 @@
   
 
 }
-ul{
+.parents{
   list-style: none;
-  display:flex;
-  flex-wrap: nowrap;
+  display:flex ;
+  flex-wrap: wrap;
+  justify-content: center;
   
 
 }
+
+
 
 header {
   font-size: 64px;

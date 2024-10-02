@@ -5,45 +5,114 @@ import { EventCard1, EventCard2, EventCard3}  from '../../components/eventcard/e
 function Eventpage(props) {
     const [activeTab, setActiveTab] = useState('Technical'); // Tracks the currently active tab
 
+    // Define event data in an array
+    const technicalEvents = [
+        {
+            imageSrc: "https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png",
+            imageAlt: "Event 1",
+            eventName: "Technical Event 1",
+            eventDate: "12th October 2024",
+            eventLink: "https://youthopia.dituniversity.co.in/#/events"
+        },
+        {
+            imageSrc: "https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png",
+            imageAlt: "Event 2",
+            eventName: "Technical Event 2",
+            eventDate: "13th October 2024",
+            eventLink: "https://example.com"
+        },
+        // Add more events as needed...
+    ];
+    const culturalEvents = [
+        {
+            imageSrc: "https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png",
+            imageAlt: "Event 1",
+            eventName: "cultural Event 1",
+            eventDate: "12th October 2024",
+            eventLink: "https://youthopia.dituniversity.co.in/#/events"
+        },
+        {
+            imageSrc: "https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png",
+            imageAlt: "Event 2",
+            eventName: "cultural Event 2",
+            eventDate: "13th October 2024",
+            eventLink: "https://example.com"
+        },
+        // Add more events as needed...
+    ];
+    const informalEvents = [
+        {
+            imageSrc: "https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png",
+            imageAlt: "Event 1",
+            eventName: "informal Event 1",
+            eventDate: "12th October 2024",
+            eventLink: "https://youthopia.dituniversity.co.in/#/events"
+        },
+        {
+            imageSrc: "https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png",
+            imageAlt: "Event 2",
+            eventName: "informal Event 2",
+            eventDate: "13th October 2024",
+            eventLink: "https://example.com"
+        },
+    ];
+
+
+    // Render content based on active tab
     const renderContent = () => {
         switch (activeTab) {
             case 'Technical':
                 return (
-                    <div>
-                        <ul>
-                            {/* Three list items for technical events */}
-                            <div>{EventCard1()}</div>
-                            <div>{EventCard1()}</div>
-                            <div>{EventCard1()}</div>
-                            
-                        </ul>
+                    <div className='parents'>
+                        {technicalEvents.map((event, index) => (
+                            <EventCard1
+                                key={index}
+                                imageSrc={event.imageSrc}
+                                imageAlt={event.imageAlt}
+                                eventName={event.eventName}
+                                eventDate={event.eventDate}
+                                eventLink={event.eventLink}
+                            />
+                        ))}
                     </div>
-
                 );
 
             case 'Cultural':
                 return (
-                    <div>
-                        <ul>
-                            {/* Three list items for technical events */}
+                    <div className='parents'>
+                        {culturalEvents.map((event, index) => (
+                            <EventCard2
+                                key={index}
+                                imageSrc={event.imageSrc}
+                                imageAlt={event.imageAlt}
+                                eventName={event.eventName}
+                                eventDate={event.eventDate}
+                                eventLink={event.eventLink}
+                            />
+                        ))}
+                        
                             
-                            <div>{EventCard2()}</div>
-                            <div>{EventCard2()}</div>
-                            <div>{EventCard2()}</div>
+                          
                             
-                        </ul>
+                    
                     </div>
 
                 );
             case 'Informal':
                 return (
-                    <div>
-                        <ul>
-                            {/* Three list items for technical events */}
-                            <div>{EventCard3()}</div>
-                            <div>{EventCard3()}</div>
-                            <div>{EventCard3()}</div>
-                        </ul>
+                    <div className='parents'>
+                    {informalEvents.map((event, index) => (
+                        <EventCard3
+                            key={index}
+                            imageSrc={event.imageSrc}
+                            imageAlt={event.imageAlt}
+                            eventName={event.eventName}
+                            eventDate={event.eventDate}
+                            eventLink={event.eventLink}
+                        />
+                    ))}
+                    
+                       
                     </div>
 
                 );

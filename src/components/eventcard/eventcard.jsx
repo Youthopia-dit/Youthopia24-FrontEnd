@@ -1,104 +1,68 @@
 import './EventCard.css'; // Import the CSS file
 
-function EventCard1() {
+
+
+function EventCard1(props) {
     const openEventPage = () => {
-        window.location.href = "https://youthopia.dituniversity.co.in/#/events"; // Random YouTube link
-      };
+        window.location.href = props.eventLink; // Link passed as a prop
+    };
+
     return (
-        <li>
-           <img 
-                src="https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png" 
-                alt="event images loading..." 
+        <div className='eventcontent'>
+            <img 
+                src={props.imageSrc} 
+                alt={props.imageAlt} 
                 width={250} 
                 height={200} 
                 onClick={openEventPage}  // React onClick event handler
                 style={{ cursor: "pointer" }}  // Optional: add pointer cursor
             />
-            <p>Event Name: <br />Technical Event 1 Date:</p>
-            
-
-           <img 
-                src="https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png" 
-                alt="event images loading..." 
-                width={250} 
-                height={200} 
-            />
-            <p>Event Name: <br />Technical Event 2 Date:</p>
-
-            <img 
-                src="https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png" 
-                alt="event images loading..." 
-                width={250} 
-                height={200} 
-            />
-            <p>Event Name: <br />Technical Event 3 Date:</p>
-            
-        </li>
+            <p>Event Name: <br />{props.eventName}</p>
+            <p>Date: {props.eventDate}</p>
+        </div>
     );
 }
-function EventCard2() {
+function EventCard2(props) {
+    const openEventPage = () => {
+        window.location.href = props.eventLink; // Link passed as a prop
+    };
+
     return (
-        <li>
-        <img 
-            src="https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png" 
-            alt="event images loading..." 
-            width={250} 
-            height={200} 
-        />
-        <p>Event Name: <br />Cultural Event 1 Date:</p>
-
-        <img 
-            src="https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png" 
-            alt="event images loading..." 
-            width={250} 
-            height={200} 
-        />
-        <p>Event Name: <br />Cultural Event 2 Date:</p>
-
-        <img 
-            src="https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png" 
-            alt="event images loading..." 
-            width={250} 
-            height={200} 
-        />
-        <p>Event Name: <br />Cultural Event 3 Date:</p>
-    </li>
-
-
+        <div className='eventcontent'>
+            <img 
+                src={props.imageSrc} 
+                alt={props.imageAlt} 
+                width={250} 
+                height={200} 
+                onClick={openEventPage}  // React onClick event handler
+                style={{ cursor: "pointer" }}  // Optional: add pointer cursor
+            />
+            <p>Event Name: <br />{props.eventName}</p>
+            <p>Date: {props.eventDate}</p>
+        </div>
     );
 }
-    function EventCard3() {
-        return (
-            <li>
-            <img 
-                src="https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png" 
-                alt="event images loading..." 
-                width={250} 
-                height={200} 
-            />
-            <p>Event Name: <br />Informal Event 1 Date:</p>
-    
-            <img 
-                src="https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png" 
-                alt="event images loading..." 
-                width={250} 
-                height={200} 
-            />
-            <p>Event Name: <br />Informal Event 2 Date:</p>
+function EventCard3(props) {
+    const openEventPage = () => {
+        window.location.href = props.eventLink; // Link passed as a prop
+    };
 
+    return (
+        <div className='eventcontent'>
             <img 
-                src="https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png" 
-                alt="event images loading..." 
+                src={props.imageSrc} 
+                alt={props.imageAlt} 
                 width={250} 
                 height={200} 
+                onClick={openEventPage}  // React onClick event handler
+                style={{ cursor: "pointer" }}  // Optional: add pointer cursor
             />
-            <p>Event Name: <br />Informal Event 3 Date:</p>
-        </li>
-    
-    
-        );
-
+            <p>Event Name: <br />{props.eventName}</p>
+            <p>Date: {props.eventDate}</p>
+        </div>
+    );
 }
+
 
 
 
