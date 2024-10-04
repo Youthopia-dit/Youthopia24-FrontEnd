@@ -6,6 +6,7 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import IndividualEvent from './pages/Event/Individual/Individualpage'
 import Loginpage from './pages/Login/Loginpage'
+import Signuppage from './pages/Signup/Signuppage'
 function App() {
 
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/individualpage" element={<IndividualEvent />}/>
         <Route path="/Loginpage" element={<Loginpage />}/>
+        <Route path="/Signuppage" element={<Signuppage />}/>
       </Routes>
     </BrowserRouter>
     </>
