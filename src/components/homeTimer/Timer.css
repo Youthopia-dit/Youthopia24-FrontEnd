@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap');
+
+#root{
+    padding: 0;
+}
+
+.timer{
+    display: flex;
+    justify-content: space-around;
+    max-width: 800px;
+    width: 60%;
+}
+
+.timer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+h2{
+    font-family: sans-serif;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: white;
+}
+
+h1{
+    font-family: "Russo One", Times, serif;
+    color: white;
+    font-size: 4rem;
+}

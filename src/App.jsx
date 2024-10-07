@@ -7,7 +7,7 @@ import ProfilePage from './pages/Profilepage/profilepage'
 import ComingSoon from './pages/Coming soon/ComingSoon'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
