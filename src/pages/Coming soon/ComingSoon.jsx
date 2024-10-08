@@ -3,6 +3,7 @@ import './ComingSoon.css';
 import centerElement from '../../assets/center-element-full.png'
 import DIT from '../../assets/ditu-full.png'
 import Youthopia from '../../assets/youthopia-logo.png'
+import Timer from '../../components/homeTimer/Timer'
 
 function ComingSoon() {
     return (
@@ -16,6 +17,7 @@ function ComingSoon() {
                     <img src={Youthopia} className="coming-soon-youthopia"></img>
                     <img src={Youthopia} className="coming-soon-youthopia-blur"></img>
                 </div>
+                <Timer />
             </div>
             <img src={centerElement} alt="center element" className="center-element" />
         </div>

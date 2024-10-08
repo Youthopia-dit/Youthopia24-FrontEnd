@@ -1,6 +1,6 @@
 import "./home.css";
 import youthopia from "../../assets/youthopia.svg";
-import Timer from "../homeTimer/timer";
+import Timer from "../homeTimer/Timer";
 import Sponser from "../sponsers/sponsers";
 import EventAndPrev from "../eventAndPrev/eventAndPrev";
 

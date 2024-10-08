@@ -15,19 +15,19 @@
 
 .center-element{
     position: absolute;
-    margin-top: 10%;
+    margin-top: 5%;
     text-align: center;
+    filter: opacity(40%);
 }
 
 .coming-soon-content {
     position: relative;
-    z-index: 1; /* Ensure content is above the center element */
+    z-index: 1; 
     text-align: center;
-    /* margin-top: 20px; Adjust margin to control distance from top */
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%; /* Make sure the content spans the full width */
+    width: 100%;
 }
 
 .dit-logo {

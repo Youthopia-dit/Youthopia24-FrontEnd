@@ -8,7 +8,7 @@ function Timer() {
   const [seconds, setSeconds] = useState(0);
   const [isTimeOver, setIsTimeOver] = useState(false);
   setInterval(() => {
-    const eventDate = new Date("2024-11-02T00:00:00");
+    const eventDate = new Date("2024-11-12T00:00:00");
     const currentDate = new Date();
     const totalSeconds = (eventDate - currentDate) / 1000;
     const days = Math.floor(totalSeconds / 3600 / 24);
@@ -46,20 +46,20 @@ function Timer() {
         <>
           <div className="timer-container">
             <div className="days">
-              <h2 className="time-info">DAYS</h2>
-              <h1>{days}</h1>
+              <div className="time-info">DAYS</div>
+              <div className="time-data">{days}</div>
             </div>
             <div className="hours">
-              <h2 className="time-info">HOURS</h2>
-              <h1>{hours}</h1>
+              <div className="time-info">HOURS</div>
+              <div className="time-data">{hours}</div>
             </div>
             <div className="minutes">
-              <h2 className="time-info">MINUTES</h2>
-              <h1>{minutes}</h1>
+              <div className="time-info">MINUTES</div>
+              <div className="time-data">{minutes}</div>
             </div>
             <div className="seconds">
-              <h2 className="time-info">SECONDS</h2>
-              <h1>{seconds}</h1>
+              <div className="time-info">SECONDS</div>
+              <div className="time-data">{seconds}</div>
             </div>
           </div>
         </>

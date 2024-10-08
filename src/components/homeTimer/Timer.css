@@ -1,14 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap');
-
-#root{
-    padding: 0;
-}
-
 .timer{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     max-width: 800px;
     width: 60%;
+
 }
 
 .timer-container{
@@ -18,16 +13,17 @@
     width: 100%;
 }
 
-h2{
-    font-family: sans-serif;
-    font-family: "Montserrat", sans-serif;
+.time-info{
+    font-family: "Nico";
     font-size: 1.25rem;
     font-weight: normal;
+    line-height: 1;
     color: white;
 }
 
-h1{
-    font-family: "Russo One", Times, serif;
+.time-data{
+    font-family: "Nico";
     color: white;
+    line-height: 1;
     font-size: 4rem;
 }
