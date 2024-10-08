@@ -16,12 +16,17 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'  # Use the version that matches your project requirements
+        node-version: '18'  # Adjust this to match your project's Node.js version
+
+    - name: Install dependencies
+      run: |
+        npm ci
+      working-directory: .  # Adjust this if your package.json is not in the root
 
     - name: Build React Frontend
       run: |  
-        npm ci
         npm run build
+      working-directory: .  # Adjust this if your package.json is not in the root
 
     - name: Install Web Deploy
       run: |
@@ -31,5 +36,5 @@ jobs:
     - name: Deploy Frontend to IIS
       run: |
         $env:PATH = $env:PATH + ";${env:ProgramFiles}\IIS\Microsoft Web Deploy V3"
-        msdeploy.exe -verb:sync -source:IisApp='${{ github.workspace }}\build' -dest:IisApp='Default Web Site/Frontend',ComputerName='https://${{ secrets.SERVER_IP }}/msdeploy.axd?site=Default Web Site',UserName='${{ secrets.IIS_USERNAME }}',Password='${{ secrets.IIS_PASSWORD }}',AuthType='Basic' -enableRule:DoNotDeleteRule -allowUntrusted
+        msdeploy.exe -verb:sync -source:IisApp='${{ github.workspace }}\dist' -dest:IisApp='Default Web Site/Frontend',ComputerName='https://${{ secrets.SERVER_IP }}/msdeploy.axd?site=Default Web Site',UserName='${{ secrets.IIS_USERNAME }}',Password='${{ secrets.IIS_PASSWORD }}',AuthType='Basic' -enableRule:DoNotDeleteRule -allowUntrusted
       shell: powershell
