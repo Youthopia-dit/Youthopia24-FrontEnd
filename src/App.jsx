@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/profile" element={<ProfilePage />}/>
-        <Route path="/comingsoon" element={<ComingSoon />}/>
+        <Route path="/" element={<ComingSoon />}/>
       </Routes>
     </BrowserRouter>
     </>
