@@ -13,25 +13,23 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-   
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Use the version that matches your project requirements
+
     - name: Build React Frontend
       run: |  
-        npm install
+        npm ci
         npm run build
 
-    
+    - name: Install Web Deploy
+      run: |
+        Invoke-WebRequest -Uri https://download.microsoft.com/download/0/1/D/01DC28EA-638C-4A22-A57B-4CEF97755C6C/WebDeploy_amd64_en-US.msi -OutFile WebDeploy_amd64_en-US.msi
+        Start-Process msiexec.exe -Wait -ArgumentList '/I WebDeploy_amd64_en-US.msi /quiet'
 
-    
     - name: Deploy Frontend to IIS
-      uses: microsoft/webdeploy@v1
-      with:
-        source: './frontend/build'
-        dest: 'contentPath=Default Web Site/Frontend,ComputerName=https://$SERVER_IP/msdeploy.axd?site=Default Web Site,UserName=$IIS_USERNAME,Password=$IIS_PASSWORD,AuthType=Basic'
-        enableRule: DoNotDeleteRule
-        allowUntrusted: true
-      env:
-        SERVER_IP: ${{ secrets.SERVER_IP }}
-        IIS_USERNAME: ${{ secrets.IIS_USERNAME }}
-        IIS_PASSWORD: ${{ secrets.IIS_PASSWORD }}
-
-    
+      run: |
+        $env:PATH = $env:PATH + ";${env:ProgramFiles}\IIS\Microsoft Web Deploy V3"
+        msdeploy.exe -verb:sync -source:IisApp='${{ github.workspace }}\build' -dest:IisApp='Default Web Site/Frontend',ComputerName='https://${{ secrets.SERVER_IP }}/msdeploy.axd?site=Default Web Site',UserName='${{ secrets.IIS_USERNAME }}',Password='${{ secrets.IIS_PASSWORD }}',AuthType='Basic' -enableRule:DoNotDeleteRule -allowUntrusted
+      shell: powershell
