@@ -6,6 +6,7 @@
     width: 100vw;
     background-color: #090104;
     position: relative;
+    overflow:hidden;
 }
 
 .coming-soon img{
@@ -70,4 +71,48 @@
     height: 100%;
     object-fit: contain;
     z-index: 1; /* Ensure it's in the foreground */
+}
+
+.marquee-container{
+    position: absolute;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    z-index:2;
+}
+.marquee{
+    position:absolute;
+    width:200%;
+    display:flex;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    
+}
+
+.marquee-text{
+    font-family: 'Nico';
+    font-size: 3rem;
+    white-space:nowrap;
+    animation: marquee 20s linear infinite;
+    color: white;   
+}
+
+@keyframes marquee{
+    0%{
+        transform:translateX(0%);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+}
+.marquee-1{
+    top: 40%;
+    left: -20%;
+    transform: rotate(-10deg); 
+}
+
+.marquee-2{
+    top:40%;
+    left: -80%;
+    transform: rotate(10deg);
 }
