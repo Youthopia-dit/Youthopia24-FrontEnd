@@ -2,6 +2,7 @@ import youthopia from "../../assets/youthopia.svg";
 import Timer from "../../components/homeTimer/Timer";
 // import Sponser from "../sponsers/sponsers";
 // import EventAndPrev from "../eventAndPrev/eventAndPrev";
+import './Homepage.css';
 
 function HomePage() {
   return (
