@@ -4,7 +4,7 @@
     align-items: start;
     height: 100vh;
     width: 100vw;
-    background-color: #090104;
+    background-color: #0E0516;
     position: relative;
 }
 
@@ -70,4 +70,44 @@
     height: 100%;
     object-fit: contain;
     z-index: 1; /* Ensure it's in the foreground */
+}
+
+#bg1, #bg2, #bg3, #bg4 {
+    position: absolute;
+   z-index: 1;
+}
+
+#bg1 {
+    position: absolute;
+    top: 2vh;          
+    right: 0;       
+    width: 11vw;       
+    height: auto;   
+ 
+}
+
+#bg2 {
+    position: absolute;
+    bottom: 0;         
+    left: 0;          
+    width: 21vw;      
+    height: auto;   
+   
+}
+#bg3{
+    position: absolute;
+    top: 10px;         
+    left: 0;          
+    width: 30vw;      
+    height: auto;      
+  
+}
+
+#bg4{
+    position: absolute;
+    bottom: 10px;         
+    right: 0;         
+    width: 30vw;      
+    height: auto;   
+   
 }
