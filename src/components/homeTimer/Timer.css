@@ -1,0 +1,29 @@
+.timer{
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 800px;
+    width: 60%;
+
+}
+
+.timer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.time-info{
+    font-family: "Nico";
+    font-size: 1.25rem;
+    font-weight: normal;
+    line-height: 1;
+    color: white;
+}
+
+.time-data{
+    font-family: "Nico";
+    color: white;
+    line-height: 1;
+    font-size: 4rem;
+}
