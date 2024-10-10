@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: start;
-    height: 100vh;
+    /* height: 100vh; */
     width: 100vw;
     background-color: #0E0516;
     position: relative;
@@ -17,7 +17,7 @@
 }
 
 .center-element{
-    position: absolute;
+    position: fixed;
     margin-top: 5%;
     text-align: center;
     filter: opacity(40%);
@@ -58,8 +58,6 @@
     min-height: 100px; 
     display: inline-block;
 }
-
-
 .coming-soon-youthopia-blur {
     position: absolute;
     top: 8px;
@@ -70,7 +68,9 @@
     filter: blur(12px);
     z-index: 0;
 }
-
+.glimpse{
+    font-size: 3vw;
+}
 .coming-soon-youthopia {
     position: absolute;
     top: 0;
@@ -82,12 +82,12 @@
 }
 
 #bg1, #bg2, #bg3, #bg4 {
-    position: absolute;
+    position: fixed;
    z-index: 1;
 }
 
 #bg1 {
-    position: absolute;
+    position: fixed;
     top: 2vh;          
     right: 0;       
     width: 11vw;       
@@ -96,7 +96,7 @@
 }
 
 #bg2 {
-    position: absolute;
+    position: fixed;
     bottom: 0;         
     left: 0;          
     width: 21vw;      
@@ -104,7 +104,7 @@
    
 }
 #bg3{
-    position: absolute;
+    position: fixed;
     top: 10px;         
     left: 0;          
     width: 30vw;      
@@ -113,7 +113,7 @@
 }
 
 #bg4{
-    position: absolute;
+    position: fixed;
     bottom: 10px;         
     right: 0;         
     width: 30vw;      
