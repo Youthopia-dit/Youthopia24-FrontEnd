@@ -1,0 +1,113 @@
+.coming-soon{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0E0516;
+    position: relative;
+}
+
+.coming-soon img{
+    height: 70%;
+    object-fit: contain;
+}
+
+.center-element{
+    position: absolute;
+    margin-top: 5%;
+    text-align: center;
+    filter: opacity(40%);
+}
+
+.coming-soon-content {
+    position: relative;
+    z-index: 1; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.dit-logo {
+    height: 100px; 
+    margin-top: 50px;
+    margin-bottom: 10px; 
+}
+
+/* Presents text styling */
+.presents-text {
+    font-size: 24px;
+    font-family: 'Nico';
+    color: white;
+    margin-bottom: 10px;
+}
+
+.logo-image {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    display: inline-block;
+}
+
+.coming-soon-youthopia-blur {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: blur(12px);
+    z-index: 0;
+}
+
+.coming-soon-youthopia {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1; /* Ensure it's in the foreground */
+}
+
+#bg1, #bg2, #bg3, #bg4 {
+    position: absolute;
+   z-index: 1;
+}
+
+#bg1 {
+    position: absolute;
+    top: 2vh;          
+    right: 0;       
+    width: 11vw;       
+    height: auto;   
+ 
+}
+
+#bg2 {
+    position: absolute;
+    bottom: 0;         
+    left: 0;          
+    width: 21vw;      
+    height: auto;   
+   
+}
+#bg3{
+    position: absolute;
+    top: 10px;         
+    left: 0;          
+    width: 30vw;      
+    height: auto;      
+  
+}
+
+#bg4{
+    position: absolute;
+    bottom: 10px;         
+    right: 0;         
+    width: 30vw;      
+    height: auto;   
+   
+}
