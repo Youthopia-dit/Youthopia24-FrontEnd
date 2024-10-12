@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: start;
+    /* height: 100vh; */
     width: 100vw;
     background-color: #0E0516;
     position: relative;
@@ -9,25 +10,6 @@
     background-position: center;
 }
 
-.youthopia-icon{
-    width: 7vw;
-    position: absolute;
-    top: -200px;
-    margin: 10px ;
-    left: 0;
-}
-
-
-.NAAClogo{
-    position: absolute;
-    top: -180px;
-    margin-top: 0px;       
-    margin-right: 25px;
-    right: 0;         
-    width: 10vw;
-    z-index: 1;  
-      
-}
 .coming-soon img{
     height: 70%;
     object-fit: contain;
@@ -143,15 +125,6 @@
         font-size: 40vw;
     }
 
-    .youthopia-icon{
-        width: 13vw;
-        top: -220px;
-    }
-    .NAAClogo{
-        width: 16vw;
-        top: -200px;
-        right: -20px;
-    }
 }
 
 
@@ -159,16 +132,6 @@
 
 
 @media (max-width: 480px) {
-    .youthopia-icon{
-        width: 13vw;
-        top: -210px;
-    }
-    .NAAClogo{
-        width: 16vw;
-        top: -200px;
-        right: -20px;
-    }
-
     .presents-text {
         font-size: 7vw;
     }
@@ -247,6 +210,4 @@
         width: 15vw; 
     }
 }
-
-
 
