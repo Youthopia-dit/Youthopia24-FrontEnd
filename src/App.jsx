@@ -5,6 +5,7 @@ import viteLogo from '/vite.svg'
 // import './App.css'
 import ProfilePage from './pages/Profilepage/profilepage'
 import ComingSoon from './pages/Coming soon/ComingSoon'
+import Gallery from './pages/Gallery/gallery';
 import Eventpage from './pages/Event/Eventpage'
 import { BrowserRouter, Routes,Route } from 'react-router-dom'
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />}/>
         <Route path="/" element={<ComingSoon />}/>
         <Route path="/events" element={<Eventpage />}/>
+        <Route path="/gallery" element={<Gallery />}/>
       </Routes>
     </BrowserRouter>
     </>
