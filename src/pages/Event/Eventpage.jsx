@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './Eventpage.css';
-import EventCard from '../../components/eventcard/EventCard'; // Use a single EventCard component
+import EventCard from '../../components/eventcard/EventCard';
+import BGImage1 from '../../../src/assets/Events-Elements/Group 62.png';
+import BGImage2 from '../../../src/assets/Events-Elements/Group 63.png';
 
 function Eventpage(props) {
     const [activeTab, setActiveTab] = useState('Technical'); // Tracks the currently active tab
+
     const createEvent = (category, index) => ({
         imageSrc: "https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png",
         imageAlt: `${category} Event ${index + 1}`,
@@ -11,15 +14,12 @@ function Eventpage(props) {
         eventDate: index % 2 === 0 ? "12th October 2024" : "13th October 2024",
         eventLink: index % 2 === 0 ? "https://youthopia.dituniversity.co.in/#/events" : "https://example.com",
     });
-    
+
     const eventTypes = {
         Technical: Array.from({ length: 6 }, (_, index) => createEvent("Technical", index)),
         Cultural: Array.from({ length: 6 }, (_, index) => createEvent("Cultural", index)),
         Informal: Array.from({ length: 6 }, (_, index) => createEvent("Informal", index)),
     };
-    
-    // Define event data for all tabs in an object
-    
 
     // Function to render content dynamically based on active tab
     const renderContent = () => {
@@ -37,15 +37,38 @@ function Eventpage(props) {
                         eventLink={event.eventLink}
                     />
                 ))}
+                 {events.map((event, index) => (
+                    <EventCard
+                        key={index}
+                        imageSrc={event.imageSrc}
+                        imageAlt={event.imageAlt}
+                        eventName={event.eventName}
+                        eventDate={event.eventDate}
+                        eventLink={event.eventLink}
+                    />
+                ))}
             </div>
         );
     };
 
     return (
+        <body>
+            
+            
+            
+       
+        <div className="Background">
+                <div className="Background-elements">
+                <img src={BGImage1} alt="upper element" id="BGImage1" /> {/* Add the image here */}
+                <img src={BGImage2} alt="upper element" id="BGImage2" /> {/* Add the image here */}
+
+
+              
         <div className='events'>
             <header>EVENTS {props.name}</header>
-            <p>This is a paragraph right below the header.</p>
+            <p>These are our Events.</p>
             <button>Register now</button>
+           
 
             <main className='clubs'>
                 {/* Buttons for tabs */}
@@ -54,11 +77,16 @@ function Eventpage(props) {
                         <button
                             key={tab}
                             className={activeTab === tab ? 'active' : ''}
-                            onClick={() => setActiveTab(tab)}>
+                            onClick={() => setActiveTab(tab)}
+                            disabled={activeTab === tab} // Disable button for active tab
+                            aria-label={`Show ${tab} events`}
+                        >
                             {tab}
                         </button>
                     ))}
                 </div>
+                
+                
 
                 {/* Content based on the active tab */}
                 <div className='tab-content'>
@@ -66,6 +94,10 @@ function Eventpage(props) {
                 </div>
             </main>
         </div>
+        </div>
+        </div>
+        </body>
+
     );
 }
 

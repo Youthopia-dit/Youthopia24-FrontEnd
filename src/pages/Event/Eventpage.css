@@ -1,3 +1,26 @@
+#BGImage1, #BGImage2 {   /* when using codelines 1-23 buttons not working */
+  position: fixed;
+  z-index: 0;
+}
+
+#BGImage1 {
+  position: fixed;
+  align-items: center;
+  top: -7vh;          
+  right: 1;       
+  width: 95vw;       
+  height: auto;   
+
+}
+
+#BGImage2{
+  position: fixed;
+  top: 7vh;         
+  left: 0;          
+  width: 30vw;      
+  height: auto;
+ 
+}
 
 .events {
   height: 100vh;
@@ -36,7 +59,7 @@ p {
 }
 
 
-/* Flexbox container for the buttons and tab content */
+
 .clubs {
   display: flex;
   flex-direction: column; /* Stack buttons and content vertically */
