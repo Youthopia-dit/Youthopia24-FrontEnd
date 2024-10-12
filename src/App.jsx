@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import ProfilePage from './pages/Profilepage/profilepage'
 import ComingSoon from './pages/Coming soon/ComingSoon'
 import Gallery from './pages/Gallery/gallery';
+import Homepage from './pages/Home/Homepage'
+
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -15,7 +17,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/profile" element={<ProfilePage />}/>
-        <Route path="/" element={<ComingSoon />}/>
+        <Route path="/" element={<Homepage />}/>
         <Route path="/gallery" element={<Gallery />}/>
       </Routes>
     </BrowserRouter>

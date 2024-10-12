@@ -8,7 +8,9 @@ import bg1 from '../../assets/Bg-Elements/bg1.png';
 import bg2 from '../../assets/Bg-Elements/bg2.png';
 import bg3 from '../../assets/Bg-Elements/bg3.png';
 import bg4 from '../../assets/Bg-Elements/bg4.png';
+import ditlogo from '../../assets/ditlogo.png';
 import Gallery from "../Gallery/gallery";
+import Homepage from "../Home/Homepage";
 
 
 
@@ -24,7 +26,9 @@ function ComingSoon() {
 
                     <div className="coming-soon">
                         <div className="coming-soon-content">
-                            <img src={DIT} alt="DIT University" className="dit-logo" />
+                            <img src={ditlogo} alt="DIT University" className="dit-logo" />
+                            
+                            <img src="{" alt="" />
                             <div className="presents-text">
                                 Presents
                             </div>
@@ -42,6 +46,7 @@ function ComingSoon() {
                 </div>
             </div>
             <Gallery />
+            
         </>
     )
 }
