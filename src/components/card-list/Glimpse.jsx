@@ -40,7 +40,7 @@ function Carousel({ images, direction }) {
             <img src={image.src} alt={`Event ${image.id}`} />
           </div>
         ))}
-        {/* Duplicate the first few images for infinite effect */}
+      
         {images.slice(0, 2).map(image => (
           <div className="image-card" key={image.id + 10}>
             <img src={image.src} alt={`Event ${image.id}`} />
