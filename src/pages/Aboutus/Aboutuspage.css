@@ -75,6 +75,13 @@ body{
     align-items: center;
     justify-content: center;
 }
+.containermain2-text p{
+    /* -webkit-line-clamp: 3; */
+    -webkit-box-orient: 'vertical';
+    overflow: 'hidden';
+    display: 'webkit-box';
+
+}
 
 .heading{
     text-align: center; 
@@ -139,15 +146,28 @@ p.text{
 .containermain3 {
     display: flex;
     gap: 2rem;
-    /* padding-left: 5rem;
-    padding-right: 5rem; */
+    
 }
+.containermain3 .containermain2-pic{
+    width: 70%;
+}
+.read-more-content {
+    display: none;
+  }
+  
+  .read-more {
+    cursor: pointer;
+  }
+  
+  .read-less {
+    display: none;
+    cursor: pointer;
+  }
 
 .containermain4 {
     display: flex;
     gap: 2rem;
-    /* padding-left: 5rem;
-    padding-right: 5rem; */
+  
 }
 
 ul {
@@ -171,6 +191,9 @@ ul {
     padding-left: 45px;
     padding-right: 45px;
 }
+ .containermain4 .containermain2-pic {
+ width: 70%;
+} 
 
 .sponsorlogo {
     display: flex;
@@ -221,6 +244,7 @@ button:hover{
     padding-left: 45px;
     padding-right: 45px;
 }
+
 .containermain3 {
     display: flex;
      margin-top: 20px;
@@ -264,9 +288,7 @@ button:hover{
 
     }
 
-    /* .about-youthopia-main img {
-        width: 50%;
-    } */
+    
    
 
     .about-youthopia-main h3 {
@@ -290,9 +312,6 @@ button:hover{
         padding-top: 0px;
     }
   
-    /* .containermain2 {
-        width: 70%;
-    } */
     .about-us-content{
         width: 70%;
     }
@@ -319,10 +338,7 @@ button:hover{
         align-items: center;
     }
 
-    /* .containermain3 img {
-        width: 50%;
-        margin-top: 2rem;
-    } */
+    
 
     .containermain3 h3 {
         text-align: justify;
@@ -339,12 +355,6 @@ button:hover{
 
     }
 
-    /* .containermain4 img {
-        width: 50%;
-        margin-top: 2rem;
-
-
-    } */
 
     .containermain4 h3 {
         text-align: justify;
@@ -362,9 +372,5 @@ button:hover{
     }
 
 }
-/* @media only screen and (min-width:370px){
-    .about-youthopia-main .containermain2-pic{
-        width: 80%;
-    }
-} */
+
 
