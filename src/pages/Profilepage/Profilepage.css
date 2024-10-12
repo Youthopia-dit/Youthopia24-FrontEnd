@@ -1,0 +1,114 @@
+.ProfilePage{
+    margin-top: 0;
+    height: 100vh;
+    width: 95vw; 
+}
+.image{
+    margin-left: 180px;
+    margin-top: 100px;
+    height: 300px;
+    width: 300px;
+    background-color: red;
+}
+.heading{
+    text-align: center;
+}
+.info{
+    display: flex;
+}
+.mainheading{
+    width: 70vw;
+    text-align: center;
+    font-size: smaller;
+    margin-top: 80px;
+}
+.contact{
+    margin-top: auto;
+    width: 35vw;
+    text-align: center;
+}
+.button{
+    height: 100px;
+    width: 300px;
+    margin-top: 50px;
+}
+.registered{
+    display: flex;
+    margin-left: 200px;
+    flex-wrap: wrap;
+    font-size: large;
+}
+.events{
+    /* margin-left: 200px; */
+    height: 150px;
+    width: 150px;
+    padding: 50px;
+}
+.inside{
+    align-items: center;
+    height: 200px;
+    width: 350px;
+}
+.text{
+    padding: 30px;
+}
+.register{
+    text-align: center;
+}
+@media only screen and (max-width: 500px){
+    .contact{
+        margin-left: 100px;
+    }
+    .image{
+        margin-left: 35px;
+        size-adjust: 25%;
+    }
+    .registered{
+        margin-left: 150px;
+        display: flex;
+    }
+    .events{
+        height: 200px;
+        width: 200px;
+    }
+    .register{
+        font-size: larger;
+        margin-left: 200px;
+    }
+}
+@media only screen and (min-width:501px)and (max-width: 1000px){
+    .contact{
+        margin-left: 100px;
+    }
+    .image{
+        margin-left: 85px;
+    }
+    .registered{
+        margin-left: 230px;
+    }
+    .register{
+        font-size: larger;
+        margin-left: 200px;
+    }
+}
+@media only screen and (min-width:1001px)and (max-width: 1200px){
+    .contact{
+        margin-left: 75px;
+    }
+    .image{
+        margin-left: 200px;
+    }
+    .register{
+        font-size: larger;
+        margin-left: 200px;
+    }
+}
+@media only screen and (min-width:560px)and (max-width:800px){
+    .registered{
+        margin-left: 150px;
+    }
+    .register{
+        font-size: larger;
+        margin-left: 200px;
+    }
+}
