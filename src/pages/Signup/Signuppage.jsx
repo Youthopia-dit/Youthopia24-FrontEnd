@@ -1,15 +1,17 @@
 import React from 'react';
 import "./Signuppage.css"
+import logo from '../../assets/logo.png'
+
 function Signuppage() {
     return (<>
-    <div class="card">
-   <img src="" alt="" />
+    <div className="card-wrapper">
+   <img src={logo} alt="" />
 
 
-    <div className="signup-form">
-      <h2>Welcome</h2>
-      <h2>Create a New Account</h2>
-      <form>
+    <div className="sign-up-form">
+      <h2>Welcome Back</h2>
+      <h2>Login to continue</h2>
+      <form className='entry-field'>
         <input type="text" placeholder="Name" />
         <input type="email" placeholder="Email" />
         <a href="">Verify Email</a>

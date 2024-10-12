@@ -1,52 +1,64 @@
-.card{
-    background-color:;
-    width:500px;
-    height:600px;
-    border-radius: 30px;
+body {
+  background-image: url('bg.png');
+  background-color: #0E0516;
+  background-position: center;
+  background-size: cover;
 }
-.card img {
-    background-color: darkgrey;
-    width: 350px;
-    height: 120px;
-  }
-  
-  .signup-form {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .signup-form h2 {
-    margin-bottom: 20px;
-    color: black;
-  }
-  
-  .signup-form input {
-    display:flex;
-    flex-direction: column;
-    justify-items: center;
-    display: inline;
-    width: 300px;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-  }
-  
-  .signup-form a { 
-    display: block; 
-    text-align: center;
-    margin-bottom: 15px;
-    color: blue; 
-    text-decoration: underline;
-  }
-  
-  .signup-form button {
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    width: 320px;
-    
-  }
+
+.card-wrapper {
+  background-color: rgba(55, 52, 53, 0.4);
+  padding: 32px;
+  /* backdrop-filter: blur(10px); */
+  width: 500px;
+  height: 600px;
+  border-radius: 30px;
+}
+
+.card-wrapper img {
+  width: 350px;
+  height: 100px;
+}
+
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+input {
+  display: inline;
+  width: 300px; 
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+a {
+  margin-bottom: 15px;
+  color: blue;
+  text-decoration: underline;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.entry-field{
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+}
