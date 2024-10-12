@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 10px 50px;  */
     background-color: #1c1b21;
     color: transparent;
 }
@@ -56,28 +55,6 @@
     font-family: "Montserrat", sans-serif;
 }
 
-/* .navbar-links li :nth-child(2) {
-    border-right: white;
-  } */
-
-
 .navbar-links li a:hover {
     color: #7f56d9;
-}
-
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .navbar-links {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .logo {
-        margin: 20px 0;
-    }
 }
