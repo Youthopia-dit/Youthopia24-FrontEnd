@@ -1,20 +1,95 @@
-.img{
-    height: 200px;
-    background-color:red ;
+.main{
+    margin-top:0;
+    height:100%;
+    width: 100%;
     
     
+}
+.background{
+    /* margin-left: 20px; */
+    margin-top: 90px;
+    width: 100%;
+    background-size: contain ;
+
+
+}
+
+.background img{
+    width: 100%;
+}
+
+h3{
+    padding-top: 0px;
+    text-align: center;
+}
+
+
+#logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+    z-index: 1; 
+    background-size: contain;
+    margin-left: 500px;
+    padding: 20px;
+    
+}
+.bordernp{
+    background-color:#17171733;
+    backdrop-filter: blur(20px);
+    width: 700px;
+    height:700px;
+    border: 1px solid none;
+    padding: 10px;
+    margin-left: 400px;
+    border-radius: 12px;
+    margin-top: 129px;
+    align-content: center;
+}
+#ab{
+    position:fixed;
+    z-index: -1;
+    background-size: contain;
+    object-fit: contain; 
+}
+
+h1{
+    padding-top: 60px;
+    margin-top: 150px;
+    text-align: center;
+    padding-bottom: 0px;;
 }
 #button{
     border-radius:20px;
-    height:50px;
-    width:100%;
+    height:60px;
+    width:70%;
+    margin-left: 100px;
+    
+
 }
-.button{
+#button{
     text-align:inherit;
 }
 .remem{
  display:flex;
  justify-content:space-between;
  align-items:left;
- padding: 12px 0;
+ padding: 10px 0;
+ margin-left: 100px;
+ margin-right: 110px;
+}
+
+.Login{
+    border-radius: 10px;
+    width: 300px;
+    margin-left: 130px;
+    margin-top: 0px;
+    text-align: center;  
+}
+.h:hover{
+    background: linear-gradient(180deg, #9B6CCB 0%, #4D3665 100%);
+    ;
 }
