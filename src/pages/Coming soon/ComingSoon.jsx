@@ -10,13 +10,13 @@ import bg3 from '../../assets/Bg-Elements/bg3.png';
 import bg4 from '../../assets/Bg-Elements/bg4.png';
 import ditlogo from '../../assets/ditlogo.png';
 import Gallery from "../Gallery/gallery";
-import Homepage from "../Home/Homepage";
 
 
 
 function ComingSoon() {
     return (
         <>
+        <Navbar />
             <div className="Background">
                 <div className="Background-elements">
                     <img src={bg1} alt="bg1-element" id="bg1" />
