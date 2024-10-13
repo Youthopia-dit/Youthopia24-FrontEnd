@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { useRef, useEffect, useState } from 'react'
-
+import Navbar from '../../components/Navbar/navbar';
 import './Aboutuspage.css';
 import ditlogo from '../../logos/ditlogo.jpg';
 //import Navbar from '../../components/Navbar/Navbar.jsx'
@@ -31,7 +31,8 @@ export default function Aboutuspage() {
 
    
     return (
-
+        <>
+        <Navbar/>
         <div div className="Aboutsection">
             <div className="background-div">
                 <img className='ImgLeftCorner' src={imgLC}></img>
@@ -164,6 +165,7 @@ export default function Aboutuspage() {
                 </div>
             </div>
         </div>
+        </>
 
 
     )
