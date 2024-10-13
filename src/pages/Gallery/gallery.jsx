@@ -30,7 +30,7 @@ import H27 from "../../assets/Gallery/H27.jpg";
 import H28 from "../../assets/Gallery/H28.jpg";
 import H29 from "../../assets/Gallery/H29.jpg";
 import V1 from "../../assets/Gallery/V1.jpg";
-import V2 from "../../assets/Gallery/V2.jpg";   
+import V2 from "../../assets/Gallery/V2.jpg";
 import V3 from "../../assets/Gallery/V3.jpg";
 import V4 from "../../assets/Gallery/V4.jpg";
 import V5 from "../../assets/Gallery/V5.jpg";
@@ -57,19 +57,22 @@ const imageList = [
     { src: V8, type: 'vertical' }, { src: V9, type: 'vertical' }, { src: H24, type: 'horizontal' },
     { src: H25, type: 'horizontal' }, { src: V10, type: 'vertical' }, { src: H26, type: 'horizontal' },
     { src: H27, type: 'horizontal' }, { src: V11, type: 'vertical' }, { src: V12, type: 'vertical' },
-    { src: V13, type: 'vertical' }, {src: H28, type: 'horizontal'}, {src: H29, type: 'horizontal'}
-  ];
-  
-  const Gallery = () => {
+    { src: V13, type: 'vertical' }, { src: H28, type: 'horizontal' }, { src: H29, type: 'horizontal' }
+];
+
+const Gallery = () => {
     return (
-      <div className="gallery-container">
-        {imageList.map((image, index) => (
-          <div key={index} className={`gallery-item ${image.type}`}>
-            <img src={image.src} alt={`Gallery img ${index + 1}`} />
-          </div>
-        ))}
-      </div>
+        <>
+            {/* <div className="gallery-heading">Glimpse from the Past</div> */}
+            <div className="gallery-container">
+                {imageList.map((image, index) => (
+                    <div key={index} className={`gallery-item ${image.type}`}>
+                        <img src={image.src} alt={`Gallery img ${index + 1}`} />
+                    </div>
+                ))}
+            </div>
+        </>
     );
-  };
-  
-  export default Gallery;
+};
+
+export default Gallery;
