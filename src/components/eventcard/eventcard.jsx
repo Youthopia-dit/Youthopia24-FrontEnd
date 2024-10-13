@@ -1,4 +1,4 @@
-import './EventCard.css'; // Import the CSS file
+import './eventcard.css'; // Import the CSS file
 
 function EventCard({ imageSrc, imageAlt, eventName, eventDate, eventLink }) {
     const openEventPage = () => {
