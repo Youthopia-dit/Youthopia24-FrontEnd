@@ -13,6 +13,7 @@ import imgB from '../../assets/FrameB.png'
 import LOGOIMG from '../../logos/DITLOGOIMG.png'
 import professor1 from '../../logos/prof1.png'
 import professor2 from '../../logos/prof2.png'
+import youthopiawhitelogo from '../../logos/logoyouthopia.png'
 import download1 from '../../logos/download1.jpeg';
 
 var list = [{ id: 1, img: download1 },
@@ -52,7 +53,7 @@ export default function Aboutuspage() {
                     </div>
 
                     <div div className='containermain2-pic'>
-                        <img src={download1}></img>
+                        <img src={youthopiawhitelogo}></img>
                     </div>
 
                 </div>
@@ -127,7 +128,7 @@ export default function Aboutuspage() {
                                 opportunities for your personal growth and development.
                                 <br></br><br></br></>}
                         </p>
-                        <button onClick={() => setIsOpen(!isOpen)}>{isOpen ? 'read less...' : 'read more...'}</button>
+                        <button onClick={() => setIsOpen(!isOpen)}>{isOpen ? 'Read less...' : 'Read more...'}</button>
                     </div>
 
 
@@ -156,7 +157,7 @@ export default function Aboutuspage() {
                             DIT University is not merely commemorating 25 years of excellence; we are embarking on an extraordinary journey with 'YOUTHOPIA 2024.' This Techno-Cultural Fest promises to be a distinctive experience, where the sparks of creativity and innovation will illuminate the night sky.<br></br><br></br>
                                 Whether you wish to explore the latest technological advancements, engage with diverse cultural expressions, or simply relax and enjoy the infectious enthusiasm of the event, Youthopia 2024 offers something for everyone. Join us for a captivating adventure that transcends the ordinary and embraces the extraordinary.</>} 
                         </p>
-                        <button onClick={() => setIsOpen1(!isOpen1)}>{isOpen1 ? 'read less...' : 'read more...'}</button>
+                        <button onClick={() => setIsOpen1(!isOpen1)}>{isOpen1 ? 'Read less...' : 'Read more...'}</button>
                     </div>
 
                     <div className="containermain2-pic">
