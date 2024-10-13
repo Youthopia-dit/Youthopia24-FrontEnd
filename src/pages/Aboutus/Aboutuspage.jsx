@@ -89,7 +89,10 @@ export default function Aboutuspage() {
                     </div>
 
                     <div className="containermain2-text">
-                        <p align="left" > {isOpen ? <>I am thrilled to extend my best wishes for the upcoming Cultural Fest, ‘YOUTHOPIA’24,’ taking
+                        <p align="left" > {isOpen ? <>
+                           <span className="namebig"> Prof. G. Raghurama</span><br></br>
+                           <span className="namesmall">Vice  Chancellor, DIT University</span><br></br><br></br>
+                        I am thrilled to extend my best wishes for the upcoming Cultural Fest, ‘YOUTHOPIA’24,’ taking
                             place from November 12th to 14th, 2024. For the DIT University community, this eagerly awaited
                             celebration is a testament to the vibrant spirit of our students. The enthusiasm and energy you
                             bring to these days truly exemplify the essence of our institution.<br></br><br></br>
@@ -105,9 +108,13 @@ export default function Aboutuspage() {
                             The success of YOUTHOPIA’24 also depends on the dedication and support of our faculty members and staff. This festival is a wonderful occasion for the entire DIT University community—faculty, staff, and students—to come together and strengthen our bonds.<br></br><br></br>
                             As we embark on this journey of Youthopia’24, marking 25 years of Stellar Fusion, I wish you all the very best. Let’s make this fest a shining celebration of creativity and talent, one that brings pride to DIT University and leaves a lasting impression on everyone involved.<br></br><br></br>
 
-                            Prof. G. Raghurama<br></br><br></br></>
+                           </>
 
-                            : <>I am thrilled to extend my best wishes for the upcoming Cultural Fest, ‘YOUTHOPIA’24,’ taking
+
+                            : <>
+                               <span className="namebig">Prof. G. Raghurama</span><br></br>
+                               <span className="namesmall">Vice  Chancellor, DIT University</span><br></br><br></br>
+                            I am thrilled to extend my best wishes for the upcoming Cultural Fest, ‘YOUTHOPIA’24,’ taking
                                 place from November 12th to 14th, 2024. For the DIT University community, this eagerly awaited
                                 celebration is a testament to the vibrant spirit of our students. The enthusiasm and energy you
                                 bring to these days truly exemplify the essence of our institution.<br></br><br></br>
@@ -128,14 +135,24 @@ export default function Aboutuspage() {
 
                 <div className="containermain4">
                     <div className="containermain2-text">
-                        <p align="left">{isOpen1 ? <>DIT University is not merely commemorating 25 years of excellence; we are embarking on an extraordinary journey with 'YOUTHOPIA 2024.' This Techno-Cultural Fest promises to be a distinctive experience, where the sparks of creativity and innovation will illuminate the night sky.<br></br><br></br>
+                        <p align="left">{isOpen1 ? <>
+                           
+                            <span className="namebig"> Dr. Rakesh Mohan</span><br></br>
+                            <span className="namesmall">Dean Student Welfare</span><br></br><br></br>
+
+                        DIT University is not merely commemorating 25 years of excellence; we are embarking on an extraordinary journey with 'YOUTHOPIA 2024.' This Techno-Cultural Fest promises to be a distinctive experience, where the sparks of creativity and innovation will illuminate the night sky.<br></br><br></br>
                             Whether you wish to explore the latest technological advancements, engage with diverse cultural expressions, or simply relax and enjoy the infectious enthusiasm of the event, Youthopia 2024 offers something for everyone. Join us for a captivating adventure that transcends the ordinary and embraces the extraordinary.
 
                             Your participation will undoubtedly add a special touch to this grand celebration. So, be sure to mark your calendars and get ready to be part of an unforgettable experience at 'YOUTHOPIA 2024.' We look forward to seeing you there!<br></br><br></br>
 
-                            Dr. Rakesh Mohan<br></br><br></br>
-                            Dean Student Welfare</>
-                            : <>DIT University is not merely commemorating 25 years of excellence; we are embarking on an extraordinary journey with 'YOUTHOPIA 2024.' This Techno-Cultural Fest promises to be a distinctive experience, where the sparks of creativity and innovation will illuminate the night sky.<br></br><br></br>
+                            
+                            </>  
+                            : <>
+                            
+                            <span className="namebig">Dr. Rakesh Mohan</span><br></br>
+                            <span className="namesmall">Dean Student Welfare</span><br></br><br></br>
+                             
+                            DIT University is not merely commemorating 25 years of excellence; we are embarking on an extraordinary journey with 'YOUTHOPIA 2024.' This Techno-Cultural Fest promises to be a distinctive experience, where the sparks of creativity and innovation will illuminate the night sky.<br></br><br></br>
                                 Whether you wish to explore the latest technological advancements, engage with diverse cultural expressions, or simply relax and enjoy the infectious enthusiasm of the event, Youthopia 2024 offers something for everyone. Join us for a captivating adventure that transcends the ordinary and embraces the extraordinary.</>} 
                         </p>
                         <button onClick={() => setIsOpen1(!isOpen1)}>{isOpen1 ? 'read less...' : 'read more...'}</button>
