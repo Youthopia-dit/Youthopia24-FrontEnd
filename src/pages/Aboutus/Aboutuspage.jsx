@@ -29,18 +29,7 @@ export default function Aboutuspage() {
 
     const [showReadMoreButton, setShowReadMoreButton] = useState(false)
 
-    // const ref = useRef(null)
-
-    // useEffect(() => {
-    //     if(ref.current){
-    //         console.log(ref.current.scrollHeight,ref.current.clientHeight)
-    //         setShowReadMoreButton(
-    //             ref.current.scrollHeight !== ref,current.clientHeight
-    //         ) 
-
-    //     }
-    // },[isOpen])
-
+   
     return (
 
         <div div className="Aboutsection">
