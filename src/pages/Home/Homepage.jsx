@@ -80,7 +80,7 @@ function Homepage() {
                     <div className="coming-soon-home">
                         <div className="coming-soon-content">
                             {/* <img src={DIT} alt="DIT University" className="dit-logo" /> */}
-                            <img src={NAAC} alt="Naac logo" className="NAAClogo" />
+                            <img src={NAAC} alt="Naaclogo" className="NAAClogo" />
                             <img src={Youthopialogo} alt="youthopia" className="youthopia-icon" />
                             <div className="presents-text">
                                 Presents

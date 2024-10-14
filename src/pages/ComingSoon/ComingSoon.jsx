@@ -12,7 +12,7 @@ function ComingSoon() {
             <Navbar />
             <div className="coming-soon">
                 <div className="coming-soon-content">
-                    <img src={DIT} alt="DIT University" className="dit-logo" />
+                    {/* <img src={DIT} alt="DIT University" className="dit-logo" /> */}
                     <div className="presents-text">
                         Presents
                     </div>
