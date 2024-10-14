@@ -1,18 +1,14 @@
 import React from "react";
 import './Homepage.css';
 import centerElement from '../../assets/center-element-full.png'
-import DIT from '../../assets/ditu-full.png'
 import Youthopia from '../../assets/youthopia-logo.png'
 import Timer from '../../components/homeTimer/Timer'
 import bg1 from '../../assets/Bg-Elements/bg1.png';
-import bg2 from '../../assets/Bg-Elements/bg2.png';
+import bg2 from '../../assets/Bg-Elements/bgx.png';
 import bg3 from '../../assets/Bg-Elements/bg3.png';
 import bg4 from '../../assets/Bg-Elements/bg4.png';
-import Gallery from "../Gallery/gallery";
-import ditlogo from '../../assets/ditlogo.png';
 import NAAC from '../../assets/NAAC.png';
 import Youthopialogo from '../../assets/youthopialogo.png'
-import Glimpse from "../../components/card-list/glimpse";
 import H1 from '../../assets/Gallery/H1.jpg';
 import H2 from '../../assets/Gallery/H2.jpg';
 import H3 from '../../assets/Gallery/H3.jpg';
@@ -82,7 +78,7 @@ function Homepage() {
 
                     <div className="coming-soon">
                         <div className="coming-soon-content">
-                            <img src={DIT} alt="DIT University" className="dit-logo" />
+                            {/* <img src={DIT} alt="DIT University" className="dit-logo" /> */}
                             <img src={NAAC} alt="Naac logo" className="NAAClogo" />
                             <img src={Youthopialogo} alt="youthopia" className="youthopia-icon" />
                             <div className="presents-text">
@@ -90,7 +86,7 @@ function Homepage() {
                             </div>
                             <div className="logo-image">
                                 <img src={Youthopia} className="coming-soon-youthopia"></img>
-                                <img src={Youthopia} className="coming-soon-youthopia-blur"></img>
+                                {/* <img src={Youthopia} className="coming-soon-youthopia-blur"></img> */}
                             </div>
                             <Timer />
                             <div className="presents-text">

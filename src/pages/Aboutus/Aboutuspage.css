@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
-body {
-    background-color: black;
-}
-
 .Aboutsection {
+    background-color: #0E0516;
     margin-top: 0;
-    background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     position: relative;
 }
@@ -16,6 +12,8 @@ body {
     text-align: center;
     font-size: 40px;
     font-weight: 700;
+    margin: 0;
+    padding-top: 2rem;
     font-family: 'Dela Gothic One', sans-serif;
 }
 
@@ -44,9 +42,6 @@ body {
     padding-right: 45px;
 }
 
-.content {
-    background-color: rgba(0, 0, 0, 0.7);
-}
 
 .containermain2-text {
     gap: 2rem;
@@ -66,6 +61,14 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
     z-index: 4;
 
+
+}
+
+.about-youthopia-main .containermain2-pic {
+    width: 90%;
+    object-fit: contain;
+    z-index: 2;
+
 }
 
 .containermain2-pic {
@@ -76,7 +79,6 @@ body {
     z-index: 4;
     align-items: center;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -108,13 +110,15 @@ p.text {
 }
 
 .ImgLeftCorner {
-    position: absolute;
+    position: fixed;
     width: 30%;
     height: auto;
+    left: 0;
+    z-index: 1;
 }
 
 .imageLeft {
-    position: absolute;
+    position: fixed;
     width: 20%;
     height: auto;
     margin-top: 20%;
@@ -124,7 +128,7 @@ p.text {
     width: 15%;
     height: auto;
     float: right;
-    position: absolute;
+    position: fixed;
     right: 0;
 }
 
@@ -160,11 +164,7 @@ p.text {
 .containermain3 {
     display: flex;
     gap: 2rem;
-
-}
-
-.containermain3 .containermain2-pic {
-    width: 70%;
+    align-items: center;
 }
 
 .read-more-content {
@@ -183,6 +183,8 @@ p.text {
 .containermain4 {
     display: flex;
     gap: 2rem;
+    align-items: center;
+
 }
 
 ul {
@@ -203,13 +205,45 @@ ul {
     font-family: 'Dela Gothic One', sans-serif;
 }
 
+.containermain3 .containermain2-pic {
+    background-color: rgba(255, 255, 255, 0.3);
+
+    border-radius: 25px;
+    width: 70%;
+    object-fit: contain;
+    display: flex;
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+.containermain4 .containermain2-pic {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    padding: 10px;
+    padding-bottom: 0px;
+    margin-left: 0;
+}
+
+.namebig {
+    font-size: 30px;
+    font-weight: 800;
+
+}
+
+.namesmall {
+    font-size: 20px;
+    font-weight: 600;
+}
+
 .containermain3 .containermain2-text {
     padding-left: 45px;
     padding-right: 45px;
+    margin-left: 0;
 }
 
 .containermain4 .containermain2-pic {
     width: 70%;
+    margin-right: 20px;
 }
 
 .sponsorlogo {
@@ -244,13 +278,48 @@ ul {
     margin: 2%;
     box-shadow: none;
     padding-bottom: 0px;
+    border: none;
+  
+  
+}
+.knowmore button{
+    
+    background-color: transparent;
+    border: 3px solid  #b09be9
+  
+}
+.containermain3 button{
+    background-color: transparent;
+    border: 3px solid  #b09be9
+
+}
+.containermain4 button{
+    background-color: transparent;
+    border: 3px solid  #b09be9
 }
 
+
+
 button:hover {
-    background: linear-gradient(#9B6CCB, #4D3665);
+     background: linear-gradient(#9B6CCB, #4D3665); 
     color: white;
     font-family: 'Montserrat', sans-serif;
+
+    width: 200px;
+    height: 50px;
+  
+    border: none;
+    transition-delay: 0ms;
+
+  
 }
+/* .knowmore button:hover{
+    width: 200px;
+    height: 50px;
+  
+    border: none;
+    transition-delay: 0ms;
+} */
 
 .fromthedesktext h2 {
     color: rgb(255, 255, 255);
@@ -264,20 +333,16 @@ button:hover {
 .containermain4 .containermain2-text {
     padding-left: 45px;
     padding-right: 45px;
+    margin-right: 0;
 }
 
 .containermain3 {
     display: flex;
     margin-top: 20px;
-    /* margin-left: 30px;  */
+    /* margin-left: 30px; */
+    margin-left: 30px;
 }
 
-/* .containermain5 img {
-    width: 95%;
-    margin-left: 30px;
-    gap: 10rem;
-    margin-top: 5rem
-} */
 
 @media only screen and (max-width: 1500px) {
     .sponsorlogo {
@@ -296,6 +361,8 @@ button:hover {
         flex-direction: column;
         align-items: center;
     }
+
+
 }
 
 @media only screen and (max-width: 1070px) {
@@ -311,9 +378,6 @@ button:hover {
         align-items: center;
 
     }
-
-
-
 
     .about-youthopia-main h3 {
         text-align: justify;
