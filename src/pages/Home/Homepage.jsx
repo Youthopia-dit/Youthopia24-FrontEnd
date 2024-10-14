@@ -21,6 +21,7 @@ import H9 from '../../assets/Gallery/H9.jpg';
 import H10 from '../../assets/Gallery/H10.jpg';
 import "../../components/card-list/Glimpse.css";
 import Navbar from "../../components/Navbar/navbar";
+import Footer from "../../components/Footer/Footer";
 
 const imagesCarousel1 = [
     { id: 1, src: H1 },
@@ -76,7 +77,7 @@ function Homepage() {
                     <img src={bg3} alt="bg3-element" id="bg3" />
                     <img src={bg4} alt="bg4-element" id="bg4" />
 
-                    <div className="coming-soon">
+                    <div className="coming-soon-home">
                         <div className="coming-soon-content">
                             {/* <img src={DIT} alt="DIT University" className="dit-logo" /> */}
                             <div className="logo-row">
@@ -105,6 +106,8 @@ function Homepage() {
             {/* <Glimpse />  */}
 
             {/* <Gallery /> */}
+            <Footer />
+
         </>
     )
 }

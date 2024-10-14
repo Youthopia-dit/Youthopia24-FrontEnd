@@ -1,4 +1,4 @@
-.coming-soon{
+.coming-soon-home{
     display: flex;
     justify-content: center;
     align-items: start;
@@ -73,6 +73,7 @@
     margin-bottom: 2%; 
     margin-top: 2%; 
 
+
 }
 
 .logo-image {
@@ -87,7 +88,7 @@
 .glimpse{
     font-size: 3vw;
 }
-/* .coming-soon-youthopia {
+.coming-soon-youthopia {
     position: absolute;
     top: 20;
     left: 0;
@@ -95,7 +96,7 @@
    
     object-fit: contain;
     z-index: 1; 
-} */
+}
 #bg1, #bg2, #bg3, #bg4 {
     position: fixed;
    z-index: 1;
@@ -142,12 +143,12 @@
 
     .youthopia-icon{
         width: 13vw;
-        top: -220px;
+        top: 220px;
     }
     .NAAClogo{
         width: 16vw;
         top: -200px;
-        right: -20px;
+        right: 20px;
     }
 }
 

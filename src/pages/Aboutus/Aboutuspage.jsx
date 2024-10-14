@@ -75,7 +75,7 @@ export default function Aboutuspage() {
                             <p className='text'>Established in 1998 by Shri Naveen Agarwal, DIT University in Dehradun, Uttarakhand, has grown into a leading institution recognized for its vision “Imagine Aspire Achieve.” Spread across 21 acres, it offers world-class infrastructure and a diverse range of programs in engineering, sciences, humanities, and more. With a focus on innovation, research, and a global outlook, DIT University empowers students with the skills to excel in their careers and make a meaningful impact on society.
 
                                 <div className="knowmore">
-                                    <a href="https://www.dituniversity.edu.in/">
+                                    <a href="https://www.dituniversity.edu.in/" target="_blank">
                                         <button type="submit">Know More</button></a>
                                 </div>
                             </p>
