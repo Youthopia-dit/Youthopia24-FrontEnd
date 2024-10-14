@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import './Eventpage1.css';
+import img from  '../../assets/img.png';
+import img1 from  '../../assets/img1.png';
+import img2 from '../../assets/img2.png';
+import img3 from '../../assets/img3.png';
+import img4 from '../../assets/img4.png';
 import EventCard from '../../components/eventcard/eventcard';
-import BGImage1 from '../../../src/assets/Events-Elements/Group 62.png'; // Top part
+import bgevent from '../../../src/assets/bgevent.png'; // Top part
 import BGImage2 from '../../../src/assets/Events-Elements/Group 63.png'; // Bottom part
 
 function Eventpage(props) {
@@ -9,7 +14,7 @@ function Eventpage(props) {
 
   // Function to create sample events
   const createEvent = (category, index) => ({
-    imageSrc: "https://cdn.pixabay.com/photo/2017/01/08/21/37/flame-1964066_1280.png",
+    imageSrc: img,
     imageAlt: `${category} Event ${index + 1}`,
     eventName: `${category} Event ${index + 1}`,
     eventDate: index % 2 === 0 ? "12th October 2024" : "13th October 2024",
@@ -18,9 +23,9 @@ function Eventpage(props) {
 
   // Event data categorized by type
   const eventTypes = {
-    Technical: Array.from({ length: 6 }, (_, index) => createEvent('Technical', index)),
-    Cultural: Array.from({ length: 6 }, (_, index) => createEvent('Cultural', index)),
-    Informal: Array.from({ length: 6 }, (_, index) => createEvent('Informal', index)),
+    Technical: Array.from({ length: 12 }, (_, index) => createEvent('Technical', index)),
+    Cultural: Array.from({ length: 12}, (_, index) => createEvent('Cultural', index)),
+    Informal: Array.from({ length: 12 }, (_, index) => createEvent('Informal', index)),
   };
 
   // Function to render event cards based on the active tab
@@ -42,12 +47,21 @@ function Eventpage(props) {
     );
   };
 
-  return (
+  return (  
+    
+    <div className="elements">
+      <div className="bgelemets">
+   
+<img src={img1} alt="bg1" id='bg' className='bg1' />
+<img src={img2} alt="bg2" id='bg' className='bg2' />
+<img src={img3} alt="bg3" id='bg' className='bg3' />
+<img src={img4} alt="bg4" id='bg' className='bg4' />
+
     <div className="events-page">
       {/* Background Images */}
       <div className="background">
-        <img src={BGImage1} alt="Background Top" className="background-top" />
-        <img src={BGImage2} alt="Background Bottom" className="background-bottom" />
+        <img src={bgevent} alt="Background Top" className="background" />
+        {/* <img src={BGImage2} alt="Background Bottom" className="background-bottom" /> */}
       </div>
 
       <div className="events">
@@ -75,6 +89,8 @@ function Eventpage(props) {
           <div className="tab-content">{renderContent()}</div>
         </main>
       </div>
+    </div>
+    </div>
     </div>
   );
 }

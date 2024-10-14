@@ -6,7 +6,7 @@ import viteLogo from '/vite.svg'
 import ProfilePage from './pages/Profilepage/profilepage'
 import ComingSoon from './pages/Coming soon/ComingSoon'
 import Gallery from './pages/Gallery/gallery';
-import Eventpage from './pages/Event/Eventpage1'
+import Eventpage from './pages/Event/Eventpage1';
 import { BrowserRouter, Routes,Route } from 'react-router-dom'
 
 

@@ -1,126 +1,185 @@
+/* Apply box-sizing to all elements to avoid overflow issues */
+* {
+  box-sizing: border-box;
+}
+
 /* Ensure body fills the screen and avoids unwanted overflow */
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
-  }
-  
-  .events-page {
-    position: relative;
-    height: 100vh;
-    overflow-y: auto; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .background-top, .background-bottom {
-    width: 100%;
-    height: 50%;
-    object-fit: cover;
-  }
-  
-  /* Main content container */
-  .events {
-    text-align: center;
-    color: white;
-    max-width: 1200px; 
-    width: 90%; 
-    margin: 0 auto;
-  }
-  
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Main container for events */
+.events-page {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color:#0E0516;
+  z-index: 1;
  
-  header {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    margin-bottom: 20px;
-  }
-  
-  .register-button {
-    margin-bottom: 30px;
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #6c63ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .register-button:hover {
-    background-color: #5a54e6;
-  }
-  
-  .tab-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .tab-buttons button {
-    padding: 10px 20px;
-    font-weight: bold;
-    border: none;
-    background: transparent;
-    color: lightgray;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    transition: color 0.3s, border-color 0.3s;
-  }
-  
-  .tab-buttons button.active {
-    color: white;
-    border-bottom: 2px solid white;
-  }
-  
-  .tab-buttons button:hover {
-    color: white;
-  }
-  
-  /* Center the event cards grid */
-  .tab-content {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .parents {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-    padding: 20px;
-    max-width: 1200px;
-    width: 100%;
-    box-sizing: border-box;
-    justify-items: center; 
-  }
-  
-  .parents > div {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 15px;
-    width: 100%; 
-    max-width: 300px;
-    transition: transform 0.3s;
-  }
-  
-  .parents > div:hover {
-    transform: scale(1.05); 
-  }
+}
+
+/* Background Image Handling */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400vh;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+}
+
+.background img{
+  width: 100%; 
+  height: 100%; 
+  position: relative;
+  top: 0;
+  left: 0;  
+  z-index: -1;
+}
+
+
+/* Main content container */
+.events {
+  text-align: center;
+  color: white;
+  max-width: 1000px; 
+  width: 100%; /* Changed to 100% to ensure it doesn't overflow */
+  margin: 0 auto;
+}
+
+header {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 1em;
+}
+
+.register-button {
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background-color: #5a54e6;
+}
+
+/* Tab buttons */
+.tab-buttons {
+  display: flex;
+  font-size: 2em;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+.tab-buttons button {
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  color: black;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.4s;
+}
+
+.tab-buttons button.active {
+  color: white;
+  border-bottom: 2px solid black;
+}
+
+.tab-buttons button:hover {
+  color: white;
+}
+
+/* Center the event cards grid */
+.tab-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: transparent;
+}
+
+/* Center grid of event cards */
+.parents {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  justify-content: center; /* Center horizontally */
+  justify-items: center;
+  align-items: center; /* Center vertically */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.parents > div {
+  background: rgba(171, 129, 129, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.3s;
+}
+
+.parents > div:hover {
+  transform: scale(1.05); 
+}
+
+
+
+
+.bgelemets {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ensure the container covers the full viewport height */
+}
+
+.bg1, .bg2, .bg3, .bg4 {
+  position: absolute; /* Keep images fixed in the viewport */
+  width: 150px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 2; /* Set z-index to position behind main content */
+}
+
+.bg1 {
+  top: 0;
+  left: 0; /* Top-left corner */
+}
+
+.bg2 {
+  top: 0;
+  right: 0; /* Top-right corner */
+}
+
+.bg3 {
+  bottom: 0;
+  left: 0; /* Bottom-left corner */
+}
+
+.bg4 {
+  bottom: 0;
+  right: 0; /* Bottom-right corner */
+}

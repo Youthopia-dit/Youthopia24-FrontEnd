@@ -1,35 +1,64 @@
 .eventcontent {
     list-style: none;
+    height: 53vh;
     padding: 25px;
     margin: 20px;
     border: 2px solid #ddd;
     border-radius: 10px;
     max-width: auto;
     text-align: right;
+    background-color: rgba(186, 186, 186, 0.2);
+    backdrop-filter: blur(10px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 li img {
     display: flex;
     margin: 5px auto 10px;
     border-radius: 8px;
-    
+    width: 100%;
+    max-width: 350px;
+    height: auto;
 }
 
 li p {
     margin: 5px;
     font-size: 16px;
     font-weight: bold;
-    color: #333;
-    padding: 5px;
-    background-color: #000000;
+    color: white;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 5px;
 }
 
-li p:nth-child(2) {
-    margin-bottom: 530px;
+.event-details {
+    margin-top: 20px;
+    padding: 10px;
+    width: 26vw;
+    height: 18vh;
+    background-color: #8D78BC;
+    border-radius: 5px;
+    text-align: left;
 }
 
-li p:nth-child(4) {
-    margin-bottom: 130px;
+.eventcontent:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .eventcontent {
+        text-align: center;
+        padding: 15px;
+    }
+
+    li img {
+        max-width: 100%;
+    }
+
+    li p {
+        font-size: 14px;
+        padding: 8px;
+    }
 }
