@@ -82,7 +82,7 @@ function Homepage() {
 
                     <div className="coming-soon">
                         <div className="coming-soon-content">
-                            <img src={DIT} alt="DIT University" className="dit-logo" />
+                            {/* <img src={DIT} alt="DIT University" className="dit-logo" /> */}
                             <img src={NAAC} alt="Naac logo" className="NAAClogo" />
                             <img src={Youthopialogo} alt="youthopia" className="youthopia-icon" />
                             <div className="presents-text">
@@ -90,7 +90,7 @@ function Homepage() {
                             </div>
                             <div className="logo-image">
                                 <img src={Youthopia} className="coming-soon-youthopia"></img>
-                                <img src={Youthopia} className="coming-soon-youthopia-blur"></img>
+                                {/* <img src={Youthopia} className="coming-soon-youthopia-blur"></img> */}
                             </div>
                             <Timer />
                             <div className="presents-text">
