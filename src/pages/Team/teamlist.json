@@ -1,0 +1,234 @@
+{
+    "Conveners": {
+        "Anya Jha" : {
+            "course" : "B.Tech CSE",
+            "phone" : "8825195909",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Debdatta Maitra" : {
+            "course" : "B.Des UX",
+            "phone" : "8229903183",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Supriya Ray" : {
+            "course" : "B.Tech CSE",
+            "phone" : "82950119753",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Tarun Thakur" : {
+            "course" : "B.Tech CSE",
+            "phone" : "9667769973",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    }, 
+    "Organising Heads" : {
+        "Tushar Garg" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Ankit Singh" : {
+            "course" : "B.Tech ME",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    }, 
+    "Event  Management Heads" : {
+        "Akshit Dangwal" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Abhay Singh Shekhawat" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Aagam Jain" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    },
+    "Technical Heads" : {
+        "Tanya Singhal" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Harsheet Sharma" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Vijayant Singh" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Chahat Rana" : {
+            "course" : "B.Tech ME",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Vinayak Gupta" : {
+            "course" : "B.Tech ME",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Paramjeet Bind" : {
+            "course" : "B.Tech ECE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Kartavya Srivastava" : {
+            "course" : "B.Tech EE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    }, 
+    "Cultural Heads" : {
+        "Kingshuk Singh" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Simran Chauhan" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Aditya Agarwal" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    }, 
+    "Dance Heads" :{
+        "Naihok Phyok yhung Debarma" : {
+            "course" : "B.Sc. Chemistry Hons",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Nandini Yadav" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    }, 
+    "Singing Heads" : {
+        "Shiv Sharma" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Dhruv Singhal" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    }, 
+    "Fashionista Heads" : {
+        "Saina Rautela" : {
+            "course" : "B.Des. UX",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Shahriar Rahman Shawon" : {
+            "course" : "MBA",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    },
+    "Publicity and PR Heads" : {
+        "Saba Khan" : {
+            "course" : "B.Pharm",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+"Dilpreet Kaur" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Dhairya Sharma" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Shashank Kanaujia" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    },
+    "Photography and Videography Heads" : {
+        "Lakshay Varshney" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Rohan Rawat" : {
+            "course" : "B.Pharm",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    },
+    "Literary and Theatre Heads" : {
+        "Vanshita Gupta" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Ansh Thapliyal" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    },
+    "Informal Heads" : {
+        "Anvi Garg" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Anavil Nautiyal" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Ridhima Kandpal" : {
+            "course" : "B.Sc. Stats",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    },
+    "Fine Arts Heads" : {
+        "Manasvi Rastogi" : {
+            "course" : "B.Des. UX",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Arya Joshi" : {
+            "course" : "",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    },
+    "Design Heads" : {
+        "Nitish Kumar" : {
+            "course" : "B.Des. UX",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Rabiya Bilal" : {
+            "course" : "B.Des. UX",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    },
+    "Content and Creative Writing Heads" : {
+        "Varshita Sah" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Saurabh Singh Rawat" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Jahnvi Naithani" : {
+            "course" : "B.Sc. Stats",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    },
+    "Anchoring Heads" : {
+        "Chaitanya Jalwal" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    },
+    "Sound and Light Heads" : {
+        "Gaurav Jha" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Mayur Negi" : {
+            "course" : "BCA",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    }, 
+    "DC Heads" : {
+        "Ashutosh Pandey" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        },
+        "Ayush Dwivedi" : {
+            "course" : "M.Tech CE",
+            "image"  :"https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-breath-of-the-wild-2/3/38/Link2.png"
+        }
+    }
+}

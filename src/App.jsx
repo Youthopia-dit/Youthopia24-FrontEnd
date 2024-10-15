@@ -10,11 +10,12 @@ import ComingSoon from './pages/ComingSoon/ComingSoon';
 import Gallery from './pages/Gallery/gallery';
 import Eventpage from './pages/Event/Eventpage1';
 import Homepage from './pages/Home/Homepage';
+import TeamPage from './pages/Team/Teampage';
 
 
 
 function App() {
-  // const [count, setCount] = useState(0)
+
 
   return (
     <>
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Homepage />}/>
         <Route path="/gallery" element={<Gallery />}/>
         <Route path="/comingsoon" element={<ComingSoon />}/>
+        <Route path="/team" element={<TeamPage />}/>
       </Routes>
     </BrowserRouter>
     </>
