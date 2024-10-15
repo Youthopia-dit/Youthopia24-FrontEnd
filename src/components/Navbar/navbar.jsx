@@ -17,7 +17,7 @@ function Navbar() {
             <div className={`navbar ${navOpen ? "show-nav" : ""}`}>
                 <ul className="navbar-links right-link">
                     <Link to="/" className="noburger"><li onClick={toggleNav}>Home</li></Link>
-                    <Link to="/comingsoon" className="noburger"><li onClick={toggleNav}>Events</li></Link>
+                    <Link to="/events" className="noburger"><li onClick={toggleNav}>Events</li></Link>
                     <Link to="/comingsoon" className="noburger"><li onClick={toggleNav}>Our Team</li></Link>
 
                 </ul>

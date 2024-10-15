@@ -16,7 +16,9 @@
     margin: 10px ;
     left: 0;
     margin-left: 10vw;
+    z-index: 8;
 }
+
 
 
 .NAAClogo{
@@ -92,7 +94,7 @@
 }
 #bg1, #bg2, #bg3, #bg4 {
     position: fixed;
-   z-index: 1;
+   z-index: 1!important;
 }
 
 #bg1 {
