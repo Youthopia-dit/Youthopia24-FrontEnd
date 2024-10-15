@@ -6,7 +6,7 @@ const EventContext = createContext();
 
 // Provider component
 export const EventProvider = ({ children }) => {
-    const [events, setEvents] = useState({});
+    const [events, setEvents] = useState([]);
 
     // Function to call the API
     const fetchEvents = async () => {
