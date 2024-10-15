@@ -46,20 +46,20 @@ function Timer() {
         <>
           <div className="timer-container">
             <div className="days">
-              <div className="time-info">DAYS</div>
-              <div className="time-data">{days}</div>
+              <div id="timer-space" className="time-info">DAYS</div>
+              <div id="timer-space" className="time-data">{days}</div>
             </div>
             <div className="hours">
-              <div className="time-info">HOURS</div>
-              <div className="time-data">{hours}</div>
+              <div id="timer-space" className="time-info">HOURS</div>
+              <div id="timer-space" className="time-data">{hours}</div>
             </div>
             <div className="minutes">
-              <div className="time-info">MINUTES</div>
-              <div className="time-data">{minutes}</div>
+              <div id="timer-space" className="time-info">MINUTES</div>
+              <div id="timer-space" className="time-data">{minutes}</div>
             </div>
             <div className="seconds">
-              <div className="time-info">SECONDS</div>
-              <div className="time-data">{seconds}</div>
+              <div id="timer-space" className="time-info">SECONDS</div>
+              <div id="timer-space" className="time-data">{seconds}</div>
             </div>
           </div>
         </>
