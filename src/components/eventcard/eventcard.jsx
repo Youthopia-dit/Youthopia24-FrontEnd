@@ -1,37 +1,17 @@
-import './eventcard.css'; // Import the CSS file
+import './eventcard.css'; 
+import image from './cs.png'
 
 
-function EventCard({ imageSrc, imageAlt, eventName, eventDate, eventLink, eventDescription }) {
-    const openEventPage = () => {
-        window.location.href = eventLink; // Link passed as a prop
-    };
-
+const EventCard = ({ eventName, eventDate, posterUrl }) => {
     return (
-      
-            
-        <div className='eventcontent'>
-            {/* Event image */}
-            <img
-                src={imageSrc}
-                alt={imageAlt}
-                width={350}
-                height={200}
-                onClick={openEventPage}  // React onClick event handler
-                style={{ cursor: "pointer" }}  // Optional: add pointer cursor
-            />
-
-            {/* Event name and date */}
-            
-
-            {/* New div for additional details */}
-            <div className="event-details">
-            <p>Event Name: <br />{eventName}</p>
-            <p>Date: {eventDate}</p>
-                <p>{eventDescription}</p>
-            </div>
+      <div className="event-card">
+        <img src={image} alt={eventName} className="event-poster" />
+        <div className="event-details">
+          <h2>{eventName}</h2>
+          <p>{eventDate}</p>
         </div>
-        
+      </div>
     );
-}
+  };
 
 export default EventCard;
