@@ -8,6 +8,7 @@ import img4 from '../../assets/img4.png';
 import EventCard from '../../components/eventcard/eventcard';
 import bgevent from '../../../src/assets/bgevent.png'; // Top part
 import BGImage2 from '../../../src/assets/Events-Elements/Group 63.png'; // Bottom part
+import Youthopia from '../../assets/youthopia-logo.png';
 
 function Eventpage(props) {
   const [activeTab, setActiveTab] = useState('Technical'); // Tracks the currently active tab
@@ -52,7 +53,7 @@ function Eventpage(props) {
     <div className="elements">
       <div className="bgelemets">
    
-<img src={img1} alt="bg1" id='bg' className='bg1' />
+{/* <img src={img1} alt="bg1" id='bg' className='bg1' /> */}
 <img src={img2} alt="bg2" id='bg' className='bg2' />
 <img src={img3} alt="bg3" id='bg' className='bg3' />
 <img src={img4} alt="bg4" id='bg' className='bg4' />
@@ -65,9 +66,9 @@ function Eventpage(props) {
       </div>
 
       <div className="events">
+        <img src={Youthopia} alt="logo" className='youthopia-logo'></img>
         <header>EVENTS {props.name}</header>
-        <p>These are our Events.</p>
-        <button className="register-button">Register now</button>
+        <p>These are our main Events.</p>
 
         <main className="clubs">
           {/* Tab Buttons */}
