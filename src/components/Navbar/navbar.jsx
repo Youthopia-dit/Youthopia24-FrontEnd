@@ -16,13 +16,16 @@ function Navbar() {
         <nav>
             <div className={`navbar ${navOpen ? "show-nav" : ""}`}>
                 <ul className="navbar-links right-link">
+                    <Link to="/" className="noburger"><li onClick={toggleNav}>Home</li></Link>
                     <Link to="/comingsoon" className="noburger"><li onClick={toggleNav}>Events</li></Link>
                     <Link to="/comingsoon" className="noburger"><li onClick={toggleNav}>Our Team</li></Link>
+
                 </ul>
                 <div className="logo">
                     <img src={DIT} alt="DIT University Logo" />
                 </div>
                 <ul className="navbar-links left-link">
+                <Link to="/gallery" className="noburger"><li onClick={toggleNav}>Gallery</li></Link>
                 <Link to="/comingsoon" className="hamburger"><li onClick={toggleNav}>Events</li></Link>
                 <Link to="/comingsoon" className="hamburger"><li onClick={toggleNav}>Our Team</li></Link>
                     <Link to="/about"><li onClick={toggleNav}>About Us</li></Link>
