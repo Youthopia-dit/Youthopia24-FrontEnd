@@ -29,6 +29,7 @@ function Eventpage(props) {
     Informal: Array.from({ length: 12 }, (_, index) => createEvent('Informal', index)),
   };
 
+  
   // Function to render event cards based on the active tab
   const renderContent = () => {
     const events = eventTypes[activeTab];
