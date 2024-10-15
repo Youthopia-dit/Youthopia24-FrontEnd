@@ -1,33 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap');
-
-#root{
-    padding: 0;
-}
-
-.timer{
+.timer {
     display: flex;
-    justify-content: space-around;
-    max-width: 800px;
+    justify-content: space-evenly;
+    max-width: 100vw;
     width: 60%;
 }
 
-.timer-container{
+.timer-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: space-around;
+    width: 80%;
 }
 
-h2{
-    font-family: sans-serif;
-    font-family: "Montserrat", sans-serif;
+.time-info {
+    font-family: "Nico";
     font-size: 1.25rem;
     font-weight: normal;
+    line-height: 1;
     color: white;
 }
 
-h1{
-    font-family: "Russo One", Times, serif;
+.time-data {
+    font-family: "Nico";
     color: white;
+    line-height: 1;
     font-size: 4rem;
+}
+
+@media (max-width: 1024px) {
+    .timer {
+        width: 60vw;
+         
+    }
+
+    .time-info {
+        font-size: 1.2rem;
+    }
+
+    .time-data {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .timer {
+        width: 100vw; 
+    }
+
+    .time-info {
+        font-size: 1.1rem; 
+    }
+
+    .time-data {
+        font-size: 3rem;
+    }
+    #timer-space{
+        margin: 1rem;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+    .timer {
+        flex-direction: column;
+        width: 100%; 
+        max-width: none; 
+        align-items: center;
+        
+    }
+    #timer-space{
+        margin: 1rem;
+    }
+
+    .timer-container {
+        flex-direction: column; 
+        justify-content: center;
+        width: 100%;
+    }
+
+    .time-info {
+        font-size: 1rem; 
+        text-align: center;
+    }
+
+    .time-data {
+        font-size: 2.5rem;}
 }
