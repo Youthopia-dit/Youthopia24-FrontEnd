@@ -62,7 +62,6 @@ function Eventpage(props) {
           {/* Background Images */}
           <div className="background">
             <img src={bgevent} alt="Background Top" className="background" />
-            {/* <img src={BGImage2} alt="Background Bottom" className="background-bottom" /> */}
           </div>
 
           <div className="events">
