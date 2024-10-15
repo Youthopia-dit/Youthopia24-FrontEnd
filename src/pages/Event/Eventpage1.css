@@ -3,7 +3,6 @@
   box-sizing: border-box;
 }
 
-/* Ensure body fills the screen and avoids unwanted overflow */
 body,
 html {
   margin: 0;
@@ -11,7 +10,6 @@ html {
   height: 100%;
   font-family: 'Arial', sans-serif;
 }
-
 
 /* Main container for events */
 .events-page {
@@ -48,7 +46,6 @@ html {
   top: 0;
   left: 0;
   z-index: -1;
-  
 }
 
 
@@ -59,7 +56,7 @@ html {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
-
+  margin-top: -10rem;
 }
 
 .events .youthopia-logo {

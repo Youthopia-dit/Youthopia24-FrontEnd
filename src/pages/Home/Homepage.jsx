@@ -19,7 +19,7 @@ import H7 from '../../assets/Gallery/H7.jpg';
 import H8 from '../../assets/Gallery/H8.jpg';
 import H9 from '../../assets/Gallery/H9.jpg';
 import H10 from '../../assets/Gallery/H10.jpg';
-import "../../components/card-list/Glimpse.css";
+// import "../../components/card-list/Glimpse.css";
 import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/Footer";
 
