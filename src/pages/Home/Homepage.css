@@ -129,25 +129,63 @@
     height: auto;   
    
 }
-@media (max-width: 390px) {
+
+@media (max-width: 1200px) {
     .presents-text {
-        font-size: 40vw;
+        font-size: 5vw;
     }
 
-    .youthopia-icon{
-        width: 13vw;
-        top: 220px;
+    .dit-logo {
+        max-height: 100px;
     }
-    .NAAClogo{
-        width: 16vw;
-        top: -200px;
-        right: 20px;
+
+    .logo-image {
+        width: 80%;
+    }
+    .glimpse{
+        font-size: 5vw;
+    }
+
+    #bg1, #bg2, #bg3, #bg4 {
+        width: 15vw; 
     }
 }
 
+@media (max-width: 1024px) {
+    .presents-text {
+        font-size: 3vw;
+    }
 
+    .dit-logo {
+        max-height: 90px;
+    }
 
+    .logo-image {
+        width: 85%;
+    }
 
+    #bg1, #bg2, #bg3, #bg4 {
+        width: 18vw; 
+    }
+}
+
+@media (max-width: 768px) {
+    .presents-text {
+        font-size: 4vw;
+    }
+
+    .dit-logo {
+        max-height: 80px;
+    }
+
+    .logo-image {
+        width: 90%; 
+    }
+
+    #bg1, #bg2, #bg3, #bg4 {
+        width: 20vw; 
+    }
+}
 
 @media (max-width: 480px) {
     .youthopia-icon{
@@ -179,65 +217,35 @@
     }
 }
 
-
-@media (max-width: 768px) {
-    .presents-text {
-        font-size: 4vw;
-    }
-
-    .dit-logo {
-        max-height: 80px;
-    }
-
-    .logo-image {
-        width: 90%; 
-    }
-
-    #bg1, #bg2, #bg3, #bg4 {
-        width: 20vw; 
-    }
-}
-
-
-@media (max-width: 1024px) {
-    .presents-text {
-        font-size: 3vw;
-    }
-
-    .dit-logo {
-        max-height: 90px;
-    }
-
-    .logo-image {
-        width: 85%;
-    }
-
-    #bg1, #bg2, #bg3, #bg4 {
-        width: 18vw; 
-    }
-}
-
-
-@media (max-width: 1200px) {
+@media (max-width: 390px) {
     .presents-text {
         font-size: 5vw;
     }
 
-    .dit-logo {
-        max-height: 100px;
+    .youthopia-icon{
+        width: 13vw;
+        top: 220px;
     }
-
-    .logo-image {
-        width: 80%;
-    }
-    .glimpse{
-        font-size: 5vw;
-    }
-
-    #bg1, #bg2, #bg3, #bg4 {
-        width: 15vw; 
+    .NAAClogo{
+        width: 16vw;
+        top: -200px;
+        right: 20px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
