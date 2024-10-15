@@ -8,7 +8,9 @@ import Aboutuspage from './Pages/Aboutus/Aboutuspage';
 import ProfilePage from './pages/Profilepage/profilepage';
 import ComingSoon from './pages/ComingSoon/ComingSoon';
 import Gallery from './pages/Gallery/gallery';
+import Eventpage from './pages/Event/Eventpage1';
 import Homepage from './pages/Home/Homepage';
+
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
     <>
       <BrowserRouter>
       <Routes>
+        <Route path="/profile" element={<ProfilePage />}/>
+        <Route path="/events" element={<Eventpage />}/>
         <Route path="/about" element={<Aboutuspage/>}/>
         <Route path="/" element={<Homepage />}/>
         <Route path="/gallery" element={<Gallery />}/>
