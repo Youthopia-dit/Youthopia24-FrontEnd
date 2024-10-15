@@ -1,64 +1,40 @@
-.eventcontent {
-    list-style: none;
-    height: 53vh;
-    padding: 25px;
-    margin: 20px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    max-width: auto;
-    text-align: right;
-    background-color: rgba(186, 186, 186, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-li img {
-    display: flex;
-    margin: 5px auto 10px;
+/* EventCard.css */
+.event-card {
+    /* border: 1px solid #ddd; */
     border-radius: 8px;
-    width: 100%;
-    max-width: 350px;
-    height: auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    width: 350px;
 }
 
-li p {
-    margin: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 5px;
-}
+.event-card img{
+    width: 100%;
+    object-fit: contain;
+    padding: 16px;
+    border-radius: 8%;
+}   
 
 .event-details {
-    margin-top: 20px;
-    padding: 10px;
-    width: 26vw;
-    height: 18vh;
-    background-color: #8D78BC;
-    border-radius: 5px;
+    padding: 16px;
+    margin: 16px;
+    margin-top: 0;
+    border-radius: 8px;
     text-align: left;
+    background-color: #8D78BC;
+    color: white;
 }
 
-.eventcontent:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.event-details h2 {
+    font-size: 1.5em;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
-@media (max-width: 768px) {
-    .eventcontent {
-        text-align: center;
-        padding: 15px;
-    }
-
-    li img {
-        max-width: 100%;
-    }
-
-    li p {
-        font-size: 14px;
-        padding: 8px;
-    }
+.event-details p {
+    font-size: 1em;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
