@@ -1,0 +1,108 @@
+.individual-event {
+    background-image: url('../../../assets/BackgroundLanding.webp');
+    background-attachment: fixed; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    width: 100vw;
+    height: auto; 
+    min-height: 150vh; 
+}
+
+.event-page {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: transparent; 
+    color: #fff;
+    padding: 20px;
+}
+
+.event-container {
+    position: relative; 
+    display: flex;
+    max-width: 800px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0; /* Add margin for spacing */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+}
+
+.event-image {
+    width: 300px;
+    object-fit: cover;
+}
+
+.event-details {
+    padding: 20px;
+    flex: 1;
+    position: relative;
+    background-color: #a92323;
+    opacity: 0.9; /* Optional: Make background slightly transparent */
+}
+
+.event-title {
+    font-family: 'Dela Gothic One';
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    line-height: 60px;
+    size: 50px;
+}
+
+.event-info {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 30.78px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    border: 2px solid white;
+    padding: 10px;
+    margin: 10px 0; /* Adjusted for spacing */
+    border-radius: 10px;
+}
+
+.event-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.event-section {
+    margin-bottom: 10px;
+}
+
+.event-list {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.event-list li {
+    margin-bottom: 5px;
+}
+
+.register-btn {
+    background-color: #6200ee;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+    background-color: #3700b3;
+}
