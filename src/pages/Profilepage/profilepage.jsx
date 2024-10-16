@@ -1,6 +1,5 @@
 import React from "react";
 import './ProfilePage.css';
-import bg from './bg.png';
 function ProfilePage(){
     return(
         <div className="ProfilePage">
@@ -30,16 +29,16 @@ function ProfilePage(){
                 <div className="scroller">
                     <h1 className="register">Registered events</h1>
                     <div className="registered">
-                        <img src="https://m.media-amazon.com/images/I/61QPLVPgSOL._SX679_.jpg" className="events"></img>
-                        <img src="https://m.media-amazon.com/images/I/61QPLVPgSOL._SX679_.jpg" className="events"></img>
-                        <img src="https://m.media-amazon.com/images/I/61QPLVPgSOL._SX679_.jpg" className="events"></img>
-                        <img src="https://m.media-amazon.com/images/I/61QPLVPgSOL._SX679_.jpg" className="events"></img>
-                        <img src="https://m.media-amazon.com/images/I/61QPLVPgSOL._SX679_.jpg" className="events"></img>
-                        <img src="https://m.media-amazon.com/images/I/61QPLVPgSOL._SX679_.jpg" className="events"></img>
-                        <img src="https://m.media-amazon.com/images/I/61QPLVPgSOL._SX679_.jpg" className="events"></img>
-                        <img src="https://m.media-amazon.com/images/I/61QPLVPgSOL._SX679_.jpg" className="events"></img>
-                        <img src="https://m.media-amazon.com/images/I/61QPLVPgSOL._SX679_.jpg" className="events"></img>
-                        <img src="https://m.media-amazon.com/images/I/61QPLVPgSOL._SX679_.jpg" className="events"></img>
+                        <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
+                        <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
+                        <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
+                        <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
+                        <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
+                        <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
+                        <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
+                        <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
+                        <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
+                        <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
                     </div>
                     <br />
                 </div>
