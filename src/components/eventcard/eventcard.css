@@ -10,31 +10,32 @@
     width: 350px;
 }
 
-.event-card img{
-    width: 100%;
+.event-card img {
+    width: 95%;
     object-fit: contain;
-    padding: 16px;
-    border-radius: 8%;
-}   
+    padding: 10px;
+    border-radius: 4%;
+}
 
 .event-details {
-    padding: 16px;
-    margin: 16px;
+    padding: 10px;
+    margin: 10px;
     margin-top: 0;
     border-radius: 8px;
+    /* height: 15vh; */
     text-align: left;
     background-color: #8D78BC;
     color: white;
 }
 
 .event-details h2 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
 
 .event-details p {
-    font-size: 1em;
+    font-size: 0.8em;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
