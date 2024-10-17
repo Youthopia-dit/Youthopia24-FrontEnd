@@ -3,7 +3,7 @@ import "./Signuppage.css";
 import bg1 from "../../assets/bg1.png";
 import youthopia_logo from "../../assets/youthopia-logo.png";
 
-function Signuppage() {
+function Signifno() {
   return (
     <>
       <div className="main">
@@ -14,8 +14,7 @@ function Signuppage() {
           <div>
             <img src={youthopia_logo} alt="logo" id="log" />
           </div>
-          <h2> Welcome </h2>
-          <p class="notb">Sign up to continue</p>
+          <p class="notb">Non DITian</p>
           <form>
             <div>
               <p>
@@ -23,23 +22,23 @@ function Signuppage() {
                   id="text"
                   type="text"
                   name="name"
-                  placeholder="Name:"
+                  placeholder="College Name:"
                 />
               </p>
               <p>
                 <input
                   id="text"
-                  type="email"
-                  name="email"
-                  placeholder="  E-mail :"
+                  type="text"
+                  name="text"
+                  placeholder=" Year:"
                 />
               </p>
               <p>
                 <input
                   id="text"
-                  type="password" 
-                  name="password"
-                  placeholder="  Password :"
+                  type="text" 
+                  name="branch"
+                  placeholder="  Branch :"
                   
                 />
               </p>
@@ -48,7 +47,7 @@ function Signuppage() {
                   id="text"
                   type="password" 
                   name="password"
-                  placeholder=" Confirm Password :"
+                  placeholder="Government ID (Aadhar/DL) :"
                   
                 />
               </p>
@@ -57,7 +56,7 @@ function Signuppage() {
                   id="Next"
                   class="button"
                   type="submit"
-                  value="NEXT"
+                  value="Login"
                  
                 ></input>
               </p>
@@ -70,4 +69,4 @@ function Signuppage() {
   );
 }
 
-export default Signuppage;
+export default Signifno;

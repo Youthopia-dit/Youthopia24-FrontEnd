@@ -11,6 +11,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import IndividualEvent from './pages/Event/Individual/Individualpage'
 import Loginpage from './pages/Login/Loginpage'
 import Loginpage1 from './pages/Login/Loginpage1'
+import Signuppage from './pages/Signup/Signuppage'
+import Signupq from './pages/Signup/Signupq'
+import Signifyes from './pages/Signup/signifyes'
+import Signifno from './pages/Signup/Signifno'
 
 function App() {
 
@@ -22,6 +26,10 @@ function App() {
         <Route path="/Loginpage" element={<Loginpage />}/>
         <Route path="/Loginpage1" element={<Loginpage1 />} />
         <Route path="/profile" element={<ProfilePage />}/>
+        <Route path="/Signuppage" element={<Signuppage />} />
+        <Route path="/Signupq" element={<Signupq /> } />
+        <Route path="/signifyes" element={<Signifyes />} />
+        <Route path="/signifno" element={<Signifno />} />
         <Route path="/" element={<ComingSoon />}/>
         <Route path="/gallery" element={<Gallery />}/>
       </Routes>
