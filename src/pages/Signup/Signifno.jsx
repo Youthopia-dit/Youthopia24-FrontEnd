@@ -1,69 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Signuppage.css";
 import bg1 from "../../assets/bg1.png";
 import youthopia_logo from "../../assets/youthopia-logo.png";
+import { useNavigate } from "react-router-dom";
 
 function Signifno() {
+  const [formdata, setFormData] = useState({
+    collegeName: "",
+    year: "",
+    branch: "",
+    governmentId: "",
+  });
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({ ...formdata, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Non-Dit Signup Data:", formData);
+    alert("Non-Dit Signup Complete!");
+    navigate("/");
+  };
+
   return (
     <>
       <div className="main">
-        <div class="backg">
-          <img src={bg1} alt="bg-page" id="ab" />
-          </div>
-        <div class="border">
+        <div class="background">
+          <img src={bg1} alt="bg-page" />
+        </div>
+        <div class="bordernp">
           <div>
-            <img src={youthopia_logo} alt="logo" id="log" />
+            <img src={youthopia_logo} alt="logo" id="logo" />
           </div>
-          <p class="notb">Non DITian</p>
+          <h2 className="sign_no">Non DITian</h2>
           <form>
-            <div>
-              <p>
-                <input
-                  id="text"
-                  type="text"
-                  name="name"
-                  placeholder="College Name:"
-                />
-              </p>
-              <p>
-                <input
-                  id="text"
-                  type="text"
-                  name="text"
-                  placeholder=" Year:"
-                />
-              </p>
-              <p>
-                <input
-                  id="text"
-                  type="text" 
-                  name="branch"
-                  placeholder="  Branch :"
-                  
-                />
-              </p>
-              <p>
-                <input
-                  id="text"
-                  type="text" 
-                  name="text"
-                  placeholder="Government ID (Aadhar/DL) :"
-                  
-                />
-              </p>
-              <p >
-                <input
-                  id="Next"
-                  class="button"
-                  type="submit"
-                  value="Login"
-                 
-                ></input>
-              </p>
-            </div>
+            <input
+              id="text"
+              type="text"
+              name="collegeName"
+              placeholder="College Name"
+              onChange={handleChange}
+            />
+            <input
+              id="text"
+              type="text"
+              name="year"
+              placeholder="Year"
+              onChange={handleChange}
+            />
+            <input
+              id="text"
+              type="text"
+              name="branch"
+              placeholder="Branch"
+              onChange={handleChange}
+            />
+            <input
+              id="text"
+              type="text"
+              name="governmentId"
+              placeholder="Government ID (Aadhar/DL)"
+              onChange={handleChange}
+            />
+            <button type="submit" id="Next" className="button">Log In</button>
           </form>
         </div>
-       
       </div>
     </>
   );
