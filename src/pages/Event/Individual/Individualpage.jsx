@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import "./individualpage.css"
+import "./Individualpage.css"
 function IndividualEvent() {
   const [activeTab, setActiveTab] = useState(1);
   const handleTabClick = (index) => {
