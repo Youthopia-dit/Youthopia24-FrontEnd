@@ -1,5 +1,5 @@
 /* EventCard.css */
-.event-card {
+.team-card {
     /* border: 1px solid #ddd; */
     border-radius: 8px;
     overflow: hidden;
@@ -10,32 +10,31 @@
     width: 350px;
 }
 
-.event-card img {
-    width: 95%;
+.team-card img{
+    width: 100%;
     object-fit: contain;
-    padding: 10px;
-    border-radius: 4%;
-}
+    padding: 16px;
+    border-radius: 8%;
+}   
 
-.event-details {
-    padding: 10px;
-    margin: 10px;
+.team-details {
+    padding: 16px;
+    margin: 16px;
     margin-top: 0;
     border-radius: 8px;
-    /* height: 15vh; */
     text-align: left;
     background-color: #8D78BC;
     color: white;
 }
 
-.event-details h2 {
-    font-size: 1.2em;
+.team-details h2 {
+    font-size: 1.5em;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
 
-.event-details p {
-    font-size: 0.8em;
+.team-details p {
+    font-size: 1em;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }

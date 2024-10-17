@@ -11,6 +11,7 @@ import Gallery from './pages/Gallery/gallery';
 import Homepage from './pages/Home/Homepage';
 import Eventpage from './pages/Event/Eventpage1';
 import IndividualEvent from './pages/Event/Individual/Individualpage';
+import TeamPage from './pages/Team/Teampage';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/comingsoon" element={<ComingSoon />}/>
         <Route path="/events" element={<Eventpage />}/>
         <Route path="/individual-event" element={<IndividualEvent />}/>
+        <Route path="/team" element={<TeamPage />}/>
       </Routes>
     </BrowserRouter>
     </>

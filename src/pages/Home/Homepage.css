@@ -12,7 +12,7 @@
 .youthopia-icon{
     width: 7vw;
     position: absolute;
-    top: -200px;
+    top: 0px;
     margin: 10px ;
     left: 0;
     margin-left: 10vw;
@@ -23,7 +23,7 @@
 
 .NAAClogo{
     position: absolute;
-    top: -180px;
+    top: 15px;
     margin-top: 0px;       
     margin-right: 10vw;
     right: 0;         
@@ -78,7 +78,7 @@
     /* max-width: 500px; */
     height: 40vh;
     min-height: 100px; 
-    display: inline-block;
+    /* display: inline-block; */
 }
 .glimpse{
     font-size: 3vw;
@@ -88,7 +88,6 @@
     top: 20;
     left: 0;
     width: 100%;
-   
     object-fit: contain;
     z-index: 1; 
 }
@@ -130,6 +129,11 @@
     width: 30vw;      
     height: auto;   
    
+}
+
+.logos{
+    display: flex;
+    flex-direction: row;
 }
 
 @media (max-width: 1200px) {

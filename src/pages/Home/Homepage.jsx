@@ -79,15 +79,15 @@ function Homepage() {
 
                     <div className="coming-soon-home">
                         <div className="coming-soon-content">
-                            {/* <img src={DIT} alt="DIT University" className="dit-logo" /> */}
-                            <img src={NAAC} alt="Naaclogo" className="NAAClogo" />
+                            <div className="logos">
                             <img src={Youthopialogo} alt="youthopia" className="youthopia-icon" />
                             <div className="presents-text">
                                 Presents
+                            <img src={NAAC} alt="Naaclogo" className="NAAClogo" />
+                            </div>
                             </div>
                             <div className="logo-image">
                                 <img src={Youthopia} className="coming-soon-youthopia"></img>
-                                {/* <img src={Youthopia} className="coming-soon-youthopia-blur"></img> */}
                             </div>
                             <Timer />
                             <div className="presents-text">
@@ -103,9 +103,6 @@ function Homepage() {
                     </div>
                 </div>
             </div>
-            {/* <Glimpse />  */}
-
-            {/* <Gallery /> */}
             <Footer />
 
         </>

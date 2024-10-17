@@ -1,19 +1,3 @@
-/* Apply box-sizing to all elements to avoid overflow issues */
-/* * {
-  box-sizing: border-box;
-} */
-
-/* Ensure body fills the screen and avoids unwanted overflow */
-/* body,
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Arial', sans-serif;
-} */
-
-
-/* Main container for events */
 .events-page {
   position: relative;
   height: 100vh;
@@ -24,10 +8,9 @@ html {
   align-items: center;
   justify-content: center;
   background-color: #0E0516;
-  z-index: 1;
+  z-index: 2;
 }
 
-/* Background Image Handling */
 .background {
   position: absolute;
   top: 0;
@@ -51,8 +34,6 @@ html {
 
 }
 
-
-/* Main content container */
 .events {
   text-align: center;
   color: white;
@@ -77,7 +58,6 @@ p {
   font-size: 1em;
 }
 
-/* Tab buttons */
 .tab-buttons {
   display: flex;
   font-size: 2em;
@@ -104,7 +84,6 @@ p {
   color: #FF9F83;
 }
 
-/* Center the event cards grid */
 .tab-content {
   display: flex;
   justify-content: center;
@@ -112,7 +91,6 @@ p {
   background-color: transparent;
 }
 
-/* Center grid of event cards */
 .parents {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -120,17 +98,16 @@ p {
   padding: 20px;
   max-width: 1200px;
   justify-content: center;
-  /* Center horizontally */
   justify-items: center;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
 }
 
-.bgelemets {
+.bgelements {
   position: relative;
   width: 100%;
-  /* background-image: url("../../assets/bgevent.png"); */
+
   height: 100vh;
 }
 
