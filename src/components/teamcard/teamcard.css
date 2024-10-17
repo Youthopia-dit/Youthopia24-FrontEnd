@@ -1,0 +1,41 @@
+/* EventCard.css */
+.team-card {
+    /* border: 1px solid #ddd; */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    width: 300px;
+    
+}
+
+.team-card img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 8%;
+    align-items: center;
+}   
+
+.team-details {
+    padding: 16px;
+    margin: 16px;
+    margin-top: 0;
+    border-radius: 8px;
+    text-align: left;
+    background-color: none;
+    color: white;
+    text-align: center;
+}
+
+.team-details h2 {
+    font-size: 1.5em;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.team-details p {
+    font-size: 1em;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
