@@ -45,8 +45,8 @@ function Signifno() {
               <p>
                 <input
                   id="text"
-                  type="password" 
-                  name="password"
+                  type="text" 
+                  name="text"
                   placeholder="Government ID (Aadhar/DL) :"
                   
                 />

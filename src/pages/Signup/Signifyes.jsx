@@ -36,7 +36,7 @@ function Signifyes() {
               <p>
                 <input
                   id="text"
-                  type="password" 
+                  type="text" 
                   name="SapId"
                   placeholder=" Sap ID:"
                   
