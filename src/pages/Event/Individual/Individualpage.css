@@ -1,4 +1,4 @@
-.individual-event {
+/* .individual-event {
     background-image: url('../../../assets/BackgroundLanding.webp');
     background-attachment: fixed; 
     background-position: center; 
@@ -30,8 +30,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 20px 0; /* Add margin for spacing */
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+    margin: 20px 0; 
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .event-image {
@@ -43,8 +43,7 @@
     padding: 20px;
     flex: 1;
     position: relative;
-    background-color: #a92323;
-    opacity: 0.9; /* Optional: Make background slightly transparent */
+    opacity: 0.9;
 }
 
 .event-title {
@@ -66,7 +65,7 @@
     text-align: center;
     border: 2px solid white;
     padding: 10px;
-    margin: 10px 0; /* Adjusted for spacing */
+    margin: 10px 0;
     border-radius: 10px;
 }
 
@@ -105,4 +104,4 @@
 
 .register-btn:hover {
     background-color: #3700b3;
-}
+} */

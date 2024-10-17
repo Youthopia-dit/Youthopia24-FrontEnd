@@ -1,12 +1,15 @@
 import './eventcard.css';
 import image from './cs.png'
+import { useNavigate } from 'react-router-dom';
 
 
 const EventCard = ({ eventName, eventDate, posterUrl, eventDetails}) => {
-
+  
+  const navigate = useNavigate();
+  console.log(eventDetails);
+  
   const navigateToEvent = () => {
-    console.log(eventDetails)
-    
+    navigate('/event-details', {state: eventDetails})
   }
 
   return (
