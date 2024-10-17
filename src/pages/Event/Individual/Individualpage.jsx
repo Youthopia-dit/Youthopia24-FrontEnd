@@ -20,12 +20,6 @@ const IndividualEvent = () => {
 
       <div className="individual-event">
         <div className="event-container">
-          <img
-            src="./squid game-01 1.png"
-            alt={eventDetails.name}
-            className="event-image"
-          />
-
           <div className="event-details">
             {/* <h2 className="event-title">{eventDetails.name}</h2> */}
             <h2 className="event-title">Technical Event</h2>
