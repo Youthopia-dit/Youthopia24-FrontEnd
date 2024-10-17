@@ -2,9 +2,9 @@
 import React from 'react'
 import { useRef, useEffect, useState } from 'react'
 import Navbar from '../../components/Navbar/navbar';
+import Footer from '../../components/Footer/Footer';
 import './Aboutuspage.css';
 import ditlogo from '../../logos/ditlogo.jpg';
-//import Navbar from '../../components/Navbar/Navbar.jsx'
 import imgL from '../../assets/LeftImg.png'
 import imgR from '../../assets/RightImg.png'
 import imgLC from '../../assets/FrameLC.png'
@@ -166,6 +166,7 @@ export default function Aboutuspage() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
 
 

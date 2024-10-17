@@ -122,6 +122,8 @@ p.text {
     width: 20%;
     height: auto;
     margin-top: 20%;
+    left:0;
+    z-index:0;
 }
 
 .imageRight {
@@ -184,6 +186,7 @@ p.text {
     display: flex;
     gap: 2rem;
     align-items: center;
+    padding-bottom: 5vw;
 
 }
 
