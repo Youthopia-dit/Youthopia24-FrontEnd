@@ -1,5 +1,5 @@
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
-import Aboutuspage from './Pages/Aboutus/Aboutuspage';
+import Aboutuspage from './pages/Aboutus/Aboutuspage';
 import ProfilePage from './pages/Profilepage/profilepage';
 import ComingSoon from './pages/ComingSoon/ComingSoon';
 import Gallery from './pages/Gallery/gallery';
