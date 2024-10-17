@@ -14,18 +14,23 @@ import { useEvents } from '../../store/events';
 
 function EventPage(props) {
   const [activeTab, setActiveTab] = useState('Technical'); // Tracks the currently active tab
-  const {events,fetchEvents} = useEvents();
+  const { events, fetchEvents } = useEvents();
   useEffect(() => {
     fetchEvents();
-  },[])
-  useEffect(() => {console.log(events)},[events])
+  }, []);
+  useEffect(() => {
+    console.log(events);
+  }, [events]);
   // Function to create sample events
   const createEvent = (category, index) => ({
     imageSrc: img,
     imageAlt: `${category} Event ${index + 1}`,
     eventName: `${category} Event ${index + 1}`,
-    eventDate: index % 2 === 0 ? "12th October 2024" : "13th October 2024",
-    eventLink: index % 2 === 0 ? "https://youthopia.dituniversity.co.in/#/events" : "https://example.com",
+    eventDate: index % 2 === 0 ? '12th October 2024' : '13th October 2024',
+    eventLink:
+      index % 2 === 0
+        ? 'https://youthopia.dituniversity.co.in/#/events'
+        : 'https://example.com',
   });
 
   // Event data categorized by type
@@ -35,11 +40,10 @@ function EventPage(props) {
   //   Informal: Array.from({ length: 12 }, (_, index) => createEvent('Informal', index)),
   // };
   const eventTypes = {
-    Technical: events.filter(event => event.category === 'Technical'),
-    Cultural: events.filter(event => event.category === 'Cultural'),
-    Informal: events.filter(event => event.category === 'Informal'),
-};
-
+    Technical: events.filter((event) => event.category === 'Technical'),
+    Cultural: events.filter((event) => event.category === 'Cultural'),
+    Informal: events.filter((event) => event.category === 'Informal'),
+  };
 
   // Function to render event cards based on the active tab
   const renderContent = () => {
@@ -67,10 +71,10 @@ function EventPage(props) {
 
       <div className="elements">
         <div className="bgelemets">
-          <img src={img1} alt="bg1" id='bg1' className='bg1' />
-          <img src={img2} alt="bg2" id='bg2' className='bg2' />
-          <img src={img3} alt="bg3" id='bg3' className='bg3' />
-          <img src={img4} alt="bg4" id='bg4' className='bg4' />
+          <img src={img1} alt="bg1" id="bg1" className="bg1" />
+          <img src={img2} alt="bg2" id="bg2" className="bg2" />
+          <img src={img3} alt="bg3" id="bg3" className="bg3" />
+          <img src={img4} alt="bg4" id="bg4" className="bg4" />
 
           <div className="events-page">
             {/* Background Images */}
@@ -79,7 +83,7 @@ function EventPage(props) {
             </div>
 
             <div className="events">
-              <img src={Youthopia} alt="logo" className='youthopia-logo'></img>
+              <img src={Youthopia} alt="logo" className="youthopia-logo"></img>
               <header>EVENTS {props.name}</header>
               <p>These are our main Events.</p>
 
@@ -103,13 +107,10 @@ function EventPage(props) {
                 <div className="tab-content">{renderContent()}</div>
               </main>
             </div>
-
           </div>
-
         </div>
       </div>
       <Footer />
-
     </>
   );
 }
