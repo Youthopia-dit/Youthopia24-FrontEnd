@@ -103,9 +103,6 @@ function Homepage() {
                     </div>
                 </div>
             </div>
-            {/* <Glimpse />  */}
-
-            {/* <Gallery /> */}
             <Footer />
 
         </>

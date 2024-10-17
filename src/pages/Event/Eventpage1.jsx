@@ -53,6 +53,7 @@ function EventPage(props) {
             // imageAlt={event.imageAlt}
             eventName={event.event_name}
             eventDate={event.date}
+            eventDetails={event}
             // eventLink={event.eventLink}
           />
         ))}
