@@ -99,7 +99,7 @@
     position: fixed;
     bottom: 0;         
     left: 0;          
-    width: 21vw;      
+    width: 15vw;      
     height: auto;   
    
 }
@@ -166,7 +166,7 @@
     }
 
     #bg1, #bg2, #bg3, #bg4 {
-        width: 20vw; 
+        width: 15vw; 
     }
 }
 
