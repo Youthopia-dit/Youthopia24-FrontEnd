@@ -1,11 +1,17 @@
 .events-list-page {
   width: 100vw;
-  background-color: #0E0516;
+  
+  background-color: #0E0516; 
+ 
   
 }
-header{
-  
+
+.Events{
+  position: relative;
+  z-index: 100;
+  padding: 20px 480px 130px;
 }
+
 
 .parents {
   display: flex;
@@ -18,7 +24,6 @@ header{
   z-index: 101;
   position: relative;
   display: flex;
-  font-size: 2em;
   justify-content: space-around;
   gap: 20px;
   margin-bottom: 20px;
@@ -27,6 +32,7 @@ header{
 
 .tab-buttons button {
   padding: 10px 20px;
+  font-size: 35px;
   font-weight: bold;
   border: none;
   background: transparent;
@@ -43,8 +49,9 @@ header{
 }
 
 
+
 .background-wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -52,17 +59,10 @@ header{
   overflow: hidden;
 }
 
-/* .background-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Ensure image covers the area */
-  /* z-index: -1; */
-  /* Ensure the image is behind the content */
 
 
 .tech-back-image {
-  position: relative;
+  position: absolute;
   width: 100%;
   z-index: 1;
   background-size: cover;
@@ -70,6 +70,22 @@ header{
   filter: brightness(0.4);
 }
 
+.cultural-back-image {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background-size: cover;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+.informal-back-image {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background-size: cover;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
 .gradient-overlay {
   position: absolute;
   top: 0;
@@ -79,8 +95,31 @@ header{
   background: linear-gradient(to bottom, rgba(14, 5, 22, 0), rgb(12, 3, 23));
   /* Gradient effect */
   z-index: 1;
-  /* Ensure gradient is behind the content, but over the image */
+  
 }
+.gradient-overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(135, 0, 254, 0), rgba(102, 0, 227, 0));
+  /* Gradient effect */
+  z-index: 1;
+  
+}
+.gradient-overlay3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(135, 0, 254, 0), rgba(102, 0, 227, 0));
+  /* Gradient effect */
+  z-index: 1;
+  
+}
+
 
 
 .clubs {
@@ -89,7 +128,11 @@ header{
 }
 
 @media only screen and (max-width: 768px) {
+  .events-heading {
+    font-size: 2em; 
+  }
+  
   .tab-buttons {
-    font-size: 1em;
+    font-size: 2em;
   }
 }
