@@ -44,16 +44,27 @@ const EventPage = () => {
     );
   };
 
+  const renderBack = () => {
+    if(activeTab === 'Technical') {
+      return <>
+      <div className="background-wrapper">
+          <img src={TechBack} alt="Tech background" className="tech-back-image" />
+          
 
+          <div className="gradient-overlay"></div>
+        </div>
+      </>;
+    }
+  }
 
   return (
     <div className="events-list-page">
+       <header>EVENTS</header>
+
       <div className="event-page-background">
-      <div className="background-wrapper">
-        <img src={TechBack} alt="Background" className="background-image" />
-        <div className="gradient-overlay"></div>
+        {renderBack()}
       </div>
-      </div>
+     
       <div className="clubs">
         <div className="tab-buttons">
           <button onClick={() => handleTabChange('Technical')}>Technical</button>
