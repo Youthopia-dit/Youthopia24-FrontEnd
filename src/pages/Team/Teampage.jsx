@@ -19,6 +19,7 @@ const TeamPage = () => {
         <img className='imageLeft' src={imgL}></img>
         <img className='imageRight' src={imgR}></img>
       </div>
+      <div className="team-page-content">
       {Object.keys(teamData).map((sectionTitle) => (
         <div key={sectionTitle} className="team-section">
           <h1 className="section-title">{sectionTitle}</h1>
@@ -35,6 +36,7 @@ const TeamPage = () => {
           </div>
         </div>
       ))}
+      </div>
       <Footer />
     </div>
     </>

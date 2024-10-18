@@ -108,7 +108,7 @@ function Homepage() {
                             </div>
                             </div> */}
 
-                            <div className="events-home">
+                            {/* <div className="events-home">
                                 <p className="events-text">EVENTS</p>
                                 <div className="events-row">
                                     <div className="events-img">
@@ -124,7 +124,7 @@ function Homepage() {
                                         <img src={event1} alt="event1" className="Elogo" />
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="presents-text">
                                 <p className="glimpse"> Glimpse from 2023 </p>
                             </div>

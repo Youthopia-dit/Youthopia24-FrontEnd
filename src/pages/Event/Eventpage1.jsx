@@ -41,8 +41,8 @@ function EventPage(props) {
   // };
   const eventTypes = {
     Technical: events.filter((event) => event.category === 'tech'),
-    Cultural: events.filter((event) => event.category === 'Cultural'),
-    Informal: events.filter((event) => event.category === 'Informal'),
+    Cultural: events.filter((event) => event.category === 'cul'),
+    Informal: events.filter((event) => event.category === 'inf'),
   };
 
   // Function to render event cards based on the active tab

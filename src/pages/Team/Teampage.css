@@ -8,6 +8,11 @@
     background-color: black;
 }
 
+.team-page-content {
+    position: relative;
+    z-index: 100;
+}
+
 .section-title {
     font-size: 2rem;
     text-align: center;
@@ -32,8 +37,6 @@
 }
 
 .team-image {
-    width: 100px;
-    height: 100px;
     border-radius: 50%;
     margin-bottom: 15px;
 }
