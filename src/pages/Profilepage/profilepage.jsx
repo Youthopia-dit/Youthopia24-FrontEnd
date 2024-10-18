@@ -1,5 +1,5 @@
 import React from "react";
-import './ProfilePage.css';
+import './profilepage.css';
 function ProfilePage(){
     return(
         <div className="ProfilePage">
