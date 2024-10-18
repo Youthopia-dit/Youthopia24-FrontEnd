@@ -6,10 +6,10 @@ import { MdClose } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 function Navbar() {
-    const [navOpen, setNavOpen] = useState(false); 
+    const [navOpen, setNavOpen] = useState(false);
 
     const toggleNav = () => {
-        setNavOpen(!navOpen); 
+        setNavOpen(!navOpen);
     };
 
     return (
@@ -18,34 +18,28 @@ function Navbar() {
                 <ul className="navbar-links right-link">
                     <Link to="/" className="noburger"><li onClick={toggleNav}>Home</li></Link>
                     <Link to="/events" className="noburger"><li onClick={toggleNav}>Events</li></Link>
-                    <Link to="/team" className="noburger"><li onClick={toggleNav}>Our Team</li></Link>
-
-                </ul>
-                <div className="logo">
-                    <img src={DIT} alt="DIT University Logo" />
-                </div>
-                <ul className="navbar-links left-link">
-                <Link to="/gallery" className="noburger"><li onClick={toggleNav}>Gallery</li></Link>
-                <Link to="/comingsoon" className="hamburger"><li onClick={toggleNav}>Events</li></Link>
-                <Link to="/team" className="hamburger"><li onClick={toggleNav}>Our Team</li></Link>
+                    <Link to="/comingsoon" className="noburger"><li onClick={toggleNav}>Our Team</li></Link>
+                    <Link to="/gallery" className="noburger"><li onClick={toggleNav}>Gallery</li></Link>
+                    <Link to="/comingsoon" className="hamburger"><li onClick={toggleNav}>Events</li></Link>
+                    <Link to="/comingsoon" className="hamburger"><li onClick={toggleNav}>Our Team</li></Link>
                     <Link to="/about"><li onClick={toggleNav}>About Us</li></Link>
                     <Link to="/comingsoon"><li onClick={toggleNav}>Sign In</li></Link>
                 </ul>
 
-                
+
                 {navOpen && (
                     <button className="nav-button nav-close-button" onClick={toggleNav}>
                         <MdClose size={30} />
                     </button>
                 )}
                 {!navOpen && (
-                <button className="nav-button" onClick={toggleNav}>
-                    <GiHamburgerMenu size={30} />
-                </button>
-            )}
+                    <button className="nav-button" onClick={toggleNav}>
+                        <GiHamburgerMenu size={30} />
+                    </button>
+                )}
             </div>
 
-            
+
         </nav>
     );
 }

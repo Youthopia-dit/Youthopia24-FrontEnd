@@ -123,15 +123,15 @@ p {
   position: fixed;
   top: 5vh;
   right: 0;
-  width: 20vw;
+  width: 15vw;
   height: auto;
 }
 
 #bg2 {
   position: fixed;
-  bottom: -5vh;
+  bottom: 15vh;
   left: 0;
-  width: 25vw;
+  width: 15vw;
   height: auto;
 }
 
