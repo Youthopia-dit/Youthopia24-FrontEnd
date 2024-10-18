@@ -104,7 +104,7 @@ function EventPage(props) {
                 </div>
 
                 {/* Event Cards Content */}
-                <div className="tab-content">{renderContent()}</div>
+                <div className="event-tab-content">{renderContent()}</div>
               </main>
             </div>
           </div>
