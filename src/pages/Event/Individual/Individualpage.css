@@ -1,116 +1,117 @@
-.eventpage{
-    margin-top: 0px;
-    height: 100vh;
-    width: 95vw;
-}
-.info{
-    display:flex;
-    justify-content: space-evenly;
-    }
-.image{
-    height: 300px;
-    background-color:red ;
-    width:500px;
-    margin-left: 100px;
-    margin-top:50px;
-        
-}
-ul{
-    list-style: square;
-}
-.container{
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-    padding: 40px;
-    flex-wrap:wrap;
-    width: 40%;
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+.individual-event {
+  background-color: #0E0516;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: auto;
+  min-height: 150vh;
+  position: relative;
+  padding-bottom: 5rem;
 }
 
-.reg-btn{
-    padding: 10px 20px;
-    height:42px;
-    margin-top: 15px;
-    cursor: pointer;
-    margin-left: 300px;
-    
-
-}
-.tabsin{
-    display:flex;
-    justify-content:space-between;
-    list-style-type: none;
-    flex-wrap:wrap;
-    padding: 0px;
-
-}
-.nr{
-    margin-left: 50px;
-    margin-top: 60px;
-}
-.current{
-    font-weight: bold;
-    border: 2px solid red;
-    border-radius:5px;
-    position: relative;
-    top:2px;
-    text-align: center;
-}
-.content{
-    width:100%;
-    height:100%;
-    display: none;
-}
-.active{
-    display: block;
-    
-}
-.content-tab{
-    padding: 15px;
-    border: 2px solid  white;
-}
-@media only screen and (max-width: 950px){
-   .info{
-    flex-direction: column;
-    width:95vw;
-
-   }
-   .image{
-    min-height: 300px;
-    background-color:red ;
-    min-width:300px;
-    max-height: 400px;
-    max-width: 400px;
-    margin-left:20px;
-
-}
-.reg-btn{
-    margin-left:120px;
-}
-.current{
-    padding-right:50px;
-}
-.tab{
-    padding-right: 50px;
+.event-container {
+  max-width: 90%;
+  margin: auto;
+  padding-top: 5rem;
+  display: flex;
+  gap: 2rem;
 }
 
-
-
+.event-poster{
+  width: 40%;
 }
-@media only screen and (max-width: 640px){
-    .tab{
-        padding-right: 100px;
-    }
-    .current{
-        padding-right:100px;
-    }
+
+.event-poster img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-@media only screen and (max-width: 490px){
-    .tab{
-        padding-right: 120px;
-    }
-    .current{
-        padding-right:140px;
-    }
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.event-details .event-title {
+  font-size: 28px;
+  font-family: 'Dela Gothic One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.event-image {
+  flex: 1;
+  height: 600px;
+}
+.event-details {
+  flex: 1.5;
+  background-color: transparent;
+}
+
+.event-info {
+  border: 3px solid white;
+  padding: 21px 15px;
+}
+
+.event-data {
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.event-section strong {
+  font-size: 20px;
+}
+
+.gradient {
+  position: absolute;
+  z-index: 5;
+}
+
+.event-desc{
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1rem;
+}
+
+.event-rule-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-navigation {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.tab-navigation button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+}
+
+.tab-navigation .active-tab {
+  background-color: transparent;
+  color: white;
+}
+
+.tab-content {
+  margin-top: 20px;
+  width: 100%;
+  border: 1px solid white;
+}
+
+.event-coor-list{
+  display: flex;
 }

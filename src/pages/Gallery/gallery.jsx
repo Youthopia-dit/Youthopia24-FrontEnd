@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './gallery.css';
+import Navbar from '../../components/Navbar/navbar';
 import H1 from "../../assets/Gallery/H1.jpg";
 import H2 from "../../assets/Gallery/H2.jpg";
 import H3 from "../../assets/Gallery/H3.jpg";
@@ -63,7 +64,8 @@ const imageList = [
 const Gallery = () => {
     return (
         <>
-            {/* <div className="gallery-heading">Glimpse from the Past</div> */}
+            <Navbar />
+
             <div className="gallery-container">
                 {imageList.map((image, index) => (
                     <div key={index} className={`gallery-item ${image.type}`}>
