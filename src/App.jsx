@@ -5,7 +5,7 @@ import Signuppage from './pages/Signup/Signuppage';
 import Signupq from './pages/Signup/Signupq';
 import Signifyes from './pages/Signup/Signifyes';
 import Signifno from './pages/Signup/Signifno';
-import Aboutuspage from './Pages/Aboutus/Aboutuspage';
+import Aboutuspage from './pages/Aboutus/Aboutuspage';
 import ProfilePage from './pages/Profilepage/profilepage';
 import ComingSoon from './pages/ComingSoon/ComingSoon';
 import Gallery from './pages/Gallery/gallery';
