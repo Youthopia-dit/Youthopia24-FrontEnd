@@ -18,10 +18,8 @@ function Navbar() {
                 <ul className="navbar-links right-link">
                     <Link to="/" className="noburger"><li onClick={toggleNav}>Home</li></Link>
                     <Link to="/events" className="noburger"><li onClick={toggleNav}>Events</li></Link>
-                    <Link to="/comingsoon" className="noburger"><li onClick={toggleNav}>Our Team</li></Link>
+                    <Link to="/team" className="noburger"><li onClick={toggleNav}>Our Team</li></Link>
                     <Link to="/gallery" className="noburger"><li onClick={toggleNav}>Gallery</li></Link>
-                    <Link to="/comingsoon" className="hamburger"><li onClick={toggleNav}>Events</li></Link>
-                    <Link to="/comingsoon" className="hamburger"><li onClick={toggleNav}>Our Team</li></Link>
                     <Link to="/about"><li onClick={toggleNav}>About Us</li></Link>
                     <Link to="/comingsoon"><li onClick={toggleNav}>Sign In</li></Link>
                 </ul>

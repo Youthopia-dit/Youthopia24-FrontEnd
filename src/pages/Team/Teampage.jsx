@@ -10,17 +10,15 @@ import Footer from '../../components/Footer/Footer';
 
 const TeamPage = () => {
   return (
-
+<>
+<Navbar />
     <div className="team-page">
+      
       <div className="background-div">
         <img className='ImgLeftCorner' src={imgLC}></img>
         <img className='imageLeft' src={imgL}></img>
         <img className='imageRight' src={imgR}></img>
-        {/* <img className='FrameR' src={imgRC}></img>
-                <img className='FrameB' src={imgB}></img> */}
-        {/* <img className='imageRB' src={imgRC}></img> */}
       </div>
-      <Navbar />
       {Object.keys(teamData).map((sectionTitle) => (
         <div key={sectionTitle} className="team-section">
           <h1 className="section-title">{sectionTitle}</h1>
@@ -39,6 +37,7 @@ const TeamPage = () => {
       ))}
       <Footer />
     </div>
+    </>
   );
 };
 
