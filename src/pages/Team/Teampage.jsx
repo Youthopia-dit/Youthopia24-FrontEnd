@@ -2,13 +2,28 @@ import React from 'react';
 import './Teampage.css'; // Import the CSS file
 import TeamCard from '../../components/teamcard/teamcard'; // Import the TeamCard component
 import teamData from './teamlist.json'; // Import the JSON file
+import imgL from '../../assets/LeftImg.png'
+import imgR from '../../assets/RightImg.png'
+import imgLC from '../../assets/FrameLC.png'
+import Navbar from '../../components/Navbar/navbar';
+import Footer from '../../components/Footer/Footer';
 
 const TeamPage = () => {
   return (
+
     <div className="team-page">
+      <div className="background-div">
+        <img className='ImgLeftCorner' src={imgLC}></img>
+        <img className='imageLeft' src={imgL}></img>
+        <img className='imageRight' src={imgR}></img>
+        {/* <img className='FrameR' src={imgRC}></img>
+                <img className='FrameB' src={imgB}></img> */}
+        {/* <img className='imageRB' src={imgRC}></img> */}
+      </div>
+      <Navbar />
       {Object.keys(teamData).map((sectionTitle) => (
         <div key={sectionTitle} className="team-section">
-          <h1 className="section-title">{sectionTitle}</h1> 
+          <h1 className="section-title">{sectionTitle}</h1>
           <div className="team-container">
             {Object.entries(teamData[sectionTitle]).map(([name, details]) => (
               <TeamCard
@@ -22,6 +37,7 @@ const TeamPage = () => {
           </div>
         </div>
       ))}
+      <Footer />
     </div>
   );
 };

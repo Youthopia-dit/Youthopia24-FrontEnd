@@ -40,7 +40,7 @@ function EventPage(props) {
   //   Informal: Array.from({ length: 12 }, (_, index) => createEvent('Informal', index)),
   // };
   const eventTypes = {
-    Technical: events.filter((event) => event.category === 'Technical'),
+    Technical: events.filter((event) => event.category === 'tech'),
     Cultural: events.filter((event) => event.category === 'Cultural'),
     Informal: events.filter((event) => event.category === 'Informal'),
   };

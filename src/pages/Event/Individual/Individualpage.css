@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .individual-event {
-  background-color: black;
+  background-color: #0E0516;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,6 +11,7 @@
   height: auto;
   min-height: 150vh;
   position: relative;
+  padding-bottom: 5rem;
 }
 
 .event-container {
@@ -18,16 +19,28 @@
   margin: auto;
   padding-top: 5rem;
   display: flex;
+  gap: 2rem;
+}
+
+.event-poster{
+  width: 40%;
+}
+
+.event-poster img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .event-details {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 0;
 }
 
 .event-details .event-title {
-  font-size: 50px;
+  font-size: 28px;
   font-family: 'Dela Gothic One', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -48,7 +61,7 @@
 }
 
 .event-data {
-  font-size: 26.89px;
+  font-size: 20px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -61,100 +74,13 @@
   z-index: 5;
 }
 
-/* 
-.event-page {
+.event-desc{
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 2rem;
+}
+
+.event-rule-list{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: transparent;
-  color: #fff;
-  padding: 20px;
 }
-
-.event-container {
-  position: relative;
-  display: flex;
-  max-width: 800px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 20px 0;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.event-image {
-  width: 300px;
-  object-fit: cover;
-}
-
-.event-details {
-  padding: 20px;
-  flex: 1;
-  position: relative;
-  opacity: 0.9;
-}
-
-.event-title {
-  font-family: 'Dela Gothic One';
-  font-size: 2rem;
-  margin-bottom: 10px;
-  font-weight: bold;
-  line-height: 60px;
-  size: 50px;
-}
-
-.event-info {
-  display: flex;
-  justify-content: space-between;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  line-height: 30.78px;
-  letter-spacing: 0.04em;
-  text-align: center;
-  border: 2px solid white;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 10px;
-}
-
-.event-description {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  text-align: left;
-}
-
-.event-section {
-  margin-bottom: 10px;
-}
-
-.event-list {
-  list-style-type: disc;
-  margin-left: 20px;
-}
-
-.event-list li {
-  margin-bottom: 5px;
-}
-
-.register-btn {
-  background-color: #6200ee;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-top: 10px;
-  transition: background-color 0.3s;
-}
-
-.register-btn:hover {
-  background-color: #3700b3;
-} */
