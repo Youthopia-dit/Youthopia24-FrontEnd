@@ -3,15 +3,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    /* padding: 20px; */
+    width: 100vw;
     background-color: black;
+}
+
+.team-page-content {
+    position: relative;
+    z-index: 100;
 }
 
 .section-title {
     font-size: 2rem;
     text-align: center;
     margin: 20px 0;
-    color: #333;
+    color: white;
 }
 
 .team-container {
@@ -31,8 +37,6 @@
 }
 
 .team-image {
-    width: 100px;
-    height: 100px;
     border-radius: 50%;
     margin-bottom: 15px;
 }

@@ -1,4 +1,4 @@
-@font-face{
+/* @font-face{
   font-family: 'Nico';
   src: url('./assets/fonts/NicoMoji-Regular.ttf') format('truetype');
   font-weight: normal;
@@ -36,7 +36,7 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+
 }
 
 h1 {
@@ -74,4 +74,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

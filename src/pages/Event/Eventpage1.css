@@ -1,67 +1,17 @@
-.events-page {
-  position: relative;
-  height: 100vh;
+.events-list-page {
   width: 100vw;
-  overflow-y: auto;
+}
+
+.parents {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  background-color: #0E0516;
-  z-index: 2;
-}
-
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: fit-content;
-  z-index: -1;
-  display: flex;
-  flex-direction: column;
-  background-color: transparent;
-  filter: blur(10px);
-}
-
-.background img {
-  width: 100%;
-  height: fit-content;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: -1;
-
-}
-
-.events {
-  text-align: center;
-  color: white;
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-
-}
-
-.events .youthopia-logo {
-  margin-top: -20rem;
-}
-
-header {
-  font-size: 3em;
-  margin-bottom: 10px;
-}
-
-p {
-  margin-bottom: 20px;
-  font-family: Montserrat;
-  font-size: 1em;
 }
 
 .tab-buttons {
   display: flex;
   font-size: 2em;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 20px;
   margin-bottom: 20px;
   border: none;
@@ -84,71 +34,39 @@ p {
   color: #FF9F83;
 }
 
-.tab-content {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  background-color: transparent;
-}
 
-.parents {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.bgelements {
-  position: relative;
-  width: 100%;
-
-  height: 100vh;
-}
-
-#bg1,
-#bg2,
-#bg3,
-#bg4 {
-  position: fixed;
-  z-index: 10;
-}
-
-#bg1 {
-  position: fixed;
-  top: 5vh;
-  right: 0;
-  width: 20vw;
-  height: auto;
-}
-
-#bg2 {
-  position: fixed;
-  bottom: -5vh;
+.background-wrapper {
+  position: absolute;
+  top: 0;
   left: 0;
-  width: 25vw;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-#bg3 {
-  position: fixed;
-  top: 10px;
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure image covers the area */
+  z-index: -1; /* Ensure the image is behind the content */
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
   left: 0;
-  width: 20vw;
-  height: auto;
-
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)); /* Gradient effect */
+  z-index: -1; /* Ensure gradient is behind the content, but over the image */
 }
 
-#bg4 {
-  position: fixed;
-  bottom: 10px;
-  right: vw;
-  width: 30vw;
-  height: auto;
+.clubs {
+  z-index: 100;
+}
 
+@media only screen and (max-width: 768px) {
+  .tab-buttons {
+    font-size: 1em;
+  }
 }

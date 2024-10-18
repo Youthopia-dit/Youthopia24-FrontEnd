@@ -1,5 +1,6 @@
 import React from "react";
 import './Homepage.css';
+import event1 from "../../assets/tech01.png";
 import centerElement from '../../assets/center-element-full.png'
 import Youthopia from '../../assets/youthopia-logo.png'
 import Timer from '../../components/homeTimer/Timer'
@@ -22,6 +23,7 @@ import H10 from '../../assets/Gallery/H10.jpg';
 import "../../components/card-list/Glimpse";
 import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/Footer";
+import DITLOGO from "../../assets/ditlogo.png";
 
 const imagesCarousel1 = [
     { id: 1, src: H1 },
@@ -29,18 +31,18 @@ const imagesCarousel1 = [
     { id: 3, src: H3 },
 ];
 
-const imagesCarousel2 = [
-    { id: 4, src: H4 },
-    { id: 5, src: H5 },
-    { id: 6, src: H6 },
-];
+// const imagesCarousel2 = [
+//     { id: 4, src: H4 },
+//     { id: 5, src: H5 },
+//     { id: 6, src: H6 },
+// ];
 
-const imagesCarousel3 = [
-    { id: 7, src: H7 },
-    { id: 8, src: H8 },
-    { id: 9, src: H9 },
-    { id: 10, src: H10 },
-];
+// const imagesCarousel3 = [
+//     { id: 7, src: H7 },
+//     { id: 8, src: H8 },
+//     { id: 9, src: H9 },
+//     { id: 10, src: H10 },
+// ];
 
 function Carousel({ images, direction }) {
     return (
@@ -52,7 +54,6 @@ function Carousel({ images, direction }) {
                             <img src={image.src} alt={`Event ${image.id}`} />
                         </div>
                     ))}
-                    {/* Duplicate the first few images for infinite effect */}
                     {images.slice(0, 2).map(image => (
                         <div className="image-card" key={image.id + 10}>
                             <img src={image.src} alt={`Event ${image.id}`} />
@@ -79,24 +80,58 @@ function Homepage() {
 
                     <div className="coming-soon-home">
                         <div className="coming-soon-content">
-                            <div className="logos">
-                            <img src={Youthopialogo} alt="youthopia" className="youthopia-icon" />
-                            <div className="presents-text">
-                                Presents
-                            <img src={NAAC} alt="Naaclogo" className="NAAClogo" />
+
+                            <div className="DIT-main">
+                                <img src={DITLOGO} alt="DITlogo" className="DITlogo" />
                             </div>
+                            <div className="logos">
+                                <img src={Youthopialogo} alt="youthopia" className="youthopia-icon" />
+                                <div className="presents-text">
+                                    Presents
+                                    <img src={NAAC} alt="Naaclogo" className="NAAClogo" />
+                                </div>
                             </div>
                             <div className="logo-image">
                                 <img src={Youthopia} className="coming-soon-youthopia"></img>
                             </div>
+                            <div className="presents-text">
+                                <p className="Desc">Annual Techno-Cultural Fest</p>
+                            </div>
                             <Timer />
+                            {/* <div className="sponsors-home">
+                                <p className="sponsors-text">SPONSORS</p>
+                                <div className="sponsors-logos">
+                                    <img src={NAAC} alt="Naaclogo" className="Slogo" />
+                                    <img src={NAAC} alt="Naaclogo" className="Slogo" />
+                                    <img src={NAAC} alt="Naaclogo" className="Slogo" />
+                                    <img src={NAAC} alt="Naaclogo" className="Slogo" />
+                            </div>
+                            </div> */}
+
+                            {/* <div className="events-home">
+                                <p className="events-text">EVENTS</p>
+                                <div className="events-row">
+                                    <div className="events-img">
+                                        <img src={event1} alt="event1" className="Elogo" />
+                                    </div>
+                                    <div className="events-img">
+                                        <img src={event1} alt="event1" className="Elogo" />
+                                    </div>
+                                    <div className="events-img">
+                                        <img src={event1} alt="event1" className="Elogo" />
+                                    </div>
+                                    <div className="events-img">
+                                        <img src={event1} alt="event1" className="Elogo" />
+                                    </div>
+                                </div>
+                            </div> */}
                             <div className="presents-text">
                                 <p className="glimpse"> Glimpse from 2023 </p>
                             </div>
                             <div className="image-list">
                                 <Carousel images={imagesCarousel1} direction="left-to-right" />
-                                <Carousel images={imagesCarousel2} direction="right-to-left" />
-                                <Carousel images={imagesCarousel3} direction="left-to-right" />
+                                {/* <Carousel images={imagesCarousel2} direction="right-to-left" />
+                                <Carousel images={imagesCarousel3} direction="left-to-right" /> */}
                             </div>
                         </div>
                         <img src={centerElement} alt="center element" className="center-element" />
