@@ -27,43 +27,54 @@ function Signifno() {
   return (
     <>
       <div className="main">
-        <div class="background">
+        <div className="background">
           <img src={bg1} alt="bg-page" />
         </div>
-        <div class="bordernp">
+        <div className="bordernp">
           <div>
             <img src={youthopia_logo} alt="logo" id="logo" />
           </div>
           <h2 className="sign_no">Non DITian</h2>
-          <form>
-            <input
-              id="text"
-              type="text"
-              name="collegeName"
-              placeholder="College Name"
-              onChange={handleChange}
-            />
-            <input
-              id="text"
-              type="text"
-              name="year"
-              placeholder="Year"
-              onChange={handleChange}
-            />
-            <input
-              id="text"
-              type="text"
-              name="branch"
-              placeholder="Branch"
-              onChange={handleChange}
-            />
-            <input
-              id="text"
-              type="text"
-              name="governmentId"
-              placeholder="Government ID (Aadhar/DL)"
-              onChange={handleChange}
-            />
+          <form onSubmit={handleSubmit}>
+            <div>
+              <p>
+                <input
+                  id="text"
+                  type="text"
+                  name="collegeName"
+                  placeholder="College Name"
+                  onChange={handleChange}
+                />
+              </p>
+              <p>
+                <input
+                  id="text"
+                  type="text"
+                  name="year"
+                  placeholder="Year"
+                  onChange={handleChange}
+                />
+              </p>
+              <p>
+                <input
+                  id="text"
+                  type="text"
+                  name="branch"
+                  placeholder="Branch"
+                  onChange={handleChange}
+                />
+              </p>
+              <p>
+                <input
+                  id="text"
+                  type="text"
+                  name="governmentId"
+                  placeholder="Government ID (Aadhar/DL)"
+                  onChange={handleChange}
+                />
+              </p>
+            </div>
+
             <button type="submit" id="Next" className="button">Log In</button>
           </form>
         </div>

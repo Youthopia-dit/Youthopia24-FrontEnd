@@ -30,8 +30,8 @@ function Signuppage() {
       const data = await response.json();
       if (response.ok) {
         alert("Signup Successful!");
-        console.log(data); 
-        navigate("/loginpage"); 
+        console.log(data);
+        navigate("/loginpage");
       } else {
         alert(data.message || "Signup failed, please try again.");
       }
@@ -44,25 +44,35 @@ function Signuppage() {
   return (
     <>
       <div className="main">
-        <div class="background">
+        <div className="background">
           <img src={bg1} alt="bg-page" />
         </div>
-        <div class="bordernp">
+        <div className="bordernp">
           <div>
             <img src={youthopia_logo} alt="logo" id="logo" />
           </div>
           <h2> Welcome </h2>
           <h3> Sign up to continue </h3>
-          <form onSubmit={handleSubmit}>
-            <input id="text" type="text" name="name" placeholder="Name" onChange={handleChange} />
-            <input id="text" type="email" name="email" placeholder="E-mail" onChange={handleChange} />
-            <input id="text" type="password" name="password" placeholder="Password" onChange={handleChange} />
-            <input id="text" type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} />
-            <button type="submit" id="Next">Next</button>
+          <form onSubmit={handleSignUp}>
+            <div>
+              <p>
+                <input id="text" type="text" name="name" placeholder="Name" onChange={handleChange} />
+              </p>
+              <p>
+                <input id="text" type="email" name="email" placeholder="E-mail" onChange={handleChange} />
+              </p>
+              <p>
+                <input id="text" type="password" name="password" placeholder="Password" onChange={handleChange} />
+              </p>
+              <p>
+                <input id="text" type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} />
+              </p>
+              <button type="submit" id="Next">Next</button>
+            </div>
           </form>
-        </div>
+        </div >
 
-      </div>
+      </div >
     </>
   );
 }

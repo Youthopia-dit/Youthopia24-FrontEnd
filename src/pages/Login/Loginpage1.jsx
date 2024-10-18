@@ -10,11 +10,11 @@ function Loginpage1() {
   return (
     <>
       <div className="main">
-        <div class="background">
+        <div className="background">
           <img src={bg1} alt="bg-page" id="ab" />
         </div>
 
-        <div class="bordernp">
+        <div className="bordernp">
           <div>
             <img src={youthopia_logo} alt="logo" id="logo" />
           </div>

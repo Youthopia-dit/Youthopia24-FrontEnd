@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Loginpage.css";
 import bg1 from "../../assets/bg1.png";
 import youthopia_logo from "../../assets/youthopia-logo.png";
+import { useNavigate } from "react-router-dom";
 
 function Loginpage() {
   const [email, setEmail] = useState("");
@@ -22,7 +23,7 @@ function Loginpage() {
       const data = await response.json();
       if (response.ok) {
         alert("Login Successful!");
-        console.log(data); 
+        console.log(data);
         navigate("/");
       } else {
         alert(data.message || "Login failed, please try again.");
@@ -36,37 +37,43 @@ function Loginpage() {
   return (
     <>
       <div className="main">
-        <div class="background">
+        <div className="background">
           <img src={bg1} alt="bg-page" className="bgimage" />
         </div>
-        <div class="bordernp">
+        <div className="bordernp">
           <div>
             <img src={youthopia_logo} alt="logo" id="logo" />
           </div>
           <h2> Welcome </h2>
           <h3>Login to continue</h3>
           <form onSubmit={handleLogin}>
-            <input
-              id="button"
-              type="email"
-              name="email"
-              placeholder="E-mail:"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input
-              id="button"
-              type="password"
-              name="password"
-              placeholder="Password:"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <button id="Next" className="button" type="submit">
-              NEXT
-            </button>
+            <div>
+              <p>
+                <input
+                  id="button"
+                  type="email"
+                  name="email"
+                  placeholder="E-mail:"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </p>
+              <p>
+                <input
+                  id="button"
+                  type="password"
+                  name="password"
+                  placeholder="Password:"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </p>
+              <button id="Next" className="button" type="submit">
+                NEXT
+              </button>
+            </div>
           </form>
         </div>
 

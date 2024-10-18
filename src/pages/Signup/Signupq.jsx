@@ -11,17 +11,17 @@ function Signupq() {
     if (userType === "DIT") {
       navigate("/signup/dit");
     } else {
-      navigate("signup/non-dit");
+      navigate("/signup/non-dit");
     }
   };
 
   return (
     <>
       <div className="main">
-        <div class="background">
+        <div className="background">
           <img src={bg1} alt="bg-page" />
-          </div>
-        <div class="bordernp">
+        </div>
+        <div className="bordernp">
           <div>
             <img src={youthopia_logo} alt="logo" id="logo" />
           </div>
@@ -29,12 +29,16 @@ function Signupq() {
           <h1 className="Dit"> Are you a DIT student ?</h1>
           <form>
             <div>
-            <button id="Login" onClick={() => handleNavigation("DIT")}>Yes</button>
-            <button id="Login" onClick={() => handleNavigation("Non-DIT")}>No</button>
+              <p>
+                <button id="Login" onClick={() => handleNavigation("DIT")}>Yes</button>
+              </p>
+              <p>
+                <button id="Login" onClick={() => handleNavigation("Non-DIT")}>No</button>
+              </p>
             </div>
           </form>
         </div>
-       
+
       </div>
     </>
   );
