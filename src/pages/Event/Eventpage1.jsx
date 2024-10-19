@@ -49,10 +49,10 @@ const EventPage = () => {
   return (
     <div className="events-list-page">
       <div className="event-page-background">
-      <div className="background-wrapper">
+      {/* <div className="background-wrapper">
         <img src={TechBack} alt="Background" className="background-image" />
         <div className="gradient-overlay"></div>
-      </div>
+      </div> */}
       </div>
       <div className="clubs">
         <div className="tab-buttons">

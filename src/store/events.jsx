@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Create the context
 const EventContext = createContext();
-
+const baseUrl = 'https://27.123.248.68:4000'
 // Provider component
 export const EventProvider = ({ children }) => {
     const [events, setEvents] = useState([]);
@@ -11,7 +11,7 @@ export const EventProvider = ({ children }) => {
     // Function to call the API
     const fetchEvents = async () => {
         try {
-            const response = await axios.get('https://youthopia24-backend.onrender.com/api/events');
+            const response = await axios.get(`${baseUrl}/api/events`);
             console.log(response.data.events)
             setEvents(response.data.events);
             console.log(events)
