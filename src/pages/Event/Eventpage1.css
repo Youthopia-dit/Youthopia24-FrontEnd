@@ -1,9 +1,14 @@
 .events-list-page {
   width: 100vw;
-  
+  overflow-x: hidden;
   background-color: #0E0516; 
+
  
   
+}
+.event-page-background{
+  display: flex;
+  align-items: center;
 }
 
 .Events{
@@ -67,16 +72,16 @@
   z-index: 1;
   background-size: cover;
   object-fit: cover;
-  filter: brightness(0.4);
+  filter: brightness(0.8);
 }
 
 .cultural-back-image {
   position: absolute;
-  width: 100%;
+  width: 102%;
   z-index: 1;
   background-size: cover;
   object-fit: cover;
-  filter: brightness(0.9);
+  filter: brightness(0.5);
 }
 .informal-back-image {
   position: absolute;
@@ -84,7 +89,7 @@
   z-index: 1;
   background-size: cover;
   object-fit: cover;
-  filter: brightness(0.4);
+  filter: brightness(1);
 }
 .gradient-overlay {
   position: absolute;
@@ -103,7 +108,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(135, 0, 254, 0), rgba(102, 0, 227, 0));
+  background: linear-gradient(to bottom, rgba(135, 0, 254, 0), rgba(0, 0, 0, 0.829));
   /* Gradient effect */
   z-index: 1;
   
@@ -120,19 +125,122 @@
   
 }
 
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center all children within the flex container */
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.top img {
+  width: 60%;
+  height: auto;
+  align-self: center; /* Optional, if you only want to align the image */
+}
+
+.top h1 {
+  width: 40%;
+  text-align: center;
+  color: azure;
+  font-size: 3rem; /* Adjust the font size as needed */
+  margin: 3px ; /* Add some margin for spacing */
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  
+}
+
+.top p {
+  text-align: center; 
+  color: azure;
+  font-size: 1.5rem; 
+  margin-top: -10px;
+  font-family: "Montserrat", sans-serif ;
+  font-weight: 400;
+}
 
 
 .clubs {
  position: relative;
   z-index: 10;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 @media only screen and (max-width: 768px) {
   .events-heading {
     font-size: 2em; 
   }
+  .top h1 {
+    font-size: 2.2rem; /* Reduce heading size */
+  }
   
   .tab-buttons {
-    font-size: 2em;
+    font-size: 1em;
+  }
+
+  .tab-buttons button{
+    font-size: 1em;
+  }
+  .event-page-background{
+    background-size: cover;  
+    align-items: center;
+  }
+}
+  @media only screen and (max-width: 425px) {
+    .top img {
+      width: 300px; /* Smaller image size for smaller screens */
+    }
+  
+    .top h1 {
+      font-size: 2rem; /* Adjust heading size */
+      width: 70%; /* Adjust width for heading to fit within mobile view */
+    }
+  
+    .top p {
+      font-size: 1rem; /* Reduce paragraph font size */
+    }
+  
+    .tab-buttons button {
+      font-size: 14px; /* Adjust tab button font size */
+      padding: 8px 12px; /* Adjust padding for smaller buttons */
+    }
+  
+    .event-page-background {
+      background-size: cover;
+      align-items: center;
+    }
+  
+    .Events {
+      padding: 10px 80px 100px; /* Adjust padding for the image */
+    }
+  
+    .parents {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+/* Responsive design for 375px */
+@media only screen and (max-width: 375px) {
+  .top img {
+    width: 250px; /* Adjust image width for smaller screens */
+  }
+
+  .top h1 {
+    font-size: 1.8rem; /* Further reduce heading size */
+  }
+
+  .top p {
+    font-size: 0.9rem; /* Reduce paragraph font size */
+  }
+
+  .tab-buttons button {
+    font-size: 12px; /* Further adjust tab button font size */
+  }
+
+  .Events {
+    padding: 10px 150px 80px; /* Further adjust padding */
   }
 }
