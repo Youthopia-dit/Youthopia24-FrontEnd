@@ -67,24 +67,45 @@ const IndividualEvent = () => {
               {activeTab === 'coordinators' && (
                 <div className="event-coor-list">
                   <>
-                    <strong>Event Coordinators:</strong>
-                    <ul className="event-rule-list">
-                      {Object.entries(eventDetails.coordinator).map(([name, number]) => (
-                        <li key={name}>
-                          <strong>{name}:</strong> {number}
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                  <>
-                    <strong>Event Heads:</strong>
-                    <ul className="event-rule-list">
-                      {Object.entries(eventDetails.overall_head).map(([name, number]) => (
-                        <li key={name}>
-                          <strong>{name}:</strong> {number}
-                        </li>
-                      ))}
-                    </ul>
+                  
+                  <div className="event-coor-list">
+  <strong className='tablehead' >Event Coordinators:</strong>
+  <table className="event-coor-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Contact Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      {Object.entries(eventDetails.coordinator).map(([name, number]) => (
+        <tr key={name}>
+          <td><strong>{name}</strong></td>
+          <td>{number}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <strong className='tablehead' >Event Heads:</strong>
+  <table className="event-head-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Contact Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      {Object.entries(eventDetails.overall_head).map(([name, number]) => (
+        <tr key={name}>
+          <td><strong>{name}</strong></td>
+          <td>{number}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
                   </>
                 </div>
               )}

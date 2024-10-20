@@ -80,9 +80,55 @@
   padding: 1rem;
 }
 
+.event-coor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  padding: 5px;
+  
+}
+
+.event-coor-table,
+.event-head-table {
+  width: 100%; 
+  border-collapse: collapse;
+}
+
+.event-coor-table th,
+.event-head-table th,
+.event-coor-table td,
+.event-head-table td {
+  border: 1px solid white; 
+  padding: 10px; 
+  text-align: left; 
+}
+
+.event-coor-table th,
+.event-head-table th {
+  background-color: rgba(255, 255, 255, 0.1); 
+  color: white; 
+}
+
+.event-coor-table tr:nth-child(even),
+.event-head-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tablehead{
+  font-size: 1.5em;
+  margin-left: 10px;
+  text-decoration: underline;
+}
+
+
+
+
+
 .event-rule-list{
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  border : 3px solid white;
 }
 
 .tab-navigation {
@@ -132,8 +178,9 @@
 }
 
 .register-btn{
-width: 28%;
-height: 7vh;
+  margin-top: 1%;
+  width: 28%;
+height: 6vh;
 border: none;
 cursor: pointer;
 border-radius: 5px;
