@@ -3,41 +3,38 @@ import "./Signuppage.css";
 import bg1 from "../../assets/bg1.png";
 import youthopia_logo from "../../assets/youthopia-logo.png";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function Signuppage() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+const Signuppage = () => {
+  const [formData, setFromData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const [confrimPassword, setConfirmPassword] = useState("");
+  // const [tempStorage, setTempStorage] = useState(null);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSignup = async (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Passwords do not match!");
-      return;
+    if (formData.password !== confirmPassword) {
+      return setError("Passwords do not match.");
     }
-
     try {
-      const response = await fetch("https://youthopia24-backend.onrender.com/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, password }),
-      });
-
-      const data = await response.json();
-      if (response.ok) {
-        alert("Signup Successful!");
-        console.log(data);
-        navigate("/loginpage");
-      } else {
-        alert(data.message || "Signup failed, please try again.");
-      }
+      const response = await axios.post(
+        "http://localhost:3000/api/signup",
+        formData
+      );
+      alert(response.data.message);
+      // Navigate to OTP verification with email as state
+      navigate("/verify-otp", { state: { email: formData.email } });
     } catch (error) {
-      console.error("Error during signup:", error);
-      alert("Server error, please try again later.");
+      setError(error.response?.data?.message || "Signup failed.");
     }
   };
 
@@ -53,10 +50,10 @@ function Signuppage() {
           </div>
           <h2> Welcome </h2>
           <h3> Sign up to continue </h3>
-          <form onSubmit={handleSignUp}>
+          <form onSubmit={handleSubmit}>
             <div>
               <p>
-                <input id="text" type="text" name="name" placeholder="Name" onChange={handleChange} />
+                <input id="text" type="text" name="name" placeholder="Name"  onChange={handleChange} />
               </p>
               <p>
                 <input id="text" type="email" name="email" placeholder="E-mail" onChange={handleChange} />
@@ -67,7 +64,8 @@ function Signuppage() {
               <p>
                 <input id="text" type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} />
               </p>
-              <button type="submit" id="Next">Next</button>
+              <button type="submit" id="Next">Sign Up</button>
+              {error && <p>{error}</p>}
             </div>
           </form>
         </div >
@@ -75,6 +73,6 @@ function Signuppage() {
       </div >
     </>
   );
-}
+};
 
 export default Signuppage;

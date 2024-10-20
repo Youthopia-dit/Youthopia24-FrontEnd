@@ -3,34 +3,28 @@ import "./Loginpage.css";
 import bg1 from "../../assets/bg1.png";
 import youthopia_logo from "../../assets/youthopia-logo.png";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function Loginpage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+const Loginpage = () => {
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCredentials({ ...credentials, [name]: value });
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://youthopia24-backend.onrender.com/loginpage", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await response.json();
-      if (response.ok) {
-        alert("Login Successful!");
-        console.log(data);
-        navigate("/");
-      } else {
-        alert(data.message || "Login failed, please try again.");
-      }
+      const response = await axios.post(
+        "https://youthopia24-backend.onrender.com/login",
+        credentials,
+        { withCredentials: true } // Send cookies with the request
+      );
+      alert(response.data.message);
+      localStorage.setItem("authToken", response.data.token); // Store token in localStorage
+      navigate("/"); // Redirect to home
     } catch (error) {
-      console.error("Error during login:", error);
-      alert("Server error, please try again later.");
+      alert(error.response.data.message);
     }
   };
 
@@ -54,8 +48,8 @@ function Loginpage() {
                   type="email"
                   name="email"
                   placeholder="E-mail:"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={credentials.email}
+                  onChange={handleChange}
                   required
                 />
               </p>
@@ -65,8 +59,8 @@ function Loginpage() {
                   type="password"
                   name="password"
                   placeholder="Password:"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={credentials.password}
+                  onChange={handleChange}
                   required
                 />
               </p>

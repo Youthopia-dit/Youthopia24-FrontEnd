@@ -13,6 +13,7 @@ import Homepage from './pages/Home/Homepage';
 import Eventpage from './pages/Event/Eventpage1';
 import IndividualEvent from './pages/Event/Individual/Individualpage';
 import TeamPage from './pages/Team/Teampage';
+import VerifyOtpPage from './pages/Signup/VerifyOtpPage';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/event-details" element={<IndividualEvent />}/>
           <Route path="/team" element={<TeamPage />}/>
           <Route path="/about" element={<Aboutuspage/>}/>
+          <Route path="/verify-otp" element={<VerifyOtpPage/>}/>
         </Routes>
       </BrowserRouter>
     </>
