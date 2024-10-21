@@ -16,6 +16,7 @@
     margin: 0;
     padding-top: 2rem;
     font-family: 'Dela Gothic One', sans-serif;
+    word-spacing: 10px;
 }
 
 .about-youthopia-main {
@@ -35,6 +36,7 @@
 
 .containermain2-text {
     width: auto;
+
 }
 
 .about-youthopia-main .containermain2-text {
@@ -84,7 +86,7 @@
     -webkit-box-orient: 'vertical';
     overflow: 'hidden';
     display: 'webkit-box';
-
+    font-family: 'Montserrat', sans-serif;
 }
 
 .heading {
@@ -164,6 +166,7 @@ p.text {
     display: flex;
     gap: 2rem;
     align-items: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .read-more-content {
@@ -184,8 +187,7 @@ p.text {
     gap: 2rem;
     align-items: center;
     padding-bottom: 5vw;
-    
-
+    font-family: 'Montserrat', sans-serif;
 }
 
 ul {
@@ -199,11 +201,13 @@ ul {
     font-size: 34px;
     color: rgb(255, 255, 255);
     font-family: 'Dela Gothic One', sans-serif;
+    word-spacing: 10px;
 }
 
 .fromthedesktext {
     font-size: 40px;
     font-family: 'Dela Gothic One', sans-serif;
+    word-spacing: 10px;
 }
 
 .containermain3 .containermain2-pic {

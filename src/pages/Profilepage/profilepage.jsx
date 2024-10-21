@@ -9,19 +9,19 @@ function ProfilePage(){
                         <h3 className="heading">Profile photo</h3>
                     </div>
                     <div className="contact">
-                        <h2 align="left" className="contactinfo">Phone: 1234567890 <br /> Email: example@gmail.com</h2>
+                        <h3 className="contactinfo">Phone: 1234567890 <br /> Email: example@gmail.com</h3>
                     </div>
                     </div>
                     <div className="mainheading">
-                        <div className="bgplate"><h2 className="text">Your Name : Name</h2></div>
+                        <div className="bgplate"><h2 className="text"> Your Name : Name</h2></div>
                         {/* <h3>Name</h3> */}
-                        <div className="bgplate"><h2 className="text">College: DIT</h2></div>
+                        <div className="bgplate"><h2 className="text"> College: DIT</h2></div>
                         {/* <h3>DIT</h3> */}
-                        <div className="bgplate"><h2 className="text">College ID: ID</h2></div>
+                        <div className="bgplate"><h2 className="text"> College ID: ID</h2></div>
                         {/* <h3>ID</h3> */}
-                        <div className="bgplate"><h2 className="text">Branch: CSE</h2></div>
+                        <div className="bgplate"><h2 className="text"> Branch: CSE</h2></div>
                         {/* <h3>CSE</h3> */}
-                        <div className="bgplate"><h2 className="text">Year: 2nd</h2></div>
+                        <div className="bgplate"><h2 className="text"> Year: 2nd</h2></div>
                     </div>
                 </div>
                 <br />

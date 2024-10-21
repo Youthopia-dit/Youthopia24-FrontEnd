@@ -5,15 +5,17 @@
     background-color: black; 
     background-image: url('../../assets/bg.png');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    padding: 10px;
 }
 .image{
     margin-left: 95px;
     margin-top: 100px;
     height: 300px;
-    width: 500px;
+    width: 40vw;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 25px;
+    margin-bottom: 15px;
 }
 .heading{
     text-align: center;
@@ -25,17 +27,27 @@
     width: 30vw;
     text-align: center;
     font-size: smaller;
-    margin-top: 80px;
+    margin-top: 80px; 
+}
+.bgplate{
+    margin-bottom: 10px;
+    height: 65px;
+    padding-top: 20px;
+    padding-left: 10px;
 }
 .contact{
     margin-top: auto;
-    width: 30vw;
-    margin-left: 65px;
+    width: 40vw;
+    height: 90px;
+    margin-left: 85px;
     margin-right: 50px;
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
+    padding-top: 10px;
+   
 }
+
 .button{
     height: 100px;
     width: 300px;
@@ -57,6 +69,7 @@
     align-items: center;
     
 }
+
 .events{
     /* margin-left: 200px; */
     height: 200px;
@@ -70,24 +83,30 @@
     width: 350px;
 }
 .text{
-    padding: 30px;
+    padding: 0px;
     text-align: left;
 }
 .register{
     text-align: center;
     width: 95vw;
 }
-@media only screen and (max-width: 500px){
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+@media only screen and (max-width: 768px){
     .ProfilePage{
-        background-image: url('../../assets/Bg-vertical.png');
-        background-size: 100% 1000px;
-        background-attachment: fixed;
+        background-color: black; 
+        background-image: url('../../assets/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+
     }
     .image{
-        height:200px;
-        width: 200px;
-        margin-left: 30px;
-        margin-left: 25%;
+        height:40vh;
+        width: 70vw;
+        margin-left: 15%;
     }
     .info{
         display: flex;
@@ -97,19 +116,20 @@
         width: 70%;
         margin-top: 30px;
         height: 75px;
-        width: 350px;
-        margin-left: 10%;
+        width: 70vw;
+        margin-left: 15%;
+        padding: 0;
     }
     .mainheading{
-        margin-left: 10%;
+        margin-left: 15%;
         margin-top: 15px;
     }
     .text{
-        width: 300px;
+        width: 70vw;
     }
     .bgplate{
         margin-top: 30px;
-        width: 350px !important;
+        width: 70vw !important;
     }
     .register{
         font-size: 25px;
@@ -123,13 +143,77 @@
         /* font-size: 15px; */
         font-size: 20px;
         margin-top: 35px;
-        font-size: 20px;
         padding-top: 10px;
 
     }
     .events{
         margin-left: 15px;
     }
+}
+@media only screen and (max-width: 426px){
+    .ProfilePage{
+        background-color: black; 
+        background-image: url('../../assets/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .image{
+        height:30vh;
+        width: 70vw;
+        margin-left: 15%;
+    }
+    .contact{
+        width: 70%;
+        margin-top: 30px;
+        height: 75px;
+        width: 70vw;
+        margin-left: 15%;
+    }
+    .mainheading{
+        margin-left: 15%;
+        margin-top: 15px;
+    }
+    .text{
+        width: 70vw;
+        text-wrap: wrap;
+    }
+    .bgplate{
+        width: 70vw !important;
+    }
+  
+}
+@media only screen and (max-width: 320px) {
+    .ProfilePage{
+        background-color: black; 
+        background-image: url('../../assets/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+        }
+        .image{
+            height:30vh;
+            width: 70vw;
+            margin-left: 10%;
+        }
+        .bgplate{
+            margin-bottom: 15px;
+        }
+        .contact{
+            width: 50%;
+            
+            width: 70vw;
+            margin-left: 10%;
+        }
+        .mainheading{
+            margin-left: 10%;
+        }
+        .text{
+            width: 70vw;
+        }
+        .bgplate{
+            width: 70vw !important;
+        }
+      
 }
 /* @media only screen and (min-width:501px)and (max-width: 1000px){ */
     /* .contact{
@@ -171,7 +255,7 @@
 .bgplate{
     /* background-color: rgba(80, 79, 79, 0.5); */
     background: rgba(255, 255, 255, 0.1);
-    width: 55vw;
+    width: 40vw;
     border-radius: 25px;
 }
 .ele2{

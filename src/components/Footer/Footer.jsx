@@ -32,21 +32,20 @@ const Footer = () => {
                         <p>📍 DIT University,</p>
                         <p>Mussoorie - Diversion Road, Village Makkawala,</p><p> Dehradun, Uttarakhand - 248009, India</p>
                     </div>
+                    <div className="footer-image">
+                    <img src={Campus} alt="Campus" />
+                </div>
                     <div className="footer-contact">
                         <p>📞 1800121041000</p>
                     </div>
                 </div>
-                <div className="footer-image">
-                    <img src={Campus} alt="Campus" />
-                </div>
-
+                
             </div>
             <div className="footer-bottom">
                 <img src={NAAC} alt="Accreditation Logo" className="footer-logo" />
                 <div className="design-credit">
                     <p>Design & Developed By Technical Team Youthopia 2024</p>
                 </div>
-                <img src={YLogo} alt="Youthopia Logo" className="footer-logo" />
                 <img src={DITLogo} alt="DIT University Logo" className="footer-logo" />
             </div>
 
