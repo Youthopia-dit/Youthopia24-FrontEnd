@@ -13,7 +13,7 @@ const IndividualEvent = () => {
 
   const [activeTab, setActiveTab] = useState("description");
 
-  if (!eventDetails) return <p>Event not found</p>;
+  if (!eventDetails) return <p>Event details not found</p>;
 
   const teamSizes = eventDetails.prices.map((price) => price.teamSize);
 
