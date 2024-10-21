@@ -3,6 +3,9 @@ import "./Individualpage.css";
 import Navbar from "../../../components/Navbar/navbar";
 import { useLocation } from "react-router-dom";
 import Footer from "../../../components/Footer/Footer";
+import TechBack from "../../../assets/Events-Elements/tech_back.png";
+import CulturalBack from "../../../assets/Events-Elements/image 397.png";
+import InformalBack from "../../../assets/Events-Elements/informal_back.png";
 
 const IndividualEvent = () => {
   const location = useLocation();
@@ -14,15 +17,43 @@ const IndividualEvent = () => {
 
   const teamSizes = eventDetails.prices.map((price) => price.teamSize);
 
+  // Function to render the background based on the event category
+  const renderBack = () => {
+    if (eventDetails.category === "tech") {
+      return (
+        <div className="background-wrapper">
+          <img src={TechBack} alt="Tech background" className="tech-back-image" />
+          <div className="gradient-overlay"></div>
+        </div>
+      );
+    } else if (eventDetails.category === "cul") {
+      return (
+        <div className="background-wrapper">
+          <img src={CulturalBack} alt="Cultural background" className="cultural-back-image" />
+          <div className="gradient-overlay2"></div>
+        </div>
+      );
+    } else if (eventDetails.category === "inf") {
+      return (
+        <div className="background-wrapper">
+          <img src={InformalBack} alt="Informal background" className="informal-back-image" />
+          <div className="gradient-overlay"></div>
+        </div>
+      );
+    }
+  };
+
   return (
     <>
-      <Navbar />
+      
       <div className="individual-event">
+        {renderBack()}
+
         <div className="event-container">
           <div className="event-poster">
             <img src={eventDetails.event_poster} alt="event-poster" />
           </div>
-          <div className="event-details">
+          <div className="event-detail">
             <h2 className="event-title">{eventDetails.event_name}</h2>
             <div className="event-info">
               <span className="event-data">
@@ -132,10 +163,7 @@ const IndividualEvent = () => {
               {activeTab === "fees" && (
                 <div className="event-section">
                   <strong>Fees:</strong> <span>{eventDetails.fees}</span>
-                  <table
-                    border="1"
-                    style={{ width: "100%", textAlign: "center" }}
-                  >
+                  <table className="fees-table">
                     <thead>
                       <tr>
                         <th></th>
