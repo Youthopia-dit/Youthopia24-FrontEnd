@@ -1,86 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .individual-event {
   background-color: #0E0516;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100vw;
   height: auto;
   min-height: 150vh;
   position: relative;
   padding-bottom: 5rem;
-  overflow: hidden;
-}
-
-.event-page-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.tech-back-image,
-.cultural-back-image,
-.informal-back-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-size: cover;
-  filter: brightness(0.8);
-}
-
-.gradient-overlay,
-.gradient-overlay2,
-.gradient-overlay3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
-  /* Fades into darker shades */
+  
 }
 
 .event-container {
-  position: relative;
-  z-index: 3;
-  /* Higher z-index to place content on top of background */
   max-width: 90%;
-  margin: 10vw;
+  margin: auto;
   padding-top: 5rem;
   display: flex;
-
   gap: 2rem;
+  z-index: 100;
+  position: relative;
+  
 }
 
-.event-poster {
-  width: 100%;
-  /* Take full width of the container */
-  max-width: 500px;
-  /* You can set a max width to avoid the image getting too large */
-  margin: auto;
+.event-poster{
+  width: 40%;
 }
 
-.event-poster img {
+.event-poster img{
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  display: block;
-
 }
 
 .event-detail {
-  flex: 1.5;
-  background-color: rgba(40, 40, 39, 0.636);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #fff;
+  padding: 0;
+  background-color: rgba(42, 44, 47, 0.436);
 }
 
 .event-detail .event-title {
   font-size: 28px;
   font-family: 'Dela Gothic One', sans-serif;
   font-weight: 400;
+  font-style: normal;
+}
+
+.event-image {
+  flex: 1;
+  height: 600px;
+}
+.event-detail {
+  flex: 1.5;
+  background-color: transparent;
 }
 
 .event-info {
@@ -90,24 +67,110 @@
 
 .event-data {
   font-size: 20px;
+  color: aliceblue;
   font-family: 'Montserrat', sans-serif;
+}
+
+.event-section strong {
+  font-size: 20px;
+}
+
+.gradient {
+  position: absolute;
+  z-index: 5;
+}
+
+.event-desc{
+  font-size: 20px;
+  color: aliceblue;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1rem;
+}
+
+.event-coor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  padding: 5px;
+  
+}
+
+.event-coor-table,
+.event-head-table {
+  width: 100%; 
+  border-collapse: collapse;
+}
+
+.event-coor-table th,
+.event-head-table th,
+.event-coor-table td,
+.event-head-table td {
+  border: 1px solid white; 
+  padding: 10px; 
+  color: aliceblue;
+  text-align: left; 
+}
+
+.event-coor-table th,
+.event-head-table th {
+  background-color: rgba(255, 255, 255, 0.1); 
+  color: white; 
+}
+
+.event-coor-table tr:nth-child(even),
+.event-head-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tablehead{
+  font-size: 1.5em;
+  color: aliceblue;
+  margin-left: 10px;
+  text-decoration: underline;
+}
+
+.fees-table {
+  width: 100%;
+  text-align: center;
+  
+  border-collapse: collapse;
+}
+
+.fees-table th, .fees-table td {
+  border: 1px solid #ffffff;
+  padding: 10px;
+}
+.event-section {
+  color: aliceblue;
+}
+
+
+
+
+.event-rule-list{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border : 3px solid white;
 }
 
 .tab-navigation {
   display: flex;
   gap: 10px;
   margin-top: 20px;
+  width: 100%;
   justify-content: space-evenly;
 }
+
 
 .tab-navigation button {
   padding: 10px 20px;
   cursor: pointer;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   border: none;
   border-radius: 5px;
-  color: rgb(0, 0, 0);
-  width: auto;
+  color: black;
+  width: 10vw;
   height: 6.5vh;
   display: inline-block;
   text-align: center;
@@ -129,139 +192,165 @@
 
 .tab-content {
   margin-top: 20px;
+  width: 100%;
   border: 1px solid white;
-  padding: 1rem;
 }
 
-.register-btn {
-  margin-top: 1%;
-  width: 28%;
-  height: 6vh;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  background-color: white;
-  transition: background-color 0.3s ease, color 0.3s ease;
+.event-coor-list {
+  display: flex;
+}
+
+.register-btn{
+margin-top: 1px;
+width: 28%;
+height: 6vh;
+border: none;
+position: relative;
+left: 290px;
+cursor: pointer;
+border-radius: 5px;
+background-color: white;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+@media only screen and (max-width: 1440px){
+  
+  .event-poster img {
+    width: 100%;
+    height: 70%;
+    position: relative;
+    top: 30px;
+    object-fit: cover;
+  }
+
+  .register-btn {
+    width: 50%;
+    left: 50%;
+    padding: 10px 10px 22.5px;
+    transform: translateX(-50%);
+  }
+
+  .tab-navigation button {
+    width: 25%;
+    padding: 10px 10px 25px;
+  }
+ 
+
 }
 
 
-/* Media Queries for Responsiveness */
-@media (min-width: 475px) {
+@media only screen and (max-width: 1025px){
+  .event-poster img {
+    width: 100%;
+    height: 70%;
+    position: relative;
+    top: 30px;
+    object-fit: cover;
+  }
+
+  .register-btn {
+    width: 50%;
+    left: 50%;
+    padding: 10px 10px 22.5px;
+    transform: translateX(-50%);
+  }
+
+  .tab-navigation button {
+    width: 25%;
+    padding: 10px 10px 25px;
+  }
+ 
+
+}
+
+
+@media only screen and (max-width: 769px){
   .event-container {
     flex-direction: column;
-    /* Stack elements vertically */
+    gap: 1.5rem;
   }
 
   .event-poster {
     width: 100%;
-    /* Full width on small screens */
   }
-
-  .event-details {
-    flex: 1;
-    /* Adjust details section to occupy full width */
-    margin-top: 20px;
-    /* Add margin on top for separation */
-  }
-}
-
-@media (min-width: 640px) {
-  .event-details .event-title {
-    font-size: 26px;
-    /* Adjust font size for titles */
-  }
-
-  .event-data,
-  .event-section strong {
-    font-size: 19px;
-    /* Slightly larger font for data */
-  }
-
-  .tab-navigation button {
-    width: 30%;
-    /* Adjust button width for small tablets */
+  .event-poster img {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    left: 100px;
+    object-fit: cover;
   }
 
   .register-btn {
-    width: 40%;
-    /* Adjust button width for small tablets */
-  }
-}
-
-@media (min-width: 768px) {
-  .event-details .event-title {
-    font-size: 28px;
-    /* Font size for larger screens */
-  }
-
-  .event-data,
-  .event-section strong {
-    font-size: 20px;
-    /* Adjust font size for data */
+    width: 50%;
+    left: 50%;
+    padding: 10px 10px 22.5px;
+    transform: translateX(-50%);
   }
 
   .tab-navigation button {
-    width: 10vw;
-    /* Set button width */
-    height: 6.5vh;
-    /* Button height */
+    width: 25%;
+    padding: 10px 10px 25px;
   }
 
-  .register-btn {
-    width: 28%;
-    /* Adjust button width */
-  }
+
 }
-
-@media (min-width: 1024px) {
+@media only screen and (max-width: 426px){
   .event-container {
-    flex-direction: row;
-    /* Horizontal layout for desktop */
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .event-poster {
-    width: 40%;
-    /* Maintain original width on larger screens */
+    width: 100%;
   }
-
-  .event-details {
-    flex: 1.5;
-    /* Adjust details section */
-  }
-}
-
-@media (min-width: 1280px) {
-  .event-details .event-title {
-    font-size: 30px;
-    /* Larger title for very large screens */
-  }
-
-  .event-data,
-  .event-section strong {
-    font-size: 22px;
-    /* Increase font size for larger screens */
-  }
-
-  .tab-navigation button {
-    width: 8vw;
-    /* Adjust button size */
-  }
-}
-
-@media (min-width: 1536px) {
-  .event-details .event-title {
-    font-size: 32px;
-    /* Maximum title size for very large screens */
-  }
-
-  .event-data,
-  .event-section strong {
-    font-size: 24px;
-    /* Maximum font size for data */
+  .event-poster img {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    left: 65px;
+    object-fit: cover;
   }
 
   .register-btn {
-    width: 25%;
-    /* Adjust button width for very large screens */
+    width: 50%;
+    left: 50%;
+    padding: 10px 10px 22.5px;
+    transform: translateX(-50%);
   }
+
+  .tab-navigation button {
+    width: 25%;
+    padding: 10px 10px 25px;
+  }
+
+}
+@media only screen and (max-width: 376px){
+  .event-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .event-poster {
+    width: 100%;
+  }
+  .event-poster img {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    left: 65px;
+    object-fit: cover;
+  }
+
+  .register-btn {
+    width: 50%;
+    left: 50%;
+    padding: 10px 10px 22.5px;
+    transform: translateX(-50%);
+  }
+
+  .tab-navigation button {
+    width: 27%;
+    padding: 10px 10px 25px;
+  }
+
 }
