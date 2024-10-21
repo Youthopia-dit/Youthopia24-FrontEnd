@@ -187,3 +187,104 @@ border-radius: 5px;
 background-color: white;
 transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+
+/* Media Queries for Responsiveness */
+@media (min-width: 475px) {
+  .event-container {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .event-poster {
+    width: 100%; /* Full width on small screens */
+  }
+
+  .event-details {
+    flex: 1; /* Adjust details section to occupy full width */
+    margin-top: 20px; /* Add margin on top for separation */
+  }
+}
+
+@media (min-width: 640px) {
+  .event-details .event-title {
+    font-size: 26px; /* Adjust font size for titles */
+  }
+
+  .event-data,
+  .event-section strong {
+    font-size: 19px; /* Slightly larger font for data */
+  }
+
+  .tab-navigation button {
+    width: 30%; /* Adjust button width for small tablets */
+  }
+
+  .register-btn {
+    width: 40%; /* Adjust button width for small tablets */
+  }
+}
+
+@media (min-width: 768px) {
+  .event-details .event-title {
+    font-size: 28px; /* Font size for larger screens */
+  }
+
+  .event-data,
+  .event-section strong {
+    font-size: 20px; /* Adjust font size for data */
+  }
+
+  .tab-navigation button {
+    width: 10vw; /* Set button width */
+    height: 6.5vh; /* Button height */
+  }
+
+  .register-btn {
+    width: 28%; /* Adjust button width */
+  }
+}
+
+@media (min-width: 1024px) {
+  .event-container {
+    flex-direction: row; /* Horizontal layout for desktop */
+  }
+
+  .event-poster {
+    width: 40%; /* Maintain original width on larger screens */
+  }
+
+  .event-details {
+    flex: 1.5; /* Adjust details section */
+  }
+}
+
+@media (min-width: 1280px) {
+  .event-details .event-title {
+    font-size: 30px; /* Larger title for very large screens */
+  }
+
+  .event-data,
+  .event-section strong {
+    font-size: 22px; /* Increase font size for larger screens */
+  }
+
+  .tab-navigation button {
+    width: 8vw; /* Adjust button size */
+  }
+}
+
+@media (min-width: 1536px) {
+  .event-details .event-title {
+    font-size: 32px; /* Maximum title size for very large screens */
+  }
+
+  .event-data,
+  .event-section strong {
+    font-size: 24px; /* Maximum font size for data */
+  }
+
+  .register-btn {
+    width: 25%; /* Adjust button width for very large screens */
+  }
+}
+

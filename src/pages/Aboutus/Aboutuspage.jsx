@@ -53,7 +53,7 @@ export default function Aboutuspage() {
                         </div>
 
                         <div div className='containermain2-pic'>
-                            <img src={youthopiawhitelogo}></img>
+                            <img  id='imgbg' src={youthopiawhitelogo}></img>
                         </div>
 
                     </div>
@@ -161,7 +161,7 @@ export default function Aboutuspage() {
                         </div>
 
                         <div className="containermain2-pic">
-                            <img src={professor2}></img>
+                            <img id='imgbg2' src={professor2}></img>
                         </div>
                     </div>
                 </div>
