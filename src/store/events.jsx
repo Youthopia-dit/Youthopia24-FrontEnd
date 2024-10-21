@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Create the context
 const EventContext = createContext();
-const baseUrl = 'https://27.123.248.68:4000'
+const baseUrl = 'http://localhost:4000'
 // Provider component
 export const EventProvider = ({ children }) => {
     const [events, setEvents] = useState([]);
