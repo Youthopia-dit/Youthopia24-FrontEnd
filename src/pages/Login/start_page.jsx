@@ -4,7 +4,7 @@ import bg1 from "../../assets/bg1.png";
 import youthopia_logo from "../../assets/youthopia-logo.png";
 import { useNavigate } from "react-router-dom";
 
-function Loginpage1() {
+function GettingStarted() {
   const navigate = useNavigate();
 
   return (
@@ -37,7 +37,7 @@ function Loginpage1() {
                   type="button"
                   name="button"
                   value="Create a New Account"
-                  onClick={() => navigate("/signup/question")}
+                  onClick={() => navigate("/signup")}
                 />
               </p>
             </div>
@@ -48,4 +48,4 @@ function Loginpage1() {
   );
 }
 
-export default Loginpage1;
+export default GettingStarted;
