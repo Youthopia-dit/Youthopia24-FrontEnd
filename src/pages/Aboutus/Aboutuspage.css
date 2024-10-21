@@ -6,6 +6,7 @@
     margin-top: 0;
     color: rgb(255, 255, 255);
     position: relative;
+    padding: 0 40px ;
 }
 
 .aboutus {
@@ -22,10 +23,9 @@
     gap: 2rem;
     justify-content: space-evenly;
     width: auto;
-    /* Make sure the child div takes less space */
+ 
     margin: 20px 15px 20px 15px;
-    /* Space between divs */
-    /* padding: 20px; */
+   
 }
 
 .about-youthopia-main {
@@ -69,7 +69,7 @@
 }
 
 .containermain2-pic {
-    width: 20%;
+    width: 50%;
     object-fit: contain;
     background-color: transparent;
     border: none;
@@ -184,6 +184,11 @@ p.text {
     gap: 2rem;
     align-items: center;
     padding-bottom: 5vw;
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> fec93791b99ae534a365dca195dceed9ebd9ace5
 }
 
 ul {
@@ -266,6 +271,12 @@ ul {
     margin-left: 80px;
 }
 
+#knowbtn{
+    font-weight: 500;
+    font-size: 20px;
+    
+}
+
 .knowmore {
     margin-bottom: 0px;
     font-size: 20px;
@@ -278,10 +289,23 @@ ul {
     padding-bottom: 0px;
     border: none;
 }
+<<<<<<< HEAD
 
 .knowmore button {
     background-color: transparent;
     border: 3px solid #b09be9
+=======
+.knowmore button{
+    border-radius: 20px;
+    
+    background-color: transparent;
+    border: 3px solid  #b09be9;
+    
+    width: 15vw;
+    height: 7vh;
+  
+  
+>>>>>>> fec93791b99ae534a365dca195dceed9ebd9ace5
 }
 
 .containermain3 button {
@@ -448,8 +472,87 @@ ul {
         display: flex;
         text-align: center;
     }
+}
 
+@media (max-width: 480px) {
     .aboutus {
-        font-size: 40px;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    #imgbg{
+        width: 70vw;
+
+    }
+
+    .containermain2-text {
+     
+        width: 60vw;
+    }
+
+    .containermain2-pic {
+        width: 50%;
+        
+    }
+
+    .sponsorImage {
+        width: 10%;
+    }
+    #imgbg2{
+        width: 100vw;
+        height: 80vh;
+        align-items: center;
+        padding-left: 20px;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .Aboutsection {
+        font-size: 30px;
+        width: 100%;
+    }
+
+    #imgbg{
+        width: 50vw;
+
+    }
+
+    #imgbg2{
+        width: 90vw;
+        height: 80vh;
+        align-items: center;
+        padding-left: 20px;
+
+    }
+}
+@media (max-width: 375px) {
+    .Aboutsection {
+        font-size: 30px;
+        width: 110%;
+    }
+
+    #imgbg{
+        width: 70vw;
+
+    }
+
+    .containermain2-pic{
+        width: 20vw;
+    }
+
+    @media (max-width: 768px) {
+        .aboutus {
+            font-size: 30px;
+            width: 100%;
+        }
+    
+        #imgbg2{
+            width: 100vw;
+            height: 80vh;
+            align-items: center;
+            padding-left: 20px;
+    
+        }
     }
 }
