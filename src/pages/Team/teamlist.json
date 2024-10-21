@@ -45,36 +45,6 @@
             "course" : "B.Tech CSE",
             "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_0107 - AAGAM JAIN.jpg"
         }
-    },
-    "Technical Heads" : {
-        "Tanya Singhal" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_0286 - Tanya.jpeg"
-        },
-        "Harsheet Sharma" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/_DSC0123-removebg-preview 1 (1) (1).png"
-        },
-        "Vijayant Singh" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/Vijayant_Singh_1000017514[1].JPG"
-        },
-        "Chahat Rana" : {
-            "course" : "B.Tech ME",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_1476 - Parth Rana.jpeg"
-        },
-        "Vinayak Gupta" : {
-            "course" : "B.Tech ME",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/vinayak.jpg"
-        },
-        "Paramjeet Bind" : {
-            "course" : "B.Tech ECE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/Paramjeet.JPG"
-        },
-        "Kartavya Srivastava" : {
-            "course" : "B.Tech EE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/kartavya pic - CHAHAT SINGH.jpg"
-        }
     }, 
     "Cultural Heads" : {
         "Kingshuk Singh" : {
@@ -118,6 +88,36 @@
         "Shahriar Rahman Shawon" : {
             "course" : "MBA",
             "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_8933 - Shahriar Shawon.jpeg"
+        }
+    },
+    "Technical Heads" : {
+        "Tanya Singhal" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_0286 - Tanya.jpeg"
+        },
+        "Harsheet Sharma" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/_DSC0123-removebg-preview 1 (1) (1).png"
+        },
+        "Vijayant Singh" : {
+            "course" : "B.Tech CSE",
+            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/Vijayant_Singh_1000017514[1].JPG"
+        },
+        "Chahat Rana" : {
+            "course" : "B.Tech ME",
+            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_1476 - Parth Rana.jpeg"
+        },
+        "Vinayak Gupta" : {
+            "course" : "B.Tech ME",
+            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/vinayak.jpg"
+        },
+        "Paramjeet Bind" : {
+            "course" : "B.Tech ECE",
+            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/Paramjeet.JPG"
+        },
+        "Kartavya Srivastava" : {
+            "course" : "B.Tech EE",
+            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/kartavya pic - CHAHAT SINGH.jpg"
         }
     },
     "Publicity and PR Heads" : {
