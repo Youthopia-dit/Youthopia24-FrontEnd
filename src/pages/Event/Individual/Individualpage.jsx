@@ -3,6 +3,9 @@ import "./Individualpage.css";
 import Navbar from "../../../components/Navbar/navbar";
 import { useLocation } from "react-router-dom";
 import Footer from "../../../components/Footer/Footer";
+import TechBack from "../../../assets/Events-Elements/tech_back.png"
+import CulturalBack from "../../../assets/Events-Elements/image 397.png"
+import InformalBack from "../../../assets/Events-Elements/informal_back.png"
 
 const IndividualEvent = () => {
   const location = useLocation();
