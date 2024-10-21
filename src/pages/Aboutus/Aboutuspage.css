@@ -184,11 +184,8 @@ p.text {
     gap: 2rem;
     align-items: center;
     padding-bottom: 5vw;
-<<<<<<< HEAD
-=======
     
 
->>>>>>> fec93791b99ae534a365dca195dceed9ebd9ace5
 }
 
 ul {
@@ -289,23 +286,12 @@ ul {
     padding-bottom: 0px;
     border: none;
 }
-<<<<<<< HEAD
-
-.knowmore button {
-    background-color: transparent;
-    border: 3px solid #b09be9
-=======
 .knowmore button{
     border-radius: 20px;
-    
     background-color: transparent;
     border: 3px solid  #b09be9;
-    
     width: 15vw;
     height: 7vh;
-  
-  
->>>>>>> fec93791b99ae534a365dca195dceed9ebd9ace5
 }
 
 .containermain3 button {
