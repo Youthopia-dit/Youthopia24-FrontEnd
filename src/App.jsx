@@ -14,6 +14,9 @@ import Eventpage from './pages/Event/Eventpage1';
 import IndividualEvent from './pages/Event/Individual/Individualpage';
 import TeamPage from './pages/Team/Teampage';
 import VerifyOtpPage from './pages/Signup/VerifyOtpPage';
+import ErrorPage from "./pages/utils/error";
+import SuccessPage from "./pages/utils/paymentsuccessfulpage"
+import FailPage from "./pages/utils/paymentfail"
 
 
 function App() {
@@ -36,8 +39,11 @@ function App() {
           <Route path="/events" element={<Eventpage />}/>
           <Route path="/event-details" element={<IndividualEvent />}/>
           <Route path="/team" element={<TeamPage />}/>
-          <Route path="/about" element={<Aboutuspage/>}/>
-          <Route path="/verify-otp" element={<VerifyOtpPage/>}/>
+          <Route path="/about" element={<Aboutuspage />}/>
+          <Route path="/verify-otp" element={<VerifyOtpPage />}/>
+          <Route path="/error" element={<ErrorPage />}/>
+          <Route path="/success" element={<SuccessPage />}/>
+          <Route path="/fail" element={<FailPage />}/>
         </Routes>
       </BrowserRouter>
     </>

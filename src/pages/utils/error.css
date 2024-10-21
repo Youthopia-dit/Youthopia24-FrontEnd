@@ -1,0 +1,120 @@
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    transition: color 0.3s ease-in-out;
+    z-index: 99;
+}
+
+.back-button:hover {
+    color: #7f56d9;
+}
+
+.Aboutsection {
+    background-color: #0E0516;
+    /* z-index: -1; */
+}
+
+.error-main {
+    /* display: flex; */
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 100px 0 0 0;
+    /* width: 100vw; */
+}
+
+.errorimg {
+    margin: 100px 0 0 0;
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 40px;
+    font-weight: 30;
+}
+
+.imgLeftCorner {
+    position: fixed;
+    width: 30%;
+    height: auto;
+    left: 0;
+    z-index: 1;
+}
+
+.imageLeft {
+    position: fixed;
+    width: 20%;
+    height: auto;
+    margin-top: 20%;
+    left: 0;
+    z-index: 0;
+}
+
+.imageRight {
+    width: 15%;
+    height: auto;
+    float: right;
+    position: fixed;
+    right: 0;
+}
+
+.background-div {
+    position: relative;
+}
+
+/* ................payment succesful css.................. */
+
+.container-main {
+    background-color: #0E0516;
+}
+
+.containerinside {
+    position: relative;
+}
+
+.payment-main {
+    /* display: flex; */
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 100px 0 0 0;
+    /* width: 100vw; */
+}
+
+
+
+/* ................payment fail css.................. */
+
+.container {
+    background-color: #0E0516;
+}
+
+.container1 {
+    position: relative;
+}
+
+.payment-fail {
+    /* display: flex; */
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 100px 0 0 0;
+    /* width: 100vw; */
+}
