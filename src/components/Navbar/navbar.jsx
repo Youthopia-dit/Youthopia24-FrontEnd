@@ -21,7 +21,7 @@ function Navbar() {
                     <Link to="/team" className="noburger"><li onClick={toggleNav}>Our Team</li></Link>
                     <Link to="/gallery" className="noburger"><li onClick={toggleNav}>Gallery</li></Link>
                     <Link to="/about"><li onClick={toggleNav}>About Us</li></Link>
-                    <Link to="/comingsoon"><li onClick={toggleNav}>Sign In</li></Link>
+                    <Link to="/getting-started"><li onClick={toggleNav}>Sign In</li></Link>
                 </ul>
 
 

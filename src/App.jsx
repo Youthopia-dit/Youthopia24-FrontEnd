@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Loginpage from './pages/Login/Loginpage';
-import Loginpage1 from './pages/Login/Loginpage1';
+import GettingStarted from './pages/Login/start_page';
 import Signuppage from './pages/Signup/Signuppage';
 import Signupq from './pages/Signup/Signupq';
 import Signifyes from './pages/Signup/Signifyes';
@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/individualpage" element={<IndividualEvent />} />
           <Route path="/loginpage" element={<Loginpage />} />
-          <Route path="/loginpage1" element={<Loginpage1 />} />
+          <Route path="/getting-started" element={<GettingStarted />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/signup" element={<Signuppage />} />
           <Route path="/signup/question" element={<Signupq />} />

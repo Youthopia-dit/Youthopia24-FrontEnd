@@ -1,10 +1,14 @@
-/* @font-face{
+@font-face{
   font-family: 'Nico';
   src: url('./assets/fonts/NicoMoji-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+:root{
+  overflow-x: hidden;
+}
 
+/*
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

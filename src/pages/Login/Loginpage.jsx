@@ -4,9 +4,16 @@ import bg1 from "../../assets/bg1.png";
 import youthopia_logo from "../../assets/youthopia-logo.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 const Loginpage = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackbarSeverity, setSnackbarSeverity] = useState("error"); // Can be "error", "success", etc.
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCredentials({ ...credentials, [name]: value });
@@ -16,16 +23,35 @@ const Loginpage = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://youthopia24-backend.onrender.com/login",
-        credentials,
-        { withCredentials: true } // Send cookies with the request
+        "https://youthopia24-backend.onrender.com/api/user/login",
+        credentials
       );
-      alert(response.data.message);
-      localStorage.setItem("authToken", response.data.token); // Store token in localStorage
-      navigate("/"); // Redirect to home
+      console.log(response.data.token);
+      localStorage.setItem("authToken", response.data.token);
+      navigate("/");
+      setSnackbarMessage("Login successful!");
+      setSnackbarSeverity("success");
+      setSnackbarOpen(true);
     } catch (error) {
-      alert(error.response.data.message);
+      let message = "An unexpected error occurred. Please try again.";
+      if (error.response) {
+        // Backend response error
+        message = error.response.data.message || "Login failed. Please try again.";
+      } else if (error.request) {
+        // Network error occurred
+        message = "Network error. Please check your connection and try again.";
+      }
+      setSnackbarMessage(message);
+      setSnackbarSeverity("error"); // Set to error severity
+      setSnackbarOpen(true); // Show error snackbar
     }
+  };
+
+  const handleSnackbarClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setSnackbarOpen(false);
   };
 
   return (
@@ -70,8 +96,19 @@ const Loginpage = () => {
             </div>
           </form>
         </div>
-
       </div>
+
+      {/* Snackbar for displaying error/success messages */}
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={4000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} sx={{ width: '100%' }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </>
   );
 }
