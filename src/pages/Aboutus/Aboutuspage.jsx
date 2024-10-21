@@ -76,7 +76,7 @@ export default function Aboutuspage() {
 
                                 <div className="knowmore">
                                     <a href="https://www.dituniversity.edu.in/" target="_blank">
-                                        <button type="submit">Know More</button></a>
+                                        <button className='know' type="submit">Know More</button></a>
                                 </div>
                             </p>
                         </div>

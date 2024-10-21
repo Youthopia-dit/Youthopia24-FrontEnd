@@ -2,9 +2,6 @@
   width: 100vw;
   overflow-x: hidden;
   background-color: #0E0516; 
-
- 
-  
 }
 .event-page-background{
   display: flex;
@@ -43,6 +40,7 @@
   background: transparent;
   color: rgb(255, 255, 255);
   cursor: pointer;
+  /* transition: transform 0.3s ease; */
 }
 
 .tab-buttons button.active {
@@ -51,9 +49,8 @@
 
 .tab-buttons button:hover {
   color: #FF9F83;
+  /* transform: scale(1.1); */
 }
-
-
 
 .background-wrapper {
   position: fixed;
@@ -63,8 +60,6 @@
   height: 100%;
   overflow: hidden;
 }
-
-
 
 .tech-back-image {
   position: absolute;
