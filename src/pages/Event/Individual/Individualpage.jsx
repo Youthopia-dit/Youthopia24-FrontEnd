@@ -45,7 +45,7 @@ const IndividualEvent = () => {
 
   return (
     <>
-      
+    <Navbar />
       <div className="individual-event">
         {renderBack()}
 
