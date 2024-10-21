@@ -23,10 +23,9 @@
     gap: 2rem;
     justify-content: space-evenly;
     width: auto;
-    /* Make sure the child div takes less space */
+ 
     margin: 20px 15px 20px 15px;
-    /* Space between divs */
-    /* padding: 20px; */
+   
 }
 
 .about-youthopia-main {
@@ -273,6 +272,12 @@ ul {
     margin-left: 80px;
 }
 
+#knowbtn{
+    font-weight: 500;
+    font-size: 20px;
+    
+}
+
 .knowmore {
     margin-bottom: 0px;
     font-size: 20px;
@@ -288,9 +293,14 @@ ul {
   
 }
 .knowmore button{
+    border-radius: 20px;
     
     background-color: transparent;
-    border: 3px solid  #b09be9
+    border: 3px solid  #b09be9;
+    
+    width: 15vw;
+    height: 7vh;
+  
   
 }
 .containermain3 button{
