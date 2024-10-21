@@ -76,7 +76,7 @@ export default function Aboutuspage() {
 
                                 <div className="knowmore">
                                     <a href="https://www.dituniversity.edu.in/" target="_blank">
-                                        <button type="submit">Know More</button></a>
+                                        <button id='knowbtn' type="submit">Know More</button></a>
                                 </div>
                             </p>
                         </div>
@@ -128,7 +128,7 @@ export default function Aboutuspage() {
                                     opportunities for your personal growth and development.
                                     <br></br><br></br></>}
                             </p>
-                            <button onClick={() => setIsOpen(!isOpen)}>{isOpen ? 'Read less...' : 'Read more...'}</button>
+                            <button id='knowbtn' onClick={() => setIsOpen(!isOpen)}>{isOpen ? 'Read less...' : 'Read more...'}</button>
                         </div>
 
 
