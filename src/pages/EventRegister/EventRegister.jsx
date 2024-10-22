@@ -54,7 +54,6 @@ export default function EventRegister() {
                             />
                             <button type="button" onClick={incrementCount} className="counter-btn">+</button>
                         </div>
-                </div>
 
                 {members.map((member, index) => (
                     <div className="form-group" key={index}>
