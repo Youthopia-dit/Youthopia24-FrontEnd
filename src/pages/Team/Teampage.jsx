@@ -13,7 +13,6 @@ const TeamPage = () => {
 <>
 <Navbar />
     <div className="team-page">
-      
       <div className="background-div">
         <img className='ImgLeftCorner' src={imgLC}></img>
         <img className='imageLeft' src={imgL}></img>
