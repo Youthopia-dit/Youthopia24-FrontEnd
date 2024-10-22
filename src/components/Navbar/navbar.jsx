@@ -8,14 +8,21 @@ import { GiHamburgerMenu } from "react-icons/gi";
 function Navbar() {
     const [navOpen, setNavOpen] = useState(false);
 
+    const toogleNav = () => setNavOpen(!navOpen);
+
+    const closeNav = () => setNavClose(false);
+
     const toggleNav = () => {
         setNavOpen(!navOpen);
     };
 
     return (
-        <nav>
-            <div className={`navbar ${navOpen ? "show-nav" : ""}`}>
-                <ul className="navbar-links right-link">
+        <nav className="navbar">
+            <button className="nav-button" onClick={toggleNav}>
+                {navOpen ? <MdClose size={30} /> : <GiHamburgerMenu size={30} />}
+            </button>
+            <div className={`navbar-links ${navOpen ? "show-nav" : ""}`}>
+                <ul className="navbar-link right-link">
                     <Link to="/" className="noburger"><li onClick={toggleNav}>Home</li></Link>
                     <Link to="/events" className="noburger"><li onClick={toggleNav}>Events</li></Link>
                     <Link to="/team" className="noburger"><li onClick={toggleNav}>Our Team</li></Link>
@@ -23,21 +30,7 @@ function Navbar() {
                     <Link to="/about"><li onClick={toggleNav}>About Us</li></Link>
                     <Link to="/getting-started"><li onClick={toggleNav}>Sign In</li></Link>
                 </ul>
-
-
-                {navOpen && (
-                    <button className="nav-button nav-close-button" onClick={toggleNav}>
-                        <MdClose size={30} />
-                    </button>
-                )}
-                {!navOpen && (
-                    <button className="nav-button" onClick={toggleNav}>
-                        <GiHamburgerMenu size={30} />
-                    </button>
-                )}
             </div>
-
-
         </nav>
     );
 }

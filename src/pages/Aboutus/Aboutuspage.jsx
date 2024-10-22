@@ -12,7 +12,7 @@ import imgRC from '../../assets/FrameR.png'
 import imgB from '../../assets/FrameB.png'
 import LOGOIMG from '../../logos/DITLOGOIMG.png'
 import professor1 from '../../logos/prof1.png'
-import professor2 from '../../logos/prof2.png'
+import professor2 from '../../logos/prof3.png'
 import youthopiawhitelogo from '../../logos/logoyouthopia.png'
 import download1 from '../../logos/download1.jpeg';
 
@@ -53,7 +53,7 @@ export default function Aboutuspage() {
                         </div>
 
                         <div div className='containermain2-pic'>
-                            <img src={youthopiawhitelogo}></img>
+                            <img id='imgbg' src={youthopiawhitelogo}></img>
                         </div>
 
                     </div>
@@ -76,7 +76,7 @@ export default function Aboutuspage() {
 
                                 <div className="knowmore">
                                     <a href="https://www.dituniversity.edu.in/" target="_blank">
-                                        <button type="submit">Know More</button></a>
+                                        <button id='knowbtn' type="submit">Know More</button></a>
                                 </div>
                             </p>
                         </div>
@@ -128,7 +128,7 @@ export default function Aboutuspage() {
                                     opportunities for your personal growth and development.
                                     <br></br><br></br></>}
                             </p>
-                            <button onClick={() => setIsOpen(!isOpen)}>{isOpen ? 'Read less...' : 'Read more...'}</button>
+                            <button id='knowbtn' onClick={() => setIsOpen(!isOpen)}>{isOpen ? 'Read less...' : 'Read more...'}</button>
                         </div>
 
 
@@ -161,7 +161,7 @@ export default function Aboutuspage() {
                         </div>
 
                         <div className="containermain2-pic">
-                            <img src={professor2}></img>
+                            <img id='imgbg2' src={professor2}></img>
                         </div>
                     </div>
                 </div>
