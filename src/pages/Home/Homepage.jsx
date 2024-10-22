@@ -68,6 +68,9 @@ function Carousel({ images, direction }) {
 
 
 function Homepage() {
+
+    
+
     return (
         <>
             <Navbar />

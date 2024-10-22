@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Eventpage1.css';
 import EventCard from '../../components/eventcard/eventcard';
 import { useEvents } from '../../store/events'
-import Events from '../../assets/Events-Elements/Group 54.png'
+import Events from '../../assets/youthopia-logo.png';
 import TechBack from '../../assets/Events-Elements/tech_back.png';
 import CulturalBack from '../../assets/Events-Elements/image 397.png'
 import InformalBack from '../../assets/Events-Elements/informal_back.png'

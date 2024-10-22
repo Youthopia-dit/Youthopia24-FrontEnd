@@ -93,9 +93,18 @@ const IndividualEvent = () => {
             {/* Tab Content */}
             <div className="tab-content">
               {activeTab === "description" && (
+                <>
                 <div className="event-desc">
                   {eventDetails.event_description}
+                  <br />
+                  <br />
+                  Minimum Participants: {eventDetails.participant_min} <br />
+                  Maximum Participants: {eventDetails.participant_max}
                 </div>
+                <div className="participants">
+                  
+                </div>
+                </>
               )}
 
               {activeTab === "rules" && (
