@@ -12,7 +12,7 @@ import imgRC from '../../assets/FrameR.png'
 import imgB from '../../assets/FrameB.png'
 import LOGOIMG from '../../logos/DITLOGOIMG.png'
 import professor1 from '../../logos/prof1.png'
-import professor2 from '../../logos/prof2.png'
+import professor2 from '../../logos/prof3.png'
 import youthopiawhitelogo from '../../logos/logoyouthopia.png'
 import download1 from '../../logos/download1.jpeg';
 
@@ -53,7 +53,7 @@ export default function Aboutuspage() {
                         </div>
 
                         <div div className='containermain2-pic'>
-                            <img  id='imgbg' src={youthopiawhitelogo}></img>
+                            <img id='imgbg' src={youthopiawhitelogo}></img>
                         </div>
 
                     </div>
