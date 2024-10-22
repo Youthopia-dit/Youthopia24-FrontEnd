@@ -1,15 +1,17 @@
-import React, { useState } from "react";
-import "./Signuppage.css";
-import bg1 from "../../assets/bg1.png";
-import youthopia_logo from "../../assets/youthopia-logo.png";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import './Signuppage.css';
+import bg1 from '../../assets/bg1.png';
+import youthopia_logo from '../../assets/youthopia-logo.png';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function Signifno() {
   const [formdata, setFormData] = useState({
-    collegeName: "",
-    year: "",
-    branch: "",
-    governmentId: "",
+    collegeName: '',
+    collegeId: '',
+    year: '',
+    branch: '',
+    governmentId: '',
   });
   const navigate = useNavigate();
 
@@ -19,9 +21,30 @@ function Signifno() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Non-Dit Signup Data:", formData);
-    alert("Non-Dit Signup Complete!");
-    navigate("/");
+
+    if (
+      !formdata.collegeName ||
+      !formdata.collegeId ||
+      !formdata.year ||
+      !formdata.branch ||
+      !formdata.governmentId
+    ) {
+      return alert('Enter all data');
+    }
+
+    const data = JSON.parse(localStorage.getItem('userInput'));
+
+    const submitData = { ...data, ...formdata };
+
+    axios({
+      method: 'post',
+      url: 'https://27.123.248.68:4000/api/user/initialSignup',
+      data: submitData,
+    });
+
+    console.log('Non-Dit Signup Data:', formdata);
+    alert('Non-Dit Signup Complete!');
+    navigate('/');
   };
 
   return (
@@ -43,6 +66,15 @@ function Signifno() {
                   type="text"
                   name="collegeName"
                   placeholder="College Name"
+                  onChange={handleChange}
+                />
+              </p>
+              <p>
+                <input
+                  id="text"
+                  type="text"
+                  name="collegeId"
+                  placeholder="College Identity"
                   onChange={handleChange}
                 />
               </p>
@@ -75,7 +107,14 @@ function Signifno() {
               </p>
             </div>
 
-            <button type="submit" id="Next" className="button">Log In</button>
+            <button
+              type="submit"
+              id="Next"
+              className="button"
+              onClick={handleSubmit}
+            >
+              Log In
+            </button>
           </form>
         </div>
       </div>

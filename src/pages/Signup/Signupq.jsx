@@ -1,17 +1,17 @@
-import React from "react";
-import "./Signuppage.css";
-import bg1 from "../../assets/bg1.png";
-import youthopia_logo from "../../assets/youthopia-logo.png";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import './Signuppage.css';
+import bg1 from '../../assets/bg1.png';
+import youthopia_logo from '../../assets/youthopia-logo.png';
+import { useNavigate } from 'react-router-dom';
 
 function Signupq() {
   const navigate = useNavigate();
 
   const handleNavigation = (userType) => {
-    if (userType === "DIT") {
-      navigate("/signup/dit");
+    if (userType === 'DIT') {
+      navigate('/signup/dit');
     } else {
-      navigate("/signup/non-dit");
+      navigate('/signup/non-dit');
     }
   };
 
@@ -30,15 +30,18 @@ function Signupq() {
           <form>
             <div>
               <p>
-                <button id="Login" onClick={() => handleNavigation("DIT")}>Yes</button>
+                <button id="Login" onClick={() => handleNavigation('DIT')}>
+                  Yes
+                </button>
               </p>
               <p>
-                <button id="Login" onClick={() => handleNavigation("Non-DIT")}>No</button>
+                <button id="Login" onClick={() => handleNavigation('Non-DIT')}>
+                  No
+                </button>
               </p>
             </div>
           </form>
         </div>
-
       </div>
     </>
   );

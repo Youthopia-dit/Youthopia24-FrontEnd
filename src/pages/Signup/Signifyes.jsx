@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import "./Signuppage.css";
-import bg1 from "../../assets/bg1.png";
-import youthopia_logo from "../../assets/youthopia-logo.png";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import './Signuppage.css';
+import bg1 from '../../assets/bg1.png';
+import youthopia_logo from '../../assets/youthopia-logo.png';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function Signifyes() {
-  const [formData, setFormData] = useState({ ditId: "", course: "", year: "" });
+  const [formData, setFormData] = useState({ ditId: '', course: '', year: '' });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -14,9 +15,28 @@ function Signifyes() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("DIT Signup Data:", formData);
-    alert("DIT Signup Complete!");
-    navigate("/");
+
+    if (!formData.ditId || !formData.course || !formData.year) {
+      return alert('Enter the data');
+    }
+
+    const data = JSON.parse(localStorage.getItem('userInput'));
+
+    const submitData = { ...data, ...formData };
+
+    axios({
+      method: 'post',
+      url: 'https://27.123.248.68:4000/api/user/initialSignup',
+      data: submitData,
+    });
+
+    localStorage.clear();
+
+    console.log(submitData);
+
+    console.log('DIT Signup Data:', formData);
+    alert('DIT Signup Complete!');
+    navigate('/');
   };
 
   return (
@@ -61,12 +81,16 @@ function Signifyes() {
               </p>
             </div>
 
-
-
-            <button type="submit" id="Next" className="button">Submit</button>
+            <button
+              type="submit"
+              id="Next"
+              className="button"
+              onClick={handleSubmit}
+            >
+              Submit
+            </button>
           </form>
         </div>
-
       </div>
     </>
   );
