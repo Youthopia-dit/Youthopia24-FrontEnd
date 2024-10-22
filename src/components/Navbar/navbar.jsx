@@ -22,7 +22,7 @@ function Navbar() {
                 {navOpen ? <MdClose size={30} /> : <GiHamburgerMenu size={30} />}
             </button>
             <div className={`navbar-links ${navOpen ? "show-nav" : ""}`}>
-                <ul className="navbar-links right-link">
+                <ul className="navbar-link right-link">
                     <Link to="/" className="noburger"><li onClick={toggleNav}>Home</li></Link>
                     <Link to="/events" className="noburger"><li onClick={toggleNav}>Events</li></Link>
                     <Link to="/team" className="noburger"><li onClick={toggleNav}>Our Team</li></Link>
