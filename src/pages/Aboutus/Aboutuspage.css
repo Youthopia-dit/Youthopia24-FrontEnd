@@ -7,6 +7,7 @@
     color: rgb(255, 255, 255);
     position: relative;
     padding: 0 40px ;
+    
 }
 
 .aboutus {
@@ -69,7 +70,7 @@
 }
 
 .containermain2-pic {
-    width: 50%;
+    width: 20%;
     object-fit: contain;
     background-color: transparent;
     border: none;
@@ -272,7 +273,7 @@ ul {
 
 #knowbtn{
     font-weight: 500;
-    font-size: 20px;
+    /* font-size: 20px; */
     
 }
 
@@ -293,17 +294,24 @@ ul {
     background-color: transparent;
     border: 3px solid  #b09be9;
     width: 15vw;
-    height: 7vh;
+    height: 9vh;
 }
 
 .containermain3 button {
     background-color: transparent;
-    border: 3px solid #b09be9
+    border: 3px solid #b09be9;
+    border-radius: 20px;
+    width: 15vw;
+    height: 9vh;
 }
 
 .containermain4 button {
     background-color: transparent;
-    border: 3px solid #b09be9
+    border: 3px solid #b09be9;
+    border-radius: 20px;
+    width: 15vw;
+    height: 9vh;
+    
 }
 
 .know:hover {
@@ -387,8 +395,8 @@ ul {
         font-size: 40px;
     }
 
-    .containermain2 .containermain2-pic img {
-        width: 20%;
+    .containermain2 .containermain2-pic  {
+        width: 30%;
     }
 
     .containermain2 {
@@ -400,7 +408,7 @@ ul {
     }
 
     .containermain2 .containermain2-text {
-        width: 80%;
+     
         padding-top: 0px;
     }
 
@@ -412,6 +420,9 @@ ul {
         background: linear-gradient(#9B6CCB, #4D3665);
         color: white;
         font-family: 'Montserrat', sans-serif;
+    }
+    #imgbg{
+        width: 55vw;
     }
 
     .containermain2 h3 {
@@ -468,15 +479,11 @@ ul {
         width: 100%;
     }
 
-    #imgbg{
-        width: 70vw;
-
-    }
-
-    .containermain2-text {
+  
+    /* .containermain2-text {
      
         width: 60vw;
-    }
+    } */
 
     .containermain2-pic {
         width: 50%;
@@ -488,7 +495,7 @@ ul {
     }
     #imgbg2{
         width: 100vw;
-        height: 80vh;
+        /* height: 50vh; */
         align-items: center;
         padding-left: 20px;
 
@@ -498,17 +505,19 @@ ul {
 @media (max-width: 768px) {
     .Aboutsection {
         font-size: 30px;
-        width: 100%;
+        /* width: 100%; */
     }
-
+    .text{
+        width:50vw;
+    }
     #imgbg{
-        width: 50vw;
+        width: 55vw;
 
     }
 
     #imgbg2{
         width: 90vw;
-        height: 80vh;
+        /* height: 80vh; */
         align-items: center;
         padding-left: 20px;
 
@@ -520,10 +529,7 @@ ul {
         width: 110%;
     }
 
-    #imgbg{
-        width: 70vw;
-
-    }
+    
 
     .containermain2-pic{
         width: 20vw;
@@ -542,5 +548,11 @@ ul {
             padding-left: 20px;
     
         }
+    }
+}
+@media (max-width: 375px){
+    .associationtext h2{
+
+        text-align: left;
     }
 }
