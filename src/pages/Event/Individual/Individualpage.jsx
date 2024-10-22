@@ -6,10 +6,12 @@ import Footer from "../../../components/Footer/Footer";
 import TechBack from "../../../assets/Events-Elements/tech_back.png";
 import CulturalBack from "../../../assets/Events-Elements/image 397.png";
 import InformalBack from "../../../assets/Events-Elements/informal_back.png";
+import { useNavigate } from "react-router-dom"; 
 
 const IndividualEvent = () => {
   const location = useLocation();
   const eventDetails = location.state || {};
+  const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState("description");
 
@@ -41,6 +43,16 @@ const IndividualEvent = () => {
         </div>
       );
     }
+  };
+
+  const handleRegister = () => {
+    navigate("/register", {
+      state: {
+        eventName: eventDetails.event_name,
+        minParticipants: eventDetails.participant_min,
+        maxParticipants: eventDetails.participant_max,
+      },
+    });
   };
 
   return (
@@ -204,7 +216,7 @@ const IndividualEvent = () => {
               )}
             </div>
 
-            <button className="register-btn">Register Now</button>
+            <button className="register-btn" onClick={handleRegister}>Register Now</button>
           </div>
         </div>
       </div>
