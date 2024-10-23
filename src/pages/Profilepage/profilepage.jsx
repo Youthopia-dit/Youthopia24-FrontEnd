@@ -14,9 +14,11 @@ import { useNavigate } from "react-router-dom";
 function ProfilePage() {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
+    const [events, setEvents] = useState([]);
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState('');
     const [snackbarSeverity, setSnackbarSeverity] = useState('error');
+
     const handleSnackbarClose = (event, reason) => {
         if (reason === 'clickaway') {
             return;
@@ -32,15 +34,33 @@ function ProfilePage() {
             setSnackbarOpen(true);
             window.location.href = '/getting-started';
         }
+
         const fetchUser = async () => {
+           try {
             const res = await axios.get('https://27.123.248.68:4000/api/user/getProfile', {
                 headers: {
                     authorization: `Bearer ${token}`,
                 },
             });
-            console.log(res.data.profile);
-            setUser(res.data.profile);
-        }
+           } catch (error) {
+            console.error("Error fetching user data:", error);
+           }
+            // console.log(res.data.profile);
+            // setUser(res.data.profile);
+        };
+
+        const fetchRegisteredEvents = async (userId) => {
+            try {
+                const res = await axios.get(`https://27.123.248.68:4000/api/user/${userId}/registered-events`, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('authToken')}`,
+                    },
+                });
+                setEvents(res.data.events); // Assuming the API returns an array of events
+            } catch (error) {
+                console.error("Error fetching registered events:", error);
+            }
+        };
 
         fetchUser();
     }, []);
@@ -110,7 +130,7 @@ function ProfilePage() {
                                 </div>
                             </div>
                         </div>
-                        {/* <div className="scroller">
+                        <div className="scroller">
                             <h1 className="register">Registered events</h1>
                             <div className="registered">
                                 <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
@@ -125,7 +145,7 @@ function ProfilePage() {
                                 <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
                             </div>
                             <br />
-                        </div> */}
+                        </div>
                         </>
                 )
                 }
