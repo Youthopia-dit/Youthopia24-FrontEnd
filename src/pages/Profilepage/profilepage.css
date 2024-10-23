@@ -1,111 +1,145 @@
-.ProfilePage{
-    margin-top: 0;
-    height: 100%;
-    min-height: 80vh;
-    background-color: #0E0516; 
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 10px;
+.ProfilePage {
+  margin-top: 0;
+  height: 100%;
+  min-height: 80vh;
+  background-color: #0e0516;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
 }
-.profile-details{
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    margin-left: 10px;
-    position: relative;
-    z-index: 2;
-}
-
-.left-column{
-    width: 40%;
-    margin-right: 15px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.profile-details {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-left: 10px;
+  position: relative;
+  z-index: 2;
 }
 
-.right-column{
-    width: 40%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
+.left-column {
+  width: 40%;
+  margin-right: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.profile-image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.profile-image img{
-    width: 50%;
-    border-radius: 16px;
-}
-
-.contact p{
-    font-size: 24px;
-    margin-top: 10px;
-    margin-left: 10px;
-    color: white;
-    text-align: center;
+.right-column {
+  width: 40%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 }
 
-.profile-heading{
-    font-size: 32px;
-    color: white;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-bottom: 20px;
+.profile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-image img {
+  width: 50%;
+  border-radius: 16px;
+}
+
+.contact p {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: white;
+  text-align: center;
+}
+
+.profile-heading {
+  font-size: 32px;
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
 .profile-info-tab {
-    font-size: 24px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    border-radius: 16px;
-    padding: 0.5rem 2rem;
-    width: 100%;
-    border: 1px solid white;
-    margin-bottom: 10px;
-    text-align: left;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 16px;
+  padding: 0.5rem 2rem;
+  width: 100%;
+  border: 1px solid white;
+  margin-bottom: 10px;
+  text-align: left;
 }
-.profile-buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.profile-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.profile-buttons .disabled-button {
+  color: #999999;
+}
+
+.profile-buttons button {
+  border-radius: 20px;
+  background-color: transparent;
+  border: 3px solid #b09be9;
+  padding: 1rem 2.5rem;
+  color: white;
+}
+
+.registered {
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: large;
+  background: rgba(255, 255, 255, 0.1);
+  overflow-x: hidden;
+  flex-direction: row;
+  gap: 2rem;
+  border-radius: 25px;
+  width: 90%;
+  overflow-x: scroll;
+  margin: 2rem auto;
+
+  align-items: center;
+  padding: 1rem;
+  z-index: 333;
+  position: relative;
+}
+
+.register {
+  width: 90%;
+  margin: 2rem auto;
+  position: relative;
+  z-index: 333;
+  color: #fff;
+}
+
+.registered img {
+  height: 350px;
+}
+
+.registered::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-details {
+    flex-direction: column;
     align-items: center;
-    margin-top: 10px;
-    margin-left: 10px;
+  }
+
+  .left-column {
+    width: 80%;
+    margin-right: 0;
+  }
+
+  .right-column {
+    width: 80%;
+  }
 }
-.profile-buttons .disabled-button{
-    color: #999999;
-}
-
-.profile-buttons button{
-    border-radius: 20px;
-    background-color: transparent;
-    border: 3px solid  #b09be9;
-    padding: 1rem 2.5rem;
-    color: white;
-}
-
-@media only screen and (max-width: 768px){
-    .profile-details{
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .left-column{
-        width: 80%;
-        margin-right: 0;
-    }
-
-    .right-column{
-        width: 80%;
-    }
-}
-
 
 /* .image{
     margin-left: 95px;
@@ -313,7 +347,7 @@
       
 } */
 /* @media only screen and (min-width:501px)and (max-width: 1000px){ */
-    /* .contact{
+/* .contact{
         margin-left: 100px;
     }
     .image{

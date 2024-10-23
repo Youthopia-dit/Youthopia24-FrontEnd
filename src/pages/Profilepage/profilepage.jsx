@@ -138,48 +138,50 @@ function ProfilePage() {
               </div>
             </div>
             <div className="scroller">
-              <h1 className="register">Registered events</h1>
-              <div className="registered">
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
+              <div>
+                <h1 className="register">Registered events</h1>
+                <div className="registered">
+                  <img
+                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                    className="events"
+                  ></img>
+                  <img
+                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                    className="events"
+                  ></img>
+                  <img
+                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                    className="events"
+                  ></img>
+                  <img
+                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                    className="events"
+                  ></img>
+                  <img
+                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                    className="events"
+                  ></img>
+                  <img
+                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                    className="events"
+                  ></img>
+                  <img
+                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                    className="events"
+                  ></img>
+                  <img
+                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                    className="events"
+                  ></img>
+                  <img
+                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                    className="events"
+                  ></img>
+                  <img
+                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                    className="events"
+                  ></img>
+                </div>
               </div>
               <br />
             </div>
