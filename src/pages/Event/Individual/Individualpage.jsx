@@ -6,18 +6,30 @@ import Footer from "../../../components/Footer/Footer";
 import TechBack from "../../../assets/Events-Elements/tech_back.png";
 import CulturalBack from "../../../assets/Events-Elements/image 397.png";
 import InformalBack from "../../../assets/Events-Elements/informal_back.png";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 const IndividualEvent = () => {
   const location = useLocation();
   const eventDetails = location.state || {};
   const navigate = useNavigate();
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarSeverity, setSnackbarSeverity] = useState('error');
 
   const [activeTab, setActiveTab] = useState("description");
 
   if (!eventDetails) return <p>Event details not found</p>;
 
   const teamSizes = eventDetails.prices.map((price) => price.teamSize);
+
+  const handleSnackbarClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setSnackbarOpen(false);
+  };
 
   // Function to render the background based on the event category
   const renderBack = () => {
@@ -46,18 +58,26 @@ const IndividualEvent = () => {
   };
 
   const handleRegister = () => {
-    navigate("/register", {
-      state: {
-        eventName: eventDetails.event_name,
-        minParticipants: eventDetails.participant_min,
-        maxParticipants: eventDetails.participant_max,
-      },
-    });
+    if (!localStorage.getItem('authToken')) {
+      setSnackbarMessage('Please login to register for the event');
+      setSnackbarSeverity('error');
+      setSnackbarOpen(true);
+      return;
+    }
+    if (eventDetails.participant_max === 1) {
+      navigate("/register-solo", {
+        state: { eventDetails },
+      });
+    } else {
+      navigate("/register", {
+        state: { eventDetails },
+      });
+    }
   };
 
   return (
     <>
-    <Navbar />
+      <Navbar />
       <div className="individual-event">
         {renderBack()}
 
@@ -106,16 +126,16 @@ const IndividualEvent = () => {
             <div className="tab-content">
               {activeTab === "description" && (
                 <>
-                <div className="event-desc">
-                  {eventDetails.event_description}
-                  <br />
-                  <br />
-                  Minimum Participants: {eventDetails.participant_min} <br />
-                  Maximum Participants: {eventDetails.participant_max}
-                </div>
-                <div className="participants">
-                  
-                </div>
+                  <div className="event-desc">
+                    {eventDetails.event_description}
+                    <br />
+                    <br />
+                    Minimum Participants: {eventDetails.participant_min} <br />
+                    Maximum Participants: {eventDetails.participant_max}
+                  </div>
+                  <div className="participants">
+
+                  </div>
                 </>
               )}
 
@@ -221,6 +241,21 @@ const IndividualEvent = () => {
           </div>
         </div>
       </div>
+
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={4000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert
+          onClose={handleSnackbarClose}
+          severity={snackbarSeverity}
+          sx={{ width: '100%' }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
       <Footer />
     </>
   );

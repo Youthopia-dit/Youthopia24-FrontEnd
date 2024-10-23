@@ -3,34 +3,32 @@ import axios from 'axios';
 
 // Create the context
 const EventContext = createContext();
-const baseUrl = 'https://27.123.248.68:4000'
+const baseUrl = 'https://27.123.248.68:4000';
 // Provider component
 export const EventProvider = ({ children }) => {
-    const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([]);
 
-    // Function to call the API
-    const fetchEvents = async () => {
-        try {
-            const response = await axios.get(`${baseUrl}/api/events`);
-            console.log(response.data.events)
-            setEvents(response.data.events);
-            console.log(events)
+  // Function to call the API
+  const fetchEvents = async () => {
+    try {
+      const response = await axios.get(`${baseUrl}/api/events`);
+      console.log(response.data.events);
+      setEvents(response.data.events);
+      console.log(events);
+    } catch (error) {
+      console.error('Failed to fetch events:', error);
+      setEvents([]);
+    }
+  };
+  useEffect(() => {
+    console.log(events);
+  }, [events]);
 
-        } catch (error) {
-            console.error('Failed to fetch events:', error);
-            setEvents([]);
-        }
-
-    };
-    useEffect(() => {
-        console.log(events)
-    }, [events])
-
-    return (
-        <EventContext.Provider value={{ events, fetchEvents }}>
-            {children}
-        </EventContext.Provider>
-    );
+  return (
+    <EventContext.Provider value={{ events, fetchEvents }}>
+      {children}
+    </EventContext.Provider>
+  );
 };
 
 // Custom hook to use the event context

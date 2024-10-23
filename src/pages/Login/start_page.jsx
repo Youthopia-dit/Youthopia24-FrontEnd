@@ -37,7 +37,7 @@ function GettingStarted() {
                   type="button"
                   name="button"
                   value="Create a New Account"
-                  onClick={() => navigate("/signup")}
+                  onClick={() => navigate("/signup-first")}
                 />
               </p>
             </div>
