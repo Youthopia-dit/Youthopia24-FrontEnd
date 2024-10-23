@@ -44,6 +44,12 @@
     border-radius: 16px;
 }
 
+.comingSoon{
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
 .contact p{
     font-size: 24px;
     margin-top: 10px;
