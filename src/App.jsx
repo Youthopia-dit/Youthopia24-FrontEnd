@@ -3,7 +3,6 @@ import Loginpage from './pages/Login/Loginpage';
 import GettingStarted from './pages/Login/start_page';
 import Signuppage from './pages/Signup/Signuppage';
 import Signupq from './pages/Signup/Signupq';
-import Signifyes from './pages/Signup/Signifyes';
 import SignIn from './pages/Signup/signup_details';
 import Aboutuspage from './pages/Aboutus/Aboutuspage';
 import ProfilePage from './pages/Profilepage/profilepage';
@@ -32,7 +31,6 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/signup-first" element={<Signuppage />} />
           <Route path="/signup/question" element={<Signupq />} />
-          <Route path="/signup/dit" element={<Signifyes />} />
           <Route path="/signup-second" element={<SignIn />} />
           <Route path="/" element={<Homepage />}/>
           <Route path="/gallery" element={<Gallery />} />
