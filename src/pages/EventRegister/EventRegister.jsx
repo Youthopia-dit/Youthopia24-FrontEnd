@@ -26,19 +26,15 @@ export default function EventRegister() {
             window.location.href = '/getting-started';
         }
         const fetchUser = async () => {
-            const res = await axios.get('http://localhost:4000/api/user/getProfile', {
+            const res = await axios.get('https://27.123.248.68:4000/api/user/getProfile', {
                 headers: {
                     authorization: `Bearer ${token}`,
                 },
             });
             console.log(res.data.profile);
             setUser(res.data.profile);
-            setRegistrationDetails({...RegistrationDetails,  eventId: eventDetails._id, email: user.email, college: user.college });
-        if(maxParticipants === 1) {
-            setRegistrationDetails({...RegistrationDetails,  name: user.name, id: user.id, phone: user.phone });
+            setRegistrationDetails({ ...RegistrationDetails, eventId: eventDetails._id, email: user.email, college: user.college });
         }
-        }
-
         fetchUser();
         console.log(eventDetails);
     }, []);
@@ -50,7 +46,8 @@ export default function EventRegister() {
     const handleAddMember = (count) => {
         const newMembers = Array.from({ length: count }, (_, i) => ({
             name: '',
-            id: '',
+            collegeId: '',
+            personalId: ''
         }));
         setMembers(newMembers);
         setMembersCount(count);
@@ -78,6 +75,13 @@ export default function EventRegister() {
         }
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("test")
+        console.log('Registration Details:', RegistrationDetails);
+        console.log('Members:', members);
+    }
+
     return (
         <>
             <div className="event_register">
@@ -90,32 +94,30 @@ export default function EventRegister() {
                     <div className="form-event-details">
                         Event Name: {eventDetails.event_name}
                     </div>
-                    <form>
-                        {maxParticipants > 1 ? <h4>Leader Details:</h4> : <></>}
+                    <form onSubmit={handleSubmit}>
+                        <h4>Leader Details:</h4>
                         <div className="form-group">
-                            <input type="text" placeholder={maxParticipants > 1 ? "Team Name" : "Name"} />
+                            <input type="text" placeholder="Team Name" required/>
                         </div>
                         <div className="form-group">
-                            <input type="text" placeholder="Student ID" />
-                        </div>
-
-                        <div className="form-group">
-                            <input type="text" placeholder={maxParticipants > 1 ? "Leader's Phone Number" : "Phone Number"} />
+                            <input type="text" placeholder="Leader's Phone Number"  required/>
                         </div>
 
-                        {maxParticipants > 1 ? <div className="form-group members-counter">
-                            <button type="button" onClick={decrementCount} className="counter-btn">-</button>
-                            <input
-                                className="counting"
-                                type="number"
-                                min="1"
-                                value={membersCount}
-                                readOnly
-                            />
-                            <button type="button" onClick={incrementCount} className="counter-btn">+</button>
-                        </div> : <></>}
-                        {maxParticipants > 1 ? <h4>Team Member Details:</h4> : <></>}
-                        {maxParticipants > 1 ? <>{members.map((member, index) => (
+                        <div className="form-registration-row">
+                            <h4>Team Member Details:</h4>
+                            <div className="form-group members-counter">
+                                <button type="button" onClick={decrementCount} className="counter-btn">-</button>
+                                <input
+                                    className="counting"
+                                    type="number"
+                                    min="1"
+                                    value={membersCount}
+                                    readOnly
+                                />
+                                <button type="button" onClick={incrementCount} className="counter-btn">+</button>
+                            </div>
+                        </div>
+                        {members.map((member, index) => (
                             <div className="form-group" key={index}>
                                 <label>Team Member {index + 1}:</label>
                                 <input
@@ -125,17 +127,28 @@ export default function EventRegister() {
                                     onChange={(e) =>
                                         handleMemberChange(index, 'name', e.target.value)
                                     }
+                                    required
                                 />
                                 <input
                                     type="text"
                                     placeholder={`Member ${index + 1} ID`}
                                     value={member.id}
-                                    onChange={(e) => handleMemberChange(index, 'id', e.target.value)}
+                                    onChange={(e) => handleMemberChange(index, 'collegeId', e.target.value)}
+                                    required
+                                />
+                                <input
+                                    type="text"
+                                    placeholder={`Member ${index + 1} Personal ID`}
+                                    value={member.name}
+                                    onChange={(e) =>
+                                        handleMemberChange(index, 'personalId', e.target.value)
+                                    }
+                                    required
                                 />
                             </div>
-                        ))}</> : <></>}
+                        ))}
+                        <button className="submit-btn" type="submit">Submit</button>
                     </form>
-                    <button className="submit-btn">Submit</button>
                 </div >
             </div >
         </>

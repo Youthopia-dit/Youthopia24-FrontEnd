@@ -24,7 +24,7 @@ export default function EventRegisterSolo() {
 
         const fetchUser = async () => {
             try {
-                const res = await axios.get('http://localhost:4000/api/user/getProfile', {
+                const res = await axios.get('https://27.123.248.68:4000/api/user/getProfile', {
                     headers: {
                         authorization: `Bearer ${token}`,
                     },

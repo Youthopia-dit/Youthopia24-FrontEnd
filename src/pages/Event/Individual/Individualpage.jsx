@@ -235,7 +235,7 @@ const IndividualEvent = () => {
                 </div>
               )}
             </div>
-            <button className="register-btn" onClick={handleRegister} disabled="true">Register Now</button>
+            <button className="register-btn" onClick={handleRegister}>Register Now</button>
           </div>
         </div>
       </div>
