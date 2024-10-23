@@ -28,6 +28,7 @@ function ProfilePage() {
 
     useEffect(() => {
         const token = localStorage.getItem('authToken');
+        console.log(token)
         if (!token) {
             setSnackbarMessage('User Not logged in!');
             setSnackbarSeverity('success');
@@ -42,11 +43,13 @@ function ProfilePage() {
                     authorization: `Bearer ${token}`,
                 },
             });
+
+            console.log(res.data.profile);
+            setUser(res.data.profile);
            } catch (error) {
             console.error("Error fetching user data:", error);
            }
-            // console.log(res.data.profile);
-            // setUser(res.data.profile);
+           
         };
 
         const fetchRegisteredEvents = async (userId) => {
