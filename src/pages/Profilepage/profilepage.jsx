@@ -15,6 +15,7 @@ function ProfilePage() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [events, setEvents] = useState([]);
+  const [eventImages, setEventImages] = useState([]);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('error');
@@ -54,6 +55,27 @@ function ProfilePage() {
       }
     };
 
+    const fetchEvent = async () => {
+      const eventImageArr = user.registeredEvent.map(async (el, i) => {
+        const res1 = await axios({
+          method: 'post',
+          url: 'https://27.123.248.68:4000/api/register/getRegistrations',
+          data: { registrationIds: el },
+        });
+
+        const eventID = res1.data.registrations[0].eventDetails.eventID;
+
+        const res2 = await axios({
+          method: 'get',
+          url: `https://27.123.248.68:4000/api/events/${eventID}`,
+        });
+
+        return res2.data.event_poster;
+      });
+
+      Promise.all(eventImageArr).then((res) => setEventImages(res));
+    };
+
     const fetchRegisteredEvents = async (userId) => {
       try {
         const res = await axios.get(
@@ -70,7 +92,12 @@ function ProfilePage() {
       }
     };
 
-    fetchUser();
+    const finalFunction = async () => {
+      await fetchUser();
+      await fetchEvent();
+    };
+
+    finalFunction();
   }, []);
 
   const handleSignout = () => {
@@ -138,50 +165,17 @@ function ProfilePage() {
               </div>
             </div>
             <div className="scroller">
-              <div>
-                <h1 className="register">Registered events</h1>
-                <div className="registered">
-                  <img
-                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                    className="events"
-                  ></img>
-                  <img
-                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                    className="events"
-                  ></img>
-                  <img
-                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                    className="events"
-                  ></img>
-                  <img
-                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                    className="events"
-                  ></img>
-                  <img
-                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                    className="events"
-                  ></img>
-                  <img
-                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                    className="events"
-                  ></img>
-                  <img
-                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                    className="events"
-                  ></img>
-                  <img
-                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                    className="events"
-                  ></img>
-                  <img
-                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                    className="events"
-                  ></img>
-                  <img
-                    src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                    className="events"
-                  ></img>
-                </div>
+              <h1 className="register">Registered events</h1>
+              <div className="registered">
+                {user.registeredEvent.map((el, i) => {
+                  return (
+                    <img
+                      key={i}
+                      src={`${eventImages[i]}`}
+                      className="events"
+                    ></img>
+                  );
+                })}
               </div>
               <br />
             </div>

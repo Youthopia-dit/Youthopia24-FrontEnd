@@ -102,7 +102,6 @@
   width: 90%;
   overflow-x: scroll;
   margin: 2rem auto;
-
   align-items: center;
   padding: 1rem;
   z-index: 333;
@@ -110,15 +109,16 @@
 }
 
 .register {
-  width: 90%;
-  margin: 2rem auto;
   position: relative;
-  z-index: 333;
-  color: #fff;
+  top: 40px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  width: 95vw;
+  color: aliceblue;
 }
 
 .registered img {
-  height: 350px;
+  height: 300px;
 }
 
 .registered::-webkit-scrollbar {
