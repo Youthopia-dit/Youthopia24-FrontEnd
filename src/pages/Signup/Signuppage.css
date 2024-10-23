@@ -220,7 +220,7 @@ h3 {
     transition: background 0.3s;
 }
 
-#text {
+#text, .input-fields {
     border-radius: 15px;
     height: 45px;
     width: 30vw;

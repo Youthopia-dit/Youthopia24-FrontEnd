@@ -1,14 +1,113 @@
 .ProfilePage{
     margin-top: 0;
     height: 100%;
-    width: 100%;
-    background-color: black; 
-    background-image: url('../../assets/bg.png');
+    min-height: 80vh;
+    background-color: #0E0516; 
     background-repeat: no-repeat;
     background-size: cover;
     padding: 10px;
 }
-.image{
+.profile-details{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.left-column{
+    width: 40%;
+    margin-right: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-column{
+    width: 40%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.profile-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-image img{
+    width: 50%;
+    border-radius: 16px;
+}
+
+.contact p{
+    font-size: 24px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: white;
+    text-align: center;
+}
+
+.profile-heading{
+    font-size: 32px;
+    color: white;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.profile-info-tab {
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 16px;
+    padding: 0.5rem 2rem;
+    width: 100%;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.profile-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.profile-buttons .disabled-button{
+    color: #999999;
+}
+
+.profile-buttons button{
+    border-radius: 20px;
+    background-color: transparent;
+    border: 3px solid  #b09be9;
+    padding: 1rem 2.5rem;
+    color: white;
+}
+
+@media only screen and (max-width: 768px){
+    .profile-details{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-column{
+        width: 80%;
+        margin-right: 0;
+    }
+
+    .right-column{
+        width: 80%;
+    }
+}
+
+
+/* .image{
     margin-left: 95px;
     margin-top: 100px;
     height: 300px;
@@ -34,8 +133,8 @@
     height: 65px;
     padding-top: 20px;
     padding-left: 10px;
-}
-.contact{
+} */
+/* .contact{
     margin-top: auto;
     width: 40vw;
     height: 90px;
@@ -46,9 +145,9 @@
     border-radius: 20px;
     padding-top: 10px;
    
-}
+} */
 
-.button{
+/* .button{
     height: 100px;
     width: 300px;
     margin-top: 50px;
@@ -71,7 +170,6 @@
 }
 
 .events{
-    /* margin-left: 200px; */
     height: 200px;
     width: 200px;
     padding: 50px;
@@ -140,7 +238,6 @@
         size: 50%;
     }
     .contactinfo{
-        /* font-size: 15px; */
         font-size: 20px;
         margin-top: 35px;
         padding-top: 10px;
@@ -214,7 +311,7 @@
             width: 70vw !important;
         }
       
-}
+} */
 /* @media only screen and (min-width:501px)and (max-width: 1000px){ */
     /* .contact{
         margin-left: 100px;
@@ -252,8 +349,7 @@
         margin-left: 200px;
     }
 } */
-.bgplate{
-    /* background-color: rgba(80, 79, 79, 0.5); */
+/* .bgplate{
     background: rgba(255, 255, 255, 0.1);
     width: 40vw;
     border-radius: 25px;
@@ -272,4 +368,4 @@
     margin-left: 0px;
     
 
-}
+} */
