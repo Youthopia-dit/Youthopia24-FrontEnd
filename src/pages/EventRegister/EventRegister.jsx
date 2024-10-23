@@ -1,10 +1,16 @@
 import "./EventRegister.css";
 import bg1 from "../../assets/bg1.png";
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 export default function EventRegister() {
+    const navigate = useNavigate();
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState('');
+    const [snackbarSeverity, setSnackbarSeverity] = useState('error');
     const [user, setUser] = useState(null);
     const [RegistrationDetails, setRegistrationDetails] = useState({
         email: '',
@@ -12,7 +18,14 @@ export default function EventRegister() {
         college: '',
     });
 
-    const [members, setMembers] = useState([{  id: 1, name: '', collegeId: '', personalId: '' }]);
+    const handleSnackbarClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setSnackbarOpen(false);
+    };
+
+    const [members, setMembers] = useState([{ id: 1, name: '', collegeId: '', personalId: '' }]);
     const location = useLocation();
     const eventDetails = location.state['eventDetails'] || {};
     const minParticipants = eventDetails.participant_min;
@@ -91,28 +104,50 @@ export default function EventRegister() {
         }
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    function getPrice(teamSize, isFromDit) {
+        const priceInfo = eventDetails.prices.find(price => price.teamSize === teamSize);
 
+        if (!priceInfo) {
+            return 'Team size not supported';
+        }
+
+        return isFromDit ? priceInfo.priceDit : priceInfo.priceNonDit;
+    }
+    const fromDIT = user && user.college === 'DIT University';
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const payment = {
+            paid: false,
+            amount:getPrice(members.length, fromDIT)
+        }
         const registrationData = {
-            email: RegistrationDetails.email,
-            eventId: RegistrationDetails.eventId,
+            email: user.email,
+            eventId: eventDetails.event_id,
             teamName: user.name,
-            college: RegistrationDetails.college,
+            college: user.college,
             members: members,
+            phoneNumber: user.phone,
+            payment: payment
         };
 
         console.log('Registration Details:', registrationData);
-
-        axios.post('https://27.123.248.68:4000/api/event/register', registrationData)
-            .then((res) => {
-                console.log('Registration Successful:', res.data);
-                alert('Registration successful!');
-            })
-            .catch((error) => {
-                console.error('Error during registration:', error);
-                alert('Registration failed. Please try again.');
-            });
+        const token = localStorage.getItem('authToken');
+        const res = await axios.post('https://27.123.248.68:4000/api/register/eventRegister', registrationData, {
+            headers:{
+                authorization: `Bearer ${token}`
+            }
+        });
+        console.log(res);
+        if(res.status === 201) {
+            setSnackbarMessage('Registered Successfully');
+            setSnackbarSeverity('success'); // Set to success severity
+            setSnackbarOpen(true);
+            setTimeout(() => {
+                navigate('/');
+            }, 2000);
+        }
+    
     };
     if (!user) {
         return <div>Loading...</div>; // Add a loading state while fetching user data
@@ -124,7 +159,6 @@ export default function EventRegister() {
                 <div className="background">
                     <img src={bg1} alt="bg-page" className="bgimage" />
                 </div>
-
                 <div className="participant-form">
                     <h2>Event Registration Form</h2>
                     <div className="form-event-details">
@@ -158,6 +192,7 @@ export default function EventRegister() {
                                 <label>Team Member {index + 1}:</label>
                                 <input
                                     type="text"
+                                    id={`member-${index}-name`}    
                                     placeholder={`Member ${index + 1} Name`}
                                     value={member.name}
                                     onChange={(e) => handleMemberChange(index, 'name', e.target.value)}
@@ -165,13 +200,15 @@ export default function EventRegister() {
                                 />
                                 <input
                                     type="text"
+                                    id={`member-${index}-name`}  
                                     placeholder={`Member ${index + 1} College ID`}
                                     value={member.collegeId}
                                     onChange={(e) => handleMemberChange(index, 'collegeId', e.target.value)}
                                     required
                                 />
-                                {user.college !== 'DIT University' &&  (<input
+                                {user.college !== 'DIT University' && (<input
                                     type="text"
+                                    id={`member-${index}-name`}  
                                     placeholder={`Member ${index + 1} Personal ID`}
                                     value={member.personalId}
                                     onChange={(e) => handleMemberChange(index, 'personalId', e.target.value)}
@@ -184,6 +221,20 @@ export default function EventRegister() {
                     </form>
                 </div >
             </div >
+            <Snackbar
+                open={snackbarOpen}
+                autoHideDuration={4000}
+                onClose={handleSnackbarClose}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+            >
+                <Alert
+                    onClose={handleSnackbarClose}
+                    severity={snackbarSeverity}
+                    sx={{ width: '100%' }}
+                >
+                    {snackbarMessage}
+                </Alert>
+            </Snackbar>
         </>
     )
 }
