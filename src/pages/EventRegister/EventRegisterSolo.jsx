@@ -6,7 +6,16 @@ import axios from 'axios';
 
 export default function EventRegisterSolo() {
     const [user, setUser] = useState(null);
-    const [RegistrationDetails, setRegistrationDetails] = useState({});
+    const [RegistrationDetails, setRegistrationDetails] = useState({
+        name: '',
+        collegeId: '',
+        phoneNumber: '',
+        college: '',
+        email: '',
+        eventId: '',
+        identityNumber: '',
+        members: [{ name: '', college: '', id: '', govId: '' }],
+    });
     
     const location = useLocation();
     const eventDetails = location.state['eventDetails'] || {};
@@ -34,12 +43,16 @@ export default function EventRegisterSolo() {
                 setUser(userData);
 
                 console.log(userData);
-                setRegistrationDetails({
-                    ...RegistrationDetails,
-                    eventId: eventDetails._id,
+                setRegistrationDetails((prevDetails) => ({
+                    ...prevDetails,
+                    name: userData.name || '',
+                    collegeId: userData.collegeId || '',
+                    phoneNumber: userData.phone || '',
+                    college: userData.college || '',
                     email: userData.email,
-                    college: userData.college,
-                });
+                    eventId: eventDetails._id,
+                    identityNumber: userData.identityNumber || '',
+                }));
             } catch (error) {
                 console.error('Error fetching user data:', error);
                 // Handle the error if necessary
@@ -49,6 +62,52 @@ export default function EventRegisterSolo() {
         fetchUser();
         console.log(eventDetails);
     }, []);
+
+    
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setRegistrationDetails((prevDetails) => ({
+            ...prevDetails,
+            [name]: value,
+        }));
+    };
+
+    const handleMemberChange = (index, field, value) => {
+        const updatedMembers = [...RegistrationDetails.members];
+        updatedMembers[index][field] = value;
+        setRegistrationDetails((prevDetails) => ({
+            ...prevDetails,
+            members: updatedMembers,
+        }));
+    };
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const registrationData = {
+            email: RegistrationDetails.email,
+            eventId: RegistrationDetails.eventId,
+            teamName: RegistrationDetails.name,
+            college: RegistrationDetails.college,
+            members: RegistrationDetails.members,
+            phoneNumber: RegistrationDetails.phoneNumber,
+        };
+
+        console.log('Submitted Registration:', registrationData);
+
+        try {
+            const res = await axios.post(
+                'https://27.123.248.68:4000/api/event/register',
+                registrationData
+            );
+            console.log('Registration Successful:', res.data);
+            alert('Registration successful!');
+        } catch (error) {
+            console.error('Error during registration:', error);
+            alert('Registration failed. Please try again.');
+        }
+    };
 
     if (!user) {
         return <div>Loading...</div>; // Add a loading state while fetching user data
@@ -66,26 +125,34 @@ export default function EventRegisterSolo() {
                     <div className="form-event-details">
                         Event Name: {eventDetails.event_name}
                     </div>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <input type="text" placeholder="Name" />
+                            <input type="text" name="name" placeholder="Name" value={RegistrationDetails.name} onChange={handleChange} required />
                         </div>
                         <div className="form-group">
-                            <input type="text" placeholder="Student ID" />
+                        <input
+                            type="text"
+                            name="collegeId"
+                            placeholder="Student ID"
+                            value={RegistrationDetails.collegeId}
+                            onChange={handleChange}
+                            required
+                        />
                         </div>
 
                         <div className="form-group">
-                            <input type="text" placeholder="Phone Number" />
+                            <input type="text" name="phoneNumber" placeholder="Phone Number" value={RegistrationDetails.phoneNumber} onChange={handleChange} required/>
                         </div>
 
                         {/* Ensure user is loaded before checking college */}
-                        {user.college && user.college !== 'DIT University' && (
+                        {user.identityNumber &&(
                             <div className="form-group">
-                                <input type="text" placeholder="College Name" value={user.college} readOnly />
+                                <input type="text" name="identityNumber" placeholder="Identity Number" value={RegistrationDetails.identityNumber} readOnly />
                             </div>
                         )}
+                        <button className="submit-btn" type="submit">Submit</button>
                     </form>
-                    <button className="submit-btn">Submit</button>
+                    
                 </div >
             </div >
         </>
