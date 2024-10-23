@@ -6,16 +6,18 @@ import axios from 'axios';
 
 export default function EventRegister() {
     const [user, setUser] = useState(null);
-    const [RegistrationDetails, setRegistrationDetails] = useState({});
+    const [RegistrationDetails, setRegistrationDetails] = useState({
+        email: '',
+        eventId: '',
+        college: '',
+    });
 
+    const [members, setMembers] = useState([{  id: 1, name: '', collegeId: '', personalId: '' }]);
     const location = useLocation();
     const eventDetails = location.state['eventDetails'] || {};
-
     const minParticipants = eventDetails.participant_min;
     const maxParticipants = eventDetails.participant_max;
-
     const [membersCount, setMembersCount] = useState(minParticipants);
-    const [members, setMembers] = useState([{ name: '', id: '' }]);
 
     useEffect(() => {
         const token = localStorage.getItem('authToken');
@@ -26,18 +28,29 @@ export default function EventRegister() {
             window.location.href = '/getting-started';
         }
         const fetchUser = async () => {
-            const res = await axios.get('https://27.123.248.68:4000/api/user/getProfile', {
-                headers: {
-                    authorization: `Bearer ${token}`,
-                },
-            });
-            console.log(res.data.profile);
-            setUser(res.data.profile);
-            setRegistrationDetails({ ...RegistrationDetails, eventId: eventDetails._id, email: user.email, college: user.college });
-        }
+            try {
+                const res = await axios.get('https://27.123.248.68:4000/api/user/getProfile', {
+                    headers: { authorization: `Bearer ${token}` },
+                });
+                console.log(res.data.profile);
+                setUser(res.data.profile);
+                setRegistrationDetails({ ...RegistrationDetails, eventId: eventDetails._id, email: user.email, college: user.college });
+                const userData = res.data.profile;
+                setUser(userData);
+
+                setRegistrationDetails((prevDetails) => ({
+                    ...prevDetails,
+                    email: userData.email,
+                    college: userData.college,
+                    eventId: eventDetails._id,
+                }));
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
         fetchUser();
-        console.log(eventDetails);
-    }, []);
+        // console.log(eventDetails);
+    }, [eventDetails]);
 
     useEffect(() => {
         setMembers(Array(membersCount).fill({ name: '', id: '' }));
@@ -45,6 +58,7 @@ export default function EventRegister() {
 
     const handleAddMember = (count) => {
         const newMembers = Array.from({ length: count }, (_, i) => ({
+            id: index + 1,
             name: '',
             collegeId: '',
             personalId: ''
@@ -54,9 +68,11 @@ export default function EventRegister() {
     };
 
     const handleMemberChange = (index, field, value) => {
-        const updatedMembers = [...members];
-        updatedMembers[index][field] = value;
-        setMembers(updatedMembers);
+        setMembers((prevMembers) =>
+            prevMembers.map((member, i) =>
+                i === index ? { ...member, [field]: value } : member
+            )
+        );
     };
 
     const incrementCount = () => {
@@ -77,9 +93,29 @@ export default function EventRegister() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("test")
-        console.log('Registration Details:', RegistrationDetails);
-        console.log('Members:', members);
+
+        const registrationData = {
+            email: RegistrationDetails.email,
+            eventId: RegistrationDetails.eventId,
+            teamName: user.name,
+            college: RegistrationDetails.college,
+            members: members,
+        };
+
+        console.log('Registration Details:', registrationData);
+
+        axios.post('https://27.123.248.68:4000/api/event/register', registrationData)
+            .then((res) => {
+                console.log('Registration Successful:', res.data);
+                alert('Registration successful!');
+            })
+            .catch((error) => {
+                console.error('Error during registration:', error);
+                alert('Registration failed. Please try again.');
+            });
+    };
+    if (!user) {
+        return <div>Loading...</div>; // Add a loading state while fetching user data
     }
 
     return (
@@ -97,10 +133,10 @@ export default function EventRegister() {
                     <form onSubmit={handleSubmit}>
                         <h4>Leader Details:</h4>
                         <div className="form-group">
-                            <input type="text" placeholder="Team Name" required/>
+                            <input type="text" placeholder="Team Name" required />
                         </div>
                         <div className="form-group">
-                            <input type="text" placeholder="Leader's Phone Number"  required/>
+                            <input type="text" placeholder="Leader's Phone Number" value={user?.phone || ''} readOnly required />
                         </div>
 
                         <div className="form-registration-row">
@@ -124,27 +160,24 @@ export default function EventRegister() {
                                     type="text"
                                     placeholder={`Member ${index + 1} Name`}
                                     value={member.name}
-                                    onChange={(e) =>
-                                        handleMemberChange(index, 'name', e.target.value)
-                                    }
+                                    onChange={(e) => handleMemberChange(index, 'name', e.target.value)}
                                     required
                                 />
                                 <input
                                     type="text"
-                                    placeholder={`Member ${index + 1} ID`}
-                                    value={member.id}
+                                    placeholder={`Member ${index + 1} College ID`}
+                                    value={member.collegeId}
                                     onChange={(e) => handleMemberChange(index, 'collegeId', e.target.value)}
                                     required
                                 />
-                                <input
+                                {user.college !== 'DIT University' &&  (<input
                                     type="text"
                                     placeholder={`Member ${index + 1} Personal ID`}
-                                    value={member.name}
-                                    onChange={(e) =>
-                                        handleMemberChange(index, 'personalId', e.target.value)
-                                    }
+                                    value={member.personalId}
+                                    onChange={(e) => handleMemberChange(index, 'personalId', e.target.value)}
                                     required
-                                />
+                                />)}
+
                             </div>
                         ))}
                         <button className="submit-btn" type="submit">Submit</button>
