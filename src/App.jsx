@@ -17,6 +17,7 @@ import ErrorPage from "./pages/utils/error";
 import SuccessPage from "./pages/utils/paymentsuccessfulpage"
 import FailPage from "./pages/utils/paymentfail"
 import EventRegister from "./pages/EventRegister/EventRegister"
+import EventRegisterSolo from './pages/EventRegister/EventRegisterSolo';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path="/success" element={<SuccessPage />}/>
           <Route path="/fail" element={<FailPage />}/>
           <Route path="/register" element={<EventRegister />}/>
+          <Route path="/register-solo" element = {<EventRegisterSolo/>}/>
         </Routes>
       </BrowserRouter>
     </>
