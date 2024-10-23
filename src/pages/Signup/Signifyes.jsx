@@ -6,33 +6,46 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Signifyes() {
-  const [formData, setFormData] = useState({ ditId: '', course: '', year: '' });
+  const [formData, setFormData] = useState({
+    collegeId: '',
+    course: '',
+    year: '',
+  });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.ditId || !formData.course || !formData.year) {
+    if (!formData.collegeId || !formData.course || !formData.year) {
       return alert('Enter the data');
     }
 
     const data = JSON.parse(localStorage.getItem('userInput'));
 
-    const submitData = { ...data, ...formData };
+    const submitData = {
+      name: data.name,
+      email: data.email,
+      password: data.password,
+      collegeId: String(formData.collegeId),
+      branch: formData.course,
+      year: String(formData.year),
+    };
 
-    axios({
+    const response = await axios({
       method: 'post',
       url: 'https://27.123.248.68:4000/api/user/initialSignup',
       data: submitData,
+    }).catch((err) => {
+      console.log(err);
     });
 
-    localStorage.clear();
+    console.log(response);
 
-    console.log(submitData);
+    localStorage.clear();
 
     console.log('DIT Signup Data:', formData);
     alert('DIT Signup Complete!');
@@ -56,7 +69,7 @@ function Signifyes() {
                 <input
                   id="text"
                   type="text"
-                  name="ditId"
+                  name="collegeId"
                   placeholder="DIT ID"
                   onChange={handleChange}
                 />

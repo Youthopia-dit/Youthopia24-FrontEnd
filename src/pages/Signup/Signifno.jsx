@@ -19,7 +19,7 @@ function Signifno() {
     setFormData({ ...formdata, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (
@@ -34,13 +34,26 @@ function Signifno() {
 
     const data = JSON.parse(localStorage.getItem('userInput'));
 
-    const submitData = { ...data, ...formdata };
+    const submitData = {
+      name: data.name,
+      email: data.email,
+      password: data.password,
+      collegeId: String(formData.collegeId),
+      collegeName: formdata.collegeName,
+      identityNumber: formdata.governmentId,
+      branch: formData.course,
+      year: String(formData.year),
+    };
 
-    axios({
+    const response = await axios({
       method: 'post',
       url: 'https://27.123.248.68:4000/api/user/initialSignup',
       data: submitData,
+    }).catch((err) => {
+      console.log(err);
     });
+
+    console.log(response);
 
     console.log('Non-Dit Signup Data:', formdata);
     alert('Non-Dit Signup Complete!');
