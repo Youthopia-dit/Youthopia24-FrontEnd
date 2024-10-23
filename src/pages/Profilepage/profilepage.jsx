@@ -33,7 +33,7 @@ function ProfilePage() {
             window.location.href = '/getting-started';
         }
         const fetchUser = async () => {
-            const res = await axios.get('http://localhost:4000/api/user/getProfile', {
+            const res = await axios.get('https://27.123.248.68:4000/api/user/getProfile', {
                 headers: {
                     authorization: `Bearer ${token}`,
                 },
@@ -110,7 +110,7 @@ function ProfilePage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="scroller">
+                        {/* <div className="scroller">
                             <h1 className="register">Registered events</h1>
                             <div className="registered">
                                 <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
@@ -125,7 +125,8 @@ function ProfilePage() {
                                 <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
                             </div>
                             <br />
-                        </div></>
+                        </div> */}
+                        </>
                 )
                 }
             </div>
