@@ -2,17 +2,22 @@ import React from 'react';
 import './Signuppage.css';
 import bg1 from '../../assets/bg1.png';
 import youthopia_logo from '../../assets/youthopia-logo.png';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function Signupq() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const formData = location.state;
 
   const handleNavigation = (userType) => {
+    let data = {...formData};
     if (userType === 'DIT') {
-      navigate('/signup/dit');
+      data = { ...data, 'college' : 'DIT University' };
     } else {
-      navigate('/signup/non-dit');
+      data = { ...data, 'college' : '' };
     }
+    navigate('/signup-second', { state: data });
   };
 
   return (
@@ -30,12 +35,12 @@ function Signupq() {
           <form>
             <div>
               <p>
-                <button id="Login" onClick={() => handleNavigation('DIT')}>
+                <button id="Login" onClick={() => handleNavigation('DIT')} type="button">
                   Yes
                 </button>
               </p>
               <p>
-                <button id="Login" onClick={() => handleNavigation('Non-DIT')}>
+                <button id="Login" onClick={() => handleNavigation('Non-DIT')} type="button">
                   No
                 </button>
               </p>

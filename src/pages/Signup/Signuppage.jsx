@@ -3,16 +3,20 @@ import './Signuppage.css';
 import bg1 from '../../assets/bg1.png';
 import youthopia_logo from '../../assets/youthopia-logo.png';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 const Signuppage = () => {
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarSeverity, setSnackbarSeverity] = useState('error');
   const [formData, setFromData] = useState({
     name: '',
     email: '',
     password: '',
+    confirmPassword: '',
+    phone: '',
   });
-  const [confrimPassword, setConfirmPassword] = useState('');
-  // const [tempStorage, setTempStorage] = useState(null);
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -20,28 +24,24 @@ const Signuppage = () => {
     setFromData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const checkDitOrNot = (e) => {
-    e.preventDefault();
-    localStorage.setItem('userInput', JSON.stringify(formData));
-    navigate('/signup/question');
+  const handleSnackbarClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setSnackbarOpen(false);
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.password !== confirmPassword) {
-      return setError('Passwords do not match.');
+    if (formData.password !== formData.confirmPassword) {
+      setSnackbarMessage('Passwords do not match.');
+      setSnackbarSeverity('error');
+      setSnackbarOpen(true);
+      return;
     }
-    try {
-      const response = await axios.post(
-        'http://localhost:3000/api/signup',
-        formData
-      );
-      alert(response.data.message);
-      // Navigate to OTP verification with email as state
-      navigate('/verify-otp', { state: { email: formData.email } });
-    } catch (error) {
-      setError(error.response?.data?.message || 'Signup failed.');
-    }
+    console.log(formData);
+    navigate('/signup/question', { state: formData });
   };
 
   return (
@@ -60,41 +60,60 @@ const Signuppage = () => {
             <div>
               <p>
                 <input
-                  id="text"
+                  id="name"
+                  className='input-fields'
                   type="text"
                   name="name"
                   placeholder="Name"
                   onChange={handleChange}
+                  required
                 />
               </p>
               <p>
                 <input
-                  id="text"
+                className='input-fields'
+                  id="email"
                   type="email"
                   name="email"
                   placeholder="E-mail"
                   onChange={handleChange}
+                  required
                 />
               </p>
               <p>
                 <input
-                  id="text"
+                  id="phone"
+                  className='input-fields'
+                  type="number"
+                  name="phone"
+                  placeholder="Phone Number"
+                  onChange={handleChange}
+                  required
+                />
+              </p>
+              <p>
+                <input
+                  id="pass"
                   type="password"
+                  className='input-fields'
                   name="password"
                   placeholder="Password"
                   onChange={handleChange}
+                  required
                 />
               </p>
               <p>
                 <input
-                  id="text"
+                  id="conf_pass"
+                  className='input-fields'
                   type="password"
                   name="confirmPassword"
                   placeholder="Confirm Password"
                   onChange={handleChange}
+                  required
                 />
               </p>
-              <button type="submit" id="Next" onClick={checkDitOrNot}>
+              <button type="submit" id="Next">
                 Sign Up
               </button>
               {error && <p>{error}</p>}
@@ -102,6 +121,20 @@ const Signuppage = () => {
           </form>
         </div>
       </div>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={4000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert
+          onClose={handleSnackbarClose}
+          severity={snackbarSeverity}
+          sx={{ width: '100%' }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </>
   );
 };
