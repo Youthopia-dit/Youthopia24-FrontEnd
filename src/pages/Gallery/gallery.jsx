@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import './gallery.css';
+import imgL from "../../assets/LeftImg.png";
+import imgR from "../../assets/RightImg.png";
+import imgLC from "../../assets/FrameLC.png";
+import Footer from "../../components/Footer/Footer"
 import Navbar from '../../components/Navbar/navbar';
 import H1 from "../../assets/Gallery/H1.jpg";
 import H2 from "../../assets/Gallery/H2.jpg";
@@ -65,14 +69,19 @@ const Gallery = () => {
     return (
         <>
             <Navbar />
-
+            <div className="background-div">
+          <img className="ImgLeftCorner" src={imgLC}></img>
+          <img className="imageLeft" src={imgL}></img>
+          <img className="imageRight" src={imgR}></img>
+           </div>
             <div className="gallery-container">
                 {imageList.map((image, index) => (
                     <div key={index} className={`gallery-item ${image.type}`}>
                         <img src={image.src} alt={`Gallery img ${index + 1}`} />
                     </div>
                 ))}
-            </div>
+             </div>
+            <Footer />
         </>
     );
 };
