@@ -28,7 +28,6 @@ function ProfilePage() {
 
     useEffect(() => {
         const token = localStorage.getItem('authToken');
-        console.log(token)
         if (!token) {
             setSnackbarMessage('User Not logged in!');
             setSnackbarSeverity('success');
@@ -59,7 +58,7 @@ function ProfilePage() {
                         authorization: `Bearer ${localStorage.getItem('authToken')}`,
                     },
                 });
-                setEvents(res.data.events); // Assuming the API returns an array of events
+                setEvents(res.data.events);
             } catch (error) {
                 console.error("Error fetching registered events:", error);
             }
@@ -133,7 +132,7 @@ function ProfilePage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="scroller">
+                        {/* <div className="scroller">
                             <h1 className="register">Registered events</h1>
                             <div className="registered">
                                 <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
@@ -148,7 +147,8 @@ function ProfilePage() {
                                 <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
                             </div>
                             <br />
-                        </div>
+                        </div> */}
+                        <h1 className="comingSoon">Registered Events coming soon</h1>
                         </>
                 )
                 }
@@ -193,19 +193,4 @@ export default ProfilePage
             </div>
             <br />
             <br />
-            <div className="scroller">
-                <h1 className="register">Registered events</h1>
-                <div className="registered">
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                </div>
-                <br />
-            </div> */}
+            */}
