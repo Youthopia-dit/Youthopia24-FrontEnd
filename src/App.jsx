@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Loginpage from './pages/Login/Loginpage';
 import GettingStarted from './pages/Login/start_page';
 import Signuppage from './pages/Signup/Signuppage';
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/individualpage" element={<IndividualEvent />} />
           <Route path="/loginpage" element={<Loginpage />} />
@@ -47,7 +47,7 @@ function App() {
           <Route path="/register" element={<EventRegister />}/>
           <Route path="/register-solo" element = {<EventRegisterSolo/>}/>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
