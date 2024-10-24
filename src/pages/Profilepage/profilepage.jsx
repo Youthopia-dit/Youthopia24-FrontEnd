@@ -31,7 +31,7 @@ function ProfilePage() {
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
-    // console.log(token);
+    console.log(token);
     if (!token) {
       setSnackbarMessage('User Not logged in!');
       setSnackbarSeverity('success');
@@ -54,14 +54,12 @@ function ProfilePage() {
 
         const res2 = await axios.post(
           'https://27.123.248.68:4000/api/register/getRegistrations',
-          {
-            registrationIds: eventList,
-          }
+          { registrationIds: eventList }
         );
 
         setUser({
           user: res.data.profile,
-          registeredEventDetails: res2.data.registrations,
+          registeredEvent: res2.data.registrations,
         });
 
         setLoading(false);
@@ -93,7 +91,7 @@ function ProfilePage() {
 
   return (
     <>
-      {showModal && <Modal data={modalData} />}
+      {showModal && <Modal data={modalData} handelModal={handelModal} />}
       <Navbar />
       <div className="ProfilePage">
         <div className="background-div">
@@ -145,10 +143,11 @@ function ProfilePage() {
             <div className="scroller">
               <h1 className="register">Registered events</h1>
               <div className="registered">
-                {user.registeredEventDetails.map((el, i) => {
+                {user.registeredEvent.map((el, i) => {
+                  console.log(el);
                   return (
                     <img
-                      key={el.eventDetails.eventID}
+                      key={i}
                       src={`${el.eventDetails.event_poster}`}
                       className="events"
                       onClick={() => {
