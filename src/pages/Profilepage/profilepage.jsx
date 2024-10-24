@@ -28,6 +28,34 @@ function ProfilePage() {
   };
 
   useEffect(() => {
+    const fetchEvent = async () => {
+      if (!user) {
+        return;
+      }
+
+      const eventImageArr = user.registeredEvent.map(async (el, i) => {
+        const res1 = await axios({
+          method: 'post',
+          url: 'https://27.123.248.68:4000/api/register/getRegistrations',
+          data: { registrationIds: el },
+        });
+
+        const eventID = res1.data.registrations[0].eventDetails.eventID;
+
+        const res2 = await axios({
+          method: 'get',
+          url: `https://27.123.248.68:4000/api/events/${eventID}`,
+        });
+
+        return res2.data.event_poster;
+      });
+
+      Promise.all(eventImageArr).then((res) => setEventImages(res));
+    };
+    fetchEvent();
+  }, [user]);
+
+  useEffect(() => {
     const token = localStorage.getItem('authToken');
     console.log(token);
     if (!token) {
@@ -55,31 +83,6 @@ function ProfilePage() {
       }
     };
 
-    const fetchEvent = async () => {
-      if (!user) {
-        return;
-      }
-
-      const eventImageArr = user.registeredEvent.map(async (el, i) => {
-        const res1 = await axios({
-          method: 'post',
-          url: 'https://27.123.248.68:4000/api/register/getRegistrations',
-          data: { registrationIds: el },
-        });
-
-        const eventID = res1.data.registrations[0].eventDetails.eventID;
-
-        const res2 = await axios({
-          method: 'get',
-          url: `https://27.123.248.68:4000/api/events/${eventID}`,
-        });
-
-        return res2.data.event_poster;
-      });
-
-      Promise.all(eventImageArr).then((res) => setEventImages(res));
-    };
-
     const fetchRegisteredEvents = async (userId) => {
       try {
         const res = await axios.get(
@@ -95,13 +98,7 @@ function ProfilePage() {
         console.error('Error fetching registered events:', error);
       }
     };
-
-    const finalFunction = async () => {
-      await fetchUser();
-      await fetchEvent();
-    };
-
-    finalFunction();
+    fetchUser();
   }, []);
 
   const handleSignout = () => {
