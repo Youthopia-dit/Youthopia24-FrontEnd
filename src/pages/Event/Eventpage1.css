@@ -218,6 +218,12 @@
       flex-direction: column;
       align-items: center;
     }
+    .informal-back-image{
+      height: 100vh;
+    }
+    .cultural-back-image{
+      height: 100vh;
+    }
   }
 
 
@@ -240,5 +246,11 @@
 
   .Events {
     padding: 10px 150px 80px; 
+  }
+  .cultural-back-image{
+    height: 100vh;
+  }
+  .informal-back-image{
+    height: 100vh;
   }
 }

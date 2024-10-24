@@ -1,4 +1,3 @@
-import React from "react";
 import './Homepage.css';
 import event1 from "../../assets/tech01.png";
 import centerElement from '../../assets/center-element-full.png'
@@ -24,6 +23,8 @@ import "../../components/card-list/Glimpse";
 import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/Footer";
 import DITLOGO from "../../assets/ditlogo.png";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const imagesCarousel1 = [
     { id: 1, src: H1 },
@@ -68,8 +69,23 @@ function Carousel({ images, direction }) {
 
 
 function Homepage() {
+    const [events, setEvents] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    
+    useEffect(() => {
+        const fetchEvents = async () => {
+            try {
+                const response = await axios.get('https://27.123.248.68:4000/api/gethighlights'); 
+                setEvents(response.data.data); // Assuming API returns { data: [events] }
+            } catch (err) {
+                setError('Failed to load events');
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchEvents();
+    }, []);
 
     return (
         <>
@@ -108,26 +124,29 @@ function Homepage() {
                                     <img src={NAAC} alt="Naaclogo" className="Slogo" />
                                     <img src={NAAC} alt="Naaclogo" className="Slogo" />
                                     <img src={NAAC} alt="Naaclogo" className="Slogo" />
-                            </div>
-                            </div> */}
-
-                            {/* <div className="events-home">
-                                <p className="events-text">EVENTS</p>
-                                <div className="events-row">
-                                    <div className="events-img">
-                                        <img src={event1} alt="event1" className="Elogo" />
-                                    </div>
-                                    <div className="events-img">
-                                        <img src={event1} alt="event1" className="Elogo" />
-                                    </div>
-                                    <div className="events-img">
-                                        <img src={event1} alt="event1" className="Elogo" />
-                                    </div>
-                                    <div className="events-img">
-                                        <img src={event1} alt="event1" className="Elogo" />
-                                    </div>
                                 </div>
                             </div> */}
+
+                            <div className="events-home">
+                                <p className="events-text">EVENTS</p>
+                                <div className="events-row">
+                                    {loading ? (
+                                        <p>Loading events...</p>
+                                    ) : error ? (
+                                        <p>{error}</p>
+                                    ) : (
+                                        events.map((event) => (
+                                            <div className="events-img" key={event.event_id}>
+                                                <img
+                                                    src={event.image_url || event1}
+                                                    alt={event.name}
+                                                    className="Elogo"
+                                                />
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                            </div>
                             <div className="presents-text">
                                 <p className="glimpse"> Glimpse from 2023 </p>
                             </div>
