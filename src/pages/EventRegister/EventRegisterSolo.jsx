@@ -123,7 +123,7 @@ export default function EventRegisterSolo() {
 
         try {
             const res = await axios.post(
-                'https://27.123.248.68:4000/api/register/eventRegister',
+                'http://localhost:4000/api/register/eventRegister',
                 registrationData,
                 {
                     headers: {
