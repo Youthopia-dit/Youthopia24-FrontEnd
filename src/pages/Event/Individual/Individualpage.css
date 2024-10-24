@@ -227,6 +227,8 @@
 }
 
 
+
+
 @media only screen and (max-width: 1440px) {
 
   .event-poster img {
@@ -307,7 +309,7 @@
   }
 
   .tab-navigation button {
-    width: 25%;
+    width: 26.2%;
     padding: 10px 10px 25px;
   }
 
@@ -332,7 +334,7 @@
     object-fit: cover;
   }
   .tab-navigation button {
-    width: 27%;
+    width: 31%;
     padding: 10px 10px 25px;
   }
 
