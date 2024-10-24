@@ -14,11 +14,10 @@ import { useNavigate } from 'react-router-dom';
 function ProfilePage() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
-  const [events, setEvents] = useState([]);
-  const [eventImages, setEventImages] = useState([]);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('error');
+  const [loading, setLoading] = useState(true);
 
   const handleSnackbarClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -29,6 +28,7 @@ function ProfilePage() {
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
+    console.log(token);
     if (!token) {
       setSnackbarMessage('User Not logged in!');
       setSnackbarSeverity('success');
@@ -47,56 +47,19 @@ function ProfilePage() {
           }
         );
 
-        // console.log(res.data.profile);
         setUser(res.data.profile);
-        console.log('User', user);
+        const eventList = res.data.profile.registeredEvent;
+        const res2 = await axios.post(
+          'https://27.123.248.68:4000/api/register/getRegistrations',
+          { registrationIds: eventList }
+        );
+        setUser({ ...user, registeredEvent: res2.data.registrations });
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
     };
-
-    const fetchRegisteredEvents = async (userId) => {
-      try {
-        const res = await axios.get(
-          `https://27.123.248.68:4000/api/user/${userId}/registered-events`,
-          {
-            headers: {
-              authorization: `Bearer ${localStorage.getItem('authToken')}`,
-            },
-          }
-        );
-        setEvents(res.data.events);
-      } catch (error) {
-        console.error('Error fetching registered events:', error);
-      }
-    };
     fetchUser();
-  }, []);
-
-  useEffect(() => {
-    const fetchEvent = () => {
-      console.log('Events', user);
-      const eventImageArr = user.registeredEvent.map(async (el, i) => {
-        const res1 = await axios({
-          method: 'post',
-          url: 'https://27.123.248.68:4000/api/register/getRegistrations',
-          data: { registrationIds: el },
-        });
-
-        const eventID = res1.data.registrations[0].eventDetails.eventID;
-
-        const res2 = await axios({
-          method: 'get',
-          url: `https://27.123.248.68:4000/api/events/${eventID}`,
-        });
-
-        return res2.data.event_poster;
-      });
-
-      Promise.all(eventImageArr).then((res) => setEventImages(res));
-    };
-
-    fetchEvent();
   }, []);
 
   const handleSignout = () => {
@@ -122,12 +85,12 @@ function ProfilePage() {
           <img className="imageLeft" src={imgL}></img>
           <img className="imageRight" src={imgR}></img>
         </div>
-        {!user && (
+        {loading && (
           <div className="loading">
             <h1>Loading...</h1>
           </div>
         )}
-        {user && (
+        {!loading && (
           <>
             <div className="profile-details">
               <div className="left-column">
@@ -167,54 +130,18 @@ function ProfilePage() {
               <h1 className="register">Registered events</h1>
               <div className="registered">
                 {user.registeredEvent.map((el, i) => {
+                  console.log(el);
                   return (
-                    <img key={i} src={eventImages[i]} className="events"></img>
+                    <img
+                      key={i}
+                      src={`${el.eventDetails.event_poster}`}
+                      className="events"
+                    ></img>
                   );
                 })}
-                {/* <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>
-                <img
-                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-                  className="events"
-                ></img>*/}
               </div>
               <br />
             </div>
-            <h1 className="comingSoon">Registered Events coming soon</h1>
           </>
         )}
       </div>
@@ -237,26 +164,3 @@ function ProfilePage() {
   );
 }
 export default ProfilePage;
-
-{
-  /* <div className="info">
-                <div>
-                    <div className="image" >
-                        <h3 className="heading">Profile photo</h3>
-                    </div>
-                    <div className="contact">
-                        <h3 className="contactinfo">Phone: 1234567890 <br /> Email: example@gmail.com</h3>
-                    </div>
-                </div>
-                <div className="mainheading">
-                    <div className="bgplate"><h2 className="text"> Your Name : Name</h2></div>
-                    <div className="bgplate"><h2 className="text"> College: DIT</h2></div>
-                    <div className="bgplate"><h2 className="text"> College ID: ID</h2></div>
-                    <div className="bgplate"><h2 className="text"> Branch: CSE</h2></div>
-                    <div className="bgplate"><h2 className="text"> Year: 2nd</h2></div>
-                </div>
-            </div>
-            <br />
-            <br />
-            */
-}

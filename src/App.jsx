@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Loginpage from './pages/Login/Loginpage';
 import GettingStarted from './pages/Login/start_page';
 import Signuppage from './pages/Signup/Signuppage';
@@ -12,7 +12,6 @@ import Homepage from './pages/Home/Homepage';
 import Eventpage from './pages/Event/Eventpage1';
 import IndividualEvent from './pages/Event/Individual/Individualpage';
 import TeamPage from './pages/Team/Teampage';
-import VerifyOtpPage from './pages/Signup/VerifyOtpPage';
 import ErrorPage from "./pages/utils/error";
 import SuccessPage from "./pages/utils/paymentsuccessfulpage"
 import FailPage from "./pages/utils/paymentfail"
@@ -24,7 +23,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/individualpage" element={<IndividualEvent />} />
           <Route path="/loginpage" element={<Loginpage />} />
@@ -40,14 +39,13 @@ function App() {
           <Route path="/event-details" element={<IndividualEvent />}/>
           <Route path="/team" element={<TeamPage />}/>
           <Route path="/about" element={<Aboutuspage />}/>
-          <Route path="/verify-otp" element={<VerifyOtpPage />}/>
           <Route path="/error" element={<ErrorPage />}/>
           <Route path="/success" element={<SuccessPage />}/>
           <Route path="/fail" element={<FailPage />}/>
           <Route path="/register" element={<EventRegister />}/>
           <Route path="/register-solo" element = {<EventRegisterSolo/>}/>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
