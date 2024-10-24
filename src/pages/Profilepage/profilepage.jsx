@@ -51,19 +51,6 @@ function ProfilePage() {
            
         };
 
-        const fetchRegisteredEvents = async (userId) => {
-            try {
-                const res = await axios.get(`https://27.123.248.68:4000/api/user/${userId}/registered-events`, {
-                    headers: {
-                        authorization: `Bearer ${localStorage.getItem('authToken')}`,
-                    },
-                });
-                setEvents(res.data.events);
-            } catch (error) {
-                console.error("Error fetching registered events:", error);
-            }
-        };
-
         fetchUser();
     }, []);
 
@@ -172,25 +159,3 @@ function ProfilePage() {
     )
 }
 export default ProfilePage
-
-
-{/* <div className="info">
-                <div>
-                    <div className="image" >
-                        <h3 className="heading">Profile photo</h3>
-                    </div>
-                    <div className="contact">
-                        <h3 className="contactinfo">Phone: 1234567890 <br /> Email: example@gmail.com</h3>
-                    </div>
-                </div>
-                <div className="mainheading">
-                    <div className="bgplate"><h2 className="text"> Your Name : Name</h2></div>
-                    <div className="bgplate"><h2 className="text"> College: DIT</h2></div>
-                    <div className="bgplate"><h2 className="text"> College ID: ID</h2></div>
-                    <div className="bgplate"><h2 className="text"> Branch: CSE</h2></div>
-                    <div className="bgplate"><h2 className="text"> Year: 2nd</h2></div>
-                </div>
-            </div>
-            <br />
-            <br />
-            */}
