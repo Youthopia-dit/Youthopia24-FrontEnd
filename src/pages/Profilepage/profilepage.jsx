@@ -5,7 +5,7 @@ import imgR from "../../assets/RightImg.png";
 import imgLC from "../../assets/FrameLC.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/navbar";
-import dummy from "../../assets/demo_profile.jpg"
+import dummy from "../../assets/demo_profile.jpg";
 import axios from "axios";
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 function ProfilePage() {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
-    const [events, setEvents] = useState([]);
+    const [events, setEvents] = useState([]); // State for registered events
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState('');
     const [snackbarSeverity, setSnackbarSeverity] = useState('error');
@@ -34,19 +34,19 @@ function ProfilePage() {
             setSnackbarOpen(true);
             window.location.href = '/getting-started';
         }
-
+        
         const fetchUser = async () => {
-           try {
-            const res = await axios.get('https://27.123.248.68:4000/api/user/getProfile', {
-                headers: {
-                    authorization: `Bearer ${token}`,
-                },
-            });
-           } catch (error) {
-            console.error("Error fetching user data:", error);
-           }
-            // console.log(res.data.profile);
-            // setUser(res.data.profile);
+            try {
+                const res = await axios.get('https://27.123.248.68:4000/api/user/getProfile', {
+                    headers: {
+                        authorization: `Bearer ${token}`,
+                    },
+                });
+                setUser(res.data.profile);
+                fetchRegisteredEvents(res.data.profile._id); // Fetch registered events
+            } catch (error) {
+                console.error("Error fetching user data:", error);
+            }
         };
 
         const fetchRegisteredEvents = async (userId) => {
@@ -68,7 +68,7 @@ function ProfilePage() {
     const handleSignout = () => {
         localStorage.removeItem('authToken');
         navigate('/');
-        setSnackbarMessage('Logged Out Successdully!');
+        setSnackbarMessage('Logged Out Successfully!');
         setSnackbarSeverity('success');
         setSnackbarOpen(true);
     };
@@ -77,24 +77,22 @@ function ProfilePage() {
         setSnackbarMessage('Payments are opening soon!');
         setSnackbarSeverity('info');
         setSnackbarOpen(true);
-    }
+    };
 
     return (
         <>
             <Navbar />
             <div className="ProfilePage">
                 <div className="background-div">
-                    <img className="ImgLeftCorner" src={imgLC}></img>
-                    <img className="imageLeft" src={imgL}></img>
-                    <img className="imageRight" src={imgR}></img>
+                    <img className="ImgLeftCorner" src={imgLC} alt="Left Corner" />
+                    <img className="imageLeft" src={imgL} alt="Left" />
+                    <img className="imageRight" src={imgR} alt="Right" />
                 </div>
-                {!user && (
+                {!user ? (
                     <div className="loading">
                         <h1>Loading...</h1>
                     </div>
-                )
-                }
-                {user && (
+                ) : (
                     <>
                         <div className="profile-details">
                             <div className="left-column">
@@ -130,25 +128,22 @@ function ProfilePage() {
                                 </div>
                             </div>
                         </div>
+
                         <div className="scroller">
-                            <h1 className="register">Registered events</h1>
+                            <h1 className="register">Registered Events</h1>
                             <div className="registered">
-                                <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                                <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                                <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                                <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                                <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                                <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                                <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                                <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                                <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                                <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
+                                {events.length > 0 ? (
+                                    events.map((event) => (
+                                        <img key={event._id} src={event.imageUrl} className="events" alt={event.name} />
+                                    ))
+                                ) : (
+                                    <p>No registered events found.</p>
+                                )}
                             </div>
                             <br />
                         </div>
-                        </>
-                )
-                }
+                    </>
+                )}
             </div>
             <Snackbar
                 open={snackbarOpen}
@@ -166,43 +161,7 @@ function ProfilePage() {
             </Snackbar>
             <Footer />
         </>
-    )
+    );
 }
-export default ProfilePage
 
-
-{/* <div className="info">
-                <div>
-                    <div className="image" >
-                        <h3 className="heading">Profile photo</h3>
-                    </div>
-                    <div className="contact">
-                        <h3 className="contactinfo">Phone: 1234567890 <br /> Email: example@gmail.com</h3>
-                    </div>
-                </div>
-                <div className="mainheading">
-                    <div className="bgplate"><h2 className="text"> Your Name : Name</h2></div>
-                    <div className="bgplate"><h2 className="text"> College: DIT</h2></div>
-                    <div className="bgplate"><h2 className="text"> College ID: ID</h2></div>
-                    <div className="bgplate"><h2 className="text"> Branch: CSE</h2></div>
-                    <div className="bgplate"><h2 className="text"> Year: 2nd</h2></div>
-                </div>
-            </div>
-            <br />
-            <br />
-            <div className="scroller">
-                <h1 className="register">Registered events</h1>
-                <div className="registered">
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                </div>
-                <br />
-            </div> */}
+export default ProfilePage;
