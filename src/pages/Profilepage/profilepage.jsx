@@ -56,6 +56,10 @@ function ProfilePage() {
     };
 
     const fetchEvent = async () => {
+      if (!user) {
+        return;
+      }
+
       const eventImageArr = user.registeredEvent.map(async (el, i) => {
         const res1 = await axios({
           method: 'post',
