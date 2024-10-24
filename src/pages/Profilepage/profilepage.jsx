@@ -36,17 +36,19 @@ function ProfilePage() {
         }
         
         const fetchUser = async () => {
-            try {
-                const res = await axios.get('https://27.123.248.68:4000/api/user/getProfile', {
-                    headers: {
-                        authorization: `Bearer ${token}`,
-                    },
-                });
-                setUser(res.data.profile);
-                fetchRegisteredEvents(res.data.profile._id); // Fetch registered events
-            } catch (error) {
-                console.error("Error fetching user data:", error);
-            }
+           try {
+            const res = await axios.get('https://27.123.248.68:4000/api/user/getProfile', {
+                headers: {
+                    authorization: `Bearer ${token}`,
+                },
+            });
+
+            console.log(res.data.profile);
+            setUser(res.data.profile);
+           } catch (error) {
+            console.error("Error fetching user data:", error);
+           }
+           
         };
 
         const fetchRegisteredEvents = async (userId) => {
@@ -56,7 +58,7 @@ function ProfilePage() {
                         authorization: `Bearer ${localStorage.getItem('authToken')}`,
                     },
                 });
-                setEvents(res.data.events); // Assuming the API returns an array of events
+                setEvents(res.data.events);
             } catch (error) {
                 console.error("Error fetching registered events:", error);
             }
@@ -128,9 +130,8 @@ function ProfilePage() {
                                 </div>
                             </div>
                         </div>
-
-                        <div className="scroller">
-                            <h1 className="register">Registered Events</h1>
+                        {/* <div className="scroller">
+                            <h1 className="register">Registered events</h1>
                             <div className="registered">
                                 {events.length > 0 ? (
                                     events.map((event) => (
@@ -141,9 +142,11 @@ function ProfilePage() {
                                 )}
                             </div>
                             <br />
-                        </div>
-                    </>
-                )}
+                        </div> */}
+                        <h1 className="comingSoon">Registered Events coming soon</h1>
+                        </>
+                )
+                }
             </div>
             <Snackbar
                 open={snackbarOpen}
@@ -164,4 +167,24 @@ function ProfilePage() {
     );
 }
 
-export default ProfilePage;
+
+{/* <div className="info">
+                <div>
+                    <div className="image" >
+                        <h3 className="heading">Profile photo</h3>
+                    </div>
+                    <div className="contact">
+                        <h3 className="contactinfo">Phone: 1234567890 <br /> Email: example@gmail.com</h3>
+                    </div>
+                </div>
+                <div className="mainheading">
+                    <div className="bgplate"><h2 className="text"> Your Name : Name</h2></div>
+                    <div className="bgplate"><h2 className="text"> College: DIT</h2></div>
+                    <div className="bgplate"><h2 className="text"> College ID: ID</h2></div>
+                    <div className="bgplate"><h2 className="text"> Branch: CSE</h2></div>
+                    <div className="bgplate"><h2 className="text"> Year: 2nd</h2></div>
+                </div>
+            </div>
+            <br />
+            <br />
+            */}

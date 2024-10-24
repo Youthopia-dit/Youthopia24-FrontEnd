@@ -36,8 +36,6 @@ function VerifyOtpPage() {
                     <div>
                         <img src={youthopia_logo} alt="logo" id="logo" />
                     </div>
-                    <h2> Welcome </h2>
-                    <h3>Login to continue</h3>
                     <form onSubmit={handleVerifyOtp}>
                         <div>
                             <p>

@@ -7,11 +7,12 @@
     font-family: Arial, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     width: 300px;
+    height: 400px;
     
 }
 
 .team-card img{
-    width: 100%;
+    width: 95%;
     object-fit: contain;
     height: 350px;
     border-radius: 8%;
@@ -25,18 +26,23 @@
     border-radius: 8px;
     text-align: left;
     background-color: none;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
 .team-details h2 {
-    font-size: 1.5em;
+    position: relative;
+    bottom: 50px;
+    font-size: 20px;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
 
 .team-details p {
+    position: relative;
+    bottom: 50px;
     font-size: 1em;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+    color: aliceblue;
 }

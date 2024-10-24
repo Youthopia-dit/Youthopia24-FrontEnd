@@ -159,17 +159,22 @@
   gap: 10px;
   margin-top: 20px;
   width: 100%;
+  
+
   justify-content: space-evenly;
 }
 
 
 .tab-navigation button {
   padding: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
   cursor: pointer;
-  background-color: white;
+  
+  background-color: rgba(93, 133, 153, 0.473);
+  
   border: none;
   border-radius: 5px;
-  color: black;
+  color: rgb(243, 243, 243);
   width: 10vw;
   height: 6.5vh;
   display: inline-block;
@@ -179,14 +184,16 @@
 }
 
 .tab-navigation button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  background-color: rgb(249, 243, 243);
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
   border: 1px solid white;
 }
 
 .tab-navigation .active-tab {
-  background-color: transparent;
-  color: white;
+  background-color: rgb(250, 245, 245);
+  font-weight: bold;
+  color: black;
   border: 1px solid white;
 }
 
@@ -214,6 +221,8 @@
 }
 
 
+
+
 @media only screen and (max-width: 1440px) {
 
   .event-poster img {
@@ -228,6 +237,7 @@
     width: 50%;
     left: 50%;
     padding: 10px 10px 22.5px;
+    top: 10px;
     transform: translateX(-50%);
   }
 
@@ -252,6 +262,7 @@
     width: 50%;
     left: 50%;
     padding: 10px 10px 22.5px;
+    top: 10px;
     transform: translateX(-50%);
   }
 
@@ -285,6 +296,7 @@
     width: 50%;
     left: 50%;
     padding: 10px 10px 22.5px;
+    top: 10px;
     transform: translateX(-50%);
   }
 
@@ -318,11 +330,12 @@
     width: 50%;
     left: 50%;
     padding: 10px 10px 22.5px;
+    top: 7px;
     transform: translateX(-50%);
   }
 
   .tab-navigation button {
-    width: 25%;
+    width: 26.2%;
     padding: 10px 10px 25px;
   }
 
@@ -355,7 +368,7 @@
   }
 
   .tab-navigation button {
-    width: 27%;
+    width: 31%;
     padding: 10px 10px 25px;
   }
 
