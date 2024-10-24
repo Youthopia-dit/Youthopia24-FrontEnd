@@ -27,7 +27,7 @@ function SignIn() {
     if (data.college === 'DIT University') {
       setIsCollege(true);
     }
-  }, []);
+  }, [data]);
 
   const handleChange = (e) => {
     setFormData({ ...formdata, [e.target.name]: e.target.value });
@@ -41,11 +41,11 @@ function SignIn() {
       const res = await axios.post('https://27.123.248.68:4000/api/user/initialsignup', formdata);
       console.log(res);
       if (res.status === 201) {
-        navigate('/');
         setSnackbarMessage('Sign up successful!');
         setSnackbarSeverity('success');
         setSnackbarOpen(true);
         localStorage.setItem('authToken', res.data.token);
+        navigate('/');
       }
     } catch (error) {
       console.log(error.response.data.message);
