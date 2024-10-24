@@ -41,7 +41,7 @@ const OtpModal = ({ email, otpModalOpen, setOtpModalOpen, onOtpVerification }) =
 
     const handleOtpSubmit = async () => {
         try {
-            const res = await axios.post('http://localhost:4000/api/user/verifyOtp', { userOtp: otp, email });
+            const res = await axios.post('https://27.123.248.68:4000/api/user/verifyOtp', { userOtp: otp, email });
             if (res.status === 200) {
                 onOtpVerification(true);
                 setSnackbarMessage('Email verified successfully!');
@@ -58,7 +58,7 @@ const OtpModal = ({ email, otpModalOpen, setOtpModalOpen, onOtpVerification }) =
 
     const handleResendOtp = async () => {
         try {
-            const res = await axios.post('http://localhost:4000/api/user/sendOtp', { email });
+            const res = await axios.post('https://27.123.248.68:4000/api/user/sendOtp', { email });
             setSnackbarMessage(res.data.message);
             setSnackbarSeverity('success');
             setSnackbarOpen(true);

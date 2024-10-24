@@ -38,14 +38,14 @@ function SignIn() {
     console.log(formdata);
     try {
       console.log("Test");
-      const res = await axios.post('http://localhost:4000/api/user/initialsignup', formdata);
+      const res = await axios.post('https://27.123.248.68:4000/api/user/initialsignup', formdata);
       console.log(res);
       if (res.status === 201) {
-        navigate('/');
         setSnackbarMessage('Sign up successful!');
         setSnackbarSeverity('success');
         setSnackbarOpen(true);
         localStorage.setItem('authToken', res.data.token);
+        navigate('/');
       }
     } catch (error) {
       console.log(error.response.data.message);

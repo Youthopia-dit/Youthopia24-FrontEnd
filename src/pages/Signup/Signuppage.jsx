@@ -32,7 +32,7 @@ const Signuppage = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:4000/api/user/sendOtp', { email: formData.email });
+      const res = await axios.post('https://27.123.248.68:4000/api/user/sendOtp', { email: formData.email });
       setSnackbarMessage(res.data.message);
       setSnackbarSeverity('success');
       setSnackbarOpen(true);
