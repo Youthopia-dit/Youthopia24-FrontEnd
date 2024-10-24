@@ -29,7 +29,6 @@ function ProfilePage() {
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
-    console.log(token);
     if (!token) {
       setSnackbarMessage('User Not logged in!');
       setSnackbarSeverity('success');
@@ -48,14 +47,35 @@ function ProfilePage() {
           }
         );
 
-        console.log(res.data.profile);
+        // console.log(res.data.profile);
         setUser(res.data.profile);
+        console.log('User', user);
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
     };
 
-    const fetchEvent = async () => {
+    const fetchRegisteredEvents = async (userId) => {
+      try {
+        const res = await axios.get(
+          `https://27.123.248.68:4000/api/user/${userId}/registered-events`,
+          {
+            headers: {
+              authorization: `Bearer ${localStorage.getItem('authToken')}`,
+            },
+          }
+        );
+        setEvents(res.data.events);
+      } catch (error) {
+        console.error('Error fetching registered events:', error);
+      }
+    };
+    fetchUser();
+  }, []);
+
+  useEffect(() => {
+    const fetchEvent = () => {
+      console.log('Events', user);
       const eventImageArr = user.registeredEvent.map(async (el, i) => {
         const res1 = await axios({
           method: 'post',
@@ -76,28 +96,7 @@ function ProfilePage() {
       Promise.all(eventImageArr).then((res) => setEventImages(res));
     };
 
-    const fetchRegisteredEvents = async (userId) => {
-      try {
-        const res = await axios.get(
-          `https://27.123.248.68:4000/api/user/${userId}/registered-events`,
-          {
-            headers: {
-              authorization: `Bearer ${localStorage.getItem('authToken')}`,
-            },
-          }
-        );
-        setEvents(res.data.events); // Assuming the API returns an array of events
-      } catch (error) {
-        console.error('Error fetching registered events:', error);
-      }
-    };
-
-    const finalFunction = async () => {
-      await fetchUser();
-      await fetchEvent();
-    };
-
-    finalFunction();
+    fetchEvent();
   }, []);
 
   const handleSignout = () => {
@@ -169,16 +168,53 @@ function ProfilePage() {
               <div className="registered">
                 {user.registeredEvent.map((el, i) => {
                   return (
-                    <img
-                      key={i}
-                      src={`${eventImages[i]}`}
-                      className="events"
-                    ></img>
+                    <img key={i} src={eventImages[i]} className="events"></img>
                   );
                 })}
+                {/* <img
+                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                  className="events"
+                ></img>
+                <img
+                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                  className="events"
+                ></img>
+                <img
+                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                  className="events"
+                ></img>
+                <img
+                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                  className="events"
+                ></img>
+                <img
+                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                  className="events"
+                ></img>
+                <img
+                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                  className="events"
+                ></img>
+                <img
+                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                  className="events"
+                ></img>
+                <img
+                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                  className="events"
+                ></img>
+                <img
+                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                  className="events"
+                ></img>
+                <img
+                  src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
+                  className="events"
+                ></img>*/}
               </div>
               <br />
             </div>
+            <h1 className="comingSoon">Registered Events coming soon</h1>
           </>
         )}
       </div>
@@ -222,20 +258,5 @@ export default ProfilePage;
             </div>
             <br />
             <br />
-            <div className="scroller">
-                <h1 className="register">Registered events</h1>
-                <div className="registered">
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                    <img src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg" className="events"></img>
-                </div>
-                <br />
-            </div> */
+            */
 }

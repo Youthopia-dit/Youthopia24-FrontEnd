@@ -8,6 +8,12 @@
     padding-bottom: 10vw;
   }
 
+  .background-div{
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
   .gallery-container:nth-child(n){
     z-index: 10;
   }
