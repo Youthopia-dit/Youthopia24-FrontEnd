@@ -175,7 +175,7 @@ const IndividualEvent = () => {
                         </tbody>
                       </table>
 
-                      <strong className="tablehead">Event Heads:</strong>
+                      <strong className="tablehead">Overall Heads:</strong>
                       <table className="event-head-table">
                         <thead>
                           <tr>
@@ -236,7 +236,7 @@ const IndividualEvent = () => {
               )}
             </div>
             <button className="register-btn" onClick={handleRegister}>Register Now</button>
-            <h3>Registration Opening Soon</h3>
+            {/* <h3>Registration Opening Soon</h3> */}
           </div>
         </div>
       </div>

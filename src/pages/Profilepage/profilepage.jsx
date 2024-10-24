@@ -167,6 +167,7 @@ function ProfilePage() {
     );
 }
 
+export default ProfilePage;
 
 {/* <div className="info">
                 <div>
