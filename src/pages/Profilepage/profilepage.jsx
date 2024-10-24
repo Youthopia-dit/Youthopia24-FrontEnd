@@ -10,6 +10,7 @@ import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import { useNavigate } from 'react-router-dom';
+import Modal from '../../components/Modal/Modal';
 
 function ProfilePage() {
   const navigate = useNavigate();
@@ -18,6 +19,8 @@ function ProfilePage() {
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('error');
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [modalData, setModalData] = useState();
 
   const handleSnackbarClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -28,7 +31,7 @@ function ProfilePage() {
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
-    console.log(token);
+    // console.log(token);
     if (!token) {
       setSnackbarMessage('User Not logged in!');
       setSnackbarSeverity('success');
@@ -47,13 +50,20 @@ function ProfilePage() {
           }
         );
 
-        setUser(res.data.profile);
         const eventList = res.data.profile.registeredEvent;
+
         const res2 = await axios.post(
           'https://27.123.248.68:4000/api/register/getRegistrations',
-          { registrationIds: eventList }
+          {
+            registrationIds: eventList,
+          }
         );
-        setUser({ ...user, registeredEvent: res2.data.registrations });
+
+        setUser({
+          user: res.data.profile,
+          registeredEventDetails: res2.data.registrations,
+        });
+
         setLoading(false);
       } catch (error) {
         console.error('Error fetching user data:', error);
@@ -76,8 +86,14 @@ function ProfilePage() {
     setSnackbarOpen(true);
   };
 
+  const handelModal = (data) => {
+    setShowModal((prev) => !prev);
+    setModalData(data);
+  };
+
   return (
     <>
+      {showModal && <Modal data={modalData} />}
       <Navbar />
       <div className="ProfilePage">
         <div className="background-div">
@@ -129,13 +145,15 @@ function ProfilePage() {
             <div className="scroller">
               <h1 className="register">Registered events</h1>
               <div className="registered">
-                {user.registeredEvent.map((el, i) => {
-                  console.log(el);
+                {user.registeredEventDetails.map((el, i) => {
                   return (
                     <img
-                      key={i}
+                      key={el.eventDetails.eventID}
                       src={`${el.eventDetails.event_poster}`}
                       className="events"
+                      onClick={() => {
+                        handelModal(el);
+                      }}
                     ></img>
                   );
                 })}
