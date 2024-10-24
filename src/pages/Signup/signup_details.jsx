@@ -41,7 +41,7 @@ function SignIn() {
       const res = await axios.post('http://localhost:4000/api/user/initialsignup', formdata);
       console.log(res);
       if (res.status === 201) {
-        // navigate('/');
+        navigate('/');
         setSnackbarMessage('Sign up successful!');
         setSnackbarSeverity('success');
         setSnackbarOpen(true);
