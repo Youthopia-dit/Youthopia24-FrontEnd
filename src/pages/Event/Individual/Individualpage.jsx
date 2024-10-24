@@ -74,6 +74,9 @@ const IndividualEvent = () => {
     }
   };
 
+  const downloadDoc = () => {
+    window.open(eventDetails.event_doc, '_blank');
+  };
   return (
     <>
       <Navbar />
@@ -236,7 +239,7 @@ const IndividualEvent = () => {
             </div>
             <div className="event-buttons-div">
             <button className="register-btn" onClick={handleRegister}>Register Now</button>
-            <button className="register-btn" onClick={handleRegister}>View Details</button>
+            <button className="register-btn" onClick={downloadDoc}>View Details</button>
             </div>
           </div>
         </div>
