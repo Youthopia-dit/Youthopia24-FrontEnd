@@ -1,235 +1,234 @@
 {
     "Conveners": {
-        "Anya Jha" : {
-            "course" : "B.Tech CSE",
-            "phone" : "8825195909",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/Anya Jha.jpeg"
-        },
-        "Debdatta Maitra" : {
-            "course" : "B.Des UX",
-            "phone" : "8229903183",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_3590-01 - Debdatta Maitra.jpeg"
-        },
-        "Supriya Ray" : {
-            
-            "course" : "B.Tech CSE",
-            "phone" : "8295019753",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/1000034261 - Supriya Ray.png"
-        },
-        "Tarun Thakur" : {
-            "course" : "B.Tech CSE",
-            "phone" : "9667769973",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/82721cac-bdd8-4fe6-ad5f-f1b492ed1257 - Tarun Thakur.jpeg"
-        }
-    }, 
-    "Organising Heads" : {
-        "Tushar Garg" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/ed3ogx - Tushar Garg.jpg"
-        },
-        "Ankit Singh" : {
-            "course" : "B.Tech ME",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/DSC_0001 - Ankit Singh.jpeg"
-        }
-    }, 
-    "Event  Management Heads" : {
-        "Akshit Dangwal (Overall)" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/Screenshot_20241009_113617 - Akshit Dangwal.jpg"
-        },
-        "Abhay Singh Shekhawat" : {
-            "course" : "MBA",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/_DSC0043 - Abhay Singh Shekhawat.JPG"
-        },
-        "Aagam Jain" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_0107 - AAGAM JAIN.jpg"
-        }
-    }, 
-    "Cultural Heads" : {
-        "Kingshuk Singh" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_0096 - Kingshuk Singh.jpeg"
-        },
-        "Simran Chauhan" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/WhatsApp Image 2024-07-31 at 23.04.02_7961b37f - Simran Chauhan.jpg"
-        },
-        "Aditya Agarwal" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_0425 - Aditya Aggarwal.jpeg"
-        }
-    }, 
-    "Dance Heads" :{
-        "Naihok Phyok yhung Debarma" : {
-            "course" : "B.Sc. Chemistry Hons",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241016_002520 - Naithok Phiyok Yung.jpg"
-        },
-        "Nandini Yadav" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20240910_191342_198 - Nandini Yadav.jpg"
-        }
-    }, 
-    "Singing Heads" : {
-        "Shiv Sharma" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_8808_Original Copy - Shiv Sharma.JPG"
-        },
-        "Dhruv Singhal" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241015_224428 - DHRUV SINGHAL.jpg"
-        }
-    }, 
-    "Fashionista Heads" : {
-        "Saina Rautela" : {
-            "course" : "B.Des. UX",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_8877 - SAINA RAUTELA.jpeg"
-        },
-        "Shahriar Rahman Shawon" : {
-            "course" : "MA",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_8933 - Shahriar Shawon.jpeg"
-        }
-    },
-    "Technical Heads" : {
-        "Tanya Singhal" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_0286 - Tanya.jpeg"
-        },
-        "Harsheet Sharma" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/_DSC0123-removebg-preview 1 (1) (1).png"
-        },
-        "Vijayant Singh" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/Vijayant_Singh_1000017514[1].JPG"
-        },
-        "Chahat Rana" : {
-            "course" : "B.Tech ME",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_1476 - Parth Rana.jpeg"
-        },
-        "Vinayak Gupta" : {
-            "course" : "B.Tech ME",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/vinayak.jpg"
-        },
-        "Paramjeet Bind" : {
-            "course" : "B.Tech ECE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/Paramjeet.JPG"
-        },
-        "Kartavya Srivastava" : {
-            "course" : "B.Tech EE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/kartavya pic - CHAHAT SINGH.jpg"
-        }
-    },
-    "Publicity and PR Heads" : {
-        "Saba Khan" : {
-            "course" : "B.Pharm",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_0949 - Rushalka Jha.jpeg"
-        },
-"Dilpreet Kaur" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/dilpreet_kaur.jpg"
-        },
-        "Dhairya Sharma" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/SquarePic_20230205_14452377 - Dhairya Sharma.jpg"
-        },
-        "Shashank Kanaujia" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_5130 - Tushar Kumar.jpeg"
-        }
-    },
-    "Photography and Videography Heads" : {
-        "Lakshay Varshney" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_8197 - LAKSHYA VARSHNEY.jpeg"
-        },
-        "Rohan Rawat" : {
-            "course" : "B.Pharm",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_1231 - Rohan Rawat.jpeg"
-        }
-    },
-    "Literary and Theatre Heads" : {
-        "Vanshita Gupta" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_1698 - Vanshita Gupta.jpeg"
-        },
-        "Ansh Thapliyal" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_7225 - Ansh Thapliyal.JPG"
-        }
-    },
-    "Sponsership": {
-         "Aryan Vishnoi": {
-            "course" : "B.Tech CSE",
-            "image" : "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241015_222923 - aryan vishnoi.jpg"
-         },
-         "Moksh Chhabra" : {
+        "Anya Jha": {
             "course": "B.Tech CSE",
-            "image" : "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_9395 - Moksh Chhabra.jpeg"
-         }
-    },
-    "Informal Heads" : {
-        "Anvi Garg" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_9143 - Anvi Garg.jpeg"
+            "phone": "8825195909",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/Anya Jha.jpeg"
         },
-        "Anavil Nautiyal" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241016_114344958_HDR - Anavil Nautiyal.jpg"
+        "Debdatta Maitra": {
+            "course": "B.Des UX",
+            "phone": "8229903183",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_3590-01 - Debdatta Maitra.jpeg"
         },
-        "Ridhima Kandpal" : {
-            "course" : "B.Sc. Stats",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241016_100512 - Ridhima Kandpal.jpg"
+        "Supriya Ray": {
+            "course": "B.Tech CSE",
+            "phone": "8295019753",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/1000034261 - Supriya Ray.png"
+        },
+        "Tarun Thakur": {
+            "course": "B.Tech CSE",
+            "phone": "9667769973",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/82721cac-bdd8-4fe6-ad5f-f1b492ed1257 - Tarun Thakur.jpeg"
         }
     },
-    "Fine Arts Heads" : {
-        "Manasvi Rastogi" : {
-            "course" : "B.Des. UX",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG-20240120-WA0012 - Manasvi Rastogi.jpg"
+    "Organising Heads": {
+        "Ankit Singh": {
+            "course": "B.Tech ME",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/DSC_0001 - Ankit Singh.jpeg"
         },
-        "Arya Joshi" : {
-            "course" : "B.des .UX",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20240616_191517 - Arya S. Joshi.png"
+        "Tushar Garg": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/ed3ogx - Tushar Garg.jpg"
         }
     },
-    "Design Heads" : {
-        "Nitish Kumar" : {
-            "course" : "B.Des. UX",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/PFP 02 - Nitish Kumar.png"
+    "Event  Management Heads": {
+        "Aagam Jain": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_0107 - AAGAM JAIN.jpg"
         },
-        "Rabiya Bilal" : {
-            "course" : "B.Des. UX",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/E4916D77-018A-4FE6-B62C-A5E402A91836 - Rabiya Bhat.jpeg"
+        "Abhay Singh Shekhawat": {
+            "course": "MBA",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/_DSC0043 - Abhay Singh Shekhawat.JPG"
+        },
+        "Akshit Dangwal (Overall)": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/Screenshot_20241009_113617 - Akshit Dangwal.jpg"
         }
     },
-    "Content and Creative Writing Heads" : {
-        "Varshita Sah" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/Varshita Sah.jpg"
+    "Cultural Heads": {
+        "Aditya Agarwal": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_0425 - Aditya Aggarwal.jpeg"
         },
-        "Saurabh Singh Rawat" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/Saurabh_Rawat_Photo_WhiteBG - Saurabh Singh Rawat.png"
+        "Kingshuk Singh": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_0096 - Kingshuk Singh.jpeg"
         },
-        "Jahnvi Naithani" : {
-            "course" : "B.Sc. Stats",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241015_221334 - Jahnvi Naithani.jpg"
+        "Simran Chauhan": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/WhatsApp Image 2024-07-31 at 23.04.02_7961b37f - Simran Chauhan.jpg"
         }
     },
-    "Anchoring Heads" : {
-        "Chaitanya Jalwal" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241016_112300 - Chaitanya Jalwal.jpg"
+    "Dance Heads": {
+        "Naihok Phyok yhung Debarma": {
+            "course": "B.Sc. Chemistry Hons",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241016_002520 - Naithok Phiyok Yung.jpg"
+        },
+        "Nandini Yadav": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20240910_191342_198 - Nandini Yadav.jpg"
         }
     },
-    "Sound and Light Heads" : {
-        "Gaurav Jha" : {
-            "course" : "B.Tech CSE",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/20240425_144728 - Gaurav Jha.jpg"
+    "Singing Heads": {
+        "Dhruv Singhal": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241015_224428 - DHRUV SINGHAL.jpg"
         },
-        "Mayur Negi" : {
-            "course" : "BCA",
-            "image"  :"https://csg100320016f689007.blob.core.windows.net/heads-photos/mayur negi - mayur negi.JPG"
+        "Shiv Sharma": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_8808_Original Copy - Shiv Sharma.JPG"
+        }
+    },
+    "Fashionista Heads": {
+        "Saina Rautela": {
+            "course": "B.Des. UX",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_8877 - SAINA RAUTELA.jpeg"
+        },
+        "Shahriar Rahman Shawon": {
+            "course": "MA",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_8933 - Shahriar Shawon.jpeg"
+        }
+    },
+    "Technical Heads": {
+        "Tanya Singhal": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_0286 - Tanya.jpeg"
+        },
+        "Harsheet Sharma": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/_DSC0123-removebg-preview 1 (1) (1).png"
+        },
+        "Vijayant Singh": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/Vijayant_Singh_1000017514[1].JPG"
+        },
+        "Chahat Rana": {
+            "course": "B.Tech ME",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_1476 - Parth Rana.jpeg"
+        },
+        "Vinayak Gupta": {
+            "course": "B.Tech ME",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/vinayak.jpg"
+        },
+        "Paramjeet Bind": {
+            "course": "B.Tech ECE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/Paramjeet.JPG"
+        },
+        "Kartavya Srivastava": {
+            "course": "B.Tech EE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/kartavya pic - CHAHAT SINGH.jpg"
+        }
+    },
+    "Publicity and PR Heads": {
+        "Dhairya Sharma": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/SquarePic_20230205_14452377 - Dhairya Sharma.jpg"
+        },
+        "Dilpreet Kaur": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/dilpreet_kaur.jpg"
+        },
+        "Saba Khan": {
+            "course": "B.Pharm",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_0949 - Rushalka Jha.jpeg"
+        },
+        "Shashank Kanaujia": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_5130 - Tushar Kumar.jpeg"
+        }
+    },
+    "Photography and Videography Heads": {
+        "Lakshay Varshney": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_8197 - LAKSHYA VARSHNEY.jpeg"
+        },
+        "Rohan Rawat": {
+            "course": "B.Pharm",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_1231 - Rohan Rawat.jpeg"
+        }
+    },
+    "Literary and Theatre Heads": {
+        "Ansh Thapliyal": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_7225 - Ansh Thapliyal.JPG"
+        },
+        "Vanshita Gupta": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_1698 - Vanshita Gupta.jpeg"
+        }
+    },
+    "Sponsorship": {
+        "Aryan Vishnoi": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241015_222923 - aryan vishnoi.jpg"
+        },
+        "Moksh Chhabra": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_9395 - Moksh Chhabra.jpeg"
+        }
+    },
+    "Informal Heads": {
+        "Anvi Garg": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_9143 - Anvi Garg.jpeg"
+        },
+        "Anavil Nautiyal": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241016_114344958_HDR - Anavil Nautiyal.jpg"
+        },
+        "Ridhima Kandpal": {
+            "course": "B.Sc. Stats",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241016_100512 - Ridhima Kandpal.jpg"
+        }
+    },
+    "Fine Arts Heads": {
+        "Arya Joshi": {
+            "course": "B.des .UX",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20240616_191517 - Arya S. Joshi.png"
+        },
+        "Manasvi Rastogi": {
+            "course": "B.Des. UX",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG-20240120-WA0012 - Manasvi Rastogi.jpg"
+        }
+    },
+    "Design Heads": {
+        "Nitish Kumar": {
+            "course": "B.Des. UX",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/PFP 02 - Nitish Kumar.png"
+        },
+        "Rabiya Bilal": {
+            "course": "B.Des. UX",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/E4916D77-018A-4FE6-B62C-A5E402A91836 - Rabiya Bhat.jpeg"
+        }
+    },
+    "Content and Creative Writing Heads": {
+        "Jahnvi Naithani": {
+            "course": "B.Sc. Stats",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241015_221334 - Jahnvi Naithani.jpg"
+        },
+        "Saurabh Singh Rawat": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/Saurabh_Rawat_Photo_WhiteBG - Saurabh Singh Rawat.png"
+        },
+        "Varshita Sah": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/Varshita Sah.jpg"
+        }
+    },
+    "Anchoring Heads": {
+        "Chaitanya Jalwal": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/IMG_20241016_112300 - Chaitanya Jalwal.jpg"
+        }
+    },
+    "Sound and Light Heads": {
+        "Gaurav Jha": {
+            "course": "B.Tech CSE",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/20240425_144728 - Gaurav Jha.jpg"
+        },
+        "Mayur Negi": {
+            "course": "BCA",
+            "image": "https://csg100320016f689007.blob.core.windows.net/heads-photos/mayur negi - mayur negi.JPG"
         }
     }
 }

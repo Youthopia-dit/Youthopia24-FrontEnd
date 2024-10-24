@@ -31,7 +31,6 @@ const IndividualEvent = () => {
     setSnackbarOpen(false);
   };
 
-  // Function to render the background based on the event category
   const renderBack = () => {
     if (eventDetails.category === "tech") {
       return (
@@ -75,6 +74,9 @@ const IndividualEvent = () => {
     }
   };
 
+  const downloadDoc = () => {
+    window.open(eventDetails.event_doc, '_blank');
+  };
   return (
     <>
       <Navbar />
@@ -235,8 +237,10 @@ const IndividualEvent = () => {
                 </div>
               )}
             </div>
+            <div className="event-buttons-div">
             <button className="register-btn" onClick={handleRegister}>Register Now</button>
-            {/* <h3>Registration Opening Soon</h3> */}
+            <button className="register-btn" onClick={downloadDoc}>View Details</button>
+            </div>
           </div>
         </div>
       </div>
