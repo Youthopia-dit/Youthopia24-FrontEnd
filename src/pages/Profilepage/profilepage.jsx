@@ -18,6 +18,7 @@ function ProfilePage() {
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('error');
   const [loading, setLoading] = useState(true);
+  const [eventList, setEventList] = useState([]);
 
   const handleSnackbarClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -48,13 +49,10 @@ function ProfilePage() {
         );
 
         setUser(res.data.profile);
-        console.log("test")
-        console.log(res.data.profile)
         const eventList = res.data.profile.registeredEvent;
-        const res2 = await axios.post('https://27.123.248.68:4000/api/register/getRegistrations', {registrationIds: eventList});
-        console.log("re", res2)
-        setUser({...user, events: res2.data.registrations});
-        console.log("user", user)
+        const res2 = await axios.post('https://27.123.248.68:4000/api/register/getRegistrations', { registrationIds: eventList });
+        console.log()
+        setEventList(res2.data.registrations)
         setLoading(false);
       } catch (error) {
         console.error('Error fetching user data:', error);
@@ -131,19 +129,21 @@ function ProfilePage() {
             <div className="scroller">
               <h1 className="register">Registered events</h1>
               <div className="registered">
-                {user.events.map((el, i) => {
-                    console.log("Events", el)
-                  return (
+                {eventList.length > 0 ? (
+                  eventList.map((el, i) => (
                     <img
                       key={i}
                       src={`${el.eventDetails.event_poster}`}
                       className="events"
                     ></img>
-                  );
-                })}
+                  ))
+                ) : (
+                  <p>No registered events found.</p>
+                )}
               </div>
               <br />
             </div>
+
           </>
         )}
       </div>
