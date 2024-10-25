@@ -177,7 +177,7 @@ const IndividualEvent = () => {
                         </tbody>
                       </table>
 
-                      <strong className="tablehead">Event Heads:</strong>
+                      <strong className="tablehead">Overall Heads:</strong>
                       <table className="event-head-table">
                         <thead>
                           <tr>

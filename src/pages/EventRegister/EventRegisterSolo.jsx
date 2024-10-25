@@ -113,7 +113,7 @@ export default function EventRegisterSolo() {
             eventId: RegistrationDetails.eventId,
             teamName: RegistrationDetails.name,
             college: RegistrationDetails.college,
-            members: members,
+            members: [members],
             phoneNumber: RegistrationDetails.phoneNumber,
             payment: payment,
             
