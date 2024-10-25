@@ -48,14 +48,19 @@ function ProfilePage() {
         );
 
         setUser(res.data.profile);
+        console.log("test")
+        console.log(res.data.profile)
         const eventList = res.data.profile.registeredEvent;
         const res2 = await axios.post('https://27.123.248.68:4000/api/register/getRegistrations', {registrationIds: eventList});
-        setUser({...user, registeredEvent: res2.data.registrations});
+        console.log("re", res2)
+        setUser({...user, events: res2.data.registrations});
+        console.log("user", user)
         setLoading(false);
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
     };
+    setLoading(true);
     fetchUser();
   }, []);
 
@@ -126,8 +131,8 @@ function ProfilePage() {
             <div className="scroller">
               <h1 className="register">Registered events</h1>
               <div className="registered">
-                {user.registeredEvent.map((el, i) => {
-                    console.log(el)
+                {user.events.map((el, i) => {
+                    console.log("Events", el)
                   return (
                     <img
                       key={i}
