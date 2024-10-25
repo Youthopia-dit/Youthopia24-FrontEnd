@@ -6,60 +6,63 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: 10px;
-  }
-  .profile-details {
+}
+
+.profile-details {
     display: flex;
     flex-direction: row;
     margin-top: 10px;
     margin-left: 10px;
     position: relative;
     z-index: 2;
-  }
-  
-  .left-column {
+}
+
+.left-column {
     width: 40%;
     margin-right: 15px;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-  
-  .right-column {
+}
+
+.right-column {
     width: 40%;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-  }
-  
-  .profile-image {
+}
+
+.profile-image {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .profile-image img {
+}
+
+.profile-image img {
     width: 50%;
     border-radius: 16px;
-  }
-  
-  .contact p {
+}
+
+.contact p {
     font-size: 24px;
     margin-top: 10px;
     margin-left: 10px;
     color: white;
     text-align: center;
-  }
-  
-  .profile-heading {
+}
+
+.profile-heading {
     font-size: 32px;
     color: white;
     margin-top: 10px;
     margin-left: 10px;
     margin-bottom: 20px;
-  }
-  .profile-info-tab {
+}
+
+.profile-info-tab {
     font-size: 24px;
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
@@ -69,28 +72,30 @@
     border: 1px solid white;
     margin-bottom: 10px;
     text-align: left;
-  }
-  .profile-buttons {
+}
+
+.profile-buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     margin-top: 10px;
     margin-left: 10px;
-  }
-  .profile-buttons .disabled-button {
+}
+
+.profile-buttons .disabled-button {
     color: #999999;
-  }
-  
-  .profile-buttons button {
+}
+
+.profile-buttons button {
     border-radius: 20px;
     background-color: transparent;
     border: 3px solid #b09be9;
     padding: 1rem 2.5rem;
     color: white;
-  }
-  
-  .registered {
+}
+
+.registered {
     display: flex;
     flex-wrap: nowrap;
     font-size: large;
@@ -106,42 +111,63 @@
     padding: 1rem;
     z-index: 333;
     position: relative;
-  }
-  
-  .register {
+}
+
+.register {
     position: relative;
     top: 40px;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     width: 95vw;
     color: aliceblue;
-  }
-  
-  .registered img {
+}
+
+.registered img {
     height: 300px;
-  }
-  
-  .registered::-webkit-scrollbar {
+}
+
+.registered::-webkit-scrollbar {
     display: none;
-  }
-  
-  @media only screen and (max-width: 768px) {
+}
+
+.payment-dialog-box{
+    height: 50%;
+}
+.payment-dialog{
+    background-color: #0e0516;
+}
+
+.payment-dialog-heading{
+    color: white;
+    font-family: 'Nico' !important;
+}
+
+.payment-dialog-content{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.payment-checkbox{
+    color: white !important;
+}
+
+@media only screen and (max-width: 768px) {
     .profile-details {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-  
+
     .left-column {
-      width: 80%;
-      margin-right: 0;
+        width: 80%;
+        margin-right: 0;
     }
-  
+
     .right-column {
-      width: 80%;
+        width: 80%;
     }
-  }
-  
-  /* .image{
+}
+
+/* .image{
       margin-left: 95px;
       margin-top: 100px;
       height: 300px;
@@ -168,7 +194,7 @@
       padding-top: 20px;
       padding-left: 10px;
   } */
-  /* .contact{
+/* .contact{
       margin-top: auto;
       width: 40vw;
       height: 90px;
@@ -180,8 +206,8 @@
       padding-top: 10px;
      
   } */
-  
-  /* .button{
+
+/* .button{
       height: 100px;
       width: 300px;
       margin-top: 50px;
@@ -346,8 +372,8 @@
           }
         
   } */
-  /* @media only screen and (min-width:501px)and (max-width: 1000px){ */
-  /* .contact{
+/* @media only screen and (min-width:501px)and (max-width: 1000px){ */
+/* .contact{
           margin-left: 100px;
       }
       .image{
@@ -360,8 +386,8 @@
           font-size: larger;
           margin-left: 200px;
       } */
-  /* } */
-  /* @media only screen and (min-width:1001px)and (max-width: 1200px){
+/* } */
+/* @media only screen and (min-width:1001px)and (max-width: 1200px){
       .contact{
           margin-left: 75px;
       }
@@ -373,7 +399,7 @@
           margin-left: 200px;
       }
   } */
-  /* @media only screen and (min-width:560px)and (max-width:800px){
+/* @media only screen and (min-width:560px)and (max-width:800px){
       .registered{
           margin-left: 150px;
           align-items: center;
@@ -383,7 +409,7 @@
           margin-left: 200px;
       }
   } */
-  /* .bgplate{
+/* .bgplate{
       background: rgba(255, 255, 255, 0.1);
       width: 40vw;
       border-radius: 25px;
@@ -403,4 +429,3 @@
       
   
   } */
-  
