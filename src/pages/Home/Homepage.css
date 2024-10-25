@@ -1,4 +1,4 @@
-.coming-soon-home{
+.coming-soon-home {
     display: flex;
     justify-content: center;
     align-items: start;
@@ -9,39 +9,40 @@
     background-position: center;
 }
 
-.DIT-main img{
-    width:35vw;
+.DIT-main img {
+    width: 35vw;
     padding-top: 10%;
     padding-bottom: 10%;
 }
 
-.youthopia-icon{
+.youthopia-icon {
     width: 10vw;
     position: absolute;
     top: 10px;
-    margin: 10px ;
+    margin: 10px;
     left: 0;
     margin-left: 10vw;
     z-index: 8;
 }
 
-.NAAClogo{
+.NAAClogo {
     position: absolute;
-    margin-top: 0px;       
+    margin-top: 0px;
     margin-right: 10vw;
-    top:30px;
-    right: 0;         
+    top: 30px;
+    right: 0;
     width: 10vw;
-    z-index: 1;  
-      
+    z-index: 1;
+
 }
-.sponsors-home{
+
+.sponsors-home {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.sponsors-text{
+.sponsors-text {
     font-size: 2vw;
     font-family: 'Montserrat' sans-serif;
     color: white;
@@ -50,19 +51,21 @@
     margin-bottom: 2vw;
 }
 
-.sponsors-logos{
+.sponsors-logos {
     display: flex;
     flex-direction: row;
-    gap:5vw;
+    gap: 5vw;
 }
-.center-element{
+
+.center-element {
     position: fixed;
     margin-top: 90px;
     width: 70vw;
     /* text-align: center; */
     filter: opacity(40%);
 }
-.events-text{
+
+.events-text {
     font-size: 2vw;
     font-family: 'Montserrat' sans-serif;
     color: white;
@@ -70,32 +73,37 @@
     margin-top: 8vw;
     margin-bottom: 2vw;
 }
-.events-img img{
+
+.events-img img {
     width: 90%;
     object-fit: contain;
     padding: 10px;
     border-radius: 4%;
 }
-.events-img{
+
+.events-img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 10px;
     font-family: Arial, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    width:180px;
+    width: 320px;
 }
-.events-home{
-    margin-bottom:5vw;
+
+.events-home {
+    margin-bottom: 5vw;
 }
-.events-row{
+
+.events-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+
 .coming-soon-content {
     position: relative;
-    z-index: 1; 
+    z-index: 1;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -104,7 +112,7 @@
 }
 
 .presents-text {
-    font-size: 3vw; 
+    font-size: 3vw;
     font-family: 'Nico';
     color: white;
     margin-top: 2px;
@@ -115,7 +123,7 @@
     width: 100vw;
 }
 
-.glimpse{
+.glimpse {
     font-size: 3vw;
     font-family: "Nico";
 }
@@ -126,61 +134,65 @@
     left: 0;
     width: 100%;
     object-fit: contain;
-    z-index: 1; 
+    z-index: 1;
 }
 
-.Desc{
+.Desc {
     font-size: 3.8vw;
     font-family: "Nico";
     margin-top: 1px;
 }
 
-.image-list{
-    display:flex;
+.image-list {
+    display: flex;
     justify-content: center;
 }
 
-#bg1, #bg2, #bg3, #bg4 {
+#bg1,
+#bg2,
+#bg3,
+#bg4 {
     position: fixed;
-   z-index: 1!important;
+    z-index: 1 !important;
 }
 
 #bg1 {
     position: fixed;
-    top: 5vh;          
-    right: 0;       
-    width: 11vw;       
-    height: auto;   
- 
+    top: 5vh;
+    right: 0;
+    width: 11vw;
+    height: auto;
+
 }
 
 #bg2 {
     position: fixed;
-    bottom: 2vh;         
-    left: 0;          
-    width: 10vw;      
-    height: auto;   
-   
-}
-#bg3{
-    position: fixed;
-    top: 10px;         
-    left: 0;          
-    width: 30vw;      
-    height: auto;      
-  
+    bottom: 2vh;
+    left: 0;
+    width: 10vw;
+    height: auto;
+
 }
 
-#bg4{
+#bg3 {
     position: fixed;
-    bottom: 10px;         
-    right: 0;         
-    width: 30vw;      
-    height: auto;   
-   
+    top: 10px;
+    left: 0;
+    width: 30vw;
+    height: auto;
+
 }
 
-.logos{
+#bg4 {
+    position: fixed;
+    bottom: 10px;
+    right: 0;
+    width: 30vw;
+    height: auto;
+
+}
+
+.logos {
     display: flex;
     flex-direction: row;
 }
@@ -197,12 +209,16 @@
     .logo-image {
         width: 80%;
     }
-    .glimpse{
+
+    .glimpse {
         font-size: 5vw;
     }
 
-    #bg1, #bg2, #bg3, #bg4 {
-        width: 15vw; 
+    #bg1,
+    #bg2,
+    #bg3,
+    #bg4 {
+        width: 15vw;
     }
 }
 
@@ -219,16 +235,21 @@
         width: 85%;
     }
 
-    #bg1, #bg2, #bg3, #bg4 {
-        width: 18vw; 
+    #bg1,
+    #bg2,
+    #bg3,
+    #bg4 {
+        width: 18vw;
     }
 }
-@media (max-width:800px){
-    .events-row{
+
+@media (max-width:800px) {
+    .events-row {
         display: flex;
         flex-direction: column;
     }
 }
+
 @media (max-width: 768px) {
     .presents-text {
         font-size: 4vw;
@@ -239,7 +260,7 @@
     }
 
     .logo-image {
-        width: 90%; 
+        width: 90%;
     }
 }
 
@@ -264,12 +285,15 @@
     }
 
     .logo-image {
-        width: 100%; 
-        
+        width: 100%;
+
     }
 
-    #bg1, #bg2, #bg3, #bg4 {
-        width: 15vw; 
+    #bg1,
+    #bg2,
+    #bg3,
+    #bg4 {
+        width: 15vw;
     }
 }
 
@@ -288,20 +312,3 @@
         right: 20px;
     } */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
