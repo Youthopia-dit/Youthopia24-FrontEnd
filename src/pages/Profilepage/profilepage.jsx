@@ -145,7 +145,6 @@ function ProfilePage() {
               <h1 className="register">Registered events</h1>
               <div className="registered">
                 {user.registeredEvent.map((el, i) => {
-                  console.log(el);
                   return (
                     <img
                       key={i}
@@ -155,14 +154,11 @@ function ProfilePage() {
                         handelModal(el);
                       }}
                     ></img>
-                  ))
-                ) : (
-                  <p>No registered events found.</p>
-                )}
+                  );
+                })}
               </div>
               <br />
             </div>
-
           </>
         )}
       </div>
