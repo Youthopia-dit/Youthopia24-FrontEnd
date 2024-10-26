@@ -18,6 +18,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
 import Modal from '../../components/Modal/Modal';
+import Properties from '../../properties.json';
 
 function ProfilePage() {
   const navigate = useNavigate();
