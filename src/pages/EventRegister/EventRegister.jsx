@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import Properties from '../../properties.json';
 
 export default function EventRegister() {
   const navigate = useNavigate();
@@ -104,7 +105,7 @@ export default function EventRegister() {
       setMembersCount(newCount);
       handleAddMember(newCount);
     }
-  };
+     };
 
   const decrementCount = () => {
     if (membersCount > minParticipants) {
@@ -113,7 +114,7 @@ export default function EventRegister() {
       handleAddMember(newCount);
     }
   };
-
+  
   function getPrice(teamSize, isFromDit) {
     const priceInfo = eventDetails.prices.find(
       (price) => price.teamSize === teamSize
@@ -125,45 +126,43 @@ export default function EventRegister() {
 
     return isFromDit ? priceInfo.priceDit : priceInfo.priceNonDit;
   }
+  
   const fromDIT = user && user.college === 'DIT University';
-
+  
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const payment = {
-      paid: false,
-      amount: getPrice(members.length, fromDIT),
-    };
-    const registrationData = {
-      email: user.email,
-      eventId: eventDetails.event_id,
-      teamName: user.name,
-      college: user.college,
-      members: members,
-      phoneNumber: user.phone,
-      payment: payment,
+        e.preventDefault();
+        const payment = {
+            paid: false,
+            amount:getPrice(members.length, fromDIT)
+        }
+        const registrationData = {
+            email: user.email,
+            eventId: eventDetails.event_id,
+            teamName: user.name,
+            college: user.college,
+            members: members,
+            phoneNumber: user.phone,
+            payment: payment
+        };
+
+        console.log('Registration Details:', registrationData);
+        const token = localStorage.getItem('authToken');
+        const res = await axios.post(`${Properties.base_url}/api/register/eventRegister`, registrationData, {
+            headers:{
+                authorization: `Bearer ${token}`
+            }
+        });
+        console.log(res);
+        if(res.status === 201) {
+            setSnackbarMessage('Registered Successfully');
+            setSnackbarSeverity('success'); // Set to success severity
+            setSnackbarOpen(true);
+            setTimeout(() => {
+                navigate('/');
+            }, 2000);
+        }
     };
 
-    console.log('Registration Details:', registrationData);
-    const token = localStorage.getItem('authToken');
-    const res = await axios.post(
-      'https://27.123.248.68:4000/api/register/eventRegister',
-      registrationData,
-      {
-        headers: {
-          authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    console.log(res);
-    if (res.status === 201) {
-      setSnackbarMessage('Registered Successfully');
-      setSnackbarSeverity('success'); // Set to success severity
-      setSnackbarOpen(true);
-      setTimeout(() => {
-        navigate('/');
-      }, 2000);
-    }
-  };
   if (!user) {
     return <div>Loading...</div>; // Add a loading state while fetching user data
   }

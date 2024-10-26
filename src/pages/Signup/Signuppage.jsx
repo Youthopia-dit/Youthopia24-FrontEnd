@@ -5,6 +5,7 @@ import { Button, Checkbox, Snackbar, Alert } from '@mui/material';
 import axios from 'axios';
 import OtpModal from './otpModal';
 import './Signuppage.css';
+import Properties from '../../properties.json'
 
 const Signuppage = () => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
@@ -32,7 +33,7 @@ const Signuppage = () => {
     }
 
     try {
-      const res = await axios.post('https://27.123.248.68:4000/api/user/sendOtp', { email: formData.email });
+      const res = await axios.post(`${Properties.base_url}/api/user/sendOtp`, { email: formData.email });
       setSnackbarMessage(res.data.message);
       setSnackbarSeverity('success');
       setSnackbarOpen(true);

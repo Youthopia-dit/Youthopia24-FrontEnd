@@ -9,6 +9,13 @@ import dummy from '../../assets/demo_profile.jpg';
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
+import Checkbox from '@mui/material/Checkbox';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
 import Modal from '../../components/Modal/Modal';
 
@@ -21,6 +28,10 @@ function ProfilePage() {
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState();
+  const [eventList, setEventList] = useState([]);
+  const [open, setOpen] = useState(false); // For Modal
+  const [selectedEvents, setSelectedEvents] = useState({});
+  const [totalAmount, setTotalAmount] = useState(0);
 
   const handleSnackbarClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -31,7 +42,6 @@ function ProfilePage() {
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
-    console.log(token);
     if (!token) {
       setSnackbarMessage('User Not logged in!');
       setSnackbarSeverity('success');
@@ -42,7 +52,7 @@ function ProfilePage() {
     const fetchUser = async () => {
       try {
         const res = await axios.get(
-          'https://27.123.248.68:4000/api/user/getProfile',
+          `${Properties.base_url}/api/user/getProfile`,
           {
             headers: {
               authorization: `Bearer ${token}`,
@@ -61,27 +71,40 @@ function ProfilePage() {
           user: res.data.profile,
           registeredEvent: res2.data.registrations,
         });
-
         setLoading(false);
+        console.log(eventList)
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
     };
+    setLoading(true);
     fetchUser();
   }, []);
 
   const handleSignout = () => {
     localStorage.removeItem('authToken');
     navigate('/');
-    setSnackbarMessage('Logged Out Successdully!');
+    setSnackbarMessage('Logged Out Successfully!');
     setSnackbarSeverity('success');
     setSnackbarOpen(true);
   };
 
-  const handlePayment = () => {
-    setSnackbarMessage('Payments are opening soon!');
-    setSnackbarSeverity('info');
-    setSnackbarOpen(true);
+  const handlePaymentModalOpen = () => {
+    setOpen(true);
+  };
+
+  const handlePaymentModalClose = () => {
+    setOpen(false);
+  };
+
+  const handleCheckboxChange = (event, amount) => {
+    const { name, checked } = event.target;
+    const updatedSelectedEvents = { ...selectedEvents, [name]: checked };
+
+    const updatedTotal = checked ? totalAmount + amount : totalAmount - amount;
+    setTotalAmount(updatedTotal);
+
+    setSelectedEvents(updatedSelectedEvents);
   };
 
   const handelModal = (data) => {
@@ -95,9 +118,9 @@ function ProfilePage() {
       <Navbar />
       <div className="ProfilePage">
         <div className="background-div">
-          <img className="ImgLeftCorner" src={imgLC}></img>
-          <img className="imageLeft" src={imgL}></img>
-          <img className="imageRight" src={imgR}></img>
+          <img className="ImgLeftCorner" src={imgLC} alt="" />
+          <img className="imageLeft" src={imgL} alt="" />
+          <img className="imageRight" src={imgR} alt="" />
         </div>
         {loading && (
           <div className="loading">
@@ -122,8 +145,8 @@ function ProfilePage() {
                     Sign Out
                   </button>
                   <button
-                    className="profile-button disabled-button"
-                    onClick={handlePayment}
+                    className="profile-button"
+                    onClick={handlePaymentModalOpen}
                   >
                     Proceed for Payment
                   </button>
@@ -133,9 +156,7 @@ function ProfilePage() {
                 <div className="profile-heading">Profile Details</div>
                 <div className="profile-info-tab">Name : {user.name}</div>
                 <div className="profile-info-tab">College : {user.college}</div>
-                <div className="profile-info-tab">
-                  Student ID : {user.collegeId}
-                </div>
+                <div className="profile-info-tab">Student ID : {user.collegeId}</div>
                 <div className="profile-info-tab">Year : {user.year}</div>
                 <div className="profile-info-tab">Branch : {user.branch}</div>
               </div>
@@ -149,6 +170,7 @@ function ProfilePage() {
                     <img
                       key={i}
                       src={`${el.eventDetails.event_poster}`}
+                      alt="event poster"
                       className="events"
                       onClick={() => {
                         handelModal(el);
@@ -162,6 +184,40 @@ function ProfilePage() {
           </>
         )}
       </div>
+
+      <Dialog open={open} onClose={handlePaymentModalClose} classes={{ paper: "payment-dialog-box" }}>
+        <Box className="payment-dialog">
+          <DialogTitle className='payment-dialog-heading'>Select Events for Payment</DialogTitle>
+          <DialogContent>
+            {eventList.map((event, index) => (
+              <div key={index} className='payment-dialog-content'>
+                <Checkbox
+                  checked={!!selectedEvents[event.regID]}
+                  onChange={(e) => handleCheckboxChange(e, event.payment.amount)}
+                  name={event.eventDetails.eventName}
+                  className='payment-checkbox'
+                />
+                {event.eventDetails.eventName} - ₹{event.payment.amount}
+              </div>
+            ))}
+            <p>Total Amount: ₹{totalAmount}</p>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handlePaymentModalClose}>Close</Button>
+            <Button
+              onClick={() => {
+                setSnackbarMessage('Payment successful');
+                setSnackbarSeverity('success');
+                setSnackbarOpen(true);
+                handlePaymentModalClose();
+              }}
+            >
+              Pay
+            </Button>
+          </DialogActions>
+        </Box>
+      </Dialog>
+
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={4000}
@@ -180,4 +236,5 @@ function ProfilePage() {
     </>
   );
 }
+
 export default ProfilePage;

@@ -25,6 +25,7 @@ import Footer from "../../components/Footer/Footer";
 import DITLOGO from "../../assets/ditlogo.png";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const imagesCarousel1 = [
     { id: 1, src: H1 },
@@ -72,12 +73,14 @@ function Homepage() {
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await axios.get('https://27.123.248.68:4000/api/gethighlights'); 
-                setEvents(response.data.data); // Assuming API returns { data: [events] }
+                const response = await axios.get(`${Properties.base_url}/api/gethighlights`); 
+                setEvents(response.data.data); 
+                console.log(response.data.data);
             } catch (err) {
                 setError('Failed to load events');
             } finally {
@@ -136,9 +139,11 @@ function Homepage() {
                                         <p>{error}</p>
                                     ) : (
                                         events.map((event) => (
-                                            <div className="events-img" key={event.event_id}>
+                                            <div className="events-img" key={event.event_id} onClick={() => {
+                                                navigate('/event-details', { state: event });
+                                            }}>
                                                 <img
-                                                    src={event.image_url || event1}
+                                                    src={event.event_poster}
                                                     alt={event.name}
                                                     className="Elogo"
                                                 />

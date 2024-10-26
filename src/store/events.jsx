@@ -1,9 +1,10 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+import properties from '../properties.json'
 
 // Create the context
 const EventContext = createContext();
-const baseUrl = 'https://27.123.248.68:4000';
+const baseUrl = properties.base_url;
 // Provider component
 export const EventProvider = ({ children }) => {
   const [events, setEvents] = useState([]);
