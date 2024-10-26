@@ -18,6 +18,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
 import Properties from "../../properties.json"
+import Modal from '../../components/Modal/Modal';
 function ProfilePage() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -25,6 +26,8 @@ function ProfilePage() {
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('error');
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [modalData, setModalData] = useState();
   const [eventList, setEventList] = useState([]);
   const [open, setOpen] = useState(false); // For Modal
   const [selectedEvents, setSelectedEvents] = useState({});
@@ -57,10 +60,17 @@ function ProfilePage() {
           }
         );
 
-        setUser(res.data.profile);
-        const events = res.data.profile.registeredEvent;
-        const res2 = await axios.post(`${Properties.base_url}/api/register/getRegistrations`, { registrationIds: events });
-        setEventList(res2.data.registrations);
+        const eventList = res.data.profile.registeredEvent;
+
+        const res2 = await axios.post(
+          'https://27.123.248.68:4000/api/register/getRegistrations',
+          { registrationIds: eventList }
+        );
+
+        setUser({
+          user: res.data.profile,
+          registeredEvent: res2.data.registrations,
+        });
         setLoading(false);
         console.log(eventList)
       } catch (error) {
@@ -97,8 +107,14 @@ function ProfilePage() {
     setSelectedEvents(updatedSelectedEvents);
   };
 
+  const handelModal = (data) => {
+    setShowModal((prev) => !prev);
+    setModalData(data);
+  };
+
   return (
     <>
+      {showModal && <Modal data={modalData} handelModal={handelModal} />}
       <Navbar />
       <div className="ProfilePage">
         <div className="background-div">
@@ -148,18 +164,20 @@ function ProfilePage() {
             <div className="scroller">
               <h1 className="register">Registered events</h1>
               <div className="registered">
-                {eventList.length > 0 ? (
-                  eventList.map((el, i) => (
+                {user.registeredEvent.map((el, i) => {
+                  console.log(el);
+                  return (
                     <img
                       key={i}
                       src={`${el.eventDetails.event_poster}`}
                       alt="event poster"
                       className="events"
-                    />
-                  ))
-                ) : (
-                  <p>No registered events found.</p>
-                )}
+                      onClick={() => {
+                        handelModal(el);
+                      }}
+                    ></img>
+                  );
+                })}
               </div>
               <br />
             </div>
