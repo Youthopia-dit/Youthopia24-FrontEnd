@@ -67,6 +67,7 @@ function ProfilePage() {
         console.error('Error fetching user data:', error);
       }
     };
+    setLoading(true);
     fetchUser();
   }, []);
 
@@ -154,11 +155,14 @@ function ProfilePage() {
                         handelModal(el);
                       }}
                     ></img>
-                  );
-                })}
+                  ))
+                ) : (
+                  <p>No registered events found.</p>
+                )}
               </div>
               <br />
             </div>
+
           </>
         )}
       </div>
