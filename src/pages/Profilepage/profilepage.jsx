@@ -17,7 +17,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
-
+import Properties from "../../properties.json"
 function ProfilePage() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);

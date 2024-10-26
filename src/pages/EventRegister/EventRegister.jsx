@@ -168,7 +168,7 @@ export default function EventRegister() {
                     <form onSubmit={handleSubmit}>
                         <h4>Leader Details:</h4>
                         <div className="form-group">
-                            <input type="text" placeholder="Team Name" required />
+                            <input type="text" name="Team Name" placeholder="Team Name" required />
                         </div>
                         <div className="form-group">
                             <input type="text" placeholder="Leader's Phone Number" value={user?.phone || ''} readOnly required />
