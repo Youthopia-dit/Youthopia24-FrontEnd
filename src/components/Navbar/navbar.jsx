@@ -39,11 +39,11 @@ function Navbar() {
           <Link to="/gallery" className="noburger">
             <li onClick={toggleNav}>Gallery</li>
           </Link>
-          <Link to="/about">
+          <Link to="/about"  className="noburger">
             <li onClick={toggleNav}>About Us</li>
           </Link>
           {isLoggedIn ? (
-            <Link to="/profile">
+            <Link to="/profile" className="noburger">
               <li onClick={toggleNav}>Profile</li>
             </Link>
           ) : (

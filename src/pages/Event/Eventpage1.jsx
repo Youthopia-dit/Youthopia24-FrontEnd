@@ -22,9 +22,11 @@ const EventPage = () => {
   };
 
   const eventTypes = {
-    Technical: events.filter(event => event.category === 'tech'),
-    Cultural: events.filter(event => event.category === 'cul'),
-    Informal: events.filter(event => event.category === 'inf'),
+    Technical: events.filter(event => event.category === 'tech').sort((a, b) => a.order - b.order),
+
+    Cultural: events.filter(event => event.category === 'cul').sort((a, b) => a.order - b.order),
+
+    Informal: events.filter(event => event.category === 'inf').sort((a, b) => a.order - b.order),
   };
 
   const renderContent = () => {
@@ -84,12 +86,12 @@ const EventPage = () => {
       );
     }
   };
-  
+
 
   return (
-    
+
     <div className="events-list-page">
-      <Navbar /> 
+      <Navbar />
       <div className="event-page-background">
         {renderBack()}
       </div>
