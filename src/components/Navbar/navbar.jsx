@@ -47,7 +47,7 @@ function Navbar() {
               <li onClick={toggleNav}>Profile</li>
             </Link>
           ) : (
-            <Link to="/getting-started">
+            <Link to="/getting-started" className="noburger">
               <li onClick={toggleNav}>Sign In</li>
             </Link>
           )}

@@ -65,12 +65,9 @@
 }
 
 .events-text {
-  font-size: 2vw;
-  color: white;
+  color: aliceblue;
+  font-size: 3vw;
   font-family: 'Nico';
-  font-weight: bold;
-  margin-top: 8vw;
-  margin-bottom: 2vw;
 }
 
 .events-img img {
