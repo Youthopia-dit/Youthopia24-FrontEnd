@@ -49,7 +49,7 @@ function ProfilePage() {
     const fetchUser = async () => {
       try {
         const res = await axios.get(
-          'https://27.123.248.68:4000/api/user/getProfile',
+          `${Properties.base_url}/api/user/getProfile`,
           {
             headers: {
               authorization: `Bearer ${token}`,
@@ -59,7 +59,7 @@ function ProfilePage() {
 
         setUser(res.data.profile);
         const events = res.data.profile.registeredEvent;
-        const res2 = await axios.post('https://27.123.248.68:4000/api/register/getRegistrations', { registrationIds: events });
+        const res2 = await axios.post(`${Properties.base_url}/api/register/getRegistrations`, { registrationIds: events });
         setEventList(res2.data.registrations);
         setLoading(false);
         console.log(eventList)

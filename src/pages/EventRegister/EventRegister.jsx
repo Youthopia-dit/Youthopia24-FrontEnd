@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import Properties from '../../properties.json';
 
 export default function EventRegister() {
     const navigate = useNavigate();
@@ -42,7 +43,7 @@ export default function EventRegister() {
         }
         const fetchUser = async () => {
             try {
-                const res = await axios.get('https://27.123.248.68:4000/api/user/getProfile', {
+                const res = await axios.get(`${Properties.base_url}/api/user/getProfile`, {
                     headers: { authorization: `Bearer ${token}` },
                 });
                 console.log(res.data.profile);
@@ -133,7 +134,7 @@ export default function EventRegister() {
 
         console.log('Registration Details:', registrationData);
         const token = localStorage.getItem('authToken');
-        const res = await axios.post('https://27.123.248.68:4000/api/register/eventRegister', registrationData, {
+        const res = await axios.post(`${Properties.base_url}/api/register/eventRegister`, registrationData, {
             headers:{
                 authorization: `Bearer ${token}`
             }

@@ -78,7 +78,7 @@ function Homepage() {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await axios.get('https://27.123.248.68:4000/api/gethighlights'); 
+                const response = await axios.get(`${Properties.base_url}/api/gethighlights`); 
                 setEvents(response.data.data); 
                 console.log(response.data.data);
             } catch (err) {

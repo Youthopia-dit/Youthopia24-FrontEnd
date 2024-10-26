@@ -23,7 +23,7 @@ const Loginpage = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'https://27.123.248.68:4000/api/user/login',
+        `${Properties.base_url}/api/user/login`,
         credentials
       );
       console.log(response.data.token);
