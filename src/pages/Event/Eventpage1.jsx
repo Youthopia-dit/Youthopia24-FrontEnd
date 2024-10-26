@@ -11,14 +11,22 @@ import Navbar from '../../components/Navbar/navbar';
 
 const EventPage = () => {
   const [activeTab, setActiveTab] = useState('Technical');
+  
   const { events, fetchEvents } = useEvents();
 
   useEffect(() => {
     fetchEvents();
-  }, []);
+
+    const savedTab = localStorage.getItem('activeTab');
+    if (savedTab) {
+      setActiveTab(savedTab);
+    }
+  }, [fetchEvents]);
+
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
+    localStorage.setItem('activeTab', tab);
   };
 
   const eventTypes = {

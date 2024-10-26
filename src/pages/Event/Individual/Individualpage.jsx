@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Individualpage.css";
 import Navbar from "../../../components/Navbar/navbar";
 import { useLocation } from "react-router-dom";
@@ -11,7 +11,17 @@ import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
 const IndividualEvent = () => {
+  
+
+ 
+  
   const location = useLocation();
+  
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   const eventDetails = location.state || {};
   const navigate = useNavigate();
   const [snackbarOpen, setSnackbarOpen] = useState(false);
@@ -73,6 +83,7 @@ const IndividualEvent = () => {
       });
     }
   };
+
 
   const downloadDoc = () => {
     window.open(eventDetails.event_doc, '_blank');
