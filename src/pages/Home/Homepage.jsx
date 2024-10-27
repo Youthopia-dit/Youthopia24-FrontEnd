@@ -32,6 +32,13 @@ const imagesCarousel1 = [
   { id: 1, src: H1 },
   { id: 2, src: H2 },
   { id: 3, src: H3 },
+  { id: 4, src: H4 },
+  { id: 5, src: H5 },
+  { id: 6, src: H6 },
+  { id: 7, src: H7 },
+  { id: 8, src: H8 },
+  { id: 9, src: H9 },
+  { id: 10, src: H10 }
 ];
 
 
@@ -59,6 +66,7 @@ function Carousel({ images, direction }) {
 
 function Homepage() {
   const [events, setEvents] = useState([]);
+  const [sponsors, setSponsors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -70,11 +78,28 @@ function Homepage() {
         setEvents(response.data.data);
       } catch (err) {
         setError('Failed to load events');
-      } finally {
-        setLoading(false);
       }
     };
-    fetchHighlights();
+
+    const fetchSponsors = async () => {
+      try {
+        const response = await axios.get(`${Properties.base_url}/api/sponsor/getSponsors`);
+        var sponsorList = response.data.sponsor;
+        console.log(sponsorList);
+        setSponsors(sponsorList);
+      } catch (err) {
+        setError('Failed to load sponsors');
+      }
+    }
+
+    const getData = async () => {
+      setLoading(true);
+      await fetchHighlights();
+      await fetchSponsors();
+      setLoading(false);
+    }
+
+    getData();
   }, []);
 
   return (
@@ -110,15 +135,16 @@ function Homepage() {
                 <p className="Desc">Annual Techno-Cultural Fest</p>
               </div>
               <Timer />
-              {/* <div className="sponsors-home">
-                                <p className="sponsors-text">SPONSORS</p>
-                                <div className="sponsors-logos">
-                                    <img src={NAAC} alt="Naaclogo" className="Slogo" />
-                                    <img src={NAAC} alt="Naaclogo" className="Slogo" />
-                                    <img src={NAAC} alt="Naaclogo" className="Slogo" />
-                                    <img src={NAAC} alt="Naaclogo" className="Slogo" />
-                                </div>
-                            </div> */}
+              <div className="sponsors-home">
+                <p className="events-text">OUR SPONSORS</p>
+                <div className="sponsors-logos">
+                  {
+                    loading ? <p>Loading sponsors...</p> : error ? <p>{error}</p> : sponsors.map((sponsor) => (
+                      <img src={sponsor.imageUrl} alt={sponsor.name} className="Slogo" key={sponsor.name}/>
+                    ))
+                  }
+                </div>
+              </div>
 
               <div className="events-home">
                 <p className="events-text"> FLAGSHIP EVENTS</p>
@@ -153,8 +179,6 @@ function Homepage() {
               </div>
               <div className="image-list">
                 <Carousel images={imagesCarousel1} direction="left-to-right" />
-                {/* <Carousel images={imagesCarousel2} direction="right-to-left" />
-                                <Carousel images={imagesCarousel3} direction="left-to-right" /> */}
               </div>
             </div>
             <img

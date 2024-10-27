@@ -13,6 +13,8 @@ export default function EventRegister() {
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('error');
   const [user, setUser] = useState(null);
+  const [teamName, setTeamName] = useState('');
+  const [loading, setLoading] = useState(false); // New loading state
   const [RegistrationDetails, setRegistrationDetails] = useState({
     email: '',
     eventId: '',
@@ -46,7 +48,7 @@ export default function EventRegister() {
     const fetchUser = async () => {
       try {
         const res = await axios.get(
-          'https://27.123.248.68:4000/api/user/getProfile',
+          `${Properties.base_url}/api/user/getProfile`,
           {
             headers: { authorization: `Bearer ${token}` },
           }
@@ -73,7 +75,6 @@ export default function EventRegister() {
       }
     };
     fetchUser();
-    // console.log(eventDetails);
   }, [eventDetails]);
 
   useEffect(() => {
@@ -82,7 +83,7 @@ export default function EventRegister() {
 
   const handleAddMember = (count) => {
     const newMembers = Array.from({ length: count }, (_, i) => ({
-      id: index + 1,
+      id: i + 1,
       name: '',
       collegeId: '',
       personalId: '',
@@ -105,7 +106,7 @@ export default function EventRegister() {
       setMembersCount(newCount);
       handleAddMember(newCount);
     }
-     };
+  };
 
   const decrementCount = () => {
     if (membersCount > minParticipants) {
@@ -114,7 +115,7 @@ export default function EventRegister() {
       handleAddMember(newCount);
     }
   };
-  
+
   function getPrice(teamSize, isFromDit) {
     const priceInfo = eventDetails.prices.find(
       (price) => price.teamSize === teamSize
@@ -126,66 +127,93 @@ export default function EventRegister() {
 
     return isFromDit ? priceInfo.priceDit : priceInfo.priceNonDit;
   }
-  
-  const fromDIT = user && user.college === 'DIT University';
-  
-  const handleSubmit = async (e) => {
-        e.preventDefault();
-        const payment = {
-            paid: false,
-            amount:getPrice(members.length, fromDIT)
-        }
-        const registrationData = {
-            email: user.email,
-            eventId: eventDetails.event_id,
-            teamName: user.name,
-            college: user.college,
-            members: members,
-            phoneNumber: user.phone,
-            payment: payment
-        };
 
-        console.log('Registration Details:', registrationData);
-        const token = localStorage.getItem('authToken');
-        const res = await axios.post(`${Properties.base_url}/api/register/eventRegister`, registrationData, {
-            headers:{
-                authorization: `Bearer ${token}`
-            }
-        });
-        console.log(res);
-        if(res.status === 201) {
-            setSnackbarMessage('Registered Successfully');
-            setSnackbarSeverity('success'); // Set to success severity
-            setSnackbarOpen(true);
-            setTimeout(() => {
-                navigate('/');
-            }, 2000);
-        }
+  const fromDIT = user && user.college === 'DIT University';
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true); // Disable the submit button
+
+    const payment = {
+      paid: false,
+      amount: getPrice(members.length, fromDIT),
+    };
+    const registrationData = {
+      email: user.email,
+      eventId: eventDetails.event_id,
+      teamName: teamName,
+      college: user.college,
+      members: members,
+      phoneNumber: user.phone,
+      payment: payment,
     };
 
+    console.log('Registration Details:', registrationData);
+    const token = localStorage.getItem('authToken');
+    try {
+      const res = await axios.post(
+        `${Properties.base_url}/api/register/eventRegister`,
+        registrationData,
+        {
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(res);
+      if (res.status === 201) {
+        setSnackbarMessage('Registered Successfully');
+        setSnackbarSeverity('success');
+        setSnackbarOpen(true);
+        setTimeout(() => {
+          navigate('/');
+        }, 2000);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSnackbarMessage('Registration failed. Please try again.');
+      setSnackbarSeverity('error');
+      setSnackbarOpen(true);
+      setLoading(false); // Re-enable the button if there's an error
+    }
+  };
+
   if (!user) {
-    return <div>Loading...</div>; // Add a loading state while fetching user data
+    return <div>Loading...</div>;
   }
 
-    return (
-        <>
-            <div className="event_register">
-                <div className="background">
-                    <img src={bg1} alt="bg-page" className="bgimage" />
-                </div>
-                <div className="participant-form">
-                    <h2>Event Registration Form</h2>
-                    <div className="form-event-details">
-                        Event Name: {eventDetails.event_name}
-                    </div>
-                    <form onSubmit={handleSubmit}>
-                        <h4>Leader Details:</h4>
-                        <div className="form-group">
-                            <input type="text" name="Team Name" placeholder="Team Name" required />
-                        </div>
-                        <div className="form-group">
-                            <input type="text" placeholder="Leader's Phone Number" value={user?.phone || ''} readOnly required />
-                        </div>
+  return (
+    <>
+      <div className="event_register">
+        <div className="background">
+          <img src={bg1} alt="bg-page" className="bgimage" />
+        </div>
+        <div className="participant-form">
+          <h2>Event Registration Form</h2>
+          <div className="form-event-details">
+            Event Name: {eventDetails.event_name}
+          </div>
+          <form onSubmit={handleSubmit}>
+            <h4>Leader Details:</h4>
+            <div className="form-group">
+              <input
+                type="text"
+                name="Team Name"
+                placeholder="Team Name"
+                value={teamName}
+                onChange={(e) => setTeamName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="Leader's Phone Number"
+                value={user?.phone || ''}
+                readOnly
+                required
+              />
+            </div>
 
             <div className="form-registration-row">
               <h4>Team Member Details:</h4>
@@ -250,8 +278,8 @@ export default function EventRegister() {
                 )}
               </div>
             ))}
-            <button className="submit-btn" type="submit">
-              Submit
+            <button className="submit-btn" type="submit" disabled={loading}>
+              {loading ? 'Submitting...' : 'Submit'}
             </button>
           </form>
         </div>

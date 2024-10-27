@@ -53,7 +53,15 @@
 .sponsors-logos {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 5vw;
+}
+
+.sponsors-logos .Slogo {
+  width: 10vmax;
+  height: auto;
+  margin: 10px;
 }
 
 .center-element {
@@ -106,7 +114,7 @@
 .events-row {
   display: flex;
   flex-direction: row;
-  width: 1260px;
+  width: 80vw;
   justify-content: start;
   animation: scrolling 20s linear infinite;
 }
@@ -256,7 +264,7 @@
 @media (max-width: 800px) {
   .events-row {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
   }
 }
 
