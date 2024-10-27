@@ -17,6 +17,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
+import Properties from '../../properties.json';
 import Modal from '../../components/Modal/Modal';
 import Properties from '../../properties.json';
 
@@ -73,7 +74,7 @@ function ProfilePage() {
           registeredEvent: res2.data.registrations,
         });
         setLoading(false);
-        console.log(eventList)
+        console.log(eventList);
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
@@ -157,7 +158,9 @@ function ProfilePage() {
                 <div className="profile-heading">Profile Details</div>
                 <div className="profile-info-tab">Name : {user.name}</div>
                 <div className="profile-info-tab">College : {user.college}</div>
-                <div className="profile-info-tab">Student ID : {user.collegeId}</div>
+                <div className="profile-info-tab">
+                  Student ID : {user.collegeId}
+                </div>
                 <div className="profile-info-tab">Year : {user.year}</div>
                 <div className="profile-info-tab">Branch : {user.branch}</div>
               </div>
@@ -166,7 +169,6 @@ function ProfilePage() {
               <h1 className="register">Registered events</h1>
               <div className="registered">
                 {user.registeredEvent.map((el, i) => {
-                  console.log(el);
                   return (
                     <img
                       key={i}
@@ -186,17 +188,25 @@ function ProfilePage() {
         )}
       </div>
 
-      <Dialog open={open} onClose={handlePaymentModalClose} classes={{ paper: "payment-dialog-box" }}>
+      <Dialog
+        open={open}
+        onClose={handlePaymentModalClose}
+        classes={{ paper: 'payment-dialog-box' }}
+      >
         <Box className="payment-dialog">
-          <DialogTitle className='payment-dialog-heading'>Select Events for Payment</DialogTitle>
+          <DialogTitle className="payment-dialog-heading">
+            Select Events for Payment
+          </DialogTitle>
           <DialogContent>
             {eventList.map((event, index) => (
-              <div key={index} className='payment-dialog-content'>
+              <div key={index} className="payment-dialog-content">
                 <Checkbox
                   checked={!!selectedEvents[event.regID]}
-                  onChange={(e) => handleCheckboxChange(e, event.payment.amount)}
+                  onChange={(e) =>
+                    handleCheckboxChange(e, event.payment.amount)
+                  }
                   name={event.eventDetails.eventName}
-                  className='payment-checkbox'
+                  className="payment-checkbox"
                 />
                 {event.eventDetails.eventName} - ₹{event.payment.amount}
               </div>

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
-
+import Properties from "../../properties.json"
 const Loginpage = () => {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [snackbarOpen, setSnackbarOpen] = useState(false);
@@ -38,10 +38,12 @@ const Loginpage = () => {
         // Backend response error
         message =
           error.response.data.message || 'Login failed. Please try again.';
+
       } else if (error.request) {
         // Network error occurred
         message = 'Network error. Please check your connection and try again.';
       }
+      console.log(error)
       setSnackbarMessage(message);
       setSnackbarSeverity('error'); // Set to error severity
       setSnackbarOpen(true); // Show error snackbar

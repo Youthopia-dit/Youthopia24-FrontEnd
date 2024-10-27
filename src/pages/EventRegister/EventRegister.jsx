@@ -167,31 +167,25 @@ export default function EventRegister() {
     return <div>Loading...</div>; // Add a loading state while fetching user data
   }
 
-  return (
-    <>
-      <div className="event_register">
-        <div className="background">
-          <img src={bg1} alt="bg-page" className="bgimage" />
-        </div>
-        <div className="participant-form">
-          <h2>Event Registration Form</h2>
-          <div className="form-event-details">
-            Event Name: {eventDetails.event_name}
-          </div>
-          <form onSubmit={handleSubmit}>
-            <h4>Leader Details:</h4>
-            <div className="form-group">
-              <input type="text" placeholder="Team Name" required />
-            </div>
-            <div className="form-group">
-              <input
-                type="text"
-                placeholder="Leader's Phone Number"
-                value={user?.phone || ''}
-                readOnly
-                required
-              />
-            </div>
+    return (
+        <>
+            <div className="event_register">
+                <div className="background">
+                    <img src={bg1} alt="bg-page" className="bgimage" />
+                </div>
+                <div className="participant-form">
+                    <h2>Event Registration Form</h2>
+                    <div className="form-event-details">
+                        Event Name: {eventDetails.event_name}
+                    </div>
+                    <form onSubmit={handleSubmit}>
+                        <h4>Leader Details:</h4>
+                        <div className="form-group">
+                            <input type="text" name="Team Name" placeholder="Team Name" required />
+                        </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="Leader's Phone Number" value={user?.phone || ''} readOnly required />
+                        </div>
 
             <div className="form-registration-row">
               <h4>Team Member Details:</h4>
