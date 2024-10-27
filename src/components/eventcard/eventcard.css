@@ -19,7 +19,7 @@
 .event-card img {
     width: 95%;
     height: 360px;
-    object-fit: cover;
+    object-fit: contain;
     padding: 10px;
     border-radius: 6%;
 }

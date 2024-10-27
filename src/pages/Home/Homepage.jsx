@@ -23,7 +23,7 @@ import '../../components/card-list/Glimpse';
 import Navbar from '../../components/Navbar/navbar';
 import Footer from '../../components/Footer/Footer';
 import DITLOGO from '../../assets/ditlogo.png';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,  useRef  } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -47,23 +47,24 @@ const imagesCarousel1 = [
 // ];
 
 function Carousel({ images, direction }) {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    // Clone the images and append them to create a seamless loop
+    const container = containerRef.current;
+    container.innerHTML += container.innerHTML;
+  }, []);
+
   return (
-    <>
-      <div className="carousel">
-        <div className={`image-container ${direction}`}>
-          {images.map((image) => (
-            <div className="image-card" key={image.id}>
-              <img src={image.src} alt={`Event ${image.id}`} />
-            </div>
-          ))}
-          {images.slice(0, 2).map((image) => (
-            <div className="image-card" key={image.id + 10}>
-              <img src={image.src} alt={`Event ${image.id}`} />
-            </div>
-          ))}
-        </div>
+    <div className="carousel">
+      <div className={`image-container ${direction}`} ref={containerRef}>
+        {images.map((image) => (
+          <div className="image-card" key={image.id}>
+            <img src={image.src} alt={`Event ${image.id}`} />
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 }
 
@@ -134,7 +135,7 @@ function Homepage() {
                             </div> */}
 
               <div className="events-home">
-                <p className="events-text">EVENTS</p>
+                <p className="events-text"> FLAGSHIP EVENTS</p>
                 <div className="events-row-container">
                   <div className="events-row">
                     {loading ? (

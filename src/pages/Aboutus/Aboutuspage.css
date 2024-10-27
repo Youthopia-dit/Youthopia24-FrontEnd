@@ -272,6 +272,7 @@ ul {
 }
 
 #knowbtn{
+    color: aliceblue;
     font-weight: 500;
     /* font-size: 20px; */
     
@@ -290,6 +291,7 @@ ul {
     border: none;
 }
 .knowmore button{
+    color: aliceblue;
     border-radius: 20px;
     background-color: transparent;
     border: 3px solid  #b09be9;

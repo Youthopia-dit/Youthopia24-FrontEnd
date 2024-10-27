@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Individualpage.css";
 import Navbar from "../../../components/Navbar/navbar";
 import { useLocation } from "react-router-dom";
@@ -11,7 +11,17 @@ import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
 const IndividualEvent = () => {
+  
+
+ 
+  
   const location = useLocation();
+  
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   const eventDetails = location.state || {};
   const navigate = useNavigate();
   const [snackbarOpen, setSnackbarOpen] = useState(false);
@@ -73,6 +83,7 @@ const IndividualEvent = () => {
       });
     }
   };
+
 
   const downloadDoc = () => {
     window.open(eventDetails.event_doc, '_blank');
@@ -143,11 +154,17 @@ const IndividualEvent = () => {
 
               {activeTab === "rules" && (
                 <div className="event-desc">
+                 {eventDetails.rules.length>0? <>
                   <ul className="event-rule-list">
                     {eventDetails.rules.map((rule, index) => (
-                      <li key={index}>{rule}</li>
+                      <>
+                      <li key={index}>{rule}</li><br />
+                      </>
                     ))}
                   </ul>
+                  </>:<div>NO Specific Rules</div>
+        
+                 }
                 </div>
               )}
 
@@ -177,6 +194,7 @@ const IndividualEvent = () => {
                         </tbody>
                       </table>
 
+                      {Object.keys(eventDetails.overall_head).length > 0 ? <>
                       <strong className="tablehead">Overall Heads:</strong>
                       <table className="event-head-table">
                         <thead>
@@ -198,15 +216,23 @@ const IndividualEvent = () => {
                           )}
                         </tbody>
                       </table>
+                      </> : <></>}
                     </div>
                   </>
                 </div>
               )}
 
               {activeTab === "fees" && (
-                <div className="event-section">
-                  <strong>Fees:</strong> <span>{eventDetails.fees}</span>
-                  <table className="fees-table">
+                <div className="event-section fees-section">
+                  {
+                    Object.entries(eventDetails.reg_fees).map(([cat, price]) => (
+                      <>
+                      <div className="event-details-fees">
+                        {cat}:{price}
+                      </div>
+                      </>
+                    )) 
+                  /* <table className="fees-table">
                     <thead>
                       <tr>
                         <th></th>
@@ -233,7 +259,7 @@ const IndividualEvent = () => {
                         ))}
                       </tr>
                     </tbody>
-                  </table>
+                  </table> */}
                 </div>
               )}
             </div>
