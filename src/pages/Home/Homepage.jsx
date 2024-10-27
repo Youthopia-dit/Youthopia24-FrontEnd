@@ -74,6 +74,7 @@ function Homepage() {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+<<<<<<< HEAD
   useEffect(() => {
     const fetchEvents = async () => {
       try {
@@ -90,6 +91,22 @@ function Homepage() {
     };
     fetchEvents();
   }, []);
+=======
+    useEffect(() => {
+        const fetchEvents = async () => {
+            try {
+                const response = await axios.get(`${Properties.base_url}/api/gethighlights`); 
+                setEvents(response.data.data); 
+                console.log(response.data.data);
+            } catch (err) {
+                setError('Failed to load events');
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchEvents();
+    }, []);
+>>>>>>> b018d5eb0760a433809152d4e2d0332814afdb04
 
   return (
     <>

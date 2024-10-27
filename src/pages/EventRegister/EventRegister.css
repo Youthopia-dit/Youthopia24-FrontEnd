@@ -129,6 +129,7 @@
   }
 
   .submit-btn{
+    cursor: pointer;
     padding: 15px 30px;
     color: #fff;
     background-color: transparent;

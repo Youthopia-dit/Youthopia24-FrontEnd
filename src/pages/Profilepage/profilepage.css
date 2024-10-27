@@ -125,6 +125,27 @@
   display: none;
 }
 
+.payment-dialog-box{
+    height: 50%;
+}
+.payment-dialog{
+    background-color: #0e0516;
+}
+
+.payment-dialog-heading{
+    color: white;
+    font-family: 'Nico' !important;
+}
+
+.payment-dialog-content{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.payment-checkbox{
+    color: white !important;
+}
+
 @media only screen and (max-width: 768px) {
   .profile-details {
     flex-direction: column;
@@ -405,5 +426,4 @@
       width: 100vw;
       margin-left: 0px;
       
-  
   } */
