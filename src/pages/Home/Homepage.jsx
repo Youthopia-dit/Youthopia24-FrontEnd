@@ -26,25 +26,13 @@ import DITLOGO from '../../assets/ditlogo.png';
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Properties from '../../properties.json';
 
 const imagesCarousel1 = [
   { id: 1, src: H1 },
   { id: 2, src: H2 },
   { id: 3, src: H3 },
 ];
-
-// const imagesCarousel2 = [
-//     { id: 4, src: H4 },
-//     { id: 5, src: H5 },
-//     { id: 6, src: H6 },
-// ];
-
-// const imagesCarousel3 = [
-//     { id: 7, src: H7 },
-//     { id: 8, src: H8 },
-//     { id: 9, src: H9 },
-//     { id: 10, src: H10 },
-// ];
 
 function Carousel({ images, direction }) {
   const containerRef = useRef(null);
@@ -75,20 +63,19 @@ function Homepage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchEvents = async () => {
+    const fetchHighlights = async () => {
       try {
         const response = await axios.get(
           `${Properties.base_url}/api/gethighlights`
         );
         setEvents(response.data.data);
-        console.log(response.data.data);
       } catch (err) {
         setError('Failed to load events');
       } finally {
         setLoading(false);
       }
     };
-    fetchEvents();
+    fetchHighlights();
   }, []);
 
   return (

@@ -5,7 +5,6 @@ import culBanner from '../../assets/culturalBanner.png';
 import infoBanner from '../../assets/InformalBanner.png';
 
 function Modal({ data, handelModal }) {
-  // const event_poster = data.eventDetails.event_poster;
 
   let banner;
   if (data.eventDetails.eventCategory === 'tech') {
@@ -24,10 +23,7 @@ function Modal({ data, handelModal }) {
         <div className="modal" style={{ backgroundImage: `url(${banner})` }}>
           <button
             className="modal-close-button"
-            onClick={() => {
-              handelModal('');
-              console.log(data);
-            }}
+            onClick={() => handelModal(null)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

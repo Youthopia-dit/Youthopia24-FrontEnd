@@ -121,7 +121,7 @@ const EventPage = () => {
           {renderContent()}
         </div>
       </div>
-      <Footer /> {/* Add Footer component here */}
+      <Footer /> 
     </div>
   );
 };

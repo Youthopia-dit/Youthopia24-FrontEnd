@@ -19,6 +19,7 @@ import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
 import Properties from '../../properties.json';
 import Modal from '../../components/Modal/Modal';
+
 function ProfilePage() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -66,11 +67,12 @@ function ProfilePage() {
           'https://27.123.248.68:4000/api/register/getRegistrations',
           { registrationIds: eventList }
         );
-
+        const u = res.data.profile;
         setUser({
-          user: res.data.profile,
+          ...u,
           registeredEvent: res2.data.registrations,
         });
+        console.log(user)
         setLoading(false);
         console.log(eventList);
       } catch (error) {
@@ -108,8 +110,13 @@ function ProfilePage() {
   };
 
   const handelModal = (data) => {
-    setShowModal((prev) => !prev);
-    setModalData(data);
+    if (data) {
+      setShowModal(true);
+      setModalData(data);
+    } else {
+      setShowModal(false);
+      setModalData(null);
+    }
   };
 
   return (
