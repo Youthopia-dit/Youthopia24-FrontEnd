@@ -41,7 +41,6 @@ const imagesCarousel1 = [
   { id: 10, src: H10 }
 ];
 
-
 function Carousel({ images, direction }) {
   const containerRef = useRef(null);
 
@@ -74,7 +73,9 @@ function Homepage() {
   useEffect(() => {
     const fetchHighlights = async () => {
       try {
-        const response = await axios.get(`${Properties.base_url}/api/gethighlights`);
+        const response = await axios.get(
+          `${Properties.base_url}/api/gethighlights`
+        );
         setEvents(response.data.data);
       } catch (err) {
         setError('Failed to load events');

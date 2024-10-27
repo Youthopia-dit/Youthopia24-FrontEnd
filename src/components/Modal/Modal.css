@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --font-color: black;
+  --font-color: white;
 }
 
 .modal-background {
@@ -9,7 +9,7 @@
   height: 100%;
   background-color: transparent;
   position: fixed;
-  z-index: 99999999;
+  z-index: 999;
   background-color: rgba(0, 0, 0, 0.488);
   top: 50%;
   left: 50%;
@@ -22,12 +22,12 @@
   position: absolute;
   font-family: 'Montserrat', serif;
   top: 50%;
+  z-index: 99999;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 15px;
   overflow-y: hidden;
   height: 80%;
-  /* border: 2px solid rgba(255, 255, 255, 0.57); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -36,13 +36,23 @@
 
 .modal-close-button {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 15px;
+  top: 15px;
+  width: fit-content;
+  height: fit-content;
   border: none;
   border-radius: 30px;
   background: transparent;
   color: var(--font-color);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-close-button svg {
+  position: relative;
+  z-index: 999;
 }
 
 .modal-heading {
@@ -76,6 +86,7 @@
 
 .event-member {
   color: var(--font-color);
+  align-self: center;
 }
 
 .event-member-name,
@@ -103,14 +114,23 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
+  width: 90%;
   transform: translate(-50%, -50%);
+  height: 80%;
+  overflow-y: scroll;
+}
+
+.modal-content-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .download_buttons {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
   width: 100%;
+  flex-direction: row-reverse;
 }
 
 .download_button {
@@ -123,4 +143,23 @@
   justify-content: space-between;
   align-items: center;
   gap: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .modal {
+    overflow: hidden;
+  }
+
+  .modal-content-wrapper {
+    overflow-x: hidden;
+  }
+
+  .modal-heading {
+    font-size: 32px;
+  }
+
+  .member-heading {
+    color: var(--font-color);
+    font-size: 28px;
+  }
 }

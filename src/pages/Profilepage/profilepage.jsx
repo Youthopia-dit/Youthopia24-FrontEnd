@@ -72,7 +72,7 @@ function ProfilePage() {
           ...u,
           registeredEvent: res2.data.registrations,
         });
-        console.log(user)
+        console.log(user);
         setLoading(false);
         console.log(eventList);
       } catch (error) {
