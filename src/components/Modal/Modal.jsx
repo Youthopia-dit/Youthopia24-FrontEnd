@@ -16,8 +16,6 @@ function Modal({ data, handelModal }) {
     banner = infoBanner;
   }
 
-  console.log(data);
-
   return (
     <>
       <div className="modal-background">
