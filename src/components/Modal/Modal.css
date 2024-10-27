@@ -9,7 +9,7 @@
   height: 100%;
   background-color: transparent;
   position: fixed;
-  z-index: 99999999;
+  z-index: 999;
   background-color: rgba(0, 0, 0, 0.488);
   top: 50%;
   left: 50%;
@@ -22,6 +22,7 @@
   position: absolute;
   font-family: 'Montserrat', serif;
   top: 50%;
+  z-index: 99999;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 15px;
@@ -129,6 +130,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   width: 100%;
+  flex-direction: row-reverse;
 }
 
 .download_button {
