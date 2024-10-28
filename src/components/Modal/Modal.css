@@ -55,22 +55,29 @@
   z-index: 999;
 }
 
+.modal-content-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .modal-heading {
   font-size: 40px;
   color: var(--font-color);
+  text-align: left;
 }
 
 .member-heading {
   color: var(--font-color);
   font-weight: 600;
-  margin: 0 auto 30px auto;
-  padding-top: 15px;
+  text-align: left;
   max-width: 90%;
 }
 
 .modal-desc {
   color: var(--font-color);
   font-size: 22px;
+  text-align: left;
 }
 
 .modal-image {
@@ -106,28 +113,49 @@
   flex-wrap: wrap;
   max-width: fit-content;
   gap: 3rem;
-  margin: 1rem auto;
+  margin: 2.8rem auto;
   border-radius: 8px;
 }
 
 .modal-content-wrapper {
   position: absolute;
-  top: 50%;
+  top: 42%;
   left: 50%;
   width: 90%;
   transform: translate(-50%, -50%);
-  height: 80%;
+  height: 65%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
   overflow-y: scroll;
+}
+
+.modal-content-wrapper > div {
+  flex: 1;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.modal-content-wrapper > div::-webkit-scrollbar {
+  display: none;
 }
 
 .modal-content-wrapper::-webkit-scrollbar {
   display: none;
 }
 
+.download_buttons-wrapper {
+  position: relative;
+  bottom: 0;
+}
+
 .download_buttons {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  position: fixed;
+  bottom: 30px;
   gap: 1rem;
   width: 100%;
   flex-direction: row-reverse;
@@ -148,10 +176,14 @@
 @media only screen and (max-width: 768px) {
   .modal {
     overflow: hidden;
+    width: 90%;
+    height: 90%;
   }
 
   .modal-content-wrapper {
     overflow-x: hidden;
+    height: 60%;
+    flex-direction: column;
   }
 
   .modal-heading {
