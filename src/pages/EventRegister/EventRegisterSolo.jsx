@@ -14,6 +14,7 @@ export default function EventRegisterSolo() {
     const [snackbarSeverity, setSnackbarSeverity] = useState('error');
     const [user, setUser] = useState(null);
     const token = localStorage.getItem('authToken');
+    const [loading, setLoading] = useState(false); // New loading state
     const [RegistrationDetails, setRegistrationDetails] = useState({
         name: '',
         collegeId: '',
@@ -96,14 +97,13 @@ export default function EventRegisterSolo() {
 
     const handleSubmit = async (e) => {
 
-
         e.preventDefault();
-
+        setLoading(true);
         const fromDIT = RegistrationDetails.college === 'DIT University';
         const acceptPayment = eventDetails.paymentEnabled;
         var payment = {
             paid: false,
-            amount: !acceptPayment ? "0" : getPrice(members.length, fromDIT),
+            amount: !acceptPayment ? "0" : getPrice(1, fromDIT),
         };
 
         const members = {
@@ -149,6 +149,8 @@ export default function EventRegisterSolo() {
             setSnackbarMessage('Login Failed');
             setSnackbarSeverity('error'); // Set to error severity
             setSnackbarOpen(true);
+        } finally{
+            setLoading(false);
         }
     };
 
@@ -198,7 +200,9 @@ export default function EventRegisterSolo() {
                                 </div>
                             </>
                         )}
-                        <button className="submit-btn" type="submit">Submit</button>
+                        <button className="submit-btn" type="submit" disabled={loading}>
+                            {loading ? 'Submitting...' : 'Submit'}
+                        </button>
                     </form>
 
                 </div >

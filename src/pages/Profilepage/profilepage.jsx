@@ -69,9 +69,9 @@ function ProfilePage() {
     };
   
     const processUserEvents = (registrations) => {
-      // Filter events with unpaid status and amount greater than zero
+      console.log("svsdv", registrations)
       return registrations.filter(
-        (event) => !event.payment.paid && event.payment.amount > 0
+        (event) => !event.payment.paid && Number(event.payment.amount) > 0
       );
     };
   
@@ -97,6 +97,7 @@ function ProfilePage() {
         });
   
         const filteredEvents = processUserEvents(registrations || []);
+        console.log(filteredEvents)
         setFilteredEvents(filteredEvents);
       } catch (error) {
         console.error('Error initializing user data:', error);

@@ -147,7 +147,7 @@ export default function EventRegister() {
       phoneNumber: user.phone,
       payment: payment,
     };
-
+    console.log("Event Details", eventDetails);
     console.log('Registration Details:', registrationData);
     const token = localStorage.getItem('authToken');
     try {
