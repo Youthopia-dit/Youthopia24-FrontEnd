@@ -3,6 +3,7 @@ import { Modal, Box, TextField } from '@mui/material';
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import Properties from "../../properties.json"
 
 const OtpModal = ({ email, otpModalOpen, setOtpModalOpen, onOtpVerification }) => {
     const [snackbarOpen, setSnackbarOpen] = useState(false);
@@ -41,7 +42,8 @@ const OtpModal = ({ email, otpModalOpen, setOtpModalOpen, onOtpVerification }) =
 
     const handleOtpSubmit = async () => {
         try {
-            const res = await axios.post(`${Properties.base_url}/api/user/verifyOtp`, { userOtp: otp, email });
+            const res = await axios.post(`${Properties.base_url}/api/user/verifyOTP`, { userOtp: otp, email });
+            
             if (res.status === 200) {
                 onOtpVerification(true);
                 setSnackbarMessage('Email verified successfully!');
@@ -50,7 +52,7 @@ const OtpModal = ({ email, otpModalOpen, setOtpModalOpen, onOtpVerification }) =
                 setOtpModalOpen(false);
             }
         } catch (error) {
-            setSnackbarMessage(error.response?.data?.message || 'Failed to verify OTP. Please try again.');
+            setSnackbarMessage(error || 'Failed to verify OTP. Please try again.');
             setSnackbarSeverity('error');
             setSnackbarOpen(true);
         }
