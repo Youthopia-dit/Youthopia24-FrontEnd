@@ -1,22 +1,17 @@
-import React, { useState, useEffect } from "react";
-import "./Individualpage.css";
-import Navbar from "../../../components/Navbar/navbar";
-import { useLocation } from "react-router-dom";
-import Footer from "../../../components/Footer/Footer";
-import TechBack from "../../../assets/Events-Elements/tech_back.png";
-import CulturalBack from "../../../assets/Events-Elements/image 397.png";
-import InformalBack from "../../../assets/Events-Elements/informal_back.png";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import './Individualpage.css';
+import Navbar from '../../../components/Navbar/navbar';
+import { useLocation } from 'react-router-dom';
+import Footer from '../../../components/Footer/Footer';
+import TechBack from '../../../assets/Events-Elements/tech_back.png';
+import CulturalBack from '../../../assets/Events-Elements/image 397.png';
+import InformalBack from '../../../assets/Events-Elements/informal_back.png';
+import { useNavigate } from 'react-router-dom';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
 const IndividualEvent = () => {
-  
-
- 
-  
   const location = useLocation();
-  
 
   useEffect(() => {
     // Scroll to the top when the component mounts
@@ -28,7 +23,7 @@ const IndividualEvent = () => {
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('error');
 
-  const [activeTab, setActiveTab] = useState("description");
+  const [activeTab, setActiveTab] = useState('description');
 
   if (!eventDetails) return <p>Event details not found</p>;
 
@@ -42,24 +37,36 @@ const IndividualEvent = () => {
   };
 
   const renderBack = () => {
-    if (eventDetails.category === "tech") {
+    if (eventDetails.category === 'tech') {
       return (
         <div className="background-wrapper">
-          <img src={TechBack} alt="Tech background" className="tech-back-image" />
+          <img
+            src={TechBack}
+            alt="Tech background"
+            className="tech-back-image"
+          />
           <div className="gradient-overlay"></div>
         </div>
       );
-    } else if (eventDetails.category === "cul") {
+    } else if (eventDetails.category === 'cul') {
       return (
         <div className="background-wrapper">
-          <img src={CulturalBack} alt="Cultural background" className="cultural-back-image" />
+          <img
+            src={CulturalBack}
+            alt="Cultural background"
+            className="cultural-back-image"
+          />
           <div className="gradient-overlay2"></div>
         </div>
       );
-    } else if (eventDetails.category === "inf") {
+    } else if (eventDetails.category === 'inf') {
       return (
         <div className="background-wrapper">
-          <img src={InformalBack} alt="Informal background" className="informal-back-image" />
+          <img
+            src={InformalBack}
+            alt="Informal background"
+            className="informal-back-image"
+          />
           <div className="gradient-overlay"></div>
         </div>
       );
@@ -74,16 +81,15 @@ const IndividualEvent = () => {
       return;
     }
     if (eventDetails.participant_max === 1) {
-      navigate("/register-solo", {
+      navigate('/register-solo', {
         state: { eventDetails },
       });
     } else {
-      navigate("/register", {
+      navigate('/register', {
         state: { eventDetails },
       });
     }
   };
-
 
   const downloadDoc = () => {
     window.open(eventDetails.event_doc, '_blank');
@@ -102,7 +108,7 @@ const IndividualEvent = () => {
             <h2 className="event-title">{eventDetails.event_name}</h2>
             <div className="event-info">
               <span className="event-data">
-                {eventDetails.venue} • {eventDetails.date} •{" "}
+                {eventDetails.venue} • {eventDetails.date} •{' '}
                 {eventDetails.start_time} - {eventDetails.end_time}
               </span>
             </div>
@@ -110,26 +116,26 @@ const IndividualEvent = () => {
             {/* Tab Navigation */}
             <div className="tab-navigation">
               <button
-                onClick={() => setActiveTab("description")}
-                className={activeTab === "description" ? "active-tab" : ""}
+                onClick={() => setActiveTab('description')}
+                className={activeTab === 'description' ? 'active-tab' : ''}
               >
                 Description
               </button>
               <button
-                onClick={() => setActiveTab("rules")}
-                className={activeTab === "rules" ? "active-tab" : ""}
+                onClick={() => setActiveTab('rules')}
+                className={activeTab === 'rules' ? 'active-tab' : ''}
               >
                 Rules
               </button>
               <button
-                onClick={() => setActiveTab("coordinators")}
-                className={activeTab === "coordinators" ? "active-tab" : ""}
+                onClick={() => setActiveTab('coordinators')}
+                className={activeTab === 'coordinators' ? 'active-tab' : ''}
               >
                 Coordinators
               </button>
               <button
-                onClick={() => setActiveTab("fees")}
-                className={activeTab === "fees" ? "active-tab" : ""}
+                onClick={() => setActiveTab('fees')}
+                className={activeTab === 'fees' ? 'active-tab' : ''}
               >
                 Fees
               </button>
@@ -137,7 +143,7 @@ const IndividualEvent = () => {
 
             {/* Tab Content */}
             <div className="tab-content">
-              {activeTab === "description" && (
+              {activeTab === 'description' && (
                 <>
                   <div className="event-desc">
                     {eventDetails.event_description}
@@ -146,29 +152,30 @@ const IndividualEvent = () => {
                     Minimum Participants: {eventDetails.participant_min} <br />
                     Maximum Participants: {eventDetails.participant_max}
                   </div>
-                  <div className="participants">
-
-                  </div>
+                  <div className="participants"></div>
                 </>
               )}
 
-              {activeTab === "rules" && (
+              {activeTab === 'rules' && (
                 <div className="event-desc">
-                 {eventDetails.rules.length>0? <>
-                  <ul className="event-rule-list">
-                    {eventDetails.rules.map((rule, index) => (
-                      <>
-                      <li key={index}>{rule}</li><br />
-                      </>
-                    ))}
-                  </ul>
-                  </>:<div>NO Specific Rules</div>
-        
-                 }
+                  {eventDetails.rules.length > 0 ? (
+                    <>
+                      <ul className="event-rule-list">
+                        {eventDetails.rules.map((rule, index) => (
+                          <>
+                            <li key={index}>{rule}</li>
+                            <br />
+                          </>
+                        ))}
+                      </ul>
+                    </>
+                  ) : (
+                    <div>NO Specific Rules</div>
+                  )}
                 </div>
               )}
 
-              {activeTab === "coordinators" && (
+              {activeTab === 'coordinators' && (
                 <div className="event-coor-list">
                   <>
                     <div className="event-coor-list">
@@ -194,45 +201,51 @@ const IndividualEvent = () => {
                         </tbody>
                       </table>
 
-                      {Object.keys(eventDetails.overall_head).length > 0 ? <>
-                      <strong className="tablehead">Overall Heads:</strong>
-                      <table className="event-head-table">
-                        <thead>
-                          <tr>
-                            <th>Name</th>
-                            <th>Contact Number</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {Object.entries(eventDetails.overall_head).map(
-                            ([name, number]) => (
-                              <tr key={name}>
-                                <td>
-                                  <strong>{name}</strong>
-                                </td>
-                                <td>{number}</td>
+                      {Object.keys(eventDetails.overall_head).length > 0 ? (
+                        <>
+                          <strong className="tablehead">Overall Heads:</strong>
+                          <table className="event-head-table">
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th>Contact Number</th>
                               </tr>
-                            )
-                          )}
-                        </tbody>
-                      </table>
-                      </> : <></>}
+                            </thead>
+                            <tbody>
+                              {Object.entries(eventDetails.overall_head).map(
+                                ([name, number]) => (
+                                  <tr key={name}>
+                                    <td>
+                                      <strong>{name}</strong>
+                                    </td>
+                                    <td>{number}</td>
+                                  </tr>
+                                )
+                              )}
+                            </tbody>
+                          </table>
+                        </>
+                      ) : (
+                        <></>
+                      )}
                     </div>
                   </>
                 </div>
               )}
 
-              {activeTab === "fees" && (
+              {activeTab === 'fees' && (
                 <div className="event-section fees-section">
                   {
-                    Object.entries(eventDetails.reg_fees).map(([cat, price]) => (
-                      <>
-                      <div className="event-details-fees">
-                        {cat}:{price}
-                      </div>
-                      </>
-                    )) 
-                  /* <table className="fees-table">
+                    Object.entries(eventDetails.reg_fees).map(
+                      ([cat, price]) => (
+                        <>
+                          <div className="event-details-fees">
+                            {cat}:{price}
+                          </div>
+                        </>
+                      )
+                    )
+                    /* <table className="fees-table">
                     <thead>
                       <tr>
                         <th></th>
@@ -259,13 +272,18 @@ const IndividualEvent = () => {
                         ))}
                       </tr>
                     </tbody>
-                  </table> */}
+                  </table> */
+                  }
                 </div>
               )}
             </div>
             <div className="event-buttons-div">
-            <button className="register-btn" onClick={handleRegister}>Register Now</button>
-            <button className="register-btn" onClick={downloadDoc}>View Details</button>
+              <button className="register-btn" onClick={handleRegister}>
+                Register Now
+              </button>
+              <button className="register-btn" onClick={downloadDoc}>
+                View Details
+              </button>
             </div>
           </div>
         </div>
