@@ -9,16 +9,10 @@ import dummy from '../../assets/demo_profile.jpg';
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import Checkbox from '@mui/material/Checkbox';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
 import Properties from '../../properties.json';
 import Modal from '../../components/Modal/Modal';
+import PaymentModal from '../../components/PaymentModal/PaymentModal';
 
 function ProfilePage() {
   const navigate = useNavigate();
@@ -29,10 +23,8 @@ function ProfilePage() {
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState();
-  const [eventList, setEventList] = useState([]);
   const [open, setOpen] = useState(false); // For Modal
-  const [selectedEvents, setSelectedEvents] = useState({});
-  const [totalAmount, setTotalAmount] = useState(0);
+  const [filteredEvents, setFilteredEvents] = useState([]);
 
   const handleSnackbarClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -42,16 +34,9 @@ function ProfilePage() {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    if (!token) {
-      setSnackbarMessage('User Not logged in!');
-      setSnackbarSeverity('success');
-      setSnackbarOpen(true);
-      window.location.href = '/getting-started';
-    }
-
-    const fetchUser = async () => {
+    const fetchUserProfile = async (token) => {
       try {
+        // Fetch user profile
         const res = await axios.get(
           `${Properties.base_url}/api/user/getProfile`,
           {
@@ -60,28 +45,69 @@ function ProfilePage() {
             },
           }
         );
-
-        const eventList = res.data.profile.registeredEvent;
-
-        const res2 = await axios.post(
-          'https://27.123.248.68:4000/api/register/getRegistrations',
-          { registrationIds: eventList }
-        );
-        const u = res.data.profile;
-        setUser({
-          ...u,
-          registeredEvent: res2.data.registrations,
-        });
-        console.log(user);
-        setLoading(false);
-        console.log(eventList);
+  
+        return res.data.profile;
       } catch (error) {
-        console.error('Error fetching user data:', error);
+        console.error('Error fetching user profile:', error);
+        throw error;
       }
     };
-    setLoading(true);
-    fetchUser();
-  }, []);
+  
+    const fetchUserRegistrations = async (registrationIds) => {
+      try {
+        // Fetch registrations based on the retrieved profile's event list
+        const res = await axios.post(
+          `${Properties.base_url}/api/register/getRegistrations`,
+          { registrationIds }
+        );
+  
+        return res.data.registrations;
+      } catch (error) {
+        console.error('Error fetching user registrations:', error);
+        throw error;
+      }
+    };
+  
+    const processUserEvents = (registrations) => {
+      // Filter events with unpaid status and amount greater than zero
+      return registrations.filter(
+        (event) => !event.payment.paid && event.payment.amount > 0
+      );
+    };
+  
+    const initializeUserData = async () => {
+      const token = localStorage.getItem('authToken');
+      if (!token) {
+        setSnackbarMessage('User Not logged in!');
+        setSnackbarSeverity('success');
+        setSnackbarOpen(true);
+        navigate('/getting-started');
+        return;
+      }
+  
+      setLoading(true);
+      try {
+        const userProfile = await fetchUserProfile(token);
+        const registrations = await fetchUserRegistrations(userProfile.registeredEvent);
+  
+        // Set user and filtered events
+        setUser({
+          ...userProfile,
+          registrations: registrations || [],
+        });
+  
+        const filteredEvents = processUserEvents(registrations || []);
+        setFilteredEvents(filteredEvents);
+      } catch (error) {
+        console.error('Error initializing user data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    initializeUserData();
+  }, [open]);
+  
 
   const handleSignout = () => {
     localStorage.removeItem('authToken');
@@ -91,22 +117,18 @@ function ProfilePage() {
     setSnackbarOpen(true);
   };
 
-  const handlePaymentModalOpen = () => {
+  const handlePaymentModalOpen = async () => {
+    if(filteredEvents.length === 0) {
+      setSnackbarMessage('No events to pay for!');
+      setSnackbarSeverity('success');
+      setSnackbarOpen(true);
+      return;
+    } 
     setOpen(true);
   };
 
   const handlePaymentModalClose = () => {
     setOpen(false);
-  };
-
-  const handleCheckboxChange = (event, amount) => {
-    const { name, checked } = event.target;
-    const updatedSelectedEvents = { ...selectedEvents, [name]: checked };
-
-    const updatedTotal = checked ? totalAmount + amount : totalAmount - amount;
-    setTotalAmount(updatedTotal);
-
-    setSelectedEvents(updatedSelectedEvents);
   };
 
   const handelModal = (data) => {
@@ -173,7 +195,7 @@ function ProfilePage() {
             <div className="scroller">
               <h1 className="register">Registered events</h1>
               <div className="registered">
-                {user.registeredEvent.map((el, i) => {
+                {user.registrations?.map((el, i) => {
                   return (
                     <img
                       key={i}
@@ -193,46 +215,14 @@ function ProfilePage() {
         )}
       </div>
 
-      <Dialog
+      {user && <PaymentModal
         open={open}
         onClose={handlePaymentModalClose}
-        classes={{ paper: 'payment-dialog-box' }}
-      >
-        <Box className="payment-dialog">
-          <DialogTitle className="payment-dialog-heading">
-            Select Events for Payment
-          </DialogTitle>
-          <DialogContent>
-            {eventList.map((event, index) => (
-              <div key={index} className="payment-dialog-content">
-                <Checkbox
-                  checked={!!selectedEvents[event.regID]}
-                  onChange={(e) =>
-                    handleCheckboxChange(e, event.payment.amount)
-                  }
-                  name={event.eventDetails.eventName}
-                  className="payment-checkbox"
-                />
-                {event.eventDetails.eventName} - ₹{event.payment.amount}
-              </div>
-            ))}
-            <p>Total Amount: ₹{totalAmount}</p>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handlePaymentModalClose}>Close</Button>
-            <Button
-              onClick={() => {
-                setSnackbarMessage('Payment successful');
-                setSnackbarSeverity('success');
-                setSnackbarOpen(true);
-                handlePaymentModalClose();
-              }}
-            >
-              Pay
-            </Button>
-          </DialogActions>
-        </Box>
-      </Dialog>
+        registeredEvents={filteredEvents}
+        name={user.name}
+        email={user.email}
+        phone={user.phone}
+      />}
 
       <Snackbar
         open={snackbarOpen}

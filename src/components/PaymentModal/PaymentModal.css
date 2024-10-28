@@ -1,0 +1,69 @@
+.modal-content {
+    background-color: #0e0516;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-header {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.event-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.event-label {
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+}
+
+.total-amount {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.payment-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-button:hover {
+    background-color: #0056b3;
+}
+
+.payment-button:focus {
+    outline: none;
+}
+
+@media (max-width: 500px) {
+    .modal-content {
+        width: 90%;
+    }
+}

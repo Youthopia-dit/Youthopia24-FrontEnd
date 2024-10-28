@@ -133,10 +133,10 @@ export default function EventRegister() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true); // Disable the submit button
-
-    const payment = {
+    const acceptPayment = eventDetails.paymentEnabled;
+    var payment = {
       paid: false,
-      amount: getPrice(members.length, fromDIT),
+      amount: !acceptPayment? "0" : getPrice(members.length, fromDIT),
     };
     const registrationData = {
       email: user.email,

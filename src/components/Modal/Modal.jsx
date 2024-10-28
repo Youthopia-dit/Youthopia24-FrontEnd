@@ -56,7 +56,7 @@ function Modal({ data, handelModal }) {
                 {data.members.map((el, i) => {
                   return (
                     <>
-                      <div key={i} className="event-member">
+                      <div key={`mem-i`} className="event-member">
                         <span className="member-no">Member {i + 1}</span>
                         <div>
                           <p className="event-member-name">

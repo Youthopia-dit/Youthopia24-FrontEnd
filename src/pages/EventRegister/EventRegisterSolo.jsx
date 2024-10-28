@@ -78,11 +78,11 @@ export default function EventRegisterSolo() {
 
     function getPrice(teamSize, isFromDit) {
         const priceInfo = eventDetails.prices.find(price => price.teamSize === teamSize);
-    
+
         if (!priceInfo) {
             return 'Team size not supported';
         }
-    
+
         return isFromDit ? priceInfo.priceDit : priceInfo.priceNonDit;
     }
 
@@ -95,13 +95,16 @@ export default function EventRegisterSolo() {
     };
 
     const handleSubmit = async (e) => {
+
+
         e.preventDefault();
 
         const fromDIT = RegistrationDetails.college === 'DIT University';
-        const payment = {
+        const acceptPayment = eventDetails.paymentEnabled;
+        var payment = {
             paid: false,
-            amount: getPrice(1, fromDIT),
-        }
+            amount: !acceptPayment ? "0" : getPrice(members.length, fromDIT),
+        };
 
         const members = {
             name: RegistrationDetails.name,
@@ -117,7 +120,7 @@ export default function EventRegisterSolo() {
             members: [members],
             phoneNumber: RegistrationDetails.phoneNumber,
             payment: payment,
-            
+
         };
 
         console.log('Submitted Registration:', registrationData);
@@ -132,7 +135,7 @@ export default function EventRegisterSolo() {
                     }
                 }
             );
-            if(res.status === 201) {
+            if (res.status === 201) {
                 setSnackbarMessage('Registered Successfully');
                 setSnackbarSeverity('success'); // Set to success severity
                 setSnackbarOpen(true);

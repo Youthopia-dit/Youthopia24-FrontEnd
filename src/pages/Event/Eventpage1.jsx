@@ -21,7 +21,7 @@ const EventPage = () => {
     if (savedTab) {
       setActiveTab(savedTab);
     }
-  }, [fetchEvents]);
+  }, []);
 
 
   const handleTabChange = (tab) => {
