@@ -60,7 +60,6 @@ function ProfilePage() {
           `${Properties.base_url}/api/register/getRegistrations`,
           { registrationIds }
         );
-  
         return res.data.registrations;
       } catch (error) {
         console.error('Error fetching user registrations:', error);
@@ -166,8 +165,8 @@ function ProfilePage() {
                 </div>
                 <div className="contact">
                   <p className="contactinfo">
-                    Phone: {user.phone}
-                    <br /> Email: {user.email}
+                    Phone: {user?.phone}
+                    <br /> Email: {user?.email}
                   </p>
                 </div>
                 <div className="profile-buttons">
@@ -184,19 +183,19 @@ function ProfilePage() {
               </div>
               <div className="right-column">
                 <div className="profile-heading">Profile Details</div>
-                <div className="profile-info-tab">Name : {user.name}</div>
-                <div className="profile-info-tab">College : {user.college}</div>
+                <div className="profile-info-tab">Name : {user?.name}</div>
+                <div className="profile-info-tab">College : {user?.college}</div>
                 <div className="profile-info-tab">
-                  Student ID : {user.collegeId}
+                  Student ID : {user?.collegeId}
                 </div>
-                <div className="profile-info-tab">Year : {user.year}</div>
-                <div className="profile-info-tab">Branch : {user.branch}</div>
+                <div className="profile-info-tab">Year : {user?.year}</div>
+                <div className="profile-info-tab">Branch : {user?.branch}</div>
               </div>
             </div>
             <div className="scroller">
               <h1 className="register">Registered events</h1>
               <div className="registered">
-                {user.registrations?.map((el, i) => {
+                {user?.registrations?.map((el, i) => {
                   return (
                     <img
                       key={i}
