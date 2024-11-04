@@ -98,8 +98,8 @@ const PaymentModal = ({ open, onClose, registeredEvents, name, email, phone }) =
                     amount={orderDetails.amount}
                     currency={orderDetails.currency}
                     orderId={orderDetails.orderId}
-                    keyId="rzp_test_GzInPIfSvQeKs1"
-                    keySecret="JoeITPXtGimcyWkeqyXa7RIO"
+                    keyId="rzp_live_eblfVtJYrfOJ76"
+                    keySecret="sUEm9h538MwyaSRdjCoiB38D"
                     events={selectedEvents}
                     name={name}
                     email={email}

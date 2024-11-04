@@ -25,7 +25,7 @@ const RenderRazorpay = ({ orderId, keyId, keySecret, amount, currency, name, eve
 
         const options = {
             key: keyId,
-            amount: amount,
+            amount: amount*100,
             currency: currency,
             name: 'Youthopia 24',
             description: 'Event Registration Fee',

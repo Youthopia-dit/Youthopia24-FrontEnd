@@ -4,6 +4,7 @@ import bg1 from '../../assets/bg1.png';
 import youthopia_logo from '../../assets/youthopia-logo.png';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
+import Properties from "../../properties.json"
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
