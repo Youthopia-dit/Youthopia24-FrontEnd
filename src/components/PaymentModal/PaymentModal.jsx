@@ -74,9 +74,10 @@ const PaymentModal = ({ open, onClose, registeredEvents, name, email, phone }) =
 
     return (
         <>
-            <Modal open={open} onClose={onClose}>
+            <Modal  open={open} onClose={onClose} className='modal-overlay'>
                 <div className="modal-content">
                     <h2 className="modal-header">Payment</h2>
+                    <p style={{color:"white"}}>Select for the events for which you want to pay</p>
                     {registeredEvents.map(event => (
                         <div key={event.regID} className="event-item">
                             <label className="event-label">
