@@ -18,6 +18,7 @@ import H6 from '../../assets/Gallery/H6.jpg';
 import H7 from '../../assets/Gallery/H7.jpg';
 import H8 from '../../assets/Gallery/H8.jpg';
 import H9 from '../../assets/Gallery/H9.jpg';
+import highlights2024 from '../../assets/Website.png';
 import H10 from '../../assets/Gallery/H10.jpg';
 import '../../components/card-list/Glimpse';
 import Navbar from '../../components/Navbar/navbar';
@@ -38,7 +39,7 @@ const imagesCarousel1 = [
   { id: 7, src: H7 },
   { id: 8, src: H8 },
   { id: 9, src: H9 },
-  { id: 10, src: H10 }
+  { id: 10, src: H10 },
 ];
 
 function Carousel({ images, direction }) {
@@ -84,21 +85,23 @@ function Homepage() {
 
     const fetchSponsors = async () => {
       try {
-        const response = await axios.get(`${Properties.base_url}/api/sponsor/getSponsors`);
+        const response = await axios.get(
+          `${Properties.base_url}/api/sponsor/getSponsors`
+        );
         var sponsorList = response.data.sponsor;
         console.log(sponsorList);
         setSponsors(sponsorList);
       } catch (err) {
         setError('Failed to load sponsors');
       }
-    }
+    };
 
     const getData = async () => {
       setLoading(true);
       await fetchHighlights();
       await fetchSponsors();
       setLoading(false);
-    }
+    };
 
     getData();
   }, []);
@@ -136,14 +139,36 @@ function Homepage() {
                 <p className="Desc">Annual Techno-Cultural Fest</p>
               </div>
               <Timer />
+              <div className="highlights-2024-wrapper">
+                <div>
+                  <h2 className="events-text highlights-2024-heading">
+                    Highlights 2024
+                  </h2>
+                </div>
+                <div>
+                  {/* Highlights Banner */}
+                  <div className="banner-wrapper">
+                    <img src={highlights2024} alt="" />
+                  </div>
+                </div>
+              </div>
               <div className="sponsors-home">
                 <p className="events-text">OUR SPONSORS</p>
                 <div className="sponsors-logos">
-                  {
-                    loading ? <p>Loading sponsors...</p> : error ? <p>{error}</p> : sponsors.map((sponsor) => (
-                      <img src={sponsor.imageUrl} alt={sponsor.name} className="Slogo" key={sponsor.name}/>
+                  {loading ? (
+                    <p>Loading sponsors...</p>
+                  ) : error ? (
+                    <p>{error}</p>
+                  ) : (
+                    sponsors.map((sponsor) => (
+                      <img
+                        src={sponsor.imageUrl}
+                        alt={sponsor.name}
+                        className="Slogo"
+                        key={sponsor.name}
+                      />
                     ))
-                  }
+                  )}
                 </div>
               </div>
 
