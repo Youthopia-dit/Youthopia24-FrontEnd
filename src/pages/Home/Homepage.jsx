@@ -28,9 +28,11 @@ import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Properties from '../../properties.json';
-import P1 from '../../assets/high1.png'
-import P2 from '../../assets/high2.png'
-import P3 from '../../assets/high3.png'
+import P1 from '../../assets/high1.png';
+import P2 from '../../assets/high2.png';
+import VideoModal from '../../components/VideoModal/VideoModal';
+import paymentVideo from '../../assets/payment-video.mp4';
+import P3 from '../../assets/high3.png';
 
 const imagesCarousel1 = [
   { id: 1, src: H1 },
@@ -115,8 +117,18 @@ function Homepage() {
     getData();
   }, []);
 
+  const [isModalOpen, setIsModalOpen] = useState(true);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <>
+      <VideoModal
+        videoUrl={paymentVideo}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
       <Navbar />
       <div className="Background">
         <div className="Background-elements">
@@ -155,8 +167,11 @@ function Homepage() {
                   </h2>
                 </div>
                 <div className="image-list">
-                <Carousel images={imagesCarousel2} direction="left-to-right" />
-              </div>
+                  <Carousel
+                    images={imagesCarousel2}
+                    direction="left-to-right"
+                  />
+                </div>
               </div>
               <div className="sponsors-home">
                 <p className="events-text">OUR SPONSORS</p>
