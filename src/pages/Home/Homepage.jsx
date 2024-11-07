@@ -28,6 +28,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Properties from '../../properties.json';
+import P1 from '../../assets/high1.png'
+import P2 from '../../assets/high2.png'
+import P3 from '../../assets/high3.png'
 
 const imagesCarousel1 = [
   { id: 1, src: H1 },
@@ -40,6 +43,12 @@ const imagesCarousel1 = [
   { id: 8, src: H8 },
   { id: 9, src: H9 },
   { id: 10, src: H10 },
+];
+
+const imagesCarousel2 = [
+  { id: 1, src: P1 },
+  { id: 2, src: P2 },
+  { id: 3, src: P3 },
 ];
 
 function Carousel({ images, direction }) {
@@ -145,12 +154,9 @@ function Homepage() {
                     Highlights 2024
                   </h2>
                 </div>
-                <div>
-                  {/* Highlights Banner */}
-                  <div className="banner-wrapper">
-                    <img src={highlights2024} alt="" />
-                  </div>
-                </div>
+                <div className="image-list">
+                <Carousel images={imagesCarousel2} direction="left-to-right" />
+              </div>
               </div>
               <div className="sponsors-home">
                 <p className="events-text">OUR SPONSORS</p>
