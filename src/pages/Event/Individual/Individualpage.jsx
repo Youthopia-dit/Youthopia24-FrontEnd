@@ -232,39 +232,12 @@ const IndividualEvent = () => {
                       </div>
                       </>
                     )) 
-                  /* <table className="fees-table">
-                    <thead>
-                      <tr>
-                        <th></th>
-                        {teamSizes.map((size) => (
-                          <th key={size}>Team Size {size}</th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <strong>DIT</strong>
-                        </td>
-                        {eventDetails.prices.map((price, index) => (
-                          <td key={`dit-${index}`}>{price.priceDit}</td>
-                        ))}
-                      </tr>
-                      <tr>
-                        <td>
-                          <strong>Non DIT</strong>
-                        </td>
-                        {eventDetails.prices.map((price, index) => (
-                          <td key={`non-dit-${index}`}>{price.priceNonDit}</td>
-                        ))}
-                      </tr>
-                    </tbody>
-                  </table> */}
+                  }
                 </div>
               )}
             </div>
             <div className="event-buttons-div">
-            <button className="register-btn" onClick={handleRegister}>Register Now</button>
+            <button className="register-btn" onClick={handleRegister} disabled = {eventDetails.disabled}>Register Now</button>
             <button className="register-btn" onClick={downloadDoc}>View Details</button>
             </div>
           </div>
